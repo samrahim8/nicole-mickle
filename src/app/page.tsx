@@ -1,65 +1,91 @@
-import Image from "next/image";
+import Link from "next/link";
+import { neighborhoods } from "@/lib/neighborhoods";
+import { HomeClient } from "@/components/home-client";
+
+const credentials = [
+  "30 Years of Orlando Real Estate",
+  "Relocation Specialist",
+  "New Construction Expert",
+  "Mortgage Lending Background",
+];
+
+const audiences = [
+  {
+    title: "Relocating to Orlando",
+    description:
+      "Moving from out of state? I'll navigate neighborhoods, schools, commutes, and lifestyle — so you find the right fit before you even visit.",
+    href: "/relocating",
+    cta: "Plan Your Move",
+    number: "01",
+  },
+  {
+    title: "Exploring New Construction",
+    description:
+      "From selecting the right builder to negotiating upgrades, I bring the expertise most agents simply don't have.",
+    href: "/new-construction",
+    cta: "Explore Builders",
+    number: "02",
+  },
+  {
+    title: "Ready to Make a Move",
+    description:
+      "Already in Orlando and ready for your next chapter? Whether upsizing, downsizing, or changing neighborhoods — I know this market inside and out.",
+    href: "/contact",
+    cta: "Let's Talk",
+    number: "03",
+  },
+];
+
+const testimonials = [
+  {
+    text: "I highly recommend Nicole Mickle for anyone seeking an exceptional realtor. Her professionalism and dedication were evident throughout my entire relocation from New York to Florida. Nicole expertly managed every aspect — from coordinating remote home viewings to overseeing all documentation and paperwork with meticulous attention to detail.",
+    author: "J D",
+    context: "Relocated from New York",
+  },
+  {
+    text: "Above and beyond doesn't even start to cover it with Nicole! We had the pleasure of working with her for not one, but two long distance moves over the past three years. We cannot speak highly enough about Nicole on both a professional and personal level.",
+    author: "Erin Myers",
+    context: "Two long-distance relocations",
+  },
+  {
+    text: "Nicole is my real estate agent who has helped me relocate from Bethesda, Maryland to Orlando, Florida. She is a great communicator. Nicole has the best interests of her clients in heart, and she deeply cares about them. I strongly recommend Nicole to all of my relatives, friends, colleagues.",
+    author: "Xiaolu Li",
+    context: "Relocated from Bethesda, MD — new construction",
+  },
+  {
+    text: "Nicole has been a fantastic help in our search for a home in Orlando. She was incredibly knowledgeable, helpful and understanding of our needs. I highly recommend Nicole for anyone looking to relocate to this area.",
+    author: "Henk Pretorius",
+    context: "Relocated from South Africa",
+  },
+  {
+    text: "Nicole Mickle's skill set and talents as a realtor are second to none. She made sure that we appropriated the best deal possible. Nicole is not only an incredibly gifted realtor, but an even better individual.",
+    author: "Tiffanie Logan",
+    context: "Bought and sold within two years",
+  },
+  {
+    text: "Nicole was recommended to me by my accountant. Most importantly, Nicole sold the property for the listed price in less time that I have ever experienced.",
+    author: "Norma Harris",
+    context: "Sold property remotely",
+  },
+];
+
+const mediaLogos = [
+  "Wall Street Journal",
+  "Redfin",
+  "HomeLight",
+  "Inman",
+  "Medium",
+  "The Close",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <HomeClient
+      credentials={credentials}
+      audiences={audiences}
+      neighborhoods={neighborhoods}
+      testimonials={testimonials}
+      mediaLogos={mediaLogos}
+    />
   );
 }

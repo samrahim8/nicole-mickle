@@ -1,0 +1,229 @@
+"use client";
+
+import Link from "next/link";
+import { FadeIn, SlideIn, Stagger, StaggerChild, TextReveal } from "./animate";
+
+interface Props {
+  steps: { number: string; title: string; description: string }[];
+  reasons: { title: string; description: string }[];
+}
+
+export function RelocatingClient({ steps, reasons }: Props) {
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <FadeIn>
+              <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-6">
+                Relocation
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
+                Moving to Orlando starts <span className="italic">with the right guide</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <p className="text-[15px] text-neutral-500 leading-relaxed mt-6 max-w-lg mx-auto">
+                Relocating is more than finding a house. It&apos;s choosing a
+                neighborhood, understanding a market, and making a life decision
+                from a distance. I specialize in making that process clear,
+                confident, and personal.
+              </p>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.5}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px] mt-12">
+              <div className="border-t-2 border-[#1B3A2D] bg-white p-6 lg:p-8 text-center">
+                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.1] text-charcoal mb-1">
+                  30
+                </p>
+                <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400">
+                  Years in Orlando
+                </p>
+              </div>
+              <div className="border-t-2 border-[#1B3A2D] bg-white p-6 lg:p-8 text-center">
+                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.1] text-charcoal mb-1">
+                  5.0
+                </p>
+                <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400">
+                  Google Rating
+                </p>
+              </div>
+              <div className="border-t-2 border-[#1B3A2D] bg-white p-6 lg:p-8 text-center">
+                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.1] text-charcoal mb-1">
+                  500+
+                </p>
+                <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400">
+                  Families Relocated
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-20 lg:py-44 bg-neutral-50">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <FadeIn>
+            <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-4">
+              The Process
+            </p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-charcoal max-w-xl mb-16 lg:mb-24">
+              A clear path from first call to closing day
+            </h2>
+          </FadeIn>
+
+          <Stagger className="space-y-0" staggerDelay={0.1}>
+            {steps.map((step) => (
+              <StaggerChild key={step.number}>
+                <div className="grid lg:grid-cols-12 gap-6 py-10 lg:py-14 border-t border-neutral-200/60">
+                  <span className="lg:col-span-1 text-[11px] tracking-[0.2em] text-neutral-300 font-medium">
+                    {step.number}
+                  </span>
+                  <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal">
+                    {step.title}
+                  </h3>
+                  <p className="lg:col-span-6 text-[15px] text-neutral-500 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </StaggerChild>
+            ))}
+            <div className="border-t border-neutral-200/60" />
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Why Nicole - Asymmetric layout */}
+      <section className="py-20 lg:py-44">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
+              <FadeIn>
+                <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-4">
+                  Why Work With Me
+                </p>
+                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
+                  The difference 30 years makes
+                </h2>
+              </FadeIn>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <Stagger className="space-y-12" staggerDelay={0.1}>
+                {reasons.map((reason) => (
+                  <StaggerChild key={reason.title}>
+                    <div className="border-l border-neutral-200 pl-8">
+                      <h3 className="text-base font-medium text-charcoal mb-2">
+                        {reason.title}
+                      </h3>
+                      <p className="text-[15px] text-neutral-500 leading-relaxed">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </StaggerChild>
+                ))}
+              </Stagger>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 lg:py-44 bg-neutral-50">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <FadeIn>
+            <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
+              Frequently Asked
+            </p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-charcoal max-w-xl mb-16 lg:mb-24">
+              Questions from relocating buyers
+            </h2>
+          </FadeIn>
+
+          <Stagger className="space-y-0" staggerDelay={0.08}>
+            <StaggerChild>
+              <div className="border-t border-neutral-100 py-8 lg:py-10">
+                <h3 className="font-medium text-charcoal mb-3">
+                  What&apos;s the best neighborhood in Orlando for families?
+                </h3>
+                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  It depends on your priorities. Winter Park and Baldwin Park offer walkability and top-rated schools. Lake Nona is newer with excellent amenities. Windermere has larger lots and a quieter pace. I match neighborhoods to your lifestyle, commute, school preferences, and budget rather than giving a one-size-fits-all answer.
+                </p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="border-t border-neutral-100 py-8 lg:py-10">
+                <h3 className="font-medium text-charcoal mb-3">
+                  How far in advance should I start working with a realtor before relocating?
+                </h3>
+                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  Ideally three to six months before your move date. That gives us time for a discovery call, neighborhood research, virtual tours, and at least one in-person visit before writing offers. If your timeline is shorter, I can adjust. I have helped clients close in as little as 30 days when needed.
+                </p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="border-t border-neutral-100 py-8 lg:py-10">
+                <h3 className="font-medium text-charcoal mb-3">
+                  Do I need to visit Orlando before buying a home?
+                </h3>
+                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  Strongly recommended but not always required. I offer detailed video tours, neighborhood drive-throughs, and FaceTime walkthroughs so you can evaluate homes remotely. Many of my relocation clients narrow their list virtually, then fly in for a focused weekend of final showings before making an offer.
+                </p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="border-t border-neutral-100 py-8 lg:py-10">
+                <h3 className="font-medium text-charcoal mb-3">
+                  What&apos;s the cost of living like compared to other major cities?
+                </h3>
+                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  Orlando is significantly more affordable than cities like New York, San Francisco, or Boston. There is no state income tax in Florida, which makes a real difference in take-home pay. Housing costs vary widely by neighborhood, but you can find quality homes in excellent school districts at price points that would be impossible in many Northeast or West Coast metros.
+                </p>
+              </div>
+            </StaggerChild>
+            <div className="border-t border-neutral-100" />
+          </Stagger>
+        </div>
+      </section>
+
+      {/* CTA - Deep forest green */}
+      <section className="py-20 lg:py-44 bg-[#1B3A2D]">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <FadeIn>
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
+                Thinking about Orlando?
+              </h2>
+              <p className="text-[15px] text-white/70 mb-10">
+                Let&apos;s start with a conversation. No pressure, no pitch. Just
+                honest answers about what it&apos;s like to live here.
+              </p>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
+              >
+                Schedule a free consultation
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="group-hover:translate-x-1 transition-transform duration-300"
+                >
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
+  );
+}
