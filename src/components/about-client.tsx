@@ -68,14 +68,14 @@ export function AboutClient() {
               </TextReveal>
 
               <FadeIn delay={0.5} className="mt-10">
-                <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   I grew up in Central Florida. I&apos;ve been in the real estate
                   industry since 1996 -- as a mortgage broker, a nationwide closing
                   company owner, a transaction coordinator, and now a realtor. I
                   didn&apos;t just learn this business from a textbook. I learned
                   it from the inside out.
                 </p>
-                <p className="text-[15px] text-neutral-500 leading-[1.75]">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75]">
                   For 23 years I ran APAT Real Estate Settlement Services,
                   coordinating closings nationwide. That background gave me an
                   understanding of the transaction process that most agents simply
@@ -124,7 +124,7 @@ export function AboutClient() {
                   <h3 className="lg:col-span-3 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white">
                     {m.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[15px] text-white/70 leading-relaxed">
+                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-white/70 leading-relaxed">
                     {m.description}
                   </p>
                 </div>
@@ -173,13 +173,13 @@ export function AboutClient() {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Let&apos;s work together
               </h2>
-              <p className="text-[15px] text-neutral-500 mb-10">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-10">
                 Whether you&apos;re moving to Orlando or building your next home,
                 I&apos;d love to help you get it right.
               </p>
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
               >
                 Get in touch
                 <svg

@@ -227,13 +227,13 @@ export function QuizClient() {
                 <br />
                 <span className="italic">neighborhood</span>
               </h1>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-md mx-auto mb-12">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-md mx-auto mb-12">
                 Five questions. Two minutes. Personalized neighborhood
                 recommendations based on your lifestyle, budget, and priorities.
               </p>
               <button
                 onClick={() => { setDirection(1); setStep(0); }}
-                className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-white bg-[#1B3A2D] px-8 py-4 hover:bg-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-white bg-[#1B3A2D] px-8 py-4 hover:bg-[#234B39] transition-all duration-300"
               >
                 Start the quiz
                 <svg
@@ -266,7 +266,7 @@ export function QuizClient() {
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                   {questions[step].heading}
                 </h2>
-                <p className="text-[14px] text-neutral-400">
+                <p className="text-[16px] sm:text-[14px] text-neutral-400">
                   {questions[step].subtext}
                 </p>
               </div>
@@ -326,7 +326,7 @@ export function QuizClient() {
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                   Your top Orlando neighborhoods
                 </h2>
-                <p className="text-[14px] text-white/50 max-w-md mx-auto">
+                <p className="text-[16px] sm:text-[14px] text-white/50 max-w-md mx-auto">
                   Based on your answers, these neighborhoods are your best fit.
                   Explore the full guides or download your personalized report.
                 </p>
@@ -361,7 +361,7 @@ export function QuizClient() {
                           <path d="M4 12L12 4M12 4H6M12 4v6" />
                         </svg>
                       </div>
-                      <p className="text-[13px] text-white/50 leading-relaxed mb-4">
+                      <p className="text-[15px] sm:text-[13px] text-white/50 leading-relaxed mb-4">
                         {n.tagline}
                       </p>
                       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] text-white/30">
@@ -388,7 +388,7 @@ export function QuizClient() {
                     <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
                       Check your inbox
                     </h3>
-                    <p className="text-[14px] text-white/50">
+                    <p className="text-[16px] sm:text-[14px] text-white/50">
                       Your personalized neighborhood guide is on its way.
                     </p>
                   </div>
@@ -397,7 +397,7 @@ export function QuizClient() {
                     <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
                       Get your personalized guide
                     </h3>
-                    <p className="text-[14px] text-white/50 mb-8">
+                    <p className="text-[16px] sm:text-[14px] text-white/50 mb-8">
                       Detailed neighborhood breakdowns, price points, schools, and
                       Nicole&apos;s personal recommendations — delivered to your inbox.
                     </p>
@@ -411,11 +411,11 @@ export function QuizClient() {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         placeholder="your@email.com"
-                        className="flex-1 px-4 py-3.5 bg-white/5 border border-white/15 text-[14px] text-white placeholder:text-white/25 focus:outline-none focus:border-white/40 transition-colors duration-300"
+                        className="flex-1 px-4 py-3.5 bg-white/5 border border-white/15 text-[16px] sm:text-[14px] text-white placeholder:text-white/25 focus:outline-none focus:border-white/40 transition-colors duration-300"
                       />
                       <button
                         type="submit"
-                        className="px-6 py-3.5 bg-white text-[#1B3A2D] text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0"
+                        className="px-6 py-3.5 bg-white text-[#1B3A2D] text-[15px] sm:text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0"
                       >
                         Send guide
                       </button>

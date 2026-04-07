@@ -72,7 +72,7 @@ export function HomeClient({
             transition={{ duration: 1, delay: 0.9 }}
             className="mt-10"
           >
-            <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-lg mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-lg mx-auto">
               Find your neighborhood before you pack a single box.
             </p>
           </motion.div>
@@ -85,7 +85,7 @@ export function HomeClient({
           >
             <Link
               href="/contact"
-              className="group text-[13px] tracking-wide font-medium text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+              className="group text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
             >
               Let&apos;s talk
               <svg
@@ -101,7 +101,7 @@ export function HomeClient({
               href="https://iorlandorealestate.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
+              className="text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
             >
               Search homes
             </a>
@@ -156,13 +156,13 @@ export function HomeClient({
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
                   The most trusted name in Orlando real estate
                 </h2>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] mb-4">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-4">
                   A Central Florida native with nearly 30 years in the industry.
                   Mortgage broker, nationwide closing company owner, and now a
                   realtor with Olympus Executive Realty. Nicole understands every
                   stage of the transaction from the inside out.
                 </p>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] mb-8">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-8">
                   Certified International Property Specialist. Founder of
                   Florida Homes and Living. Specializing in relocation and new
                   construction throughout Central Florida.
@@ -183,7 +183,7 @@ export function HomeClient({
 
                 <Link
                   href="/about"
-                  className="group text-[13px] tracking-wide text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 w-fit"
+                  className="group text-[15px] sm:text-[13px] tracking-wide text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 w-fit"
                 >
                   More about Nicole
                   <svg
@@ -230,7 +230,7 @@ export function HomeClient({
                     <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.2] text-charcoal group-hover:text-[#1B3A2D] transition-colors duration-500">
                       {item.title}
                     </h3>
-                    <p className="lg:col-span-5 text-[14px] text-neutral-500 leading-[1.7]">
+                    <p className="lg:col-span-5 text-[16px] sm:text-[14px] text-neutral-500 leading-[1.7]">
                       {item.description}
                     </p>
                     <div className="lg:col-span-2 flex lg:justify-end">
@@ -359,7 +359,7 @@ export function HomeClient({
                 <div className="mt-8 flex items-center gap-4">
                   <div className="w-8 h-[1px] bg-[#1B3A2D]/20" />
                   <div>
-                    <p className="text-[13px] font-medium text-charcoal">
+                    <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
                       {testimonials[0].author}
                     </p>
                     <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -376,13 +376,13 @@ export function HomeClient({
             {testimonials.slice(1, 4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[14px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
                     <div className="w-6 h-[1px] bg-[#1B3A2D]/20" />
                     <div>
-                      <p className="text-[13px] font-medium text-charcoal">
+                      <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
                         {t.author}
                       </p>
                       <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -400,13 +400,13 @@ export function HomeClient({
             {testimonials.slice(4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[14px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
                     <div className="w-6 h-[1px] bg-[#1B3A2D]/20" />
                     <div>
-                      <p className="text-[13px] font-medium text-charcoal">
+                      <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
                         {t.author}
                       </p>
                       <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -441,13 +441,13 @@ export function HomeClient({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Find your Orlando neighborhood
               </h2>
-              <p className="text-[15px] text-white/60 leading-[1.8] mb-10">
+              <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8] mb-10">
                 Five questions. Two minutes. Personalized recommendations based
                 on your lifestyle, budget, and priorities.
               </p>
               <Link
                 href="/quiz"
-                className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-[#1B3A2D] bg-white px-8 py-4 hover:bg-white/90 transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] bg-white px-8 py-4 hover:bg-white/90 transition-all duration-300"
               >
                 Take the quiz
                 <svg

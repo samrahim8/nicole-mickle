@@ -69,7 +69,7 @@ export default async function NeighborhoodPage({
               <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-charcoal mb-3">
                 {n.name}
               </h1>
-              <p className="text-[15px] text-neutral-500 mb-6">{n.tagline}</p>
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-6">{n.tagline}</p>
               <div className="flex flex-wrap gap-x-4 gap-y-2">
                 {n.lifestyleTags.map((tag) => (
                   <span
@@ -82,7 +82,7 @@ export default async function NeighborhoodPage({
               </div>
             </div>
             <div className="lg:col-span-4 lg:col-start-9">
-              <div className="space-y-3 text-[13px]">
+              <div className="space-y-3 text-[15px] sm:text-[13px]">
                 <div className="flex justify-between border-b border-neutral-100 pb-3">
                   <span className="text-neutral-400">Price Range</span>
                   <span className="text-charcoal">{n.priceRange}</span>
@@ -116,7 +116,7 @@ export default async function NeighborhoodPage({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
                 What it&apos;s like to live in {n.name}
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.85]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85]">
                 {n.lifestyle}
               </p>
             </div>
@@ -127,7 +127,7 @@ export default async function NeighborhoodPage({
                 </p>
                 <ul className="space-y-3">
                   {n.bestFor.map((item) => (
-                    <li key={item} className="flex gap-3 text-[13px] text-neutral-500 leading-relaxed">
+                    <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-500 leading-relaxed">
                       <span className="w-1 h-1 rounded-full bg-[#1B3A2D] shrink-0 mt-2" />
                       {item}
                     </li>
@@ -140,7 +140,7 @@ export default async function NeighborhoodPage({
                 </p>
                 <ul className="space-y-3">
                   {n.notIdealFor.map((item) => (
-                    <li key={item} className="flex gap-3 text-[13px] text-neutral-400 leading-relaxed">
+                    <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-400 leading-relaxed">
                       <span className="w-1 h-1 rounded-full bg-neutral-300 shrink-0 mt-2" />
                       {item}
                     </li>
@@ -170,7 +170,7 @@ export default async function NeighborhoodPage({
                 <p className="font-[family-name:var(--font-playfair)] text-xl text-charcoal mb-4">
                   {seg.range}
                 </p>
-                <p className="text-[13px] text-neutral-500 leading-relaxed">
+                <p className="text-[15px] sm:text-[13px] text-neutral-500 leading-relaxed">
                   {seg.description}
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default async function NeighborhoodPage({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
                 Building new in {n.name}
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.85]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85]">
                 {n.newConstruction.summary}
               </p>
             </div>
@@ -202,7 +202,7 @@ export default async function NeighborhoodPage({
                   </p>
                   <ul className="space-y-2">
                     {n.newConstruction.builders.map((b) => (
-                      <li key={b} className="text-[13px] text-neutral-500 border-b border-neutral-100 pb-2">
+                      <li key={b} className="text-[15px] sm:text-[13px] text-neutral-500 border-b border-neutral-100 pb-2">
                         {b}
                       </li>
                     ))}
@@ -216,7 +216,7 @@ export default async function NeighborhoodPage({
                   </p>
                   <ul className="space-y-2">
                     {n.newConstruction.communities.map((c) => (
-                      <li key={c} className="text-[13px] text-neutral-500 border-b border-neutral-100 pb-2">
+                      <li key={c} className="text-[15px] sm:text-[13px] text-neutral-500 border-b border-neutral-100 pb-2">
                         {c}
                       </li>
                     ))}
@@ -224,7 +224,7 @@ export default async function NeighborhoodPage({
                 </div>
               )}
               {n.newConstruction.builders.length === 0 && (
-                <p className="text-[13px] text-neutral-400 italic">
+                <p className="text-[15px] sm:text-[13px] text-neutral-400 italic">
                   No active new construction. All purchases in {n.name} are resale.
                 </p>
               )}
@@ -246,7 +246,7 @@ export default async function NeighborhoodPage({
               </h3>
               <ul className="space-y-3">
                 {n.schools.map((s) => (
-                  <li key={s} className="text-[14px] text-white/60 border-b border-white/10 pb-3">
+                  <li key={s} className="text-[16px] sm:text-[14px] text-white/60 border-b border-white/10 pb-3">
                     {s}
                   </li>
                 ))}
@@ -261,7 +261,7 @@ export default async function NeighborhoodPage({
               </h3>
               <ul className="space-y-3">
                 {n.dining.map((d) => (
-                  <li key={d} className="text-[14px] text-white/60 border-b border-white/10 pb-3">
+                  <li key={d} className="text-[16px] sm:text-[14px] text-white/60 border-b border-white/10 pb-3">
                     {d}
                   </li>
                 ))}
@@ -287,7 +287,7 @@ export default async function NeighborhoodPage({
                   <span className="text-[11px] tracking-[0.15em] text-[#1B3A2D]/40 font-medium shrink-0 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[15px] text-neutral-500 leading-[1.8] border-b border-neutral-100 pb-8">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] border-b border-neutral-100 pb-8">
                     {tip}
                   </p>
                 </div>
@@ -307,12 +307,12 @@ export default async function NeighborhoodPage({
             <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
               The Complete {n.name} Guide
             </h3>
-            <p className="text-[14px] text-neutral-500 mb-8">
+            <p className="text-[16px] sm:text-[14px] text-neutral-500 mb-8">
               Schools, price points, new construction, commute times, and local
               recommendations. Everything in one PDF.
             </p>
             <button
-              className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+              className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
             >
               Download the guide
               <svg
@@ -333,14 +333,14 @@ export default async function NeighborhoodPage({
           <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
             Interested in {n.name}?
           </h2>
-          <p className="text-[15px] text-white/70 max-w-xl mx-auto mb-10">
+          <p className="text-[16px] sm:text-[15px] text-white/70 max-w-xl mx-auto mb-10">
             I can tell you what it&apos;s really like to live here, what the market
             looks like right now, and whether it&apos;s the right fit for your lifestyle.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
+              className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
             >
               Ask about {n.name}
               <svg
@@ -356,7 +356,7 @@ export default async function NeighborhoodPage({
               href="https://iorlandorealestate.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300"
+              className="text-[15px] sm:text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300"
             >
               Search {n.name} homes
             </a>

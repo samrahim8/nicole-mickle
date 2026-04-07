@@ -26,7 +26,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
               </h1>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <p className="text-[15px] text-neutral-500 leading-relaxed mt-6 max-w-lg mx-auto">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed mt-6 max-w-lg mx-auto">
                 Relocating is more than finding a house. It&apos;s choosing a
                 neighborhood, understanding a market, and making a life decision
                 from a distance. I specialize in making that process clear,
@@ -88,7 +88,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                   <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal">
                     {step.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[15px] text-neutral-500 leading-relaxed">
+                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -121,7 +121,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                       <h3 className="text-base font-medium text-charcoal mb-2">
                         {reason.title}
                       </h3>
-                      <p className="text-[15px] text-neutral-500 leading-relaxed">
+                      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                         {reason.description}
                       </p>
                     </div>
@@ -151,7 +151,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                 <h3 className="font-medium text-charcoal mb-3">
                   What&apos;s the best neighborhood in Orlando for families?
                 </h3>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
                   It depends on your priorities. Winter Park and Baldwin Park offer walkability and top-rated schools. Lake Nona is newer with excellent amenities. Windermere has larger lots and a quieter pace. I match neighborhoods to your lifestyle, commute, school preferences, and budget rather than giving a one-size-fits-all answer.
                 </p>
               </div>
@@ -161,7 +161,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                 <h3 className="font-medium text-charcoal mb-3">
                   How far in advance should I start working with a realtor before relocating?
                 </h3>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Ideally three to six months before your move date. That gives us time for a discovery call, neighborhood research, virtual tours, and at least one in-person visit before writing offers. If your timeline is shorter, I can adjust. I have helped clients close in as little as 30 days when needed.
                 </p>
               </div>
@@ -171,7 +171,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                 <h3 className="font-medium text-charcoal mb-3">
                   Do I need to visit Orlando before buying a home?
                 </h3>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Strongly recommended but not always required. I offer detailed video tours, neighborhood drive-throughs, and FaceTime walkthroughs so you can evaluate homes remotely. Many of my relocation clients narrow their list virtually, then fly in for a focused weekend of final showings before making an offer.
                 </p>
               </div>
@@ -181,7 +181,7 @@ export function RelocatingClient({ steps, reasons }: Props) {
                 <h3 className="font-medium text-charcoal mb-3">
                   What&apos;s the cost of living like compared to other major cities?
                 </h3>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Orlando is significantly more affordable than cities like New York, San Francisco, or Boston. There is no state income tax in Florida, which makes a real difference in take-home pay. Housing costs vary widely by neighborhood, but you can find quality homes in excellent school districts at price points that would be impossible in many Northeast or West Coast metros.
                 </p>
               </div>
@@ -199,13 +199,13 @@ export function RelocatingClient({ steps, reasons }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Thinking about Orlando?
               </h2>
-              <p className="text-[15px] text-white/70 mb-10">
+              <p className="text-[16px] sm:text-[15px] text-white/70 mb-10">
                 Let&apos;s start with a conversation. No pressure, no pitch. Just
                 honest answers about what it&apos;s like to live here.
               </p>
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
               >
                 Schedule a free consultation
                 <svg

@@ -35,7 +35,7 @@ export default function ContactPage() {
               </h1>
             </TextReveal>
             <FadeIn delay={0.5}>
-              <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mt-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mt-8">
                 Whether you&apos;re just starting to think about Orlando or you&apos;re
                 ready to make a move. No pressure, no pitch.
               </p>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal mb-3">
                     Thank you
                   </h3>
-                  <p className="text-[15px] text-neutral-500">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500">
                     I&apos;ll be in touch within 24 hours.
                   </p>
                 </motion.div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 mt-4"
+                    className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 mt-4"
                   >
                     Send message
                     <svg
@@ -253,7 +253,7 @@ export default function ContactPage() {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Windermere, Florida
               </h2>
-              <p className="text-[15px] text-white/70">
+              <p className="text-[16px] sm:text-[15px] text-white/70">
                 Serving all of Central Florida including Orange, Seminole,
                 Osceola, and Lake counties.
               </p>

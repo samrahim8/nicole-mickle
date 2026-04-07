@@ -76,7 +76,7 @@ export default async function RelocatingFromPage({
               </h1>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[15px] text-neutral-500 leading-relaxed">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                 {city.description}
               </p>
             </div>
@@ -95,7 +95,7 @@ export default async function RelocatingFromPage({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
                 {city.name} vs. Orlando
               </h2>
-              <p className="text-[14px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8]">
                 {city.costComparison}
               </p>
             </div>
@@ -106,7 +106,7 @@ export default async function RelocatingFromPage({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
                 What to expect
               </h2>
-              <p className="text-[14px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8]">
                 {city.weatherComparison}
               </p>
             </div>
@@ -133,7 +133,7 @@ export default async function RelocatingFromPage({
                     <span className="text-[11px] tracking-[0.15em] text-[#1B3A2D]/40 font-medium shrink-0 mt-0.5">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-[15px] text-neutral-500 leading-relaxed">
+                    <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                       {reason}
                     </p>
                   </div>
@@ -164,7 +164,7 @@ export default async function RelocatingFromPage({
                 <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
                   {n!.name}
                 </h3>
-                <p className="text-[13px] text-white/50 leading-relaxed mb-4">
+                <p className="text-[15px] sm:text-[13px] text-white/50 leading-relaxed mb-4">
                   {n!.tagline}
                 </p>
                 <div className="flex flex-wrap gap-x-4 text-[10px] tracking-[0.15em] uppercase text-white/30 mb-4">
@@ -201,7 +201,7 @@ export default async function RelocatingFromPage({
             {city.commonQuestions.map((faq) => (
               <div key={faq.q} className="border-t border-neutral-200 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">{faq.q}</h3>
-                <p className="text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] max-w-3xl">
                   {faq.a}
                 </p>
               </div>
@@ -218,14 +218,14 @@ export default async function RelocatingFromPage({
             <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
               Moving from {city.name}?
             </h2>
-            <p className="text-[15px] text-neutral-500 mb-10">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-10">
               I&apos;ve helped dozens of {city.name} families make the move to Orlando.
               Let&apos;s find the right neighborhood for your lifestyle and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
               >
                 Schedule a consultation
                 <svg
@@ -239,7 +239,7 @@ export default async function RelocatingFromPage({
               <span className="text-neutral-200 hidden sm:block">|</span>
               <Link
                 href="/quiz"
-                className="text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
+                className="text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
               >
                 Take the neighborhood quiz
               </Link>

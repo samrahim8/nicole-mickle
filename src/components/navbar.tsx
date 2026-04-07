@@ -51,7 +51,7 @@ export function Navbar() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-charcoal after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-charcoal after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -59,7 +59,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-charcoal after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-charcoal after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </Link>
@@ -69,7 +69,7 @@ export function Navbar() {
             href="https://iorlandorealestate.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[13px] font-medium px-5 py-2.5 bg-[#1B3A2D] text-white hover:bg-[#234B39] transition-all duration-300"
+            className="text-[15px] sm:text-[13px] font-medium px-5 py-2.5 bg-[#1B3A2D] text-white hover:bg-[#234B39] transition-all duration-300"
           >
             Start Your Search
           </a>

@@ -11,13 +11,13 @@ export function Footer() {
               Ready to make
               <span className="italic"> Orlando home?</span>
             </h2>
-            <p className="text-[14px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
+            <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
               Whether you&apos;re relocating from across the country or exploring
               new construction, let&apos;s find the right place for you.
             </p>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+              className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
             >
               Schedule a conversation
               <svg
@@ -40,7 +40,7 @@ export function Footer() {
               <p className="font-[family-name:var(--font-playfair)] text-lg text-white tracking-[-0.01em] mb-3">
                 Nicole Mickle
               </p>
-              <p className="text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
+              <p className="text-[15px] sm:text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
                 Orlando relocation &amp; new construction specialist.
                 Nearly 30 years of industry expertise.
               </p>
@@ -110,7 +110,7 @@ export function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-[13px] text-white/50 hover:text-white transition-colors duration-300"
+                    className="block text-[15px] sm:text-[13px] text-white/50 hover:text-white transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -121,7 +121,7 @@ export function Footer() {
               <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">
                 Contact
               </p>
-              <div className="space-y-2.5 text-[13px] text-white/50">
+              <div className="space-y-2.5 text-[15px] sm:text-[13px] text-white/50">
                 <a href="tel:+14073530826" className="block hover:text-white transition-colors duration-300">
                   (407) 353-0826
                 </a>

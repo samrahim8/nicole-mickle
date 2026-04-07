@@ -21,7 +21,7 @@ export default function NeighborhoodsPage() {
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
               Find the Orlando neighborhood that fits your life
             </h1>
-            <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
               Each neighborhood has its own character, pace, and personality.
               After 30 years here, I know which ones match which lifestyles.
             </p>
@@ -61,7 +61,7 @@ export default function NeighborhoodsPage() {
                     <path d="M4 12L12 4M12 4H6M12 4v6" />
                   </svg>
                 </div>
-                <p className="text-[13px] text-neutral-500 leading-relaxed mb-4">{n.tagline}</p>
+                <p className="text-[15px] sm:text-[13px] text-neutral-500 leading-relaxed mb-4">{n.tagline}</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 mb-4">
                   {n.lifestyleTags.map((tag) => (
                     <span
@@ -87,13 +87,13 @@ export default function NeighborhoodsPage() {
           <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
             Not sure which neighborhood is right?
           </h2>
-          <p className="text-[15px] text-white/70 max-w-xl mx-auto mb-10">
+          <p className="text-[16px] sm:text-[15px] text-white/70 max-w-xl mx-auto mb-10">
             Tell me about your lifestyle, commute, and priorities and I&apos;ll point
             you in the right direction.
           </p>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
+            className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
           >
             Ask me about neighborhoods
             <svg
