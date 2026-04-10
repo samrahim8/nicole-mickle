@@ -15,6 +15,8 @@ export interface Neighborhood {
   name: string;
   tagline: string;
   description: string;
+  image?: string;
+  searchUrl: string;
   lifestyleTags: string[];
   highlights: string[];
   priceRange: string;
@@ -38,6 +40,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "winter-park",
     name: "Winter Park",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-park",
     tagline: "Tree-lined charm meets cultural sophistication",
     description:
       "Winter Park is Orlando's most beloved neighborhood for a reason. Brick-lined Park Avenue, world-class museums, and lakefront living create a walkable, cultured community that feels like a small town. Mature oak canopies, independent boutiques, and some of the best restaurants in Central Florida make this a perennial favorite for relocators.",
@@ -112,6 +116,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "lake-nona",
     name: "Lake Nona",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-nona",
     tagline: "Orlando's master-planned community of the future",
     description:
       "Lake Nona is where innovation meets lifestyle. Home to the Medical City, USTA National Campus, and a growing tech corridor, this master-planned community offers modern architecture, resort-style amenities, and a forward-thinking approach to community design. Ideal for families and professionals who want new construction with walkable town centers.",
@@ -186,6 +192,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "windermere",
     name: "Windermere",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/windermere",
     tagline: "Lakefront luxury with a relaxed pace",
     description:
       "Windermere is Orlando's premier lakefront community, known for its spacious estates, rolling hills, and the Butler Chain of Lakes. This is where you come for space, privacy, and water access without sacrificing proximity to Disney-area attractions and top schools. A favorite of executives and families seeking room to breathe.",
@@ -260,6 +268,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "dr-phillips",
     name: "Dr. Phillips",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/dr-phillips",
     tagline: "Orlando's dining capital with suburban comfort",
     description:
       "Dr. Phillips offers the best of Orlando dining at Restaurant Row while maintaining a family-friendly suburban character. With excellent schools, proximity to the attractions corridor, and a wide range of housing from townhomes to estates, it's one of the most versatile neighborhoods for relocators who want convenience and community.",
@@ -335,6 +345,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "celebration",
     name: "Celebration",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/celebration",
     tagline: "A walkable town designed for community",
     description:
       "Celebration is a master-planned town originally developed by Disney that has grown into one of Orlando's most distinctive communities. Its walkable downtown, community events calendar, and mix of architectural styles create a neighborhood that feels intentionally crafted for connection. Great for families and anyone who values a strong sense of place.",
@@ -408,6 +420,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "baldwin-park",
     name: "Baldwin Park",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/baldwin-park",
     tagline: "Urban village living in the heart of Orlando",
     description:
       "Built on the former Orlando Naval Training Center, Baldwin Park is a vibrant urban village minutes from downtown. Tree-lined streets, a central village center with restaurants and shops, and a mix of condos, townhomes, and single-family homes make it one of the most walkable and community-oriented neighborhoods in Central Florida.",
@@ -481,6 +495,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "horizon-west",
     name: "Horizon West",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/horizon-west",
     tagline: "Orlando's fastest-growing new construction corridor",
     description:
       "Horizon West is the epicenter of new construction in the greater Orlando area. Spanning a massive growth corridor west of Orlando, it encompasses multiple master-planned communities, town centers, and villages — each with its own identity. If new construction is your priority, this is where you start.",
@@ -555,6 +571,8 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "winter-garden",
     name: "Winter Garden",
+    image: "placeholder",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-garden",
     tagline: "Small-town charm with a thriving downtown",
     description:
       "Winter Garden is one of Orlando's best-kept secrets — a historic small town with a revitalized downtown that has become one of the most desirable places to live in Central Florida. Plant Street's boutique shops, craft breweries, and farm-to-table restaurants create a walkable core, while surrounding communities offer everything from new construction to established estates.",
