@@ -3,7 +3,7 @@ import { Bodoni_Moda, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { PageTransition } from "@/components/page-transition";
+import { SiteChrome } from "@/components/site-chrome";
 
 const bodoni = Bodoni_Moda({
   variable: "--font-playfair",
@@ -18,9 +18,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nicolemickle.com"),
   title: {
     default: "Nicole Mickle | Orlando Real Estate - Relocation & New Construction Specialist",
     template: "%s | Nicole Mickle Real Estate",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/blog/rss.xml", title: "Nicole Mickle — Journal" },
+      ],
+    },
   },
   description:
     "Orlando's trusted relocation and new construction specialist with 30 years of experience. Expert guidance for moving to Orlando, new builds, and finding your perfect neighborhood.",
@@ -100,11 +108,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
+        <SiteChrome navbar={<Navbar />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+  <title>Nicole Mickle</title>
+  <link>https://nicolemickle.com</link>
+  <description>Sample</description>
+
+  <item>
+    <title>Top 9 Walkable Communities in Orlando</title>
+    <link>https://nicolemickle.com/top-9-walkable-communities-in-orlando/</link>
+    <pubDate>Mon, 07 Apr 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[Nicole Mickle]]></dc:creator>
+    <content:encoded><![CDATA[<p>Orlando has some genuinely walkable pockets if you know where to look.</p><h2>Winter Park</h2><p>Park Avenue is the gold standard.</p><ul><li>Rollins College</li><li>Farmer's market</li></ul><p>Here's a photo:</p><img src="https://picsum.photos/seed/winterpark/800/500" alt="Winter Park" /><h2>Baldwin Park</h2><p>Built around a chain of lakes with a true town center.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Nine Orlando neighborhoods where you can genuinely leave the car at home.]]></excerpt:encoded>
+    <wp:post_id>101</wp:post_id>
+    <wp:post_date><![CDATA[2026-04-07 08:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-04-07 12:00:00]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[top-9-walkable-communities-in-orlando]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <category domain="category" nicename="neighborhoods"><![CDATA[Neighborhoods]]></category>
+  </item>
+
+  <item>
+    <title>SOLD: 884 Klondike St Winter Garden</title>
+    <link>https://nicolemickle.com/sold-884-klondike-st/</link>
+    <pubDate>Fri, 14 Mar 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[Nicole Mickle]]></dc:creator>
+    <content:encoded><![CDATA[<p>This Winter Garden home just sold for full asking price.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Closed in 14 days.]]></excerpt:encoded>
+    <wp:post_id>102</wp:post_id>
+    <wp:post_date><![CDATA[2026-03-14 08:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-03-14 12:00:00]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[sold-884-klondike-st]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <category domain="category" nicename="sold"><![CDATA[Sold Listings]]></category>
+  </item>
+
+  <item>
+    <title>Instagram Stories for Real Estate Agents</title>
+    <link>https://nicolemickle.com/instagram-stories-for-real-estate-agents/</link>
+    <pubDate>Tue, 07 May 2024 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[Nicole Mickle]]></dc:creator>
+    <content:encoded><![CDATA[<p>Social media tips for agents.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Boost engagement.]]></excerpt:encoded>
+    <wp:post_id>103</wp:post_id>
+    <wp:post_date><![CDATA[2024-05-07 08:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2024-05-07 12:00:00]]></wp:post_date_gmt>
+    <wp:post_name><![CDATA[instagram-stories-for-real-estate-agents]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <category domain="category" nicename="marketing"><![CDATA[Marketing]]></category>
+  </item>
+
+  <item>
+    <title>This is a draft</title>
+    <link>https://nicolemickle.com/?p=104</link>
+    <content:encoded><![CDATA[<p>Not published yet.</p>]]></content:encoded>
+    <wp:post_id>104</wp:post_id>
+    <wp:status><![CDATA[draft]]></wp:status>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+  </item>
+
+</channel>
+</rss>
