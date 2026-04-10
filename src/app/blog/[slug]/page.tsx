@@ -23,6 +23,7 @@ type BlogPostPageProps = {
 };
 
 export async function generateStaticParams() {
+  if (!sanityClient) return [];
   const slugs = await sanityClient.fetch<string[]>(postSlugsQuery);
   return (slugs ?? []).map((slug) => ({ slug }));
 }
@@ -31,6 +32,7 @@ export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (!sanityClient) return {};
   const post = await sanityClient.fetch<PostDetail | null>(postBySlugQuery, {
     slug,
   });
@@ -64,6 +66,7 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
+  if (!sanityClient) notFound();
   const post = await sanityClient.fetch<PostDetail | null>(postBySlugQuery, {
     slug,
   });
@@ -73,7 +76,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const categoryIds = (post.categories ?? []).map((c) => c._id);
   const related =
     categoryIds.length > 0
-      ? await sanityClient.fetch<PostListItem[]>(relatedPostsQuery, {
+      ? await sanityClient!.fetch<PostListItem[]>(relatedPostsQuery, {
           currentId: post._id,
           categoryIds,
         })

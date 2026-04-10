@@ -22,7 +22,7 @@ function escapeXml(value: string): string {
 }
 
 export async function GET(): Promise<Response> {
-  const posts = await sanityClient.fetch<RssPost[]>(
+  const posts = sanityClient ? await sanityClient.fetch<RssPost[]>(
     `*[_type == "post" && defined(slug.current) && defined(publishedAt)]
       | order(publishedAt desc) [0...50] {
         title,
@@ -31,7 +31,7 @@ export async function GET(): Promise<Response> {
         publishedAt,
         "author": author->{ name }
       }`,
-  );
+  ) : [];
 
   const items = (posts ?? [])
     .map((post) => {

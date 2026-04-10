@@ -56,6 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // we still ship a sitemap with everything else so the build never breaks.
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {
+    if (!sanityClient) throw new Error("Sanity not configured");
     const posts = await sanityClient.fetch<BlogSitemapEntry[]>(
       `*[_type == "post" && defined(slug.current) && defined(publishedAt)]{
         "slug": slug.current,

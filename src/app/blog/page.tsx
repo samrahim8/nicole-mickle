@@ -34,10 +34,12 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  const [posts, total] = await Promise.all([
-    sanityClient.fetch<PostListItem[]>(postsListQuery, { start, end }),
-    sanityClient.fetch<number>(postsCountQuery),
-  ]);
+  const [posts, total] = sanityClient
+    ? await Promise.all([
+        sanityClient.fetch<PostListItem[]>(postsListQuery, { start, end }),
+        sanityClient.fetch<number>(postsCountQuery),
+      ])
+    : [[] as PostListItem[], 0];
 
   const totalPages = Math.max(1, Math.ceil((total ?? 0) / PAGE_SIZE));
   const hasPrev = page > 1;
