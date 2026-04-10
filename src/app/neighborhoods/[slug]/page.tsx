@@ -103,24 +103,27 @@ export default async function NeighborhoodPage({
               </div>
             </div>
 
-            {/* Right — stats block */}
-            <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-neutral-200 pt-8 lg:pt-0 lg:pl-10">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                <div>
-                  <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.priceRange}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Price Range</p>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.downtown}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Downtown</p>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.airport}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Airport</p>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.disney}</p>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Disney</p>
+            {/* Right — stats card */}
+            <div className="lg:col-span-4">
+              <div className="border border-neutral-200 bg-neutral-50 p-8 lg:p-10">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-6">At a Glance</p>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                  <div>
+                    <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.priceRange}</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Price Range</p>
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.downtown}</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Downtown</p>
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.airport}</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Airport</p>
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-playfair)] text-[17px] text-charcoal">{n.commute.disney}</p>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-1">Disney</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -131,9 +134,9 @@ export default async function NeighborhoodPage({
       {/* Lifestyle Narrative + Fit Check — contained together */}
       <section className="bg-neutral-50">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          {/* Pull quote band */}
+          {/* Pull quote card */}
           <div className="py-16 lg:py-24 border-b border-neutral-200/60">
-            <div className="max-w-4xl">
+            <div className="border-l-[3px] border-[#1B3A2D] pl-8 lg:pl-10 max-w-4xl">
               <p className="font-[family-name:var(--font-playfair)] italic text-[clamp(1.35rem,2.5vw,2.15rem)] leading-[1.45] text-charcoal">
                 &ldquo;{pullQuote}&rdquo;
               </p>
@@ -152,33 +155,35 @@ export default async function NeighborhoodPage({
               )}
             </div>
 
-            {/* Fit check */}
+            {/* Fit check card */}
             <div className="lg:col-span-5 lg:col-start-8">
-              <div className="mb-10">
-                <p className="text-[10px] tracking-[0.25em] uppercase text-[#1B3A2D] mb-4">
-                  Best For
-                </p>
-                <ul className="space-y-3">
-                  {n.bestFor.map((item) => (
-                    <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-600 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1B3A2D] shrink-0 mt-[7px]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="border-t border-neutral-200/60 pt-8">
-                <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-4">
-                  Not Ideal For
-                </p>
-                <ul className="space-y-3">
-                  {n.notIdealFor.map((item) => (
-                    <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-400 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0 mt-[7px]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="border border-neutral-200 bg-white p-8 lg:p-10">
+                <div className="mb-8 pb-8 border-b border-neutral-100">
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-[#1B3A2D] mb-4">
+                    Best For
+                  </p>
+                  <ul className="space-y-3">
+                    {n.bestFor.map((item) => (
+                      <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-600 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1B3A2D] shrink-0 mt-[7px]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-4">
+                    Not Ideal For
+                  </p>
+                  <ul className="space-y-3">
+                    {n.notIdealFor.map((item) => (
+                      <li key={item} className="flex gap-3 text-[15px] sm:text-[13px] text-neutral-400 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0 mt-[7px]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -225,50 +230,50 @@ export default async function NeighborhoodPage({
       {/* New Construction */}
       <section className="py-20 lg:py-32 border-t border-neutral-100">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-8">
+            New Construction
+          </p>
           {n.newConstruction.builders.length > 0 ? (
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-              <div className="lg:col-span-7">
-                <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                  New Construction
-                </p>
-                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
-                  Building new in {n.name}
-                </h2>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85] mb-10">
-                  {n.newConstruction.summary}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {n.newConstruction.builders.map((b) => (
-                    <span
-                      key={b}
-                      className="border border-neutral-200 px-3 py-1.5 text-[12px] tracking-wide text-neutral-500"
-                    >
-                      {b}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              {n.newConstruction.communities.length > 0 && (
-                <div className="lg:col-span-4 lg:col-start-9">
-                  <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-4">
-                    Active Communities
+            <div className="border border-neutral-200 bg-neutral-50 p-8 lg:p-12">
+              <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+                <div className="lg:col-span-7">
+                  <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
+                    Building new in {n.name}
+                  </h2>
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85] mb-8">
+                    {n.newConstruction.summary}
                   </p>
-                  <ul className="space-y-0">
-                    {n.newConstruction.communities.map((c) => (
-                      <li key={c} className="text-[15px] sm:text-[13px] text-neutral-500 border-b border-neutral-100 py-3">
-                        {c}
-                      </li>
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-3">Builders</p>
+                  <div className="flex flex-wrap gap-2">
+                    {n.newConstruction.builders.map((b) => (
+                      <span
+                        key={b}
+                        className="border border-neutral-300 bg-white px-3 py-1.5 text-[12px] tracking-wide text-neutral-500"
+                      >
+                        {b}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-              )}
+                {n.newConstruction.communities.length > 0 && (
+                  <div className="lg:col-span-4 lg:col-start-9 border-t lg:border-t-0 lg:border-l border-neutral-200 pt-8 lg:pt-0 lg:pl-10">
+                    <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-4">
+                      Active Communities
+                    </p>
+                    <ul className="space-y-0">
+                      {n.newConstruction.communities.map((c) => (
+                        <li key={c} className="text-[15px] sm:text-[13px] text-neutral-500 border-b border-neutral-200 py-3 last:border-b-0">
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           ) : (
-            <div className="max-w-3xl">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                New Construction
-              </p>
-              <div className="border-l-2 border-[#1B3A2D]/20 pl-6">
+            <div className="border border-neutral-200 bg-neutral-50 p-8 lg:p-12 max-w-3xl">
+              <div className="border-l-[3px] border-[#1B3A2D]/20 pl-6">
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85]">
                   {n.newConstruction.summary}
                 </p>
@@ -373,11 +378,11 @@ export default async function NeighborhoodPage({
               </div>
             </div>
 
-            {/* Right — tips */}
+            {/* Right — tips card */}
             <div className="lg:col-span-7 lg:col-start-6">
-              <div className="space-y-0">
+              <div className="border border-neutral-200 bg-neutral-50 divide-y divide-neutral-200">
                 {n.localTips.map((tip, i) => (
-                  <div key={tip} className="border-b border-neutral-100 py-8 first:pt-0 last:border-b-0">
+                  <div key={tip} className="p-8 lg:p-10">
                     <p className="text-[clamp(1.25rem,2vw,1.75rem)] font-[family-name:var(--font-playfair)] text-[#1B3A2D]/10 leading-none mb-3">
                       {String(i + 1).padStart(2, "0")}
                     </p>
@@ -421,27 +426,29 @@ export default async function NeighborhoodPage({
       </section>
 
       {/* Lead Magnet CTA */}
-      <section className="py-16 lg:py-24 bg-neutral-50">
+      <section className="py-16 lg:py-24">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-4">
-                Free Download
-              </p>
-              <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
-                The Complete {n.name} Guide
-              </h3>
-              <p className="text-[16px] sm:text-[14px] text-neutral-500">
-                Schools, price points, new construction, commute times, and local
-                recommendations. Everything in one PDF.
-              </p>
-            </div>
-            <div className="lg:col-span-4 lg:col-start-9 lg:text-right">
-              <button
-                className="bg-[#1B3A2D] text-white px-8 py-3.5 text-[13px] tracking-wide font-medium hover:bg-[#234B39] transition-colors duration-300"
-              >
-                Download the guide
-              </button>
+          <div className="border border-neutral-200 bg-neutral-50 p-10 lg:p-14">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7">
+                <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-4">
+                  Free Download
+                </p>
+                <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
+                  The Complete {n.name} Guide
+                </h3>
+                <p className="text-[16px] sm:text-[14px] text-neutral-500">
+                  Schools, price points, new construction, commute times, and local
+                  recommendations. Everything in one PDF.
+                </p>
+              </div>
+              <div className="lg:col-span-4 lg:col-start-9 lg:text-right">
+                <button
+                  className="bg-[#1B3A2D] text-white px-8 py-3.5 text-[13px] tracking-wide font-medium hover:bg-[#234B39] transition-colors duration-300"
+                >
+                  Download the guide
+                </button>
+              </div>
             </div>
           </div>
         </div>
