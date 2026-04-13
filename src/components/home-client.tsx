@@ -46,22 +46,34 @@ export function HomeClient({
         ref={heroRef}
         className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden"
       >
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/45" />
+
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="max-w-[90rem] mx-auto px-6 lg:px-12 w-full text-center"
+          className="relative max-w-[90rem] mx-auto px-6 lg:px-12 w-full text-center"
         >
           <TextReveal delay={0.3}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-charcoal font-normal">
+            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
               Orlando&apos;s relocation
             </h1>
           </TextReveal>
           <TextReveal delay={0.4}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-charcoal font-normal">
+            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
               &amp; new construction
             </h1>
           </TextReveal>
           <TextReveal delay={0.5}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-charcoal font-normal italic">
+            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal italic">
               specialist
             </h1>
           </TextReveal>
@@ -72,7 +84,7 @@ export function HomeClient({
             transition={{ duration: 1, delay: 0.9 }}
             className="mt-10"
           >
-            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-lg mx-auto">
+            <p className="text-[15px] text-white/70 leading-[1.8] max-w-lg mx-auto">
               Find your neighborhood before you pack a single box.
             </p>
           </motion.div>
@@ -85,7 +97,7 @@ export function HomeClient({
           >
             <Link
               href="/contact"
-              className="group text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+              className="group text-[13px] tracking-wide font-medium text-white flex items-center gap-2 border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
             >
               Let&apos;s talk
               <svg
@@ -96,19 +108,19 @@ export function HomeClient({
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
             </Link>
-            <span className="text-neutral-200">|</span>
+            <span className="text-white/30">|</span>
             <a
               href="https://iorlandorealestate.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
+              className="text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300"
             >
               Search homes
             </a>
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator — rotated text */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,7 +130,7 @@ export function HomeClient({
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[1px] h-8 bg-neutral-300"
+            className="w-[1px] h-8 bg-white/40"
           />
         </motion.div>
       </section>
@@ -156,13 +168,13 @@ export function HomeClient({
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
                   The most trusted name in Orlando real estate
                 </h2>
-                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-4">
+                <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4">
                   A Central Florida native with nearly 30 years in the industry.
                   Mortgage broker, nationwide closing company owner, and now a
                   realtor with Olympus Executive Realty. Nicole understands every
                   stage of the transaction from the inside out.
                 </p>
-                <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-8">
+                <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
                   Certified International Property Specialist. Founder of
                   Florida Homes and Living. Specializing in relocation and new
                   construction throughout Central Florida.
@@ -183,7 +195,7 @@ export function HomeClient({
 
                 <Link
                   href="/about"
-                  className="group text-[15px] sm:text-[13px] tracking-wide text-[#1B3A2D] flex items-center gap-2 border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 w-fit"
+                  className="group text-[13px] tracking-wide text-forest flex items-center gap-2 border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 w-fit"
                 >
                   More about Nicole
                   <svg
@@ -227,14 +239,14 @@ export function HomeClient({
                     <span className="lg:col-span-1 text-[11px] tracking-[0.2em] text-neutral-300">
                       {item.number}
                     </span>
-                    <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.2] text-charcoal group-hover:text-[#1B3A2D] transition-colors duration-500">
+                    <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500">
                       {item.title}
                     </h3>
-                    <p className="lg:col-span-5 text-[16px] sm:text-[14px] text-neutral-500 leading-[1.7]">
+                    <p className="lg:col-span-5 text-[15px] text-neutral-500 leading-[1.7]">
                       {item.description}
                     </p>
                     <div className="lg:col-span-2 flex lg:justify-end">
-                      <span className="text-[12px] tracking-wide text-neutral-400 group-hover:text-[#1B3A2D] transition-colors duration-300 flex items-center gap-2">
+                      <span className="text-[12px] tracking-wide text-neutral-400 group-hover:text-forest transition-colors duration-300 flex items-center gap-2">
                         {item.cta}
                         <svg
                           width="12" height="12" viewBox="0 0 16 16" fill="none"
@@ -255,7 +267,7 @@ export function HomeClient({
       </section>
 
       {/* ── Neighborhoods — deep forest green ── */}
-      <section className="py-20 lg:py-44 bg-[#1B3A2D] text-white">
+      <section className="py-20 lg:py-44 bg-forest text-white">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 lg:mb-24">
@@ -291,7 +303,7 @@ export function HomeClient({
                   href={`/neighborhoods/${n.slug}`}
                   className="group block relative overflow-hidden"
                 >
-                  <div className="relative bg-[#234B39] aspect-[3/4]">
+                  <div className="relative bg-forest-light aspect-[3/4]">
                     {/* Placeholder */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-white/15">
@@ -346,7 +358,7 @@ export function HomeClient({
           <FadeIn>
             <div className="grid lg:grid-cols-12 gap-8 items-start">
               <div className="hidden lg:block lg:col-span-1">
-                <span className="font-[family-name:var(--font-playfair)] text-[8rem] leading-none text-[#1B3A2D]/10 select-none">
+                <span className="font-[family-name:var(--font-playfair)] text-[8rem] leading-none text-forest/10 select-none">
                   &ldquo;
                 </span>
               </div>
@@ -357,9 +369,9 @@ export function HomeClient({
                   </p>
                 </blockquote>
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="w-8 h-[1px] bg-[#1B3A2D]/20" />
+                  <div className="w-8 h-[1px] bg-forest/20" />
                   <div>
-                    <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
+                    <p className="text-[13px] font-medium text-charcoal">
                       {testimonials[0].author}
                     </p>
                     <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -376,13 +388,13 @@ export function HomeClient({
             {testimonials.slice(1, 4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[15px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
-                    <div className="w-6 h-[1px] bg-[#1B3A2D]/20" />
+                    <div className="w-6 h-[1px] bg-forest/20" />
                     <div>
-                      <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
+                      <p className="text-[13px] font-medium text-charcoal">
                         {t.author}
                       </p>
                       <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -400,13 +412,13 @@ export function HomeClient({
             {testimonials.slice(4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[15px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
-                    <div className="w-6 h-[1px] bg-[#1B3A2D]/20" />
+                    <div className="w-6 h-[1px] bg-forest/20" />
                     <div>
-                      <p className="text-[15px] sm:text-[13px] font-medium text-charcoal">
+                      <p className="text-[13px] font-medium text-charcoal">
                         {t.author}
                       </p>
                       <p className="text-[11px] text-neutral-400 mt-0.5">
@@ -423,7 +435,7 @@ export function HomeClient({
           <FadeIn>
             <div className="mt-16 pt-12 border-t border-neutral-100 text-center">
               <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-300">
-                5.0 Google Rating &middot; 21 Reviews
+                5.0 Google Rating &middot; 26 Reviews
               </p>
             </div>
           </FadeIn>
@@ -431,7 +443,7 @@ export function HomeClient({
       </section>
 
       {/* ── Quiz CTA ── */}
-      <section className="py-20 lg:py-44 bg-[#1B3A2D]">
+      <section className="py-20 lg:py-44 bg-forest">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
@@ -441,13 +453,13 @@ export function HomeClient({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Find your Orlando neighborhood
               </h2>
-              <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8] mb-10">
+              <p className="text-[15px] text-white/60 leading-[1.8] mb-10">
                 Five questions. Two minutes. Personalized recommendations based
                 on your lifestyle, budget, and priorities.
               </p>
               <Link
                 href="/quiz"
-                className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] bg-white px-8 py-4 hover:bg-white/90 transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-forest bg-white px-8 py-4 hover:bg-white/90 transition-all duration-300"
               >
                 Take the quiz
                 <svg

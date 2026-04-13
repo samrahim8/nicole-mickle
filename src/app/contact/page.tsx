@@ -35,7 +35,7 @@ export default function ContactPage() {
               </h1>
             </TextReveal>
             <FadeIn delay={0.5}>
-              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mt-8">
+              <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mt-8">
                 Whether you&apos;re just starting to think about Orlando or you&apos;re
                 ready to make a move. No pressure, no pitch.
               </p>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal mb-3">
                     Thank you
                   </h3>
-                  <p className="text-[16px] sm:text-[15px] text-neutral-500">
+                  <p className="text-[15px] text-neutral-500">
                     I&apos;ll be in touch within 24 hours.
                   </p>
                 </motion.div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300"
+                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                         placeholder="First name"
                       />
                     </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         id="lastName"
                         name="lastName"
                         required
-                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300"
+                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                         placeholder="Last name"
                       />
                     </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                       placeholder="(555) 555-5555"
                     />
                   </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                     <select
                       id="interest"
                       name="interest"
-                      className="w-full px-0 py-3 pr-6 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23999%22%20stroke-width=%222%22%3E%3Cpath%20d=%22M6%209l6%206%206-6%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_0_center] bg-no-repeat"
+                      className="w-full px-0 py-3 pr-6 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal focus:outline-none focus:border-forest transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23999%22%20stroke-width=%222%22%3E%3Cpath%20d=%22M6%209l6%206%206-6%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_0_center] bg-no-repeat"
                     >
                       <option value="">Select one</option>
                       <option value="relocation">Relocating to Orlando</option>
@@ -160,13 +160,13 @@ export default function ContactPage() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-[#1B3A2D] transition-colors duration-300 resize-none"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300 resize-none"
                       placeholder="Where are you moving from? What's your timeline?"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300 mt-4"
+                    className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 mt-4"
                   >
                     Send message
                     <svg
@@ -204,10 +204,10 @@ export default function ContactPage() {
                     Email
                   </p>
                   <a
-                    href="mailto:info@nicolemickle.com"
+                    href="mailto:nicole@nicolemickle.com"
                     className="text-lg text-charcoal hover:text-neutral-500 transition-colors duration-300"
                   >
-                    info@nicolemickle.com
+                    nicole@nicolemickle.com
                   </a>
                 </div>
                 <div>
@@ -243,7 +243,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map / Location - Deep forest green */}
-      <section className="py-20 lg:py-44 bg-[#1B3A2D]">
+      <section className="py-20 lg:py-44 bg-forest">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
@@ -253,7 +253,7 @@ export default function ContactPage() {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Windermere, Florida
               </h2>
-              <p className="text-[16px] sm:text-[15px] text-white/70">
+              <p className="text-[15px] text-white/70">
                 Serving all of Central Florida including Orange, Seminole,
                 Osceola, and Lake counties.
               </p>

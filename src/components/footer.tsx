@@ -11,13 +11,13 @@ export function Footer() {
               Ready to make
               <span className="italic"> Orlando home?</span>
             </h2>
-            <p className="text-[16px] sm:text-[14px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
+            <p className="text-[15px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
               Whether you&apos;re relocating from across the country or exploring
               new construction, let&apos;s find the right place for you.
             </p>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+              className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
             >
               Schedule a conversation
               <svg
@@ -33,14 +33,14 @@ export function Footer() {
       </section>
 
       {/* Footer links — forest green */}
-      <div className="bg-[#1B3A2D]">
+      <div className="bg-forest">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 py-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
             <div className="md:col-span-4">
               <p className="font-[family-name:var(--font-playfair)] text-lg text-white tracking-[-0.01em] mb-3">
                 Nicole Mickle
               </p>
-              <p className="text-[15px] sm:text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
+              <p className="text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
                 Orlando relocation &amp; new construction specialist.
                 Nearly 30 years of industry expertise.
               </p>
@@ -106,11 +106,14 @@ export function Footer() {
                   { href: "/new-construction", label: "New Construction" },
                   { href: "/neighborhoods", label: "Neighborhoods" },
                   { href: "/about", label: "About" },
+                  { href: "/quiz", label: "Neighborhood Quiz" },
+                  { href: "/blog", label: "Blog" },
+                  { href: "/contact", label: "Contact" },
                 ].map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-[15px] sm:text-[13px] text-white/50 hover:text-white transition-colors duration-300"
+                    className="block text-[13px] text-white/50 hover:text-white transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -121,21 +124,26 @@ export function Footer() {
               <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">
                 Contact
               </p>
-              <div className="space-y-2.5 text-[15px] sm:text-[13px] text-white/50">
+              <div className="space-y-2.5 text-[13px] text-white/50">
                 <a href="tel:+14073530826" className="block hover:text-white transition-colors duration-300">
                   (407) 353-0826
                 </a>
-                <a href="mailto:info@nicolemickle.com" className="block hover:text-white transition-colors duration-300">
-                  info@nicolemickle.com
+                <a href="mailto:nicole@nicolemickle.com" className="block hover:text-white transition-colors duration-300">
+                  nicole@nicolemickle.com
                 </a>
                 <p className="text-white/50">
                   13790 Bridgewater Crossings Blvd. Ste 1080
                   <br />
                   Windermere, FL 34786
                 </p>
-                <Link href="/contact" className="block hover:text-white transition-colors duration-300">
-                  Contact Form
-                </Link>
+                <a
+                  href="https://iorlandorealestate.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-white transition-colors duration-300"
+                >
+                  Search Homes
+                </a>
               </div>
             </div>
           </div>

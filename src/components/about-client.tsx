@@ -33,6 +33,7 @@ const milestones = [
 
 const credentials = [
   "Realtor at Olympus Executive Realty",
+  "B.S. in Economics, Florida A&M University",
   "Certified International Property Specialist",
   "Former Senior Mortgage Broker",
   "23 Years in Title & Closings Nationwide",
@@ -50,7 +51,7 @@ export function AboutClient() {
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
             <div className="lg:col-span-5 relative pl-8 lg:pl-10">
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#1B3A2D]" />
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-forest" />
               <FadeIn>
                 <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-6">
                   About
@@ -68,20 +69,28 @@ export function AboutClient() {
               </TextReveal>
 
               <FadeIn delay={0.5} className="mt-10">
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75] mb-6">
+                <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   I grew up in Central Florida. I&apos;ve been in the real estate
                   industry since 1996 -- as a mortgage broker, a nationwide closing
                   company owner, a transaction coordinator, and now a realtor. I
                   didn&apos;t just learn this business from a textbook. I learned
                   it from the inside out.
                 </p>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75]">
+                <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   For 23 years I ran APAT Real Estate Settlement Services,
                   coordinating closings nationwide. That background gave me an
                   understanding of the transaction process that most agents simply
                   don&apos;t have. Today I&apos;m with Olympus Executive Realty,
                   specializing in relocation and new construction throughout
                   Central Florida.
+                </p>
+                <p className="text-[15px] text-neutral-500 leading-[1.75]">
+                  My Economics degree from Florida A&amp;M gave me an analytical
+                  foundation, but what really drives the work is a genuine love
+                  for researching communities -- understanding their history, how
+                  they&apos;ve evolved, and what makes each one distinct. That
+                  curiosity is the nerdy backend behind every neighborhood guide
+                  on this site.
                 </p>
               </FadeIn>
             </div>
@@ -103,7 +112,7 @@ export function AboutClient() {
       </section>
 
       {/* Journey - Timeline style - Deep forest green */}
-      <section className="py-20 lg:py-44 bg-[#1B3A2D]">
+      <section className="py-20 lg:py-44 bg-forest">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <p className="text-[11px] tracking-[0.3em] uppercase text-white/50 mb-4">
@@ -124,7 +133,7 @@ export function AboutClient() {
                   <h3 className="lg:col-span-3 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white">
                     {m.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-white/70 leading-relaxed">
+                  <p className="lg:col-span-6 text-[15px] text-white/70 leading-relaxed">
                     {m.description}
                   </p>
                 </div>
@@ -166,20 +175,20 @@ export function AboutClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-44 bg-neutral-50">
+      <section className="py-20 lg:py-44 bg-cream">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Let&apos;s work together
               </h2>
-              <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-10">
+              <p className="text-[15px] text-neutral-500 mb-10">
                 Whether you&apos;re moving to Orlando or building your next home,
                 I&apos;d love to help you get it right.
               </p>
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
               >
                 Get in touch
                 <svg

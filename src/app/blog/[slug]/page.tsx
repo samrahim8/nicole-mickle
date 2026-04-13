@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.categories?.[0] ? (
                 <Link
                   href={`/blog?category=${post.categories[0].slug}`}
-                  className="text-[10px] tracking-[0.2em] uppercase text-[#1B3A2D] hover:underline"
+                  className="text-[10px] tracking-[0.2em] uppercase text-forest hover:underline"
                 >
                   {post.categories[0].title}
                 </Link>

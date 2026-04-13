@@ -43,7 +43,7 @@ const components: PortableTextComponents = {
       </h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="my-10 pl-6 border-l-2 border-[#1B3A2D] text-[19px] leading-[1.7] font-[family-name:var(--font-playfair)] italic text-neutral-700">
+      <blockquote className="my-10 pl-6 border-l-2 border-forest text-[19px] leading-[1.7] font-[family-name:var(--font-playfair)] italic text-neutral-700">
         {children}
       </blockquote>
     ),
@@ -80,7 +80,7 @@ const components: PortableTextComponents = {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#1B3A2D] underline underline-offset-[3px] decoration-[#1B3A2D]/30 hover:decoration-[#1B3A2D] transition-colors"
+            className="text-forest underline underline-offset-[3px] decoration-forest/30 hover:decoration-forest transition-colors"
           >
             {children}
           </a>
@@ -89,7 +89,7 @@ const components: PortableTextComponents = {
       return (
         <Link
           href={link.href}
-          className="text-[#1B3A2D] underline underline-offset-[3px] decoration-[#1B3A2D]/30 hover:decoration-[#1B3A2D] transition-colors"
+          className="text-forest underline underline-offset-[3px] decoration-forest/30 hover:decoration-forest transition-colors"
         >
           {children}
         </Link>

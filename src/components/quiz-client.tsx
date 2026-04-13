@@ -170,12 +170,12 @@ export function QuizClient() {
   const showResults = step === questions.length && results;
 
   return (
-    <div className={`min-h-[100svh] flex flex-col ${showResults ? "bg-[#1B3A2D] text-white" : "bg-[#FAFAF9] text-charcoal"} transition-colors duration-700`}>
+    <div className={`min-h-[100svh] flex flex-col ${showResults ? "bg-forest text-white" : "bg-[#FAFAF9] text-charcoal"} transition-colors duration-700`}>
       {/* Progress bar */}
       {step >= 0 && (
         <div className={`fixed top-[3px] left-0 right-0 h-[2px] z-[9999] ${showResults ? "bg-white/10" : "bg-neutral-200"}`}>
           <motion.div
-            className={showResults ? "h-full bg-white/60" : "h-full bg-[#1B3A2D]/60"}
+            className={showResults ? "h-full bg-white/60" : "h-full bg-forest/60"}
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -233,7 +233,7 @@ export function QuizClient() {
               </p>
               <button
                 onClick={() => { setDirection(1); setStep(0); }}
-                className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-white bg-[#1B3A2D] px-8 py-4 hover:bg-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-white bg-forest px-8 py-4 hover:bg-forest-light transition-all duration-300"
               >
                 Start the quiz
                 <svg
@@ -283,12 +283,12 @@ export function QuizClient() {
                       onClick={() => handleSelect(questions[step].id, option.value)}
                       className={`w-full text-left px-6 py-5 border transition-all duration-300 flex items-center justify-between group ${
                         isSelected
-                          ? "border-[#1B3A2D] bg-[#1B3A2D]/5"
+                          ? "border-forest bg-forest/5"
                           : "border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50"
                       }`}
                     >
                       <span className={`text-[15px] transition-colors duration-300 ${
-                        isSelected ? "text-[#1B3A2D]" : "text-neutral-600 group-hover:text-charcoal"
+                        isSelected ? "text-forest" : "text-neutral-600 group-hover:text-charcoal"
                       }`}>
                         {option.label}
                       </span>
@@ -297,7 +297,7 @@ export function QuizClient() {
                         stroke="currentColor" strokeWidth="1.5"
                         className={`transition-all duration-300 ${
                           isSelected
-                            ? "text-[#1B3A2D] opacity-100 translate-x-0"
+                            ? "text-forest opacity-100 translate-x-0"
                             : "text-neutral-300 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
                         }`}
                       >
@@ -415,7 +415,7 @@ export function QuizClient() {
                       />
                       <button
                         type="submit"
-                        className="px-6 py-3.5 bg-white text-[#1B3A2D] text-[15px] sm:text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0"
+                        className="px-6 py-3.5 bg-white text-forest text-[15px] sm:text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0"
                       >
                         Send guide
                       </button>

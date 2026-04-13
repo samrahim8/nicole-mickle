@@ -65,7 +65,7 @@ const jsonLd = {
     "Orlando relocation and new construction real estate specialist with nearly 30 years of industry experience.",
   url: "https://nicolemickle.com",
   telephone: "+1-407-353-0826",
-  email: "info@nicolemickle.com",
+  email: "nicole@nicolemickle.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "13790 Bridgewater Crossings Blvd. Ste 1080",

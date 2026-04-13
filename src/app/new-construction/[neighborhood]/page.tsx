@@ -60,7 +60,7 @@ export default async function NewConstructionNeighborhoodPage({
               </h1>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
+              <p className="text-[15px] text-neutral-500 leading-relaxed">
                 {n.newConstruction.summary}
               </p>
             </div>
@@ -71,7 +71,7 @@ export default async function NewConstructionNeighborhoodPage({
       {/* Image placeholder */}
       <section className="pb-16 lg:pb-24">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className="aspect-[16/9] md:aspect-[21/9] bg-[#1B3A2D] flex items-center justify-center">
+          <div className="aspect-[16/9] md:aspect-[21/9] bg-forest flex items-center justify-center">
             <div className="text-center text-white/20">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75" className="mx-auto mb-2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -148,7 +148,7 @@ export default async function NewConstructionNeighborhoodPage({
                 <p className="font-[family-name:var(--font-playfair)] text-xl text-charcoal mb-4">
                   {seg.range}
                 </p>
-                <p className="text-[15px] sm:text-[13px] text-neutral-500 leading-relaxed">
+                <p className="text-[13px] text-neutral-500 leading-relaxed">
                   {seg.description}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export default async function NewConstructionNeighborhoodPage({
       </section>
 
       {/* Neighborhood details */}
-      <section className="py-20 lg:py-44 bg-[#1B3A2D] text-white">
+      <section className="py-20 lg:py-44 bg-forest text-white">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <div>
@@ -168,7 +168,7 @@ export default async function NewConstructionNeighborhoodPage({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-white mb-6">
                 Living in {n.name}
               </h2>
-              <p className="text-[16px] sm:text-[14px] text-white/60 leading-[1.8]">
+              <p className="text-[15px] text-white/60 leading-[1.8]">
                 {n.lifestyle}
               </p>
             </div>
@@ -180,22 +180,22 @@ export default async function NewConstructionNeighborhoodPage({
                 Getting around
               </h2>
               <div className="space-y-4">
-                <div className="flex justify-between border-b border-white/10 pb-4 text-[16px] sm:text-[14px]">
+                <div className="flex justify-between border-b border-white/10 pb-4 text-[15px]">
                   <span className="text-white/50">To Downtown Orlando</span>
                   <span className="text-white">{n.commute.downtown}</span>
                 </div>
-                <div className="flex justify-between border-b border-white/10 pb-4 text-[16px] sm:text-[14px]">
+                <div className="flex justify-between border-b border-white/10 pb-4 text-[15px]">
                   <span className="text-white/50">To Orlando Airport</span>
                   <span className="text-white">{n.commute.airport}</span>
                 </div>
-                <div className="flex justify-between text-[16px] sm:text-[14px]">
+                <div className="flex justify-between text-[15px]">
                   <span className="text-white/50">To Disney / Attractions</span>
                   <span className="text-white">{n.commute.disney}</span>
                 </div>
               </div>
               <Link
                 href={`/neighborhoods/${n.slug}`}
-                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300 mt-8"
+                className="group inline-flex items-center gap-2 text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300 mt-8"
               >
                 Full {n.name} neighborhood guide
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
@@ -214,14 +214,14 @@ export default async function NewConstructionNeighborhoodPage({
             <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
               Building in {n.name}?
             </h2>
-            <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-10">
+            <p className="text-[15px] text-neutral-500 mb-10">
               I know which builders deliver quality, which upgrades add value, and
               how to negotiate the best deal. Let&apos;s talk about your build.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[15px] sm:text-[13px] tracking-wide font-medium text-[#1B3A2D] border-b border-[#1B3A2D] pb-0.5 hover:border-[#234B39] hover:text-[#234B39] transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
               >
                 Discuss your build
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
@@ -233,7 +233,7 @@ export default async function NewConstructionNeighborhoodPage({
                 href="https://iorlandorealestate.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] sm:text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
+                className="text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
               >
                 Search new construction homes
               </a>

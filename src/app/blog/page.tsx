@@ -57,7 +57,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
               Notes from 30 years in Orlando real estate
             </h1>
-            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
+            <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
               Relocation playbooks, neighborhood deep-dives, and new construction
               insights — written for the people I&apos;d actually invite over.
             </p>
@@ -124,7 +124,7 @@ function PostCard({ post }: { post: PostListItem }) {
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
           ) : (
-            <div className="absolute inset-0 bg-[#1B3A2D] flex items-center justify-center text-white/30">
+            <div className="absolute inset-0 bg-forest flex items-center justify-center text-white/30">
               <svg
                 width="32"
                 height="32"
@@ -140,7 +140,7 @@ function PostCard({ post }: { post: PostListItem }) {
         </div>
         <div className="flex items-center gap-3 mb-3">
           {category ? (
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#1B3A2D]">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-forest">
               {category.title}
             </span>
           ) : null}
@@ -182,7 +182,7 @@ function PaginationLink({
   return (
     <Link
       href={href}
-      className="text-[12px] tracking-[0.2em] uppercase text-charcoal hover:text-[#1B3A2D] transition-colors"
+      className="text-[12px] tracking-[0.2em] uppercase text-charcoal hover:text-forest transition-colors"
     >
       {label}
     </Link>

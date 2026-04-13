@@ -57,6 +57,14 @@ const reasons = [
   },
 ];
 
+const originCities = [
+  { name: "New York", slug: "new-york" },
+  { name: "Chicago", slug: "chicago" },
+  { name: "Boston", slug: "boston" },
+  { name: "Washington, D.C.", slug: "washington-dc" },
+  { name: "Atlanta", slug: "atlanta" },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -103,7 +111,11 @@ export default function RelocatingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <RelocatingClient steps={steps} reasons={reasons} />
+      <RelocatingClient
+        steps={steps}
+        reasons={reasons}
+        originCities={originCities}
+      />
     </>
   );
 }
