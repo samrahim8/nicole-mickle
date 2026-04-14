@@ -9,8 +9,8 @@ export default defineConfig({
   name: "nicole-mickle",
   title: "Nicole Mickle",
   basePath: "/studio",
-  projectId,
-  dataset,
+  projectId: projectId || "placeholder",
+  dataset: dataset || "production",
   plugins: [structureTool(), visionTool({ defaultApiVersion: apiVersion })],
   schema: { types: schemaTypes },
 });
