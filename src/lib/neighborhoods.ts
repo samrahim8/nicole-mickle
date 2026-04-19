@@ -85,7 +85,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "New construction in Winter Park proper is limited due to the established nature of the community. Most new builds are custom homes on infill lots or tear-down rebuilds. Adjacent areas like Winter Park Village and parts of Maitland offer some new townhome developments.",
-      builders: ["Phil Kean Design Group", "David Weekley Homes", "Surrey Homes", "Cahill Homes", "FG Schaub Custom Homes", "Meritage Homes"],
+      builders: ["Phil Kean Design Group", "David Weekley Homes", "Surrey Homes", "Cahill Homes", "FG Schaub Custom Homes"],
       communities: ["Custom infill lots throughout Winter Park"],
     },
     schools: [
@@ -161,8 +161,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Lake Nona is one of Orlando's best markets for new construction. Tavistock Development continues to expand the community with new phases, and national builders offer a range of options from townhomes to custom estates. This is where you come if new construction is a priority.",
-      builders: ["Toll Brothers", "Ashton Woods", "Pulte Homes", "Beazer Homes", "ICI Homes", "David Weekley Homes", "Dream Finders Homes", "M/I Homes", "Del Webb"],
-      communities: ["Laureate Park", "Lake Nona Golf & Country Club", "Storey Park", "Alora", "Nona Sound", "Gatherings of Lake Nona"],
+      builders: ["Toll Brothers", "Ashton Woods", "Pulte Homes", "ICI Homes", "David Weekley Homes", "Dream Finders Homes", "M/I Homes", "Del Webb", "Craft Homes"],
+      communities: ["Laureate Park", "Lake Nona Golf & Country Club", "Storey Park", "Alora", "Nona Sound"],
     },
     schools: [
       "Innovation Middle School (A-rated)",
@@ -237,8 +237,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "New construction in Windermere is primarily custom builds on remaining lots and a few newer communities on the outskirts. The core of Windermere is established, but surrounding areas like Horizon West offer extensive new construction options with Windermere mailing addresses.",
-      builders: ["Toll Brothers", "Taylor Morrison", "Dream Finders Homes", "Mattamy Homes", "Ryan Homes", "Ashton Woods", "Element Home Builders", "Davila Homes", "Konkol Custom Homes"],
-      communities: ["Saddlecrest at Windermere", "Palms at Windermere", "Legado", "Estancia at Windermere", "Lake Sheen Sound", "Lake Cawood Cove"],
+      builders: ["Toll Brothers", "Dream Finders Homes", "Ryan Homes", "Ashton Woods", "Element Home Builders"],
+      communities: ["Saddlecrest at Windermere", "Palms at Windermere", "Lake Cawood Cove", "Sanctuary at Lakes of Windermere"],
     },
     schools: [
       "Windermere High School (highly rated)",
@@ -312,8 +312,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "New construction within Dr. Phillips proper is limited as the area is largely built out. However, adjacent Horizon West offers extensive new construction options. Some infill and teardown-rebuild projects exist in the core area.",
-      builders: ["Meritage Homes", "Pulte Homes", "Element Home Builders", "Custom infill builders"],
-      communities: ["Estates at Parkside", "Lake Sheen Sound", "Parkview Reserve"],
+      builders: ["Pulte Homes", "Element Home Builders", "Custom infill builders"],
+      communities: ["Parkview Reserve"],
     },
     schools: [
       "Dr. Phillips High School (B-rated)",
@@ -388,8 +388,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Original Celebration is largely built out, but newer phases and adjacent developments continue to add inventory. Some builders are active in the surrounding area with Celebration-adjacent communities that offer newer homes at competitive price points.",
-      builders: ["Mattamy Homes", "David Weekley Homes", "Lennar"],
-      communities: ["Island Village", "Celebration Village", "North Celebration"],
+      builders: ["Mattamy Homes"],
+      communities: ["Island Village"],
     },
     schools: [
       "Celebration High School",
@@ -461,7 +461,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Baldwin Park is largely built out. New construction is limited to infill townhome projects and individual custom builds on remaining lots. The community was master-planned and completed, which means the infrastructure, landscaping, and community amenities are mature and well-maintained.",
-      builders: ["David Weekley Homes", "OLO Builders", "LUIH Homes", "Rex-Tibbs Development"],
+      builders: ["David Weekley Homes", "OLO Builders", "LUIH Homes"],
       communities: ["Baldwin Crossing"],
     },
     schools: [
@@ -537,7 +537,7 @@ export const neighborhoods: Neighborhood[] = [
     newConstruction: {
       summary: "Horizon West is Orlando's new construction capital. Virtually every national builder has an active presence here, and new communities continue to launch. The range of options spans from affordable townhomes to luxury single-family estates. This is the area I recommend most often to buyers whose top priority is building new.",
       builders: ["Toll Brothers", "Taylor Morrison", "Meritage Homes", "Pulte Homes", "M/I Homes", "Lennar", "Ashton Woods", "Dream Finders Homes", "D.R. Horton", "K. Hovnanian Homes", "David Weekley Homes", "Budron Homes"],
-      communities: ["Lakeside at Hamlin", "Windermere Sound", "Westhaven at Ovation", "Lake Star at Ovation", "Overlook at Hamlin", "Bridgewalk at Sunbridge", "Weslyn Park at Sunbridge"],
+      communities: ["Westhaven at Ovation", "Lakeside at Hamlin", "Overlook at Hamlin", "Bridgewalk at Sunbridge", "Weslyn Park at Sunbridge", "Northlake at Ovation", "Horizon Isle", "Silverleaf Reserve"],
     },
     schools: [
       "Horizon High School (opened 2021)",
@@ -612,8 +612,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Winter Garden offers a strong mix of new construction, particularly in the communities surrounding the historic downtown core. Several national builders are active in the area, and new communities continue to develop along the western corridor. It's one of the few areas where you can buy new and still be close to a walkable, historic downtown.",
-      builders: ["Toll Brothers", "Taylor Morrison", "Ashton Woods", "Lennar", "D.R. Horton", "Pulte Homes", "K. Hovnanian Homes", "M/I Homes", "Dream Finders Homes", "Holland Builders Co."],
-      communities: ["Waterleigh", "Oakland Park", "Storey Grove", "Harvest at Ovation", "Silverleaf Oaks"],
+      builders: ["Toll Brothers", "Taylor Morrison", "Ashton Woods", "D.R. Horton", "Pulte Homes", "K. Hovnanian Homes", "Dream Finders Homes", "Holland Builders Co."],
+      communities: ["Waterleigh", "Oakland Park", "Harvest at Ovation", "Silverleaf Oaks"],
     },
     schools: [
       "West Orange High School (A-rated)",
@@ -688,7 +688,7 @@ export const neighborhoods: Neighborhood[] = [
     newConstruction: {
       summary: "Clermont is one of the hottest new construction markets in Central Florida, with the massive Wellness Way corridor driving development south of the city. Over 200 active new home communities offer everything from affordable townhomes to estate homes. The Olympus development is bringing a health-and-wellness-focused master plan near Lake Louisa State Park.",
       builders: ["Lennar", "Pulte Homes", "KB Home", "D.R. Horton", "Ryan Homes", "Dream Finders Homes", "David Weekley Homes", "Meritage Homes", "Mattamy Homes", "Beazer Homes", "Trinity Family Builders", "Park Square Homes", "Centex"],
-      communities: ["Wellness Ridge", "Olympus", "Heritage Hills", "Ridgeview", "Del Webb Lakehaven", "Parkside Trails", "Rainwood", "Lake Nellie Crossing"],
+      communities: ["Wellness Ridge", "Olympus", "Ridgeview", "Del Webb Lakehaven", "Parkside Trails", "Rainwood", "Lake Nellie Crossing"],
     },
     schools: [
       "East Ridge High School (Niche B+)",
@@ -763,7 +763,7 @@ export const neighborhoods: Neighborhood[] = [
     newConstruction: {
       summary: "Minneola is experiencing a new construction boom, with the Hills of Minneola master plan and Sugarloaf Ridge driving much of the growth. Multiple national builders are active here, and the area benefits from its elevated terrain which allows for scenic homesites. Del Webb has a 55+ active adult community here as well.",
       builders: ["Lennar", "Dream Finders Homes", "Meritage Homes", "Ashton Woods", "Del Webb", "D.R. Horton", "Pulte Homes", "KB Home", "Toll Brothers", "Ryan Homes", "Starlight Homes", "Maronda Homes"],
-      communities: ["Hills of Minneola", "Sugarloaf Ridge", "Del Webb Minneola", "Lookout Ridge", "Ardmore Reserve"],
+      communities: ["Hills of Minneola", "Sugarloaf Ridge", "Del Webb Minneola"],
     },
     schools: [
       "Lake Minneola High School (Niche A-)",
@@ -774,7 +774,6 @@ export const neighborhoods: Neighborhood[] = [
     dining: [
       "Lake Minneola Inn Tiki Bar & Grill — American, waterfront casual dining",
       "Minneola Grill — classic American diner, neighborhood staple",
-      "Summer House on the Lake — upscale American with water views",
     ],
     commute: {
       downtown: "30-40 minutes",
@@ -846,9 +845,8 @@ export const neighborhoods: Neighborhood[] = [
       "Lake County and Orange County schools serve the area depending on location",
     ],
     dining: [
-      "The View — burgers, rice bowls, pizza with a casual atmosphere",
-      "Cal's Kitchen — local favorite with fresh-made food",
-      "19th Hole — breakfast spot known for pancakes",
+      "Cal's Kitchen — pizza and pasta, downtown Montverde",
+      "19th Hole — Bella Collina, members and guests",
     ],
     commute: {
       downtown: "35-45 minutes",
@@ -920,9 +918,7 @@ export const neighborhoods: Neighborhood[] = [
       "Foundation Academy (private, PreK-12, nearby in Winter Garden)",
     ],
     dining: [
-      "Tsuri Japanese Street Food — Japanese, highly reviewed small spot",
-      "Two Bridges Pub & Eatery — American pub fare",
-      "Winter Garden's Plant Street — 5 minutes east with full dining scene including Crooked Can Brewing and The Whole Enchilada",
+      "Winter Garden's Plant Street — dining, breweries, and cafes, 5 minutes away",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -984,8 +980,8 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Groveland is one of the most active new construction markets in Central Florida, with over 180 active communities. National builders offer a full range from affordable townhomes to active-adult resort living. Trilogy Orlando by Shea Homes is the standout for the 55+ market. The area benefits from lower land costs, which translates to more home for the money compared to Clermont or Minneola.",
-      builders: ["Lennar", "KB Home", "Richmond American Homes", "Hanover Family Builders", "Starlight Homes", "Mattamy Homes", "Taylor Morrison", "Trinity Family Builders", "Maronda Homes", "D.R. Horton", "Landsea Homes", "Shea Homes"],
-      communities: ["Trilogy Orlando (55+)", "Trinity Lakes", "Waterstone", "Cypress Oaks", "Wilson Estates", "Cherry Lake", "Meadow Pointe", "Villa Pass"],
+      builders: ["Lennar", "KB Home", "Richmond American Homes", "Hanover Family Builders", "Starlight Homes", "Mattamy Homes", "Taylor Morrison", "Trinity Family Builders", "Maronda Homes", "D.R. Horton", "Landsea Homes"],
+      communities: ["Trinity Lakes", "Waterstone", "Cypress Oaks", "Cherry Lake", "Meadow Pointe", "Villa Pass"],
     },
     schools: [
       "South Lake High School (Niche B-)",
@@ -995,7 +991,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     dining: [
       "Red Wing Restaurant — American fine dining in a country setting, local institution",
-      "The Butcher Block Kitchen — breakfast, brunch, and dinner with house-made specialties",
+      "The Butcher Block Kitchen — American, West Orange St",
       "Papi Pincho — Latin cuisine",
     ],
     commute: {
@@ -1059,16 +1055,16 @@ export const neighborhoods: Neighborhood[] = [
     newConstruction: {
       summary: "Apopka is one of the most active new construction markets in the Orlando metro, with 27+ communities and hundreds of available floor plans. The completion of the Wekiva Parkway unlocked large tracts of developable land, and national builders have responded aggressively.",
       builders: ["Toll Brothers", "KB Home", "Lennar", "D.R. Horton", "Ryan Homes", "Mattamy Homes", "M/I Homes", "Beazer Homes", "Dream Finders Homes", "Pulte Homes", "KEVCO Builders"],
-      communities: ["The Oaks at Kelly Park", "Laurel Oaks", "Bronson's Ridge", "Bronson Peak", "Rhett's Ridge Estates", "Nottingham Park"],
+      communities: ["The Oaks at Kelly Park", "Laurel Oaks", "Bronson's Ridge", "Bronson Peak", "Rhett's Ridge Estates"],
     },
     schools: [
-      "Wolf Lake Elementary (A-rated, Niche)",
+      "Wolf Lake Elementary (A-, Niche)",
       "Wolf Lake Middle",
       "Apopka High School",
       "Forest Lake Academy (private)",
     ],
     dining: [
-      "Hall's On 5th — food hall with 7 vendors, downtown",
+      "Hall's On 5th — food hall with 6 vendors, downtown",
       "The Back Room Steakhouse — aged Black Angus, prime rib",
       "Garibaldi Mexican Restaurant — traditional Mexican, family-owned",
     ],
@@ -1131,9 +1127,9 @@ export const neighborhoods: Neighborhood[] = [
       },
     ],
     newConstruction: {
-      summary: "Lake Mary has less raw land than other growth corridors, so new construction tends toward infill and higher-end communities. Builders focus on premium product given the area's price points and school demand.",
-      builders: ["Taylor Morrison", "David Weekley Homes", "Toll Brothers", "Lennar", "D.R. Horton", "Pulte Homes", "KB Home", "Ryan Homes", "Holland Builders Co."],
-      communities: ["Stoneridge", "Stonemont", "Astera", "Fontaine", "Arbor Oaks", "Woodbridge Lakes", "Twelve Oaks at Lake Mary"],
+      summary: "Lake Mary is largely built out with limited new construction, mostly custom infill. The established neighborhoods and strong school demand keep resale values high, but raw land for new communities is scarce.",
+      builders: ["David Weekley Homes", "Holland Builders Co."],
+      communities: [],
     },
     schools: [
       "Heathrow Elementary (A-rated, Niche)",
@@ -1208,21 +1204,21 @@ export const neighborhoods: Neighborhood[] = [
     ],
     newConstruction: {
       summary: "Sanford has a moderate new construction market with several communities planned or under construction. Price points are lower than Lake Mary, making it attractive for value-conscious new home buyers who still want Seminole County schools.",
-      builders: ["Taylor Morrison", "M/I Homes", "Beazer Homes", "D.R. Horton", "Lennar", "Pulte Homes", "KB Home", "K. Hovnanian Homes", "Ryan Homes", "Toll Brothers"],
-      communities: ["Thornbrooke", "Estates at Lake Jesup", "Bradbury Estates", "Avenida", "Frontier Pointe"],
+      builders: ["M/I Homes", "Beazer Homes", "D.R. Horton", "Lennar", "Pulte Homes", "KB Home", "K. Hovnanian Homes"],
+      communities: ["Estates at Lake Jesup", "Bradbury Estates"],
     },
     schools: [
       "Wilson Elementary (A-rated, Niche)",
-      "Goldsboro Elementary Magnet (A-rated, STEM)",
-      "Sanford Middle School (A-rated, Niche)",
+      "Goldsboro Elementary Magnet (A-, STEM)",
+      "Sanford Middle School (A-, Niche)",
       "Crooms Academy of IT (A-rated, magnet, 95% graduation rate)",
       "Seminole High School",
     ],
     dining: [
       "The Old Jailhouse — New American, housed in a preserved jailhouse",
       "The Tennessee Truffle — progressive Southern, farm-to-table",
-      "Buster's Bistro Belgian Bar — Belgian pub fare, 20+ Belgian beers",
-      "The Breezeway — Southern-inspired, craft cocktails, downtown patio",
+      "Buster's European Beer Hall — European pub fare, 30+ craft beers",
+      "The Breezeway — fresh seafood and steaks, craft cocktails, downtown patio",
     ],
     commute: {
       downtown: "30-35 minutes",

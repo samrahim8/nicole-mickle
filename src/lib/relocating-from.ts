@@ -18,12 +18,12 @@ export const originCities: OriginCity[] = [
     description:
       "New Yorkers are one of the largest groups relocating to Orlando. The combination of no state income tax, dramatically lower housing costs, and year-round outdoor living makes Central Florida an increasingly popular destination for NYC professionals, families, and retirees.",
     costComparison:
-      "Housing in Orlando averages 60-70% less than comparable properties in the New York metro area. A $500K home in Orlando would cost $1.2-1.5M in most NYC suburbs. Florida has no state income tax, which for a household earning $200K means roughly $12-15K in annual savings compared to New York.",
+      "Housing in Orlando averages 45-60% less than comparable properties in the New York metro area. A $450K home in Orlando would cost $750K-$1M in most NYC suburbs. Florida has no state income tax, which for a household earning $200K means roughly $12-15K in annual savings compared to New York.",
     weatherComparison:
       "Orlando averages 233 sunny days per year compared to New York's 224. Winters are mild (average January high of 72F vs New York's 39F). The trade-off is hot, humid summers and an active hurricane season from June through November.",
     whyOrlando: [
       "No state income tax saves the average New York transplant $10-15K annually",
-      "Housing costs 60-70% less for comparable square footage and quality",
+      "Housing costs 45-60% less for comparable square footage and quality",
       "Growing job market in tech, healthcare, and entertainment",
       "Year-round outdoor lifestyle — pools, parks, and activities 12 months a year",
       "Direct flights to all three NYC airports (JFK, LGA, EWR) — easy to visit family",
@@ -32,7 +32,7 @@ export const originCities: OriginCity[] = [
     commonQuestions: [
       {
         q: "How does the cost of living in Orlando compare to New York?",
-        a: "Overall cost of living in Orlando is approximately 35-45% lower than the New York metro area. Housing is the biggest difference at 60-70% less. Groceries, dining, and transportation are also significantly cheaper. The absence of state income tax in Florida adds another substantial savings layer.",
+        a: "Overall cost of living in Orlando is approximately 35-45% lower than the New York metro area. Housing is the biggest difference at 45-60% less. Groceries, dining, and transportation are also significantly cheaper. The absence of state income tax in Florida adds another substantial savings layer.",
       },
       {
         q: "What Orlando neighborhoods feel most like living in the NYC suburbs?",
@@ -51,13 +51,13 @@ export const originCities: OriginCity[] = [
     description:
       "Chicago-to-Orlando relocations have surged as families and professionals seek relief from Illinois taxes, harsh winters, and rising urban costs. Many Chicagoans find Orlando's combination of suburban comfort, strong schools, and year-round outdoor living to be the lifestyle upgrade they've been looking for.",
     costComparison:
-      "Housing in Orlando is approximately 25-35% less expensive than the Chicago metro area. The bigger financial impact comes from taxes: Florida has no state income tax, while Illinois charges a flat 4.95%. For a household earning $175K, that's roughly $8,600 in annual savings on income tax alone.",
+      "Housing in Orlando is comparable to or 10-20% more affordable than popular Chicago suburbs like Naperville and Hinsdale, with significantly more new construction inventory. The bigger financial impact comes from taxes: Florida has no state income tax, while Illinois charges a flat 4.95%. For a household earning $175K, that's roughly $8,600 in annual savings on income tax alone.",
     weatherComparison:
       "Orlando's average annual temperature is 73F compared to Chicago's 50F. Chicago averages 36 inches of snow per year — Orlando averages zero. The trade-off is Orlando's summer heat and humidity, which peaks from June through September.",
     whyOrlando: [
       "No state income tax — Illinois charges 4.95% flat rate",
       "No more brutal winters — average January high of 72F",
-      "Housing 25-35% more affordable with newer inventory",
+      "Housing comparable to or 10-20% more affordable than popular Chicago suburbs, with significantly more new construction inventory",
       "Excellent new construction options not available in established Chicago suburbs",
       "Direct flights to O'Hare and Midway — family is a 2.5-hour flight away",
     ],
@@ -84,11 +84,11 @@ export const originCities: OriginCity[] = [
     description:
       "Boston-area professionals and families relocating to Orlando often cite the combination of lower housing costs, tax savings, and escape from New England winters as primary motivators. Orlando's growing healthcare and tech sectors also provide strong career opportunities for Boston's professional workforce.",
     costComparison:
-      "Housing in Orlando averages 50-60% less than the greater Boston area. A home that costs $800K in the Boston suburbs would be $350-450K in a comparable Orlando neighborhood. Massachusetts income tax is 5%, which Florida doesn't have — a significant annual savings.",
+      "Housing in Orlando averages 40-55% less than the greater Boston area. A home that costs $800K in the Boston suburbs would be $350-450K in a comparable Orlando neighborhood. Massachusetts income tax is 5%, which Florida doesn't have — a significant annual savings.",
     weatherComparison:
       "Orlando averages 233 sunny days compared to Boston's 200. Boston's winters (average January high of 36F) contrast sharply with Orlando's mild 72F. Bostonians generally adapt well to Orlando's summers, finding the heat preferable to shoveling snow.",
     whyOrlando: [
-      "Housing costs 50-60% less than greater Boston",
+      "Housing costs 40-55% less than greater Boston",
       "No state income tax — Massachusetts charges 5%",
       "Growing healthcare sector (AdventHealth, Orlando Health, Lake Nona Medical City)",
       "Year-round outdoor lifestyle replaces seasonal limitations",
@@ -117,12 +117,12 @@ export const originCities: OriginCity[] = [
     description:
       "D.C.-area professionals relocating to Orlando often find the transition smooth — both are metro areas with strong job markets, good schools, and diverse communities. The difference is price. A family that's priced out of the D.C. suburbs can buy significantly more home in Orlando while keeping their career trajectory intact.",
     costComparison:
-      "Housing in Orlando is 40-55% less expensive than the D.C. metro area. A home that costs $700K in Fairfax or Montgomery County would be $350-450K in a comparable Orlando neighborhood. Florida's lack of state income tax adds further savings on top of Virginia's 5.75% or Maryland's 5.75% rate.",
+      "Housing in Orlando is 30-45% less expensive than the D.C. metro area. A home that costs $600K in Montgomery County would be $350-450K in a comparable Orlando neighborhood. Florida's lack of state income tax adds further savings on top of Virginia's 5.75% or Maryland's up to 6.50% rate.",
     weatherComparison:
       "Orlando is warmer year-round with milder winters (72F vs D.C.'s 43F in January). D.C.'s infamous muggy summers are actually comparable to Orlando's, so the heat is less of an adjustment for D.C. transplants than for those from cooler climates.",
     whyOrlando: [
-      "Housing 40-55% more affordable than the D.C. metro",
-      "No state income tax — Virginia charges 5.75%, Maryland 5.75%",
+      "Housing 30-45% more affordable than the D.C. metro",
+      "No state income tax — Virginia charges 5.75%, Maryland up to 6.50%",
       "Strong job market in defense, tech, and healthcare",
       "Similar suburban lifestyle at a fraction of the cost",
       "Direct flights to Reagan, Dulles, and BWI — easy weekend visits",
@@ -150,12 +150,12 @@ export const originCities: OriginCity[] = [
     description:
       "Atlanta-to-Orlando moves are among the most common Southeast relocations. Both cities share a similar pace of life, but Orlando offers lower housing costs in many areas, no state income tax, and a lifestyle that leans more toward outdoor living year-round.",
     costComparison:
-      "Housing costs are similar in many areas, though Orlando tends to be 10-20% less expensive than comparable Atlanta suburbs. The real savings come from Florida's lack of state income tax — Georgia charges up to 5.49%. For a household earning $150K, that's roughly $7-8K in annual savings.",
+      "Housing costs are comparable in overall cost, with Orlando offering significantly more new construction options than comparable Atlanta suburbs. The real savings come from Florida's lack of state income tax — Georgia charges up to 5.19%. For a household earning $150K, that's roughly $7-8K in annual savings.",
     weatherComparison:
       "Both cities are warm and humid, so the weather adjustment is minimal. Orlando is slightly warmer year-round and rarely sees the ice storms that occasionally hit Atlanta. Atlantans adapt to Orlando's climate faster than transplants from northern cities.",
     whyOrlando: [
-      "No state income tax — Georgia charges up to 5.49%",
-      "Similar lifestyle and pace, slightly lower housing costs",
+      "No state income tax — Georgia charges up to 5.19%",
+      "Similar lifestyle and pace, comparable housing costs with more new construction options",
       "Stronger new construction market with more builder options",
       "Year-round warm weather without Atlanta's occasional ice storms",
       "Only a 6-hour drive or 1-hour flight to visit Atlanta",
