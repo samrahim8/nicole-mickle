@@ -7,9 +7,10 @@ interface Props {
   steps: { number: string; title: string; description: string }[];
   reasons: { title: string; description: string }[];
   originCities: { name: string; slug: string }[];
+  employers: string[];
 }
 
-export function RelocatingClient({ steps, reasons, originCities }: Props) {
+export function RelocatingClient({ steps, reasons, originCities, employers }: Props) {
   return (
     <>
       {/* Hero */}
@@ -125,6 +126,40 @@ export function RelocatingClient({ steps, reasons, originCities }: Props) {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Clients Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <FadeIn className="lg:col-span-4">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
+                Trusted By Relocating Professionals
+              </p>
+              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
+                Clients have included employees from
+              </h2>
+              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+                None of these were corporate referral arrangements. Each client
+                found me through referrals, research, or recommendation, and
+                hired me directly. That&apos;s how I prefer to work.
+              </p>
+            </FadeIn>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <Stagger className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6" staggerDelay={0.05}>
+                {employers.map((name) => (
+                  <StaggerChild key={name}>
+                    <div className="py-4 border-b border-neutral-100">
+                      <p className="text-[15px] text-charcoal font-medium">
+                        {name}
+                      </p>
+                    </div>
+                  </StaggerChild>
+                ))}
+              </Stagger>
+            </div>
+          </div>
         </div>
       </section>
 

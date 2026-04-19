@@ -180,22 +180,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        {/* Cover */}
-        {coverSrc ? (
-          <div className="max-w-[90rem] mx-auto px-6 lg:px-12 mb-14 lg:mb-20">
-            <div className="relative w-full aspect-[16/9] bg-neutral-100">
-              <Image
-                src={coverSrc}
-                alt={post.coverImage?.alt ?? post.title}
-                fill
-                priority
-                sizes="(min-width: 1440px) 90rem, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        ) : null}
-
         {/* Body */}
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 pb-24 lg:pb-32">
           <div className="max-w-3xl mx-auto">

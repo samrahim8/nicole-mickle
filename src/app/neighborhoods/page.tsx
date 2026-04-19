@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { neighborhoods } from "@/lib/neighborhoods";
+import { NeighborhoodExplorer } from "@/components/neighborhood-explorer";
 
 export const metadata: Metadata = {
   title: "Orlando Neighborhoods",
@@ -26,6 +27,21 @@ export default function NeighborhoodsPage() {
               After 30 years here, I know which ones match which lifestyles.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Map + Cards Explorer */}
+      <section className="pb-16 lg:pb-20">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <NeighborhoodExplorer
+            neighborhoods={neighborhoods.map((n) => ({
+              slug: n.slug,
+              name: n.name,
+              tagline: n.tagline,
+              priceRange: n.priceRange,
+              lifestyleTags: n.lifestyleTags,
+            }))}
+          />
         </div>
       </section>
 

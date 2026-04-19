@@ -65,6 +65,20 @@ const originCities = [
   { name: "Atlanta", slug: "atlanta" },
 ];
 
+const employers = [
+  "Lockheed Martin",
+  "Walt Disney Company",
+  "AdventHealth",
+  "Orlando Health",
+  "Deloitte",
+  "Marriott",
+  "Darden Restaurants",
+  "Coca-Cola",
+  "PepsiCo",
+  "Frito-Lay",
+  "Walgreens",
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -115,6 +129,7 @@ export default function RelocatingPage() {
         steps={steps}
         reasons={reasons}
         originCities={originCities}
+        employers={employers}
       />
     </>
   );

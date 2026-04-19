@@ -56,8 +56,7 @@ const whyAgent = [
 ];
 
 const activeAreas = neighborhoods
-  .filter((n) => n.newConstruction.builders.length > 0)
-  .slice(0, 6);
+  .filter((n) => n.newConstruction.builders.length > 0);
 
 export function NewConstructionClient() {
   return (
@@ -247,7 +246,7 @@ export function NewConstructionClient() {
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-10">
                   Active new construction areas
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {activeAreas.map((n) => (
                     <Link
                       key={n.slug}

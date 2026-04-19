@@ -183,28 +183,22 @@ export function QuizClient() {
         </div>
       )}
 
-      {/* Nav */}
-      <div className="fixed top-[3px] left-0 right-0 z-[9999] px-6 lg:px-12">
-        <div className="max-w-[90rem] mx-auto flex items-center justify-between h-16 lg:h-20">
-          <Link
-            href="/"
-            className={`font-[family-name:var(--font-playfair)] text-xl tracking-[-0.02em] ${showResults ? "text-white" : "text-charcoal"}`}
-          >
-            Nicole Mickle
-          </Link>
-          {step >= 0 && step < questions.length && (
+      {/* Back button (below site nav) */}
+      {step >= 0 && step < questions.length && (
+        <div className="fixed top-20 left-0 right-0 z-40 px-6 lg:px-12">
+          <div className="max-w-[90rem] mx-auto">
             <button
               onClick={goBack}
-              className="text-[12px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 flex items-center gap-2 py-3 -my-3"
+              className={`text-[12px] tracking-wide transition-colors duration-300 flex items-center gap-2 py-3 -my-3 ${showResults ? "text-white/50 hover:text-white" : "text-neutral-400 hover:text-charcoal"}`}
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M13 8H3M7 4l-4 4 4 4" />
               </svg>
               Back
             </button>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Content */}
       <div className="flex-1 flex items-center justify-center px-6 lg:px-12">

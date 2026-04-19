@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
+import { NeighborhoodExplorer } from "./neighborhood-explorer";
 import type { Neighborhood } from "@/lib/neighborhoods";
 
 interface Props {
@@ -266,82 +267,42 @@ export function HomeClient({
         </div>
       </section>
 
-      {/* ── Neighborhoods — deep forest green ── */}
-      <section className="py-20 lg:py-44 bg-forest text-white">
+      {/* ── Neighborhoods Explorer ── */}
+      <section className="py-20 lg:py-32">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 lg:mb-24">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
               <div>
-                <p className="text-[10px] tracking-[0.35em] uppercase text-white/40 mb-5">
+                <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
                   Neighborhoods
                 </p>
-                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-[-0.02em]">
+                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
                   Orlando isn&apos;t one place.
                   <span className="italic"> It&apos;s many.</span>
                 </h2>
               </div>
               <Link
                 href="/neighborhoods"
-                className="text-[12px] tracking-wide text-white/50 hover:text-white transition-colors duration-300 flex items-center gap-2 shrink-0"
+                className="text-[12px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 flex items-center gap-2 shrink-0"
               >
-                View all
+                View all neighborhoods
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
               </Link>
             </div>
           </FadeIn>
-
-          {/* Image-first editorial grid */}
-          <Stagger
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3"
-            staggerDelay={0.05}
-          >
-            {neighborhoods.map((n) => (
-              <StaggerChild key={n.slug}>
-                <Link
-                  href={`/neighborhoods/${n.slug}`}
-                  className="group block relative overflow-hidden"
-                >
-                  <div className="relative bg-forest-light aspect-[3/4]">
-                    {/* Placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white/15">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75" className="mx-auto">
-                          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                          <polyline points="9 22 9 12 15 12 15 22" />
-                          
-                        </svg>
-                      </div>
-                    </div>
-
-                    {/* Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A2D] via-[#1B3A2D]/20 to-transparent" />
-
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                      <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
-                        {n.lifestyleTags.slice(0, 2).map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-[8px] tracking-[0.2em] uppercase text-white/35"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-[family-name:var(--font-playfair)] text-white text-lg mb-1">
-                        {n.name}
-                      </h3>
-                      <p className="text-[12px] text-white/40 group-hover:text-white/60 transition-colors duration-500">
-                        {n.tagline}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </StaggerChild>
-            ))}
-          </Stagger>
+          <FadeIn delay={0.2}>
+            <NeighborhoodExplorer
+              neighborhoods={neighborhoods.map((n) => ({
+                slug: n.slug,
+                name: n.name,
+                tagline: n.tagline,
+                priceRange: n.priceRange,
+                lifestyleTags: n.lifestyleTags,
+              }))}
+            />
+          </FadeIn>
         </div>
       </section>
 
