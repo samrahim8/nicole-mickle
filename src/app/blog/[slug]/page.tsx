@@ -190,7 +190,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related */}
       {related.length > 0 ? (
-        <section className="border-t border-neutral-200 py-20 lg:py-24">
+        <section className="border-t border-neutral-200 py-20 lg:py-32">
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
             <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-10">
               Keep reading

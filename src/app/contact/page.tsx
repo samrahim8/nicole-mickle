@@ -53,7 +53,7 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-12 bg-neutral-50 border border-neutral-200 text-center"
+                  className="p-12 bg-cream border border-neutral-200 text-center"
                 >
                   <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal mb-3">
                     Thank you

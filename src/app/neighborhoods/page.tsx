@@ -53,7 +53,7 @@ export default function NeighborhoodsPage() {
               <Link
                 key={n.slug}
                 href={`/neighborhoods/${n.slug}`}
-                className="group block bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-500"
+                className="group block bg-white p-8 lg:p-10 hover:bg-cream transition-colors duration-500"
               >
                 <div className="aspect-[4/3] bg-forest relative mb-6 flex items-center justify-center group-hover:bg-forest-light transition-colors duration-500">
                   <div className="text-center text-white/30">

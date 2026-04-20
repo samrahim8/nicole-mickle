@@ -53,58 +53,59 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
         </div>
       </section>
 
-      {/* Builders + Communities */}
-      <section className="py-20 lg:py-32 bg-cream">
+      {/* Builders */}
+      <section className="py-20 lg:py-28 bg-cream">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
-            <SlideIn direction="left" className="lg:col-span-5">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-20 items-start">
+            <SlideIn direction="left" className="lg:col-span-4">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
                 Active Builders
               </p>
-              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-10">
+              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal">
                 Who&apos;s building in {n.name}
               </h2>
-              <Stagger className="space-y-0" staggerDelay={0.04}>
-                {n.newConstruction.builders.map((b, i) => (
-                  <StaggerChild key={b}>
-                    <div className="flex gap-5 items-center border-t border-warm-200/60 py-4">
-                      <span className="text-[11px] tracking-[0.15em] text-neutral-300">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-[15px] font-medium text-charcoal">{b}</span>
-                    </div>
-                  </StaggerChild>
-                ))}
-                <div className="border-t border-warm-200/60" />
-              </Stagger>
             </SlideIn>
-
-            {n.newConstruction.communities.length > 0 && (
-              <SlideIn direction="right" delay={0.15} className="lg:col-span-6 lg:col-start-7">
-                <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                  Communities
-                </p>
-                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-10">
-                  Where to look
-                </h2>
-                <Stagger className="space-y-0" staggerDelay={0.04}>
-                  {n.newConstruction.communities.map((c, i) => (
-                    <StaggerChild key={c}>
-                      <div className="flex gap-5 items-center border-t border-warm-200/60 py-4">
-                        <span className="text-[11px] tracking-[0.15em] text-neutral-300">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-[15px] text-neutral-600">{c}</span>
-                      </div>
-                    </StaggerChild>
-                  ))}
-                  <div className="border-t border-warm-200/60" />
-                </Stagger>
-              </SlideIn>
-            )}
+            <FadeIn delay={0.15} className="lg:col-span-7 lg:col-start-6">
+              <div className="flex flex-wrap gap-3">
+                {n.newConstruction.builders.map((b) => (
+                  <span
+                    key={b}
+                    className="px-5 py-2.5 text-[14px] font-medium text-charcoal bg-white border border-warm-200/80 rounded-full"
+                  >
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
+
+      {/* Communities */}
+      {n.newConstruction.communities.length > 0 && (
+        <section className="py-20 lg:py-28">
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <FadeIn>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
+                Communities
+              </p>
+              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-12 lg:mb-16">
+                Where to look in {n.name}
+              </h2>
+            </FadeIn>
+            <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-warm-200/60" staggerDelay={0.04}>
+              {n.newConstruction.communities.map((c, i) => (
+                <StaggerChild key={c} className="bg-white p-6 lg:p-8">
+                  <span className="text-[11px] tracking-[0.15em] text-neutral-300 block mb-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[15px] font-medium text-charcoal">{c}</span>
+                </StaggerChild>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       {/* Price Points */}
       <section className="py-20 lg:py-32">

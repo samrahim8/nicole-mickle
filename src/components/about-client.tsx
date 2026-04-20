@@ -175,7 +175,7 @@ export function AboutClient() {
       </section>
 
       {/* Discretion */}
-      <section className="py-20 lg:py-32 bg-forest text-white">
+      <section className="py-20 lg:py-44 bg-forest text-white">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <FadeIn className="lg:col-span-4">
