@@ -40,7 +40,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "winter-park",
     name: "Winter Park",
-    image: "placeholder",
+    image: "/images/neighborhoods/winter-park.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-park",
     tagline: "Tree-lined charm meets cultural sophistication",
     description:
@@ -116,7 +116,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "lake-nona",
     name: "Lake Nona",
-    image: "placeholder",
+    image: "/images/neighborhoods/lake-nona.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-nona",
     tagline: "Orlando's master-planned community of the future",
     description:
@@ -192,7 +192,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "windermere",
     name: "Windermere",
-    image: "placeholder",
+    image: "/images/neighborhoods/windermere.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/windermere",
     tagline: "Lakefront luxury with a relaxed pace",
     description:
@@ -267,7 +267,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "dr-phillips",
     name: "Dr. Phillips",
-    image: "placeholder",
+    image: "/images/neighborhoods/dr-phillips.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/dr-phillips",
     tagline: "Orlando's dining capital with suburban comfort",
     description:
@@ -343,7 +343,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "celebration",
     name: "Celebration",
-    image: "placeholder",
+    image: "/images/neighborhoods/celebration.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/celebration",
     tagline: "A walkable town designed for community",
     description:
@@ -416,7 +416,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "baldwin-park",
     name: "Baldwin Park",
-    image: "placeholder",
+    image: "/images/neighborhoods/baldwin-park.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/baldwin-park",
     tagline: "Urban village living in the heart of Orlando",
     description:
@@ -491,7 +491,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "horizon-west",
     name: "Horizon West",
-    image: "placeholder",
+    image: "/images/neighborhoods/horizon-west.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/horizon-west",
     tagline: "Orlando's fastest-growing new construction corridor",
     description:
@@ -567,7 +567,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "winter-garden",
     name: "Winter Garden",
-    image: "placeholder",
+    image: "/images/neighborhoods/winter-garden.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-garden",
     tagline: "Small-town charm with a thriving downtown",
     description:
@@ -642,7 +642,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "clermont",
     name: "Clermont",
-    image: "placeholder",
+    image: "/images/neighborhoods/clermont.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/clermont",
     tagline: "Rolling hills, lakefront living, and an active outdoor lifestyle",
     description:
@@ -717,7 +717,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "minneola",
     name: "Minneola",
-    image: "placeholder",
+    image: "/images/neighborhoods/minneola.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/minneola",
     tagline: "A fast-growing small town with elevation and new construction",
     description:
@@ -790,7 +790,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "montverde",
     name: "Montverde",
-    image: "placeholder",
+    image: "/images/neighborhoods/montverde.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/montverde",
     tagline: "Rural elegance in the rolling hills of Lake County",
     description:
@@ -863,7 +863,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "oakland",
     name: "Oakland",
-    image: "placeholder",
+    image: "/images/neighborhoods/oakland.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/oakland",
     tagline: "A hidden gem nestled among the oaks on the West Orange Trail",
     description:
@@ -935,7 +935,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "groveland",
     name: "Groveland",
-    image: "placeholder",
+    image: "/images/neighborhoods/groveland.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/groveland",
     tagline: "Affordable new construction in a fast-growing Lake County town",
     description:
@@ -1009,7 +1009,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "apopka",
     name: "Apopka",
-    image: "placeholder",
+    image: "/images/neighborhoods/apopka.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/apopka",
     tagline: "New construction meets natural springs in Orlando's northwest corridor",
     description:
@@ -1083,7 +1083,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "lake-mary",
     name: "Lake Mary",
-    image: "placeholder",
+    image: "/images/neighborhoods/lake-mary.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-mary",
     tagline: "Seminole County's polished suburban hub with top-rated schools",
     description:
@@ -1159,7 +1159,7 @@ export const neighborhoods: Neighborhood[] = [
   {
     slug: "sanford",
     name: "Sanford",
-    image: "placeholder",
+    image: "/images/neighborhoods/sanford.jpg",
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/sanford",
     tagline: "A historic lakefront city with a growing food and arts scene",
     description:
