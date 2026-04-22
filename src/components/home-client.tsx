@@ -218,8 +218,7 @@ export function HomeClient({
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center mb-20 lg:mb-28">
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
-                Every move starts with
-                <br />a different question
+                Three ways I can help
               </h2>
             </div>
           </FadeIn>
