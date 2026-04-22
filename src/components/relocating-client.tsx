@@ -24,7 +24,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 </p>
               </FadeIn>
               <TextReveal>
-                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
+                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
                   You&apos;re choosing a lifestyle,
                   <br />
                   <span className="italic">not just a house</span>
