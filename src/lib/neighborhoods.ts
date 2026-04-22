@@ -93,6 +93,7 @@ export const neighborhoods: Neighborhood[] = [
       "Brookshire Elementary (highly rated)",
       "The Geneva School (private, classical Christian)",
       "Trinity Preparatory School (private, grades 6-12)",
+      "Lake Highland Preparatory School (private, PreK-12, nearby)",
       "Rollins College campus community",
     ],
     dining: [
@@ -469,6 +470,7 @@ export const neighborhoods: Neighborhood[] = [
       "Glenridge Middle School (A-rated)",
       "Winter Park High School (nearby)",
       "Trinity Preparatory School (private, nearby)",
+      "Lake Highland Preparatory School (private, PreK-12, nearby)",
     ],
     dining: [
       "The Osprey – seafood and spirits, neighborhood gem",
