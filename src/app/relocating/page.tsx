@@ -43,7 +43,7 @@ const reasons = [
   {
     title: "Mortgage lending background",
     description:
-      "My years in mortgage lending give me a financial insight that helps me connect you with the right professionals and structure a smooth, predictable closing.",
+      "With a foundation in mortgage lending, I bring added insight into the financial side of your purchase. I ensure you're connected with the right professionals and that every step of the process is aligned for a smooth, predictable closing.",
   },
   {
     title: "Relocation is my specialty",
@@ -53,7 +53,7 @@ const reasons = [
   {
     title: "Honest, not salesy",
     description:
-      "I offer candid insight aligned with your goals. My job is to guide you to the right choice, not push you toward a deal.",
+      "I provide candid insight on both the neighborhood and the value of a home, ensuring every decision is aligned with your goals. My focus is on guiding you to the right choice, not just closing a deal.",
   },
 ];
 
