@@ -176,9 +176,8 @@ export function HomeClient({
                   stage of the transaction from the inside out.
                 </p>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
-                  Certified International Property Specialist. Founder of
-                  Florida Homes and Living. Specializing in relocation and new
-                  construction throughout Central Florida.
+                  Founder of Florida Homes and Living. Specializing in
+                  relocation and new construction throughout Central Florida.
                 </p>
 
                 {/* Social proof */}
@@ -306,7 +305,7 @@ export function HomeClient({
         </div>
       </section>
 
-      {/* ── Testimonials — editorial spread ── */}
+      {/* ── Testimonials – editorial spread ── */}
       <section className="py-20 lg:py-44">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
@@ -315,7 +314,7 @@ export function HomeClient({
             </p>
           </FadeIn>
 
-          {/* Featured quote — large, asymmetric */}
+          {/* Featured quote – large, asymmetric */}
           <FadeIn>
             <div className="grid lg:grid-cols-12 gap-8 items-start">
               <div className="hidden lg:block lg:col-span-1">
@@ -344,7 +343,7 @@ export function HomeClient({
             </div>
           </FadeIn>
 
-          {/* Secondary quotes — 3-column grid */}
+          {/* Secondary quotes – 3-column grid */}
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-neutral-100">
             {testimonials.slice(1, 4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>

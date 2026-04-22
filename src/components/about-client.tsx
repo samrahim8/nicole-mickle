@@ -9,19 +9,19 @@ const milestones = [
     period: "1996 \u2013 2005",
     title: "Mortgage & Closings",
     description:
-      "Started as a Senior Mortgage Broker at PMC Lending, handling refinancing and underwriting for FHA and conventional loans. Simultaneously founded Statewide Closers, a mobile notary closing company that grew to cover all Florida counties.",
+      "Senior Mortgage Broker at PMC Lending, handling refinancing and conventional loans with a specialty in bankruptcy. Founded Statewide Closers, a mobile notary closing company that grew to cover all Florida counties and eventually expanded nationwide as APAT Settlement Services.",
   },
   {
     period: "1996 \u2013 2019",
     title: "APAT Settlement Services",
     description:
-      "Built and ran a nationwide mobile title closing company for 23 years, coordinating closings for mortgage brokers, title companies, and real estate brokerages across the country \u2014 including London, England and Puerto Rico.",
+      "Built and ran a nationwide mobile title closing company for 23 years, coordinating closings for mortgage brokers, title companies, and real estate brokerages across the country, including London, England and Puerto Rico.",
   },
   {
     period: "2012 \u2013 2020",
     title: "Real Estate Sales",
     description:
-      "Transitioned to residential real estate, working with Reliance Realty, Olde Town Brokers, and Mainframe Real Estate. Specialized in listings, short sales, investor transactions, and built a global network through Instagram and social media.",
+      "Started at Reliance Realty as a transaction coordinator for an RE attorney/broker, then became a listing agent negotiating short sales. Developed hedge fund and investor relationships, closing 200+ short sales in two years. Pivoted to Instagram and social media marketing, building a global relocation network.",
   },
   {
     period: "2020 \u2013 Present",
@@ -34,7 +34,7 @@ const milestones = [
 const credentials = [
   "Realtor at Olympus Executive Realty",
   "B.S. in Economics, Florida A&M University",
-  "Certified International Property Specialist",
+  "Relocation & New Construction Specialist",
   "Former Senior Mortgage Broker",
   "23 Years in Title & Closings Nationwide",
   "Founder, Florida Homes and Living",
@@ -78,11 +78,10 @@ export function AboutClient() {
                 </p>
                 <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   For 23 years I ran APAT Real Estate Settlement Services,
-                  coordinating closings nationwide. That background gave me an
-                  understanding of the transaction process that most agents simply
-                  don&apos;t have. Today I&apos;m with Olympus Executive Realty,
-                  specializing in relocation and new construction throughout
-                  Central Florida.
+                  coordinating closings nationwide. That background gave me a
+                  deep understanding of the transaction process from every angle.
+                  Today I&apos;m with Olympus Executive Realty, specializing in
+                  relocation and new construction throughout Central Florida.
                 </p>
                 <p className="text-[15px] text-neutral-500 leading-[1.75]">
                   My Economics degree from Florida A&amp;M gave me an analytical
@@ -190,9 +189,8 @@ export function AboutClient() {
               <FadeIn delay={0.1}>
                 <p className="text-[15px] text-white/70 leading-[1.85] mb-6">
                   A portion of my clients are public figures -- athletes,
-                  entertainers, and executives whose moves require a level of
-                  privacy most agents aren&apos;t built for. That work stays
-                  quiet by design.
+                  entertainers, and executives whose moves require a higher
+                  level of privacy. That work stays quiet by design.
                 </p>
                 <p className="text-[15px] text-white/70 leading-[1.85]">
                   Among the clients I&apos;m able to name is Olympic champion

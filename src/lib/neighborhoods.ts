@@ -62,7 +62,7 @@ export const neighborhoods: Neighborhood[] = [
       "Empty nesters downsizing from larger suburban homes",
     ],
     notIdealFor: [
-      "Buyers looking for new construction — most homes are established",
+      "Buyers looking for new construction – most homes are established",
       "Those who need quick access to the attractions corridor",
       "Budget-conscious buyers under $400K",
     ],
@@ -96,10 +96,10 @@ export const neighborhoods: Neighborhood[] = [
       "Rollins College campus community",
     ],
     dining: [
-      "Prato — Italian, Park Avenue staple",
-      "The Ravenous Pig — gastropub, Michelin-recognized",
-      "Hillstone — upscale American, lakefront views",
-      "The Parkview — seasonal American, Park Avenue",
+      "Prato – Italian, Park Avenue staple",
+      "The Ravenous Pig – gastropub, Michelin-recognized",
+      "Hillstone – upscale American, lakefront views",
+      "The Parkview – seasonal American, Park Avenue",
     ],
     commute: {
       downtown: "10-15 minutes",
@@ -107,10 +107,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "30-40 minutes",
     },
     localTips: [
-      "The Winter Park Farmer's Market on Saturdays is a community institution — go early",
+      "The Winter Park Farmer's Market on Saturdays is a community institution – go early",
       "The Scenic Boat Tour on Lake Osceola is the best way to see the historic lakefront homes",
       "Park Avenue during the holidays is worth the visit even if you don't live here yet",
-      "The Morse Museum houses the world's most comprehensive collection of Tiffany glass — free on Friday evenings from November through April",
+      "The Morse Museum houses the world's most comprehensive collection of Tiffany glass – free on Friday evenings from November through April",
     ],
   },
   {
@@ -130,11 +130,11 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$450K - $2M+",
     lifestyle:
-      "Lake Nona feels like living in the future. Autonomous shuttles, a performance club with golf simulators and recovery labs, and a town center designed for walking. It attracts a younger, professional demographic — medical professionals, tech workers, and families who want new everything. The community programming is excellent. It's planned, yes, but it's planned well.",
+      "Lake Nona feels like living in the future. Autonomous shuttles, a performance club with golf simulators and recovery labs, and a town center designed for walking. It attracts a younger, professional demographic – medical professionals, tech workers, and families who want new everything. The community programming is excellent. It's planned, yes, but it's planned well.",
     bestFor: [
       "Medical professionals working at Medical City",
       "Families who want new construction with modern amenities",
-      "Active lifestyle buyers — tennis, golf, fitness",
+      "Active lifestyle buyers – tennis, golf, fitness",
       "Remote workers who want community without a commute",
     ],
     notIdealFor: [
@@ -172,10 +172,10 @@ export const neighborhoods: Neighborhood[] = [
       "NorthLake Park Community School (A-rated)",
     ],
     dining: [
-      "Canvas Restaurant & Market — seasonal American, lakeside",
-      "Boxi Park — outdoor food hall and live music",
-      "Chroma Modern Bar + Kitchen — upscale American",
-      "Bosphorous Turkish Cuisine — Turkish",
+      "Canvas Restaurant & Market – seasonal American, lakeside",
+      "Boxi Park – outdoor food hall and live music",
+      "Chroma Modern Bar + Kitchen – upscale American",
+      "Bosphorous Turkish Cuisine – Turkish",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -183,7 +183,7 @@ export const neighborhoods: Neighborhood[] = [
       disney: "25-35 minutes",
     },
     localTips: [
-      "Lake Nona Town Center is still growing — expect new restaurants and retail regularly",
+      "Lake Nona Town Center is still growing – expect new restaurants and retail regularly",
       "The USTA National Campus offers public court rentals and youth programs",
       "Laureate Park has the best community events calendar in Orlando",
       "Drive Shack is the go-to for casual social outings",
@@ -206,7 +206,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$700K - $5M+",
     lifestyle:
-      "Windermere is space and water. Weekend mornings on the boat, kids playing in big backyards, dinner at home with the sunset over the lake. It's quieter than most of Orlando's popular neighborhoods and that's exactly the point. The town of Windermere itself is charming — a few blocks of small shops and restaurants that feel like old Florida.",
+      "Windermere is space and water. Weekend mornings on the boat, kids playing in big backyards, dinner at home with the sunset over the lake. It's quieter than most of Orlando's popular neighborhoods and that's exactly the point. The town of Windermere itself is charming – a few blocks of small shops and restaurants that feel like old Florida.",
     bestFor: [
       "Families who want large lots and top schools",
       "Executives and professionals seeking privacy",
@@ -247,10 +247,10 @@ export const neighborhoods: Neighborhood[] = [
       "Bay Meadows Elementary (A-rated)",
     ],
     dining: [
-      "Yellow Dog Eats — eclectic American, Windermere staple",
-      "My French Cafe — European bakery and cafe",
-      "Bella Tuscany — Italian, downtown Windermere",
-      "Restaurant Row in Dr. Phillips — 10 minutes away",
+      "Yellow Dog Eats – eclectic American, Windermere staple",
+      "My French Cafe – European bakery and cafe",
+      "Bella Tuscany – Italian, downtown Windermere",
+      "Restaurant Row in Dr. Phillips – 10 minutes away",
     ],
     commute: {
       downtown: "20-35 minutes",
@@ -258,9 +258,9 @@ export const neighborhoods: Neighborhood[] = [
       disney: "10-15 minutes",
     },
     localTips: [
-      "The Butler Chain of Lakes is one of Florida's most pristine lake chains — boat access is a genuine lifestyle upgrade",
+      "The Butler Chain of Lakes is one of Florida's most pristine lake chains – boat access is a genuine lifestyle upgrade",
       "Windermere's downtown has a farmers market and community events worth checking out",
-      "Horizon West is the fast-growing area adjacent to Windermere — new construction at lower price points",
+      "Horizon West is the fast-growing area adjacent to Windermere – new construction at lower price points",
       "The West Orange Trail is nearby in Oakland and Winter Garden for biking and running",
     ],
   },
@@ -281,7 +281,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$350K - $1.5M+",
     lifestyle:
-      "Dr. Phillips is convenience wrapped in a residential package. You're 10 minutes from world-class dining, 15 from the theme parks, and 20 from downtown — but your street feels like a quiet suburb. The dining scene is genuinely one of the best in Central Florida. The community is diverse, the schools are solid, and the housing stock ranges from accessible townhomes to gated estates.",
+      "Dr. Phillips is convenience wrapped in a residential package. You're 10 minutes from world-class dining, 15 from the theme parks, and 20 from downtown – but your street feels like a quiet suburb. The dining scene is genuinely one of the best in Central Florida. The community is diverse, the schools are solid, and the housing stock ranges from accessible townhomes to gated estates.",
     bestFor: [
       "Families who want great schools and dining without the premium of Winter Park",
       "Professionals working in the attractions or hospitality corridor",
@@ -323,10 +323,10 @@ export const neighborhoods: Neighborhood[] = [
       "The First Academy (private, PreK-12)",
     ],
     dining: [
-      "Christini's — fine Italian dining institution",
-      "Dragonfly Robata Grill — Japanese izakaya, upscale",
-      "Eddie V's — prime seafood and steaks",
-      "Seasons 52 — fresh grill and wine bar",
+      "Christini's – fine Italian dining institution",
+      "Dragonfly Robata Grill – Japanese izakaya, upscale",
+      "Eddie V's – prime seafood and steaks",
+      "Seasons 52 – fresh grill and wine bar",
     ],
     commute: {
       downtown: "15-25 minutes",
@@ -334,10 +334,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "10-15 minutes",
     },
     localTips: [
-      "Restaurant Row along Sand Lake Road is the real dining destination in Orlando — not the tourist areas",
+      "Restaurant Row along Sand Lake Road is the real dining destination in Orlando – not the tourist areas",
       "Bay Hill hosts the Arnold Palmer Invitational PGA Tour event annually",
       "The Dr. Phillips Center for the Performing Arts downtown is worth the 15-minute drive",
-      "I-4 access is excellent but can be congested during rush hour — plan accordingly",
+      "I-4 access is excellent but can be congested during rush hour – plan accordingly",
     ],
   },
   {
@@ -357,7 +357,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$350K - $1.2M+",
     lifestyle:
-      "Celebration is a town, not a neighborhood. It was designed to feel that way and it works. You walk to dinner downtown, your kids ride bikes to the park, the community hosts events nearly every weekend. The architecture is intentionally varied — Coastal, Classical, Victorian, Colonial — which gives it character that most planned communities lack. It's not for everyone, but the people who love it really love it.",
+      "Celebration is a town, not a neighborhood. It was designed to feel that way and it works. You walk to dinner downtown, your kids ride bikes to the park, the community hosts events nearly every weekend. The architecture is intentionally varied – Coastal, Classical, Victorian, Colonial – which gives it character that most planned communities lack. It's not for everyone, but the people who love it really love it.",
     bestFor: [
       "Families who prioritize community and walkability",
       "Disney and hospitality industry professionals",
@@ -397,9 +397,9 @@ export const neighborhoods: Neighborhood[] = [
       "Nearby Osceola County magnet programs",
     ],
     dining: [
-      "Celebration Town Tavern — New England seafood, downtown staple",
-      "Columbia Restaurant — Spanish-Cuban, historic Florida chain",
-      "Imperium Food & Wine — contemporary American, downtown",
+      "Celebration Town Tavern – New England seafood, downtown staple",
+      "Columbia Restaurant – Spanish-Cuban, historic Florida chain",
+      "Imperium Food & Wine – contemporary American, downtown",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -407,10 +407,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "5-15 minutes",
     },
     localTips: [
-      "Celebration's \"Now Snowing\" event runs nightly from late November through December 31 — a beloved tradition",
+      "Celebration's \"Now Snowing\" event runs nightly from late November through December 31 – a beloved tradition",
       "The lakefront walking trail is the best evening walk in the Orlando area",
-      "Downtown Celebration is small but curated — quality over quantity",
-      "The community association is active — review the guidelines before buying if you value flexibility",
+      "Downtown Celebration is small but curated – quality over quantity",
+      "The community association is active – review the guidelines before buying if you value flexibility",
     ],
   },
   {
@@ -471,10 +471,10 @@ export const neighborhoods: Neighborhood[] = [
       "Trinity Preparatory School (private, nearby)",
     ],
     dining: [
-      "The Osprey — seafood and spirits, neighborhood gem",
-      "Seito Sushi — Japanese, consistently excellent",
-      "Black Rooster Taqueria — Mexican, casual favorite",
-      "Bikes Beans & Bordeaux — cafe, lakefront patio",
+      "The Osprey – seafood and spirits, neighborhood gem",
+      "Seito Sushi – Japanese, consistently excellent",
+      "Black Rooster Taqueria – Mexican, casual favorite",
+      "Bikes Beans & Bordeaux – cafe, lakefront patio",
     ],
     commute: {
       downtown: "5-10 minutes",
@@ -482,10 +482,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "25-35 minutes",
     },
     localTips: [
-      "The Baldwin Park Community Market is held the third Saturday of each month — arrive by 9am",
+      "The Baldwin Park Community Market is held the third Saturday of each month – arrive by 9am",
       "Lake Baldwin dog park is one of the few lakefront dog parks in the city",
-      "The community is tightly knit — expect to know your neighbors within weeks",
-      "Parking can be tight in the village center on weekends — walk or bike if you can",
+      "The community is tightly knit – expect to know your neighbors within weeks",
+      "Parking can be tight in the village center on weekends – walk or bike if you can",
     ],
   },
   {
@@ -547,10 +547,10 @@ export const neighborhoods: Neighborhood[] = [
       "Windermere High School (nearby)",
     ],
     dining: [
-      "Hamlin Town Center — growing collection of restaurants and retail",
-      "First Watch — breakfast and brunch, Hamlin",
-      "Kona Grill — Asian-inspired American, Hamlin",
-      "Restaurant Row (Dr. Phillips) — 10-15 minutes away",
+      "Hamlin Town Center – growing collection of restaurants and retail",
+      "First Watch – breakfast and brunch, Hamlin",
+      "Kona Grill – Asian-inspired American, Hamlin",
+      "Restaurant Row (Dr. Phillips) – 10-15 minutes away",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -571,21 +571,21 @@ export const neighborhoods: Neighborhood[] = [
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-garden",
     tagline: "Small-town charm with a thriving downtown",
     description:
-      "Winter Garden is one of Orlando's best-kept secrets — a historic small town with a revitalized downtown that has become one of the most desirable places to live in Central Florida. Plant Street's boutique shops, craft breweries, and farm-to-table restaurants create a walkable core, while surrounding communities offer everything from new construction to established estates.",
+      "Winter Garden is one of Orlando's best-kept secrets – a historic small town with a revitalized downtown that has become one of the most desirable places to live in Central Florida. Plant Street's boutique shops, craft breweries, and farm-to-table restaurants create a walkable core, while surrounding communities offer everything from new construction to established estates.",
     lifestyleTags: ["Downtown", "Historic", "Family-Friendly", "Trail Access"],
     highlights: [
       "Historic Plant Street with boutique shops and restaurants",
       "West Orange Trail for biking and running",
-      "Garden Theatre — restored historic performing arts venue",
+      "Garden Theatre – restored historic performing arts venue",
       "Mix of new construction and established neighborhoods",
     ],
     priceRange: "$350K - $2M+",
     lifestyle:
-      "Winter Garden has the small-town feel that most of Orlando lacks. Friday nights you walk downtown for dinner and live music at the Garden Theatre. Saturday mornings you bike the West Orange Trail and stop at the farmers market. Your kids know the neighbors' kids. The downtown is genuinely charming — not manufactured charm like some planned communities, but real character from a town that's been here since the 1800s and had the good sense to revitalize rather than tear down.",
+      "Winter Garden has the small-town feel that most of Orlando lacks. Friday nights you walk downtown for dinner and live music at the Garden Theatre. Saturday mornings you bike the West Orange Trail and stop at the farmers market. Your kids know the neighbors' kids. The downtown is genuinely charming – not manufactured charm like some planned communities, but real character from a town that's been here since the 1800s and had the good sense to revitalize rather than tear down.",
     bestFor: [
       "Families who want small-town character with modern conveniences",
       "Buyers who love walkable downtowns with independent restaurants and shops",
-      "Active lifestyle buyers — the West Orange Trail is a real asset",
+      "Active lifestyle buyers – the West Orange Trail is a real asset",
       "Buyers who want new construction options near a charming downtown",
     ],
     notIdealFor: [
@@ -622,10 +622,10 @@ export const neighborhoods: Neighborhood[] = [
       "Several new schools serving growing communities",
     ],
     dining: [
-      "The Whole Enchilada — Mexican, Plant Street staple",
-      "Crooked Can Brewing Company — craft brewery and taproom",
-      "Chef's Table at the Edgewater — upscale American",
-      "Pilars Martini — Latin-inspired, downtown favorite",
+      "The Whole Enchilada – Mexican, Plant Street staple",
+      "Crooked Can Brewing Company – craft brewery and taproom",
+      "Chef's Table at the Edgewater – upscale American",
+      "Pilars Martini – Latin-inspired, downtown favorite",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -634,9 +634,9 @@ export const neighborhoods: Neighborhood[] = [
     },
     localTips: [
       "The Winter Garden Farmers Market on Saturday mornings is one of the best in Central Florida",
-      "The West Orange Trail connects Winter Garden to downtown Orlando — 22 miles of paved trail for biking and running",
+      "The West Orange Trail connects Winter Garden to downtown Orlando – 22 miles of paved trail for biking and running",
       "The Garden Theatre hosts live performances, movies, and community events year-round",
-      "Plant Street is genuinely walkable — if you can live within biking distance of downtown, it transforms daily life",
+      "Plant Street is genuinely walkable – if you can live within biking distance of downtown, it transforms daily life",
     ],
   },
   {
@@ -664,9 +664,9 @@ export const neighborhoods: Neighborhood[] = [
       "Buyers from expensive metros who want space and value",
     ],
     notIdealFor: [
-      "Buyers who need a short commute to downtown Orlando — it's 35-45 minutes",
+      "Buyers who need a short commute to downtown Orlando – it's 35-45 minutes",
       "Those who want walkable urban living or nightlife",
-      "Buyers who want an established, mature neighborhood feel — much of Clermont is still growing",
+      "Buyers who want an established, mature neighborhood feel – much of Clermont is still growing",
     ],
     priceSegments: [
       {
@@ -697,10 +697,10 @@ export const neighborhoods: Neighborhood[] = [
       "Pinecrest Lakes Academy (top-ranked charter school in area)",
     ],
     dining: [
-      "The Crooked Spoon Gastropub — American gastropub, born from one of Central Florida's first food trucks",
-      "Root & Branch Bistro + Bar — upscale New American, Best of South Lake for dinner",
-      "Crafted Steakhouse — fine dining steakhouse, globally inspired",
-      "Huarike Peruvian Cuisine — authentic Peruvian",
+      "The Crooked Spoon Gastropub – American gastropub, born from one of Central Florida's first food trucks",
+      "Root & Branch Bistro + Bar – upscale New American, Best of South Lake for dinner",
+      "Crafted Steakhouse – fine dining steakhouse, globally inspired",
+      "Huarike Peruvian Cuisine – authentic Peruvian",
     ],
     commute: {
       downtown: "35-45 minutes",
@@ -708,9 +708,9 @@ export const neighborhoods: Neighborhood[] = [
       disney: "25-30 minutes",
     },
     localTips: [
-      "The Clermont Chain of Lakes connects several lakes for boating and kayaking — Lake Minneola and Lake Minnehaha are standouts",
-      "Lake Louisa State Park is the crown jewel for hiking, biking, and swimming — locals use it year-round",
-      "The Wellness Way corridor south of town is where the growth is happening — new communities, a sports campus, and a town center are all underway",
+      "The Clermont Chain of Lakes connects several lakes for boating and kayaking – Lake Minneola and Lake Minnehaha are standouts",
+      "Lake Louisa State Park is the crown jewel for hiking, biking, and swimming – locals use it year-round",
+      "The Wellness Way corridor south of town is where the growth is happening – new communities, a sports campus, and a town center are all underway",
       "The Florida Citrus Tower offers panoramic views of the rolling hills and is a good way to orient yourself when first visiting the area",
     ],
   },
@@ -731,17 +731,17 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$400K - $700K+",
     lifestyle:
-      "Minneola is where you get the new construction and the views without the fully built-out pricing of Winter Garden. Daily life centers around your community — the pool, the fitness center, the pickleball courts — with quick runs to Clermont or Winter Garden for dining and shopping. The drive east to Winter Garden's Plant Street takes about 10 minutes. It's a practical choice for families who want a new home in a growing area that still feels manageable in size.",
+      "Minneola is where you get the new construction and the views without the fully built-out pricing of Winter Garden. Daily life centers around your community – the pool, the fitness center, the pickleball courts – with quick runs to Clermont or Winter Garden for dining and shopping. The drive east to Winter Garden's Plant Street takes about 10 minutes. It's a practical choice for families who want a new home in a growing area that still feels manageable in size.",
     bestFor: [
       "Buyers who want new construction at a better value than Winter Garden",
       "Families who want proximity to both Clermont and Winter Garden",
-      "Active adults — Del Webb has a 55+ community here",
+      "Active adults – Del Webb has a 55+ community here",
       "Buyers who appreciate elevation and views in Florida",
     ],
     notIdealFor: [
-      "Buyers who want a walkable downtown on their doorstep — Minneola's commercial areas are still developing",
+      "Buyers who want a walkable downtown on their doorstep – Minneola's commercial areas are still developing",
       "Those looking for established, mature neighborhoods with character",
-      "Buyers who need quick access to downtown Orlando — it's 30-40 minutes",
+      "Buyers who need quick access to downtown Orlando – it's 30-40 minutes",
     ],
     priceSegments: [
       {
@@ -772,8 +772,8 @@ export const neighborhoods: Neighborhood[] = [
       "Lake County Schools district (Niche B)",
     ],
     dining: [
-      "Lake Minneola Inn Tiki Bar & Grill — American, waterfront casual dining",
-      "Minneola Grill — classic American diner, neighborhood staple",
+      "Lake Minneola Inn Tiki Bar & Grill – American, waterfront casual dining",
+      "Minneola Grill – classic American diner, neighborhood staple",
     ],
     commute: {
       downtown: "30-40 minutes",
@@ -781,10 +781,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "25-30 minutes",
     },
     localTips: [
-      "The Hills of Minneola offer some of the best elevated views in Central Florida — visit before you buy to see the terrain for yourself",
+      "The Hills of Minneola offer some of the best elevated views in Central Florida – visit before you buy to see the terrain for yourself",
       "Winter Garden's Plant Street is about 10 minutes east and has the dining and shopping scene that Minneola is still building",
       "Lake Minneola is part of the Clermont Chain of Lakes and offers boating and waterfront recreation",
-      "Highway 50 connects you to the Turnpike and is the main artery east to Orlando — morning commute times can stretch during peak hours",
+      "Highway 50 connects you to the Turnpike and is the main artery east to Orlando – morning commute times can stretch during peak hours",
     ],
   },
   {
@@ -797,14 +797,14 @@ export const neighborhoods: Neighborhood[] = [
       "Montverde is a small, unincorporated community of fewer than 2,000 residents that has maintained its rural, rustic character even as neighboring Clermont and Minneola have boomed. Home to the prestigious Montverde Academy and the luxury Bella Collina golf community, it attracts buyers who want acreage, privacy, and a slower pace of life. Oakland and Minneola are both within 10 minutes, and Winter Garden's downtown is about 15 minutes east.",
     lifestyleTags: ["Rural", "Equestrian", "Luxury", "Private"],
     highlights: [
-      "Bella Collina — luxury golf community with championship course",
-      "Montverde Academy — top-ranked private school (PreK-12, boarding available)",
+      "Bella Collina – luxury golf community with championship course",
+      "Montverde Academy – top-ranked private school (PreK-12, boarding available)",
       "Rolling hills and scenic Green Mountain Scenic Byway",
       "Equestrian properties with acreage",
     ],
     priceRange: "$500K - $2M+",
     lifestyle:
-      "Montverde is the quiet counterpoint to Clermont's growth. Life here moves slower. You might keep horses, play golf at Bella Collina, or simply enjoy the privacy of a few acres with mature oaks. The town itself has a handful of small restaurants and a general store feel. For groceries, dining out, or shopping, you drive to Clermont or Winter Garden. That trade-off is exactly what draws people here — the feeling that you're in the country while being 20 minutes from everything.",
+      "Montverde is the quiet counterpoint to Clermont's growth. Life here moves slower. You might keep horses, play golf at Bella Collina, or simply enjoy the privacy of a few acres with mature oaks. The town itself has a handful of small restaurants and a general store feel. For groceries, dining out, or shopping, you drive to Clermont or Winter Garden. That trade-off is exactly what draws people here – the feeling that you're in the country while being 20 minutes from everything.",
     bestFor: [
       "Buyers who want acreage, privacy, and a rural lifestyle",
       "Equestrian enthusiasts with horses or who want to ride",
@@ -813,7 +813,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     notIdealFor: [
       "Buyers who want walkable retail, dining, or entertainment nearby",
-      "Those on a budget under $500K — options are limited",
+      "Those on a budget under $500K – options are limited",
       "Buyers who want new construction neighborhoods with community amenities (outside of Bella Collina)",
     ],
     priceSegments: [
@@ -845,8 +845,8 @@ export const neighborhoods: Neighborhood[] = [
       "Lake County and Orange County schools serve the area depending on location",
     ],
     dining: [
-      "Cal's Kitchen — pizza and pasta, downtown Montverde",
-      "19th Hole — Bella Collina, members and guests",
+      "Cal's Kitchen – pizza and pasta, downtown Montverde",
+      "19th Hole – Bella Collina, members and guests",
     ],
     commute: {
       downtown: "35-45 minutes",
@@ -854,10 +854,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "25-35 minutes",
     },
     localTips: [
-      "The Green Mountain Scenic Byway runs through Montverde and is one of the most beautiful drives in Central Florida — rolling hills, citrus groves, and lake views",
-      "Bella Collina's Nick Faldo-designed championship golf course is the centerpiece of the community — even if you don't golf, the clubhouse dining is worth a visit",
-      "Montverde Academy has a 100% college acceptance rate and draws boarding students from 89 countries — it's a genuine institution",
-      "For dining and errands, plan on driving 10-15 minutes to Clermont or Winter Garden — Montverde itself has only a handful of spots",
+      "The Green Mountain Scenic Byway runs through Montverde and is one of the most beautiful drives in Central Florida – rolling hills, citrus groves, and lake views",
+      "Bella Collina's Nick Faldo-designed championship golf course is the centerpiece of the community – even if you don't golf, the clubhouse dining is worth a visit",
+      "Montverde Academy has a 100% college acceptance rate and draws boarding students from 89 countries – it's a genuine institution",
+      "For dining and errands, plan on driving 10-15 minutes to Clermont or Winter Garden – Montverde itself has only a handful of spots",
     ],
   },
   {
@@ -870,14 +870,14 @@ export const neighborhoods: Neighborhood[] = [
       "Oakland is a tiny historic town of about 3,500 residents tucked between Winter Garden and Clermont along Highway 50. Incorporated in 1887 and bordered by Lake Apopka and Johns Lake, it offers a rare combination of old Florida charm, nature access, and new construction. The West Orange Trail runs directly through town, and the Oakland Nature Preserve provides 150 acres of free hiking and boardwalk trails. Winter Garden's Plant Street is about 5 minutes east.",
     lifestyleTags: ["Nature", "Historic", "Trail Access", "Small Town"],
     highlights: [
-      "Oakland Nature Preserve — 150 acres with 13+ miles of free trails",
+      "Oakland Nature Preserve – 150 acres with 13+ miles of free trails",
       "Direct access to the 22-mile West Orange Trail",
       "Oakland Park master-planned community by Crescent Communities",
       "Small-town character with Winter Garden's amenities minutes away",
     ],
     priceRange: "$500K - $1M+",
     lifestyle:
-      "Oakland is the kind of place people stumble onto and then never want to leave. You bike the West Orange Trail to Winter Garden for coffee, hike the boardwalk at the Nature Preserve before work, and wave to your neighbors from your front porch. The town has managed to maintain its small-town feel despite the growth exploding around it. There are no major commercial strips — your daily life connects to Winter Garden's downtown for dining and shopping. It's quiet, green, and genuinely charming.",
+      "Oakland is the kind of place people stumble onto and then never want to leave. You bike the West Orange Trail to Winter Garden for coffee, hike the boardwalk at the Nature Preserve before work, and wave to your neighbors from your front porch. The town has managed to maintain its small-town feel despite the growth exploding around it. There are no major commercial strips – your daily life connects to Winter Garden's downtown for dining and shopping. It's quiet, green, and genuinely charming.",
     bestFor: [
       "Nature lovers who want trail access and preserve hiking as part of daily life",
       "Families who want a tight-knit small-town community",
@@ -886,7 +886,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     notIdealFor: [
       "Buyers who want dining, retail, and entertainment within their own town",
-      "Those who need a large selection of housing inventory — Oakland is small",
+      "Those who need a large selection of housing inventory – Oakland is small",
       "Buyers who need quick access to I-4 or the attractions corridor",
     ],
     priceSegments: [
@@ -918,7 +918,7 @@ export const neighborhoods: Neighborhood[] = [
       "Foundation Academy (private, PreK-12, nearby in Winter Garden)",
     ],
     dining: [
-      "Winter Garden's Plant Street — dining, breweries, and cafes, 5 minutes away",
+      "Winter Garden's Plant Street – dining, breweries, and cafes, 5 minutes away",
     ],
     commute: {
       downtown: "25-35 minutes",
@@ -926,10 +926,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "20-25 minutes",
     },
     localTips: [
-      "The Oakland Nature Preserve is free and open 365 days a year — the boardwalk to Lake Apopka is the highlight",
-      "Oakland Park's community design emphasizes front porches and Live Oak-lined streets — it's one of the most architecturally intentional communities in the corridor",
-      "The West Orange Trail is the spine of outdoor life here — it connects you all the way to Apopka in one direction and downtown Winter Garden in the other",
-      "Oakland is technically in Orange County while its neighbors Clermont and Minneola are in Lake County — school districts and taxes differ accordingly",
+      "The Oakland Nature Preserve is free and open 365 days a year – the boardwalk to Lake Apopka is the highlight",
+      "Oakland Park's community design emphasizes front porches and Live Oak-lined streets – it's one of the most architecturally intentional communities in the corridor",
+      "The West Orange Trail is the spine of outdoor life here – it connects you all the way to Apopka in one direction and downtown Winter Garden in the other",
+      "Oakland is technically in Orange County while its neighbors Clermont and Minneola are in Lake County – school districts and taxes differ accordingly",
     ],
   },
   {
@@ -943,23 +943,23 @@ export const neighborhoods: Neighborhood[] = [
     lifestyleTags: ["Affordable", "New Construction", "Active Adult", "Growing"],
     highlights: [
       "Most affordable new construction in the west Lake County corridor",
-      "Trilogy Orlando — 55+ active adult resort community by Shea Homes",
+      "Trilogy Orlando – 55+ active adult resort community by Shea Homes",
       "Rapid growth with multiple national builders active",
       "Proximity to Clermont's lakes and recreation",
     ],
     priceRange: "$300K - $600K+",
     lifestyle:
-      "Groveland is where buyers come when they want a new home at a price point that's hard to find elsewhere in the Orlando metro. Daily life is community-centered — your neighborhood pool, the fitness center, weekend cookouts. For dining and shopping beyond the basics, you drive 10-15 minutes to Clermont. The town is growing fast, with new commercial development following the residential boom, but it's honest to say the infrastructure is still catching up. Buyers here are trading proximity for value and betting on the area's trajectory.",
+      "Groveland is where buyers come when they want a new home at a price point that's hard to find elsewhere in the Orlando metro. Daily life is community-centered – your neighborhood pool, the fitness center, weekend cookouts. For dining and shopping beyond the basics, you drive 10-15 minutes to Clermont. The town is growing fast, with new commercial development following the residential boom, but it's honest to say the infrastructure is still catching up. Buyers here are trading proximity for value and betting on the area's trajectory.",
     bestFor: [
       "First-time buyers who want new construction under $400K",
-      "Active adults — Trilogy Orlando is one of the best 55+ communities in Central Florida",
+      "Active adults – Trilogy Orlando is one of the best 55+ communities in Central Florida",
       "Buyers relocating from expensive markets who want maximum home for their dollar",
       "Families who don't mind a longer commute in exchange for a newer, larger home",
     ],
     notIdealFor: [
-      "Buyers who need a short commute to downtown Orlando — it's 45-55 minutes",
+      "Buyers who need a short commute to downtown Orlando – it's 45-55 minutes",
       "Those who want established dining, shopping, and entertainment in their town",
-      "Buyers focused on top-rated schools — Groveland's ratings are mixed",
+      "Buyers focused on top-rated schools – Groveland's ratings are mixed",
     ],
     priceSegments: [
       {
@@ -987,12 +987,12 @@ export const neighborhoods: Neighborhood[] = [
       "South Lake High School (Niche B-)",
       "Groveland Elementary (Niche C, GreatSchools 3/10)",
       "Gray Middle School (Niche C+, GreatSchools 4/10)",
-      "Lake County Schools district (Niche B) — newer schools planned as communities grow",
+      "Lake County Schools district (Niche B) – newer schools planned as communities grow",
     ],
     dining: [
-      "Red Wing Restaurant — American fine dining in a country setting, local institution",
-      "The Butcher Block Kitchen — American, West Orange St",
-      "Papi Pincho — Latin cuisine",
+      "Red Wing Restaurant – American fine dining in a country setting, local institution",
+      "The Butcher Block Kitchen – American, West Orange St",
+      "Papi Pincho – Latin cuisine",
     ],
     commute: {
       downtown: "45-55 minutes",
@@ -1000,10 +1000,10 @@ export const neighborhoods: Neighborhood[] = [
       disney: "30-35 minutes",
     },
     localTips: [
-      "Red Wing Restaurant on State Road 33 is the hidden gem — fine dining in a country setting that surprises first-time visitors",
-      "Trilogy Orlando's amenities are genuinely resort-level — The Grille restaurant, spa, athletic club, and 30+ clubs and activities",
+      "Red Wing Restaurant on State Road 33 is the hidden gem – fine dining in a country setting that surprises first-time visitors",
+      "Trilogy Orlando's amenities are genuinely resort-level – The Grille restaurant, spa, athletic club, and 30+ clubs and activities",
       "Clermont's dining and recreation are 10-15 minutes north, which is where most Groveland residents go for a night out",
-      "New commercial development is following the residential boom — expect more retail and restaurants along Highway 27 in the coming years",
+      "New commercial development is following the residential boom – expect more retail and restaurants along Highway 27 in the coming years",
     ],
   },
   {
@@ -1064,9 +1064,9 @@ export const neighborhoods: Neighborhood[] = [
       "Forest Lake Academy (private)",
     ],
     dining: [
-      "Hall's On 5th — food hall with 6 vendors, downtown",
-      "The Back Room Steakhouse — aged Black Angus, prime rib",
-      "Garibaldi Mexican Restaurant — traditional Mexican, family-owned",
+      "Hall's On 5th – food hall with 6 vendors, downtown",
+      "The Back Room Steakhouse – aged Black Angus, prime rib",
+      "Garibaldi Mexican Restaurant – traditional Mexican, family-owned",
     ],
     commute: {
       downtown: "30-35 minutes",
@@ -1075,9 +1075,9 @@ export const neighborhoods: Neighborhood[] = [
     },
     localTips: [
       "The Wekiva Parkway (SR-429) extension makes commuting south significantly faster than using US-441 through town",
-      "Wekiwa Springs State Park fills to capacity on weekends by late morning — arrive before 10 AM",
+      "Wekiwa Springs State Park fills to capacity on weekends by late morning – arrive before 10 AM",
       "Kelly Park / Rock Springs north of Apopka offers a lazy-river tubing experience that locals prefer over the busier Wekiwa main swimming area",
-      "Downtown Apopka around 5th Street is in the middle of a revitalization wave — Hall's On 5th is the anchor",
+      "Downtown Apopka around 5th Street is in the middle of a revitalization wave – Hall's On 5th is the anchor",
     ],
   },
   {
@@ -1097,7 +1097,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$350K - $1M+",
     lifestyle:
-      "Lake Mary residents enjoy a well-manicured suburban lifestyle with strong community infrastructure. Weekday mornings mean a quick I-4 commute to downtown Orlando or a walk to one of the area's many corporate offices. Weekends center on Colonial TownPark — Saturday farmers market, brunch at Boca, or the annual Lake Mary-Heathrow Festival of the Arts. The extensive trail system makes it easy to bike or walk without ever hitting a major road.",
+      "Lake Mary residents enjoy a well-manicured suburban lifestyle with strong community infrastructure. Weekday mornings mean a quick I-4 commute to downtown Orlando or a walk to one of the area's many corporate offices. Weekends center on Colonial TownPark – Saturday farmers market, brunch at Boca, or the annual Lake Mary-Heathrow Festival of the Arts. The extensive trail system makes it easy to bike or walk without ever hitting a major road.",
     bestFor: [
       "Families prioritizing top-rated public schools (Seminole County district)",
       "Corporate professionals working at Lake Mary/Heathrow office parks",
@@ -1139,10 +1139,10 @@ export const neighborhoods: Neighborhood[] = [
       "Lake Mary Preparatory School (private, PreK-12)",
     ],
     dining: [
-      "FishBones — seafood, steaks, and sushi",
-      "Boca — upscale American, Colonial TownPark",
-      "Ruth's Chris Steak House — classic steakhouse",
-      "Pisco Peruvian Gastrobar — Peruvian, craft cocktails",
+      "FishBones – seafood, steaks, and sushi",
+      "Boca – upscale American, Colonial TownPark",
+      "Ruth's Chris Steak House – classic steakhouse",
+      "Pisco Peruvian Gastrobar – Peruvian, craft cocktails",
     ],
     commute: {
       downtown: "25-30 minutes",
@@ -1150,8 +1150,8 @@ export const neighborhoods: Neighborhood[] = [
       disney: "40-55 minutes",
     },
     localTips: [
-      "The Lake Mary Farmers Market runs every Saturday at Central Park — fresh produce, baked goods, and local vendors",
-      "I-4 congestion between Lake Mary and downtown is worst 7-9:30 AM southbound — the SunRail commuter train from the Lake Mary station is a real alternative",
+      "The Lake Mary Farmers Market runs every Saturday at Central Park – fresh produce, baked goods, and local vendors",
+      "I-4 congestion between Lake Mary and downtown is worst 7-9:30 AM southbound – the SunRail commuter train from the Lake Mary station is a real alternative",
       "Colonial TownPark hosts WineART Wednesday on the first Wednesday of each month with food trucks and live music",
       "The Heathrow community just south of Lake Mary proper has some of the highest-rated school zones and most established landscaping in the area",
     ],
@@ -1178,12 +1178,12 @@ export const neighborhoods: Neighborhood[] = [
       "Buyers who want walkable downtown character and a food/arts scene without Orlando prices",
       "Families who want Seminole County schools at lower price points than Lake Mary",
       "Remote workers and creatives drawn to the historic downtown vibe and waterfront",
-      "Boaters and water lovers — Lake Monroe provides direct St. Johns River access",
+      "Boaters and water lovers – Lake Monroe provides direct St. Johns River access",
     ],
     notIdealFor: [
       "Buyers who need a short commute to Disney or south Orlando",
       "Those who want brand-new turnkey subdivisions with full amenity packages",
-      "Buyers uncomfortable with a city still in transition — some blocks are revitalized, others aren't",
+      "Buyers uncomfortable with a city still in transition – some blocks are revitalized, others aren't",
     ],
     priceSegments: [
       {
@@ -1215,10 +1215,10 @@ export const neighborhoods: Neighborhood[] = [
       "Seminole High School",
     ],
     dining: [
-      "The Old Jailhouse — New American, housed in a preserved jailhouse",
-      "The Tennessee Truffle — progressive Southern, farm-to-table",
-      "Buster's European Beer Hall — European pub fare, 30+ craft beers",
-      "The Breezeway — fresh seafood and steaks, craft cocktails, downtown patio",
+      "The Old Jailhouse – New American, housed in a preserved jailhouse",
+      "The Tennessee Truffle – progressive Southern, farm-to-table",
+      "Buster's European Beer Hall – European pub fare, 30+ craft beers",
+      "The Breezeway – fresh seafood and steaks, craft cocktails, downtown patio",
     ],
     commute: {
       downtown: "30-35 minutes",
@@ -1228,7 +1228,7 @@ export const neighborhoods: Neighborhood[] = [
     localTips: [
       "The Saturday Farmers & Artisan Market on First Street (10 AM - 3 PM) is the social anchor of the week for downtown residents",
       "Sanford's Alive After 5 monthly street parties on First Street are the best way to sample multiple downtown restaurants in one evening",
-      "Lake Monroe offers direct boating access to the St. Johns River system — the Sanford marina has public boat ramps",
+      "Lake Monroe offers direct boating access to the St. Johns River system – the Sanford marina has public boat ramps",
       "The SunRail commuter train has a Sanford station providing car-free access to downtown Orlando",
     ],
   },

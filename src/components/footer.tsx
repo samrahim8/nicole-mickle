@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer data-site-footer>
-      {/* CTA — white, separated from dark footer */}
+      {/* CTA – white, separated from dark footer */}
       <section className="py-28 lg:py-36 border-t border-neutral-100">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="max-w-2xl mx-auto text-center">
@@ -32,7 +32,7 @@ export function Footer() {
         </div>
       </section>
 
-      {/* Footer links — forest green */}
+      {/* Footer links – forest green */}
       <div className="bg-forest">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 py-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10">

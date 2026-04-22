@@ -66,7 +66,7 @@ body::before {
   background-size: 256px 256px;
 }
 
-/* Green spine — magazine detail */
+/* Green spine – magazine detail */
 body::after {
   content: "";
   position: fixed;

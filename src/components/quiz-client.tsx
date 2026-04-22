@@ -41,7 +41,7 @@ const questions: Question[] = [
     options: [
       { label: "Walkability and culture", value: "walkable" },
       { label: "Space and privacy", value: "space" },
-      { label: "New everything — home, schools, amenities", value: "new" },
+      { label: "New everything – home, schools, amenities", value: "new" },
       { label: "Great dining and convenience", value: "dining" },
       { label: "Community and connection", value: "community" },
     ],
@@ -79,7 +79,7 @@ const questions: Question[] = [
       { label: "Downtown Orlando", value: "downtown" },
       { label: "The attractions corridor (Disney, Universal)", value: "attractions" },
       { label: "Orlando International Airport", value: "airport" },
-      { label: "I work remotely — flexibility is key", value: "remote" },
+      { label: "I work remotely – flexibility is key", value: "remote" },
     ],
   },
 ];
@@ -304,7 +304,7 @@ export function QuizClient() {
             </motion.div>
           )}
 
-          {/* Results — stays dark green for contrast */}
+          {/* Results – stays dark green for contrast */}
           {showResults && (
             <motion.div
               key="results"
@@ -393,7 +393,7 @@ export function QuizClient() {
                     </h3>
                     <p className="text-[16px] sm:text-[14px] text-white/50 mb-8">
                       Detailed neighborhood breakdowns, price points, schools, and
-                      Nicole&apos;s personal recommendations — delivered to your inbox.
+                      Nicole&apos;s personal recommendations – delivered to your inbox.
                     </p>
                     <form
                       onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}

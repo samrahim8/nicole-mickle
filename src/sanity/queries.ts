@@ -27,7 +27,7 @@ export const postsListQuery = defineQuery(`
     }
 `);
 
-// All slugs — used for generateStaticParams.
+// All slugs – used for generateStaticParams.
 export const postSlugsQuery = defineQuery(`
   *[_type == "post" && defined(slug.current)][].slug.current
 `);
@@ -66,7 +66,7 @@ export const postBySlugQuery = defineQuery(`
   }
 `);
 
-// Related posts — same category, excluding current post, newest first.
+// Related posts – same category, excluding current post, newest first.
 export const relatedPostsQuery = defineQuery(`
   *[
     _type == "post"

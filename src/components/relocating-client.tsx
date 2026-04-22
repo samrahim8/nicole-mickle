@@ -35,10 +35,10 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               </TextReveal>
               <FadeIn delay={0.4}>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mt-8 max-w-lg">
-                  Moving to a city you don&apos;t know yet is one of the biggest
-                  decisions you&apos;ll make. The neighborhood matters more than the
-                  house. The commute matters more than the countertops. After 30
-                  years here, I help you get those decisions right the first time.
+                  You&apos;re not just buying a home -- you&apos;re choosing a
+                  lifestyle. The lake access. The Friday night restaurants. The
+                  drive to work on Monday. After 30 years living and working in
+                  Orlando, I match you to the life, not just the house.
                 </p>
               </FadeIn>
               <FadeIn delay={0.6}>
@@ -276,10 +276,10 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             <StaggerChild>
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">
-                  What&apos;s the cost of living like compared to other major cities?
+                  What are the top rated schools in the Orlando area?
                 </h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  Orlando is significantly more affordable than cities like New York, San Francisco, or Boston. There is no state income tax in Florida, which makes a real difference in take-home pay. Housing costs vary widely by neighborhood, but you can find quality homes in excellent school districts at price points that would be impossible in many Northeast or West Coast metros.
+                  Orange County and Seminole County both have highly rated public school districts with multiple A-rated schools. Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private options including Trinity Prep, The Geneva School, and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.
                 </p>
               </div>
             </StaggerChild>

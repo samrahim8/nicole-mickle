@@ -52,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Fetch blog posts from Sanity. Fail gracefully — if Sanity is unreachable
+  // Fetch blog posts from Sanity. Fail gracefully – if Sanity is unreachable
   // we still ship a sitemap with everything else so the build never breaks.
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {

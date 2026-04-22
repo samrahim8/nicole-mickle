@@ -11,7 +11,7 @@ import type { Neighborhood } from "@/lib/neighborhoods";
 gsap.registerPlugin(ScrollTrigger);
 
 function splitOnDash(text: string): { name: string; detail: string } | null {
-  const idx = text.indexOf(" — ");
+  const idx = text.indexOf(" – ");
   if (idx === -1) return null;
   return { name: text.slice(0, idx), detail: text.slice(idx + 3) };
 }
@@ -34,7 +34,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero image — slow parallax (moves at 80% scroll speed)
+      // Hero image – slow parallax (moves at 80% scroll speed)
       if (heroImageRef.current) {
         gsap.to(heroImageRef.current, {
           yPercent: -12,
@@ -48,7 +48,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         });
       }
 
-      // Stats band — numbers slide up with stagger
+      // Stats band – numbers slide up with stagger
       if (statsBandRef.current) {
         const statItems = statsBandRef.current.querySelectorAll("[data-stat]");
         gsap.from(statItems, {
@@ -65,7 +65,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         });
       }
 
-      // Pull quote — word-by-word reveal scrubbed to scroll
+      // Pull quote – word-by-word reveal scrubbed to scroll
       if (pullQuoteRef.current) {
         const words = pullQuoteRef.current.querySelectorAll("[data-word]");
         gsap.set(words, { opacity: 0.15, y: 8 });
@@ -83,7 +83,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         });
       }
 
-      // Section headlines — subtle scale from 1.02 to 1.0
+      // Section headlines – subtle scale from 1.02 to 1.0
       sectionHeadlinesRef.current.forEach((el) => {
         if (!el) return;
         gsap.from(el, {
@@ -98,7 +98,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         });
       });
 
-      // Dark sections — background parallax feel
+      // Dark sections – background parallax feel
       darkSectionsRef.current.forEach((el) => {
         if (!el) return;
         const inner = el.querySelector("[data-parallax-inner]");

@@ -21,13 +21,13 @@ const steps = [
     number: "03",
     title: "Contract & Negotiation",
     description:
-      "The builder's contract is written to protect the builder. I review every line, negotiate closing cost credits, upgrade packages, and lot premiums. Having your own agent costs you nothing — the builder pays the commission either way.",
+      "The builder's contract is written to protect the builder. I review every line, negotiate closing cost credits, upgrade packages, and lot premiums. Having your own agent costs you nothing. The builder pays the commission either way.",
   },
   {
     number: "04",
     title: "Build & Close",
     description:
-      "I monitor the build timeline, attend key inspections, and make sure everything is right before you sign. When timelines shift — and they do — I keep you informed and hold the builder accountable.",
+      "I monitor the build timeline, attend key inspections, and make sure everything is right before you sign. When timelines shift, and they do, I keep you informed and hold the builder accountable.",
   },
 ];
 
@@ -38,8 +38,8 @@ const builders = [
 
 const whyAgent = [
   {
-    title: "The builder's sales agent works for the builder",
-    description: "They're trained to sell the builder's inventory at the builder's price with the builder's preferred lender. Your own agent represents your interests, reviews every contract detail, and negotiates on your behalf.",
+    title: "Builder pricing includes buyer representation",
+    description: "Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process.",
   },
   {
     title: "It costs you nothing",
@@ -153,7 +153,7 @@ export function NewConstructionClient() {
                   Why You Need Your Own Agent
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-white">
-                  What the builder won&apos;t tell you
+                  The value of your own representation
                 </h2>
               </FadeIn>
             </div>
@@ -289,7 +289,7 @@ export function NewConstructionClient() {
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">Do I need my own realtor when buying new construction?</h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  Yes. The sales agent at the model home represents the builder, not you. Having your own agent costs you nothing as a buyer -- the builder pays the commission either way. Your agent reviews the contract, negotiates incentives, monitors the build timeline, and protects your interests throughout the process.
+                  Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process. Your agent reviews the contract, negotiates incentives, monitors the build timeline, and ensures you are represented from start to finish.
                 </p>
               </div>
             </StaggerChild>
@@ -305,7 +305,7 @@ export function NewConstructionClient() {
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">What upgrades are worth the investment?</h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  Structural upgrades like additional electrical outlets, plumbing rough-ins, and expanded garages are nearly impossible to add later and tend to be worth the cost. Kitchen and bathroom finishes also add value. Cosmetic upgrades like premium paint or lighting fixtures are often cheaper to do yourself after closing.
+                  Focus on what you can't easily change later. Ceiling heights, additional electrical, plumbing rough-ins for future bathrooms, extended lanais, and flooring upgrades tend to be worth the cost during the build. Cosmetic touches like premium paint or lighting fixtures are often cheaper to do yourself after closing.
                 </p>
               </div>
             </StaggerChild>

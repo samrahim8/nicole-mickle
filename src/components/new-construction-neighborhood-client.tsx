@@ -148,16 +148,16 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                 Your Advantage
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-white">
-                Why you need your own agent for new construction
+                The value of your own representation
               </h2>
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <SlideIn direction="right">
                 <div className="space-y-8">
                   <div className="border-l-[3px] border-white/20 pl-8">
-                    <h3 className="text-base font-medium text-white mb-2">The builder&apos;s agent works for the builder</h3>
+                    <h3 className="text-base font-medium text-white mb-2">Builder pricing includes buyer representation</h3>
                     <p className="text-[15px] text-white/60 leading-[1.8]">
-                      The sales team at the model home is employed by the builder. Your own agent represents your interests, reviews contracts, and negotiates on your behalf.
+                      Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process.
                     </p>
                   </div>
                   <div className="border-l-[3px] border-white/20 pl-8">

@@ -12,7 +12,7 @@ const steps = [
     number: "01",
     title: "Discovery Call",
     description:
-      "We start with a conversation about your lifestyle, budget, commute needs, school preferences, and timeline. I ask the questions most agents don't think of.",
+      "We start with a conversation about your lifestyle, budget, commute needs, school preferences, and timeline.",
   },
   {
     number: "02",
@@ -24,7 +24,7 @@ const steps = [
     number: "03",
     title: "Virtual & In-Person Tours",
     description:
-      "Before you fly down, we can tour homes virtually. When you visit, I curate an efficient itinerary so you see the right homes in the right areas.",
+      "Before you fly down, we can tour homes virtually. When you visit, I curate an efficient itinerary so you see the right homes in the right areas that connect with you.",
   },
   {
     number: "04",
@@ -38,12 +38,12 @@ const reasons = [
   {
     title: "30 years of Orlando knowledge",
     description:
-      "I've watched every neighborhood in this city evolve. I know which areas are appreciating, which are overbuilt, and which are genuinely great places to live.",
+      "I've spent years observing how each neighborhood in this city evolves, its growth, character, and direction, so I can help you align not just with a home, but with a community that truly fits.",
   },
   {
     title: "Mortgage lending background",
     description:
-      "Before real estate, I worked in mortgage lending. I understand financing at a level most agents don't, and I help you avoid costly surprises.",
+      "My years in mortgage lending give me a financial insight that helps me connect you with the right professionals and structure a smooth, predictable closing.",
   },
   {
     title: "Relocation is my specialty",
@@ -53,16 +53,17 @@ const reasons = [
   {
     title: "Honest, not salesy",
     description:
-      "I'll tell you if a neighborhood isn't right for you. I'll tell you if a home is overpriced. My job is to help you make a great decision, not close a deal.",
+      "I offer candid insight aligned with your goals. My job is to guide you to the right choice, not push you toward a deal.",
   },
 ];
 
 const originCities = [
   { name: "New York", slug: "new-york" },
-  { name: "Chicago", slug: "chicago" },
-  { name: "Boston", slug: "boston" },
+  { name: "Illinois", slug: "illinois" },
+  { name: "Massachusetts", slug: "massachusetts" },
   { name: "Washington, D.C.", slug: "washington-dc" },
-  { name: "Atlanta", slug: "atlanta" },
+  { name: "Georgia", slug: "georgia" },
+  { name: "California", slug: "california" },
 ];
 
 const employers = [
@@ -77,6 +78,7 @@ const employers = [
   "PepsiCo",
   "Frito-Lay",
   "Walgreens",
+  "Orlando Utilities Commission (OUC)",
 ];
 
 const faqSchema = {
@@ -109,10 +111,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "What's the cost of living like compared to other major cities?",
+      name: "What are the top rated schools in the Orlando area?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Orlando is significantly more affordable than cities like New York, San Francisco, or Boston. There is no state income tax in Florida, which makes a real difference in take-home pay. Housing costs vary widely by neighborhood, but you can find quality homes in excellent school districts at price points that would be impossible in many Northeast or West Coast metros.",
+        text: "Orange County and Seminole County both have highly rated public school districts with multiple A-rated schools. Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private options including Trinity Prep, The Geneva School, and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.",
       },
     },
   ],

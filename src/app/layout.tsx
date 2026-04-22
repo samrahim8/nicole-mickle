@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     types: {
       "application/rss+xml": [
-        { url: "/blog/rss.xml", title: "Nicole Mickle — Journal" },
+        { url: "/blog/rss.xml", title: "Nicole Mickle – Journal" },
       ],
     },
   },

@@ -16,7 +16,7 @@ const PAGE_SIZE = 12;
 export const metadata: Metadata = {
   title: "Journal",
   description:
-    "Orlando relocation, new construction, and neighborhood insights from Nicole Mickle — 30 years of local expertise, written for buyers, sellers, and anyone dreaming about life in Central Florida.",
+    "Orlando relocation, new construction, and neighborhood insights from Nicole Mickle – 30 years of local expertise, written for buyers, sellers, and anyone dreaming about life in Central Florida.",
   openGraph: {
     title: "Journal | Nicole Mickle",
     description:
@@ -59,7 +59,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
             </h1>
             <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
               Relocation playbooks, neighborhood deep-dives, and new construction
-              insights — written for the people I&apos;d actually invite over.
+              insights – written for the people I&apos;d actually invite over.
             </p>
           </div>
         </div>
