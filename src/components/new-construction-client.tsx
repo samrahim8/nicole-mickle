@@ -119,7 +119,7 @@ export function NewConstructionClient() {
                       5.0
                     </p>
                     <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      Google Rating, 26 Reviews
+                      Google Rating
                     </p>
                   </div>
                   <div className="border-b border-white/15 pb-6">
