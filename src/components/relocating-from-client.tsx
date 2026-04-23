@@ -61,13 +61,13 @@ export function RelocatingFromClient({ city, recommended }: Props) {
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <SlideIn direction="left">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                Cost of Living
+                Top Rated Schools
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
-                {city.name} vs. Orlando
+                Orlando Schools
               </h2>
               <p className="text-[15px] text-neutral-500 leading-[1.8]">
-                {city.costComparison}
+                {city.schoolComparison}
               </p>
             </SlideIn>
             <SlideIn direction="right">

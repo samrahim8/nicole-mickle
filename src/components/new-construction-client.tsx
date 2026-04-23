@@ -307,7 +307,7 @@ export function NewConstructionClient() {
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">What upgrades are worth the investment?</h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  The most valuable upgrades are the ones that enhance both structure and long-term livability. Elevated ceiling heights, well-planned electrical upgrades, plumbing rough-ins for future flexibility, expanded outdoor living areas like extended lanais, and flooring selections that complement the builder's overall quality. Cosmetic touches like premium paint or lighting fixtures are often cheaper to do yourself after closing.
+                  The most valuable upgrades in new construction are the ones that enhance both structure and long-term livability, including elevated ceiling heights and thoughtful design, well-planned electrical upgrades, plumbing rough-ins for future flexibility, expanded outdoor living areas like extended lanais, and flooring selections that complement the builder's overall quality and stand the test of time.
                 </p>
               </div>
             </StaggerChild>

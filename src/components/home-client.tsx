@@ -393,9 +393,14 @@ export function HomeClient({
           {/* Google rating badge */}
           <FadeIn>
             <div className="mt-16 pt-12 border-t border-neutral-100 text-center">
-              <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-300">
+              <a
+                href="https://www.google.com/search?q=Nicole+Mickle+Olympus+Executive+Realty+reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] tracking-[0.2em] uppercase text-neutral-300 hover:text-forest transition-colors duration-300"
+              >
                 5.0 Google Rating
-              </p>
+              </a>
             </div>
           </FadeIn>
         </div>
