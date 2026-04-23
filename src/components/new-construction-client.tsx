@@ -111,34 +111,36 @@ export function NewConstructionClient() {
             </div>
 
             {/* Proof points */}
-            <FadeIn delay={0.5} className="lg:col-span-4 lg:col-start-9">
-              <div className="space-y-6">
-                <div className="border-b border-neutral-100 pb-6">
-                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-charcoal">
-                    8
-                  </p>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mt-1">
-                    National Builder Partners
-                  </p>
+            <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
+              <FadeIn delay={0.5}>
+                <div className="bg-forest p-8 lg:p-10 space-y-6">
+                  <div className="border-b border-white/15 pb-6">
+                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
+                      5.0
+                    </p>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
+                      Google Rating, 26 Reviews
+                    </p>
+                  </div>
+                  <div className="border-b border-white/15 pb-6">
+                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
+                      30 years
+                    </p>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
+                      In the Orlando market
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
+                      0% state tax
+                    </p>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
+                      No Florida income tax
+                    </p>
+                  </div>
                 </div>
-                <div className="border-b border-neutral-100 pb-6">
-                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-charcoal">
-                    6
-                  </p>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mt-1">
-                    Active Construction Areas
-                  </p>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-charcoal">
-                    $0
-                  </p>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mt-1">
-                    Cost to You. Builder Pays.
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>
