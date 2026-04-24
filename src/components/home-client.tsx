@@ -468,10 +468,10 @@ export function HomeClient({
               <div className="h-[1px] bg-neutral-100 flex-1 hidden md:block" />
               <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
                 <span className="text-[12px] text-neutral-300 tracking-wide">
-                  Top 125 RE Instagram Influencers (Feedspot)
+                  Top 125 RE Instagram Influencers (Feedspot, 2019)
                 </span>
                 <span className="text-[12px] text-neutral-300 tracking-wide">
-                  Social Media Marketer of the Year (Orlando Real Producers)
+                  Social Media Marketer of the Year (Orlando Real Producers, 2019)
                 </span>
               </div>
             </div>
