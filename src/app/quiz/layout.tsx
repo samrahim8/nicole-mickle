@@ -3,17 +3,5 @@ export default function QuizLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            [data-site-header],
-            [data-site-footer] { display: none !important; }
-          `,
-        }}
-      />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

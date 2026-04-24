@@ -6,16 +6,10 @@ import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
 
 const milestones = [
   {
-    period: "1996 \u2013 2005",
-    title: "Mortgage & Closings",
+    period: "2020 \u2013 Present",
+    title: "Relocation & New Construction",
     description:
-      "Senior Mortgage Broker at PMC Lending, handling refinancing and conventional loans with a specialty in bankruptcy. Founded Statewide Closers, a mobile notary closing company that grew to cover all Florida counties and eventually expanded nationwide as APAT Settlement Services.",
-  },
-  {
-    period: "1996 \u2013 2019",
-    title: "APAT Settlement Services",
-    description:
-      "Built and ran a nationwide mobile title closing company for 23 years, coordinating closings for mortgage brokers, title companies, and real estate brokerages across the country, including London, England and Puerto Rico.",
+      "Focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
   },
   {
     period: "2012 \u2013 2020",
@@ -24,10 +18,16 @@ const milestones = [
       "Started at Reliance Realty as a transaction coordinator for an RE attorney/broker, then became a listing agent negotiating short sales. Developed hedge fund and investor relationships, closing 200+ short sales in two years. Pivoted to Instagram and social media marketing, building a global relocation network.",
   },
   {
-    period: "2020 \u2013 Present",
-    title: "Relocation & New Construction",
+    period: "1996 \u2013 2019",
+    title: "APAT Settlement Services",
     description:
-      "Focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
+      "Built and ran a nationwide mobile title closing company for 23 years, coordinating closings for mortgage brokers, title companies, and real estate brokerages across the country, including London, England and Puerto Rico.",
+  },
+  {
+    period: "1996 \u2013 2005",
+    title: "Mortgage & Closings",
+    description:
+      "Senior Mortgage Broker at PMC Lending, handling refinancing and conventional loans with a specialty in bankruptcy. Founded Statewide Closers, a mobile notary closing company that grew to cover all Florida counties and eventually expanded nationwide as APAT Settlement Services.",
   },
 ];
 
@@ -206,39 +206,6 @@ export function AboutClient() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 lg:py-44 bg-cream">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
-                Let&apos;s work together
-              </h2>
-              <p className="text-[15px] text-neutral-500 mb-10">
-                Whether you&apos;re moving to Orlando or building your next home,
-                I&apos;d love to help you get it right.
-              </p>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
-              >
-                Get in touch
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                >
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
     </>
   );
 }
