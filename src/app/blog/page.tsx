@@ -71,7 +71,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
           {posts.length === 0 ? (
             <EmptyState />
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 sm:gap-y-16">
               {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
@@ -112,9 +112,9 @@ function PostCard({ post }: { post: PostListItem }) {
     : null;
 
   return (
-    <article>
+    <article className="bg-white border border-neutral-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)] overflow-hidden sm:bg-transparent sm:border-0 sm:shadow-none sm:overflow-visible">
       <Link href={href} className="group block">
-        <div className="aspect-[4/3] bg-neutral-100 overflow-hidden mb-5 relative">
+        <div className="aspect-[4/3] bg-neutral-100 overflow-hidden relative sm:mb-5">
           {coverSrc ? (
             <Image
               src={coverSrc}
@@ -138,24 +138,26 @@ function PostCard({ post }: { post: PostListItem }) {
             </div>
           )}
         </div>
-        <div className="flex items-center gap-3 mb-3">
-          {category ? (
-            <span className="text-[10px] tracking-[0.2em] uppercase text-forest">
-              {category.title}
-            </span>
+        <div className="p-5 sm:p-0">
+          <div className="flex items-center gap-3 mb-3">
+            {category ? (
+              <span className="text-[10px] tracking-[0.2em] uppercase text-forest">
+                {category.title}
+              </span>
+            ) : null}
+            <time className="text-[11px] tracking-wide text-neutral-400">
+              {formatPostDate(post.publishedAt)}
+            </time>
+          </div>
+          <h2 className="font-[family-name:var(--font-playfair)] text-[1.5rem] leading-[1.25] tracking-[-0.015em] text-charcoal mb-3 group-hover:text-neutral-600 transition-colors duration-300">
+            {post.title}
+          </h2>
+          {post.excerpt ? (
+            <p className="text-[15px] leading-relaxed text-neutral-500 line-clamp-3">
+              {post.excerpt}
+            </p>
           ) : null}
-          <time className="text-[11px] tracking-wide text-neutral-400">
-            {formatPostDate(post.publishedAt)}
-          </time>
         </div>
-        <h2 className="font-[family-name:var(--font-playfair)] text-[1.5rem] leading-[1.25] tracking-[-0.015em] text-charcoal mb-3 group-hover:text-neutral-600 transition-colors duration-300">
-          {post.title}
-        </h2>
-        {post.excerpt ? (
-          <p className="text-[15px] leading-relaxed text-neutral-500 line-clamp-3">
-            {post.excerpt}
-          </p>
-        ) : null}
       </Link>
     </article>
   );

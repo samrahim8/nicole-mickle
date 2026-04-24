@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-10">
               Keep reading
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 sm:gap-y-12">
               {related.map((r) => {
                 const src = r.coverImage?.asset
                   ? urlFor(r.coverImage)
@@ -209,9 +209,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <Link
                     key={r._id}
                     href={`/blog/${r.slug}`}
-                    className="group block"
+                    className="group block bg-white border border-neutral-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)] overflow-hidden sm:bg-transparent sm:border-0 sm:shadow-none sm:overflow-visible"
                   >
-                    <div className="aspect-[4/3] bg-neutral-100 overflow-hidden mb-4 relative">
+                    <div className="aspect-[4/3] bg-neutral-100 overflow-hidden relative sm:mb-4">
                       {src ? (
                         <Image
                           src={src}
@@ -222,12 +222,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         />
                       ) : null}
                     </div>
-                    <time className="text-[11px] tracking-wide text-neutral-400 block mb-2">
-                      {formatPostDate(r.publishedAt)}
-                    </time>
-                    <h3 className="font-[family-name:var(--font-playfair)] text-[1.25rem] leading-[1.3] text-charcoal group-hover:text-neutral-600 transition-colors">
-                      {r.title}
-                    </h3>
+                    <div className="p-5 sm:p-0">
+                      <time className="text-[11px] tracking-wide text-neutral-400 block mb-2">
+                        {formatPostDate(r.publishedAt)}
+                      </time>
+                      <h3 className="font-[family-name:var(--font-playfair)] text-[1.25rem] leading-[1.3] text-charcoal group-hover:text-neutral-600 transition-colors">
+                        {r.title}
+                      </h3>
+                    </div>
                   </Link>
                 );
               })}
