@@ -171,9 +171,9 @@ export function HomeClient({
                 </h2>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4">
                   A Central Florida native with nearly 30 years in the industry.
-                  Mortgage broker, nationwide closing company owner, and now a
-                  realtor with Olympus Executive Realty. Nicole understands every
-                  stage of the transaction from the inside out.
+                  Mortgage broker, nationwide closing company owner, and licensed
+                  realtor. Nicole understands every stage of the transaction
+                  from the inside out.
                 </p>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
                   Founder of Florida Homes and Living. Specializing in
@@ -394,7 +394,7 @@ export function HomeClient({
           <FadeIn>
             <div className="mt-16 pt-12 border-t border-neutral-100 text-center">
               <a
-                href="https://www.google.com/search?q=Nicole+Mickle+Olympus+Executive+Realty+reviews"
+                href="https://www.google.com/search?q=Nicole+Mickle+Orlando+realtor+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[11px] tracking-[0.2em] uppercase text-neutral-300 hover:text-forest transition-colors duration-300"

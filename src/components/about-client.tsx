@@ -27,12 +27,12 @@ const milestones = [
     period: "2020 \u2013 Present",
     title: "Relocation & New Construction",
     description:
-      "Now with Olympus Executive Realty, focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
+      "Focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
   },
 ];
 
 const credentials = [
-  "Realtor at Olympus Executive Realty",
+  "Licensed Realtor, Central Florida",
   "B.S. in Economics, Florida A&M University",
   "Relocation & New Construction Specialist",
   "Former Senior Mortgage Broker",
@@ -80,8 +80,8 @@ export function AboutClient() {
                   For 23 years I ran APAT Real Estate Settlement Services,
                   coordinating closings nationwide. That background gave me a
                   deep understanding of the transaction process from every angle.
-                  Today I&apos;m with Olympus Executive Realty, specializing in
-                  relocation and new construction throughout Central Florida.
+                  Today I specialize in relocation and new construction
+                  throughout Central Florida.
                 </p>
                 <p className="text-[15px] text-neutral-500 leading-[1.75]">
                   My Economics degree from Florida A&amp;M gave me an analytical

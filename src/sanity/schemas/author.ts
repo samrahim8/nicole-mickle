@@ -22,7 +22,7 @@ export const author = defineType({
       name: "role",
       title: "Role",
       type: "string",
-      description: 'Displayed under the name, e.g. "Realtor, Olympus Executive Realty"',
+      description: 'Displayed under the name, e.g. "Realtor, Central Florida"',
     }),
     defineField({
       name: "image",
