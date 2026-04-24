@@ -42,7 +42,7 @@ export function Footer() {
               </p>
               <p className="text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
                 Orlando relocation &amp; new construction specialist.
-                Nearly 30 years of industry expertise.
+                30 years of industry expertise.
               </p>
               <div className="flex items-center gap-4">
                 <a

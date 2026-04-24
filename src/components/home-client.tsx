@@ -171,7 +171,7 @@ export function HomeClient({
                   The most trusted name in Orlando real estate
                 </h2>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4">
-                  A Central Florida native with nearly 30 years in the industry.
+                  A Central Florida native with 30 years in the industry.
                   Mortgage broker, nationwide closing company owner, and licensed
                   realtor. Nicole understands every stage of the transaction
                   from the inside out.

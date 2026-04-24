@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     siteName: "Nicole Mickle Real Estate",
     title: "Nicole Mickle | Orlando's Relocation & New Construction Specialist",
     description:
-      "Orlando's relocation and new construction specialist. Nearly 30 years of market expertise. Find your neighborhood before you pack a single box.",
+      "Orlando's relocation and new construction specialist. 30 years of market expertise. Find your neighborhood before you pack a single box.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nicole Mickle | Orlando Real Estate",
     description:
-      "Orlando's relocation and new construction specialist with nearly 30 years of experience.",
+      "Orlando's relocation and new construction specialist with 30 years of experience.",
   },
 };
 
@@ -62,7 +62,7 @@ const jsonLd = {
   "@type": ["RealEstateAgent", "LocalBusiness"],
   name: "Nicole Mickle",
   description:
-    "Orlando relocation and new construction real estate specialist with nearly 30 years of industry experience.",
+    "Orlando relocation and new construction real estate specialist with 30 years of industry experience.",
   url: "https://nicolemickle.com",
   telephone: "+1-407-353-0826",
   email: "nicole@nicolemickle.com",
