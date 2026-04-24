@@ -141,7 +141,7 @@ export function HomeClient({
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 py-5">
           <FadeIn>
             <p className="text-center text-[11px] tracking-[0.35em] uppercase text-neutral-400">
-              Simplifying the real estate process
+              Orlando relocation &amp; new construction, done thoughtfully
             </p>
           </FadeIn>
         </div>
@@ -168,7 +168,8 @@ export function HomeClient({
                   About Nicole
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
-                  The most trusted name in Orlando real estate
+                  Three decades of Orlando,
+                  <span className="italic"> from the inside out</span>
                 </h2>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4">
                   A Central Florida native with 30 years in the industry.
