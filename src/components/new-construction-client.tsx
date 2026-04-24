@@ -352,18 +352,18 @@ export function NewConstructionClient() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <SlideIn direction="left" className="lg:col-span-6">
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
-                Considering new construction?
+                Let&apos;s walk a community together
               </h2>
               <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
-                I know which builders deliver quality, which upgrades add value,
-                and how to negotiate the best deal. Let&apos;s talk about what
-                you&apos;re looking for.
+                The fastest way to know if new construction is right for you is
+                to see it in person. I&apos;ll meet you at the models, walk the
+                lots, and tell you what to look for before you sign anything.
               </p>
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
               >
-                Discuss your build
+                Schedule a walkthrough
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>

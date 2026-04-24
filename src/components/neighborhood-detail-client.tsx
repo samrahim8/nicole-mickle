@@ -557,38 +557,6 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         </div>
       </section>
 
-      {/* CTA Card */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <div className="border border-neutral-200 bg-cream p-10 lg:p-14">
-              <div className="grid lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-7">
-                  <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-4">
-                    Get the Full Picture
-                  </p>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
-                    Thinking about {n.name}?
-                  </h3>
-                  <p className="text-[15px] text-neutral-500">
-                    I&apos;ll walk you through what&apos;s available right now, what the
-                    market looks like, and whether it&apos;s the right fit for you.
-                  </p>
-                </div>
-                <div className="lg:col-span-4 lg:col-start-9 lg:text-right">
-                  <Link
-                    href="/contact"
-                    className="inline-block bg-forest text-white px-8 py-3.5 text-[13px] tracking-wide font-medium hover:bg-forest-light transition-colors duration-300"
-                  >
-                    Get in touch
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section
         ref={(el) => { darkSectionsRef.current[1] = el; }}

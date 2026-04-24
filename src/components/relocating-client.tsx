@@ -39,7 +39,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 </p>
               </FadeIn>
               <FadeIn delay={0.6}>
-                <div className="flex items-center gap-8 mt-10">
+                <div className="mt-10">
                   <Link
                     href="/contact"
                     className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
@@ -52,12 +52,6 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                     >
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
-                  </Link>
-                  <Link
-                    href="/quiz"
-                    className="text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
-                  >
-                    Take the neighborhood quiz
                   </Link>
                 </div>
               </FadeIn>
