@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { NeighborhoodExplorer } from "@/components/neighborhood-explorer";
 
@@ -55,15 +56,19 @@ export default function NeighborhoodsPage() {
                 href={`/neighborhoods/${n.slug}`}
                 className="group block bg-white p-8 lg:p-10 hover:bg-cream transition-colors duration-500"
               >
-                <div className="aspect-[4/3] bg-forest relative mb-6 flex items-center justify-center group-hover:bg-forest-light transition-colors duration-500">
-                  <div className="text-center text-white/30">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="mx-auto mb-1">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                      
-                    </svg>
-                    <p className="text-[10px] tracking-[0.15em] uppercase">{n.name}</p>
-                  </div>
+                <div className="aspect-[4/3] bg-forest relative mb-6 overflow-hidden">
+                  {n.image ? (
+                    <Image
+                      src={n.image}
+                      alt={n.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <p className="text-[10px] tracking-[0.15em] uppercase text-white/30">{n.name}</p>
+                    </div>
+                  )}
                 </div>
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <h2 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-neutral-600 transition-colors duration-300">
