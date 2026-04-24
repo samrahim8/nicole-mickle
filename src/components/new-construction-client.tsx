@@ -151,17 +151,17 @@ export function NewConstructionClient() {
         <div className="grid grid-cols-3 gap-1">
           <FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/neighborhoods/winter-park.jpg" alt="Winter Park tree-lined street" fill className="object-cover" />
+              <Image src="/images/neighborhoods/winter-park.jpg" alt="Winter Park tree-lined street" fill sizes="33vw" className="object-cover" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/new-construction/clubhouse.jpg" alt="Community clubhouse" fill className="object-cover" />
+              <Image src="/images/new-construction/clubhouse.jpg" alt="Community clubhouse" fill sizes="33vw" className="object-cover" />
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/new-construction/watermark-entry.jpg" alt="Watermark community entrance" fill className="object-cover" />
+              <Image src="/images/new-construction/watermark-entry.jpg" alt="Watermark community entrance" fill sizes="33vw" className="object-cover" />
             </div>
           </FadeIn>
         </div>

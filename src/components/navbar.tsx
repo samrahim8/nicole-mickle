@@ -107,7 +107,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden p-2 transition-colors duration-500 ${isLight ? "text-white" : "text-charcoal"}`}
+          className={`lg:hidden p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors duration-500 ${isLight ? "text-white" : "text-charcoal"}`}
           aria-label="Toggle menu"
         >
           <div className="w-5 h-4 relative flex flex-col justify-between">
@@ -153,7 +153,7 @@ export function Navbar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-1"
+                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-3"
                       onClick={() => setOpen(false)}
                     >
                       {link.label}
@@ -161,7 +161,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-1"
+                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-3"
                       onClick={() => setOpen(false)}
                     >
                       {link.label}

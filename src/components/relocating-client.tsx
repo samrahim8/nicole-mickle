@@ -144,7 +144,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               </p>
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
-              <Stagger className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6" staggerDelay={0.05}>
+              <Stagger className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6" staggerDelay={0.05}>
                 {employers.map((name) => (
                   <StaggerChild key={name}>
                     <div className="py-4 border-b border-neutral-100">

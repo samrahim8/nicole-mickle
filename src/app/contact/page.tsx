@@ -77,7 +77,7 @@ export default function ContactPage() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
+                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                         placeholder="First name"
                       />
                     </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         id="lastName"
                         name="lastName"
                         required
-                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
+                        className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                         placeholder="Last name"
                       />
                     </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300"
                       placeholder="(555) 555-5555"
                     />
                   </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                     <select
                       id="interest"
                       name="interest"
-                      className="w-full px-0 py-3 pr-6 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal focus:outline-none focus:border-forest transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23999%22%20stroke-width=%222%22%3E%3Cpath%20d=%22M6%209l6%206%206-6%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_0_center] bg-no-repeat"
+                      className="w-full px-0 py-3 pr-6 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal focus:outline-none focus:border-forest transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23999%22%20stroke-width=%222%22%3E%3Cpath%20d=%22M6%209l6%206%206-6%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_0_center] bg-no-repeat"
                     >
                       <option value="">Select one</option>
                       <option value="relocation">Relocating to Orlando</option>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300 resize-none"
+                      className="w-full px-0 py-3 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[15px] text-charcoal placeholder:text-neutral-300 focus:outline-none focus:border-forest transition-colors duration-300 resize-none"
                       placeholder="Where are you moving from? What's your timeline?"
                     />
                   </div>

@@ -175,6 +175,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                       src={n.image}
                       alt={n.name}
                       fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
                       className="object-cover"
                       priority
                     />
@@ -234,6 +235,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                       src={img.src}
                       alt={img.alt}
                       fill
+                      sizes="(min-width: 1024px) 22vw, 50vw"
                       className="object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
