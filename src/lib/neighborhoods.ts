@@ -16,6 +16,7 @@ export interface Neighborhood {
   tagline: string;
   description: string;
   image?: string;
+  gallery?: { src: string; alt: string }[];
   searchUrl: string;
   lifestyleTags: string[];
   highlights: string[];
@@ -494,6 +495,12 @@ export const neighborhoods: Neighborhood[] = [
     slug: "horizon-west",
     name: "Horizon West",
     image: "/images/neighborhoods/horizon-west.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/horizon-west/hamlin-pool.jpg", alt: "Community pool in Hamlin at Horizon West" },
+      { src: "/images/neighborhoods/horizon-west/lakefront-kayaks.jpg", alt: "Kayak launch and lakefront trail at Horizon West" },
+      { src: "/images/neighborhoods/horizon-west/lakeshore-pool.jpg", alt: "Lakeshore community pool by Toll Brothers" },
+      { src: "/images/neighborhoods/horizon-west/lakeshore-home.jpg", alt: "Toll Brothers home in Lakeshore community" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/horizon-west",
     tagline: "Orlando's fastest-growing new construction corridor",
     description:
@@ -570,6 +577,12 @@ export const neighborhoods: Neighborhood[] = [
     slug: "winter-garden",
     name: "Winter Garden",
     image: "/images/neighborhoods/winter-garden.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/winter-garden/plant-street-market.jpg", alt: "Plant Street Market and Crooked Can Brewery" },
+      { src: "/images/neighborhoods/winter-garden/splash-pad.jpg", alt: "Winter Garden splash pad at Centennial Plaza" },
+      { src: "/images/neighborhoods/winter-garden/downtown-dining.jpg", alt: "Downtown Winter Garden outdoor dining" },
+      { src: "/images/neighborhoods/winter-garden/downtown-aerial.jpg", alt: "Elevated view of downtown Winter Garden" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-garden",
     tagline: "Small-town charm with a thriving downtown",
     description:

@@ -217,6 +217,33 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      {n.gallery && n.gallery.length > 0 && (
+        <section className="py-16 lg:py-24">
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <FadeIn>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-10">
+                Around {n.name}
+              </p>
+            </FadeIn>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+              {n.gallery.map((img, i) => (
+                <FadeIn key={img.src} delay={i * 0.1}>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Lifestyle + Fit Check */}
       <section className="bg-linen">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">

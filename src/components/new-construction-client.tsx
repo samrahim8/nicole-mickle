@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
 import { neighborhoods } from "@/lib/neighborhoods";
 
@@ -142,6 +143,27 @@ export function NewConstructionClient() {
               </FadeIn>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Photo band */}
+      <section className="py-0">
+        <div className="grid grid-cols-3 gap-1">
+          <FadeIn>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/new-construction/new-build.jpg" alt="New construction home in Horizon West" fill className="object-cover" />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/new-construction/clubhouse.jpg" alt="Community clubhouse" fill className="object-cover" />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/new-construction/watermark-entry.jpg" alt="Watermark community entrance" fill className="object-cover" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
