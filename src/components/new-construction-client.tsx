@@ -22,7 +22,7 @@ const steps = [
     number: "03",
     title: "Contract & Negotiation",
     description:
-      "The builder's contract is written to protect the builder. I review every line, negotiate closing cost credits, upgrade packages, and lot premiums. Having your own agent costs you nothing. The builder pays the commission either way.",
+      "I provide strategic guidance as you review the builder's contract, ensuring you have clarity around the terms and how they apply to your purchase. I also advocate for you in securing available incentives, price reductions, including closing cost contributions, upgrade opportunities, and lot considerations. My compensation is arranged directly with the builder, in alignment with customary real estate practices.",
   },
   {
     number: "04",
@@ -35,6 +35,7 @@ const steps = [
 const builders = [
   "Toll Brothers", "Taylor Morrison", "Meritage Homes", "Pulte Homes",
   "Lennar", "Ashton Woods", "M/I Homes", "Dream Finders Homes",
+  "David Weekley", "Khovanian", "Mattamy", "ABD Development", "Del Webb",
 ];
 
 const whyAgent = [
@@ -313,7 +314,7 @@ export function NewConstructionClient() {
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">Do I need my own realtor when buying new construction?</h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process. Your agent reviews the contract, negotiates incentives, monitors the build timeline, and ensures you are represented from start to finish.
+                  I offer a high level of representation throughout the new construction process, guiding you through the builder&apos;s contract, advising on key decisions, and advocating for available incentives such as closing cost contributions, upgrade opportunities, and lot considerations. My compensation is handled directly with the builder, in alignment with customary real estate practices.
                 </p>
               </div>
             </StaggerChild>
@@ -337,7 +338,7 @@ export function NewConstructionClient() {
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">Can I negotiate the price on a new construction home?</h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
-                  Builders rarely lower the base price because it affects comparable sales for the rest of the community. However, there is often room to negotiate closing cost credits, upgrade packages, lot premiums, and rate buydowns through the builder&apos;s preferred lender.
+                  Yes, to an extent. Negotiability often depends on the builder&apos;s inventory levels and overall demand within the community. While builders typically avoid reducing base prices to protect future comparable sales, there is often opportunity to secure value through closing cost contributions, upgrade packages, lot premiums, and interest rate buydowns offered through the builder&apos;s preferred lender.
                 </p>
               </div>
             </StaggerChild>

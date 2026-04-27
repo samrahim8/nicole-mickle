@@ -16,7 +16,7 @@ const faqSchema = {
       name: "Do I need my own realtor when buying new construction?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. The sales agent at the model home represents the builder, not you. Having your own agent costs you nothing as a buyer. The builder pays the commission either way. Your agent reviews the contract, negotiates incentives, monitors the build timeline, and protects your interests throughout the process.",
+        text: "I offer a high level of representation throughout the new construction process, guiding you through the builder's contract, advising on key decisions, and advocating for available incentives such as closing cost contributions, upgrade opportunities, and lot considerations. My compensation is handled directly with the builder, in alignment with customary real estate practices.",
       },
     },
     {
@@ -40,7 +40,7 @@ const faqSchema = {
       name: "Can I negotiate the price on a new construction home?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Builders rarely lower the base price because it affects comparable sales for the rest of the community. However, there is often room to negotiate closing cost credits, upgrade packages, lot premiums, and rate buydowns through the builder's preferred lender. The best leverage usually comes during pre-construction phases or when builders need to close out remaining inventory.",
+        text: "Yes, to an extent. Negotiability often depends on the builder's inventory levels and overall demand within the community. While builders typically avoid reducing base prices to protect future comparable sales, there is often opportunity to secure value through closing cost contributions, upgrade packages, lot premiums, and interest rate buydowns offered through the builder's preferred lender.",
       },
     },
   ],

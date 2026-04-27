@@ -114,7 +114,7 @@ const faqSchema = {
       name: "What are the top rated schools in the Orlando area?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Orange County and Seminole County both have highly rated public school districts with multiple A-rated schools. Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private options including Trinity Prep, The Geneva School, and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.",
+        text: "Orange County, Seminole County and Osceola County have highly rated public school districts with multiple A-rated schools. Winter Garden, Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private and charter options including and not limited to Bishop Moore, Trinity Prep, The Geneva School, Lake Highland Prep, Windermere Prep and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.",
       },
     },
   ],

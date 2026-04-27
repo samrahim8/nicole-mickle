@@ -6,13 +6,13 @@ import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
 
 const milestones = [
   {
-    period: "2020 \u2013 Present",
+    period: "2014 \u2013 2026",
     title: "Relocation & New Construction",
     description:
       "Focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
   },
   {
-    period: "2012 \u2013 2020",
+    period: "2012 \u2013 2014",
     title: "Real Estate Sales",
     description:
       "Started at Reliance Realty as a transaction coordinator for an RE attorney/broker, then became a listing agent negotiating short sales. Developed hedge fund and investor relationships, closing 200+ short sales in two years. Pivoted to Instagram and social media marketing, building a global relocation network.",
