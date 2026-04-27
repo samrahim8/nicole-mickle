@@ -655,6 +655,82 @@ export const neighborhoods: Neighborhood[] = [
     ],
   },
   {
+    slug: "ocoee",
+    name: "Ocoee",
+    image: "/images/neighborhoods/ocoee.jpg",
+    searchUrl: "https://iorlandorealestate.com/homes-for-sale/ocoee",
+    tagline: "The most connected suburb on the west side",
+    description:
+      "Ocoee sits at the crossroads of three major routes – SR-408, SR-429, and Florida's Turnpike – making it one of the best-connected suburbs in the metro. It is bordered by Winter Garden to the west, Apopka to the north, and Windermere to the south, with downtown Orlando just 15-20 minutes east. A $44 million capital program is reshaping the historic downtown around Starke Lake, while established neighborhoods like Lake Olympia and Westyn Bay anchor a family-oriented bedroom community of about 53,000 residents.",
+    lifestyleTags: ["Connected", "Lakefront", "Family-Friendly", "Growing Downtown"],
+    highlights: [
+      "Highway access via SR-408, SR-429, and Florida's Turnpike",
+      "Starke Lake and Bill Breeze Park anchor the historic downtown",
+      "Active downtown revitalization on McKey Street and Bluford Avenue",
+      "West Orange Trail access for biking and running",
+    ],
+    priceRange: "$350K - $900K+",
+    lifestyle:
+      "Ocoee is the practical choice for buyers who care about commute times more than anything else. From here you can be downtown in 15 minutes, at Disney in 20, or at the airport in 30 – without paying the premium that comes with closer-in zip codes. The historic core around McKey Street and Bluford Avenue is finally getting its moment, with Toll Road Brewing, DG Doughnuts, and Bike Life Café anchoring a small but real downtown scene. For a fuller weekend evening you'll still drive 10 minutes west to Plant Street in Winter Garden, but Ocoee is closing that gap fast. Daily life is lake-adjacent – Starke Lake, Lake Olympia, and Bill Breeze Park – with the West Orange Trail running through the area for cycling.",
+    bestFor: [
+      "Commuters who need fast access to downtown Orlando, the airport, or the attractions corridor",
+      "Buyers who want established neighborhoods at lower price points than Winter Garden or Windermere",
+      "Families who value lake access without paying lakefront premiums",
+      "First-time buyers stepping into the West Orange market",
+    ],
+    notIdealFor: [
+      "Buyers who want a fully walkable downtown today – Ocoee's downtown is mid-revitalization, not finished",
+      "Those looking for luxury estate inventory at Windermere or Winter Park scale",
+      "Buyers prioritizing top-of-the-state school rankings across every grade level",
+    ],
+    priceSegments: [
+      {
+        label: "Entry",
+        range: "$350K - $450K",
+        description: "Townhomes and smaller single-family resale homes throughout the city. Many 1990s and 2000s communities along Silver Star Road and Clarcona Ocoee Road sit in this band.",
+      },
+      {
+        label: "Mid-Range",
+        range: "$450K - $650K",
+        description: "Single-family homes in Westyn Bay, Forest Lake Estates, Wynwood, and other gated and non-gated communities. 3-5 bedrooms with community pools and pickleball common.",
+      },
+      {
+        label: "Premium",
+        range: "$650K - $900K+",
+        description: "Lakefront homes on Lake Olympia and other waterfront pockets, plus larger executive homes in established neighborhoods. Some custom builds on bigger lots.",
+      },
+    ],
+    newConstruction: {
+      summary: "Ocoee's new construction is more pocketed than the Horizon West or Wellness Way corridors, but several active communities are bringing fresh inventory to the West Orange market. D.R. Horton's Wynwood is the largest current offering, with single- and two-story floor plans and smart home packages. Smaller infill builds and custom lots are available throughout the city, and resale of post-2018 homes is plentiful.",
+      builders: ["D.R. Horton", "Ryan Homes", "Pulte Homes", "Lennar", "Meritage Homes"],
+      communities: ["Wynwood", "Forest Lake Estates", "Arden Park", "McCormick Woods", "Preserve at Crown Point"],
+    },
+    schools: [
+      "Ocoee High School (A-rated, 100% graduation rate)",
+      "Westbrooke Elementary (A-rated)",
+      "Prairie Lake Elementary (A-rated, 2024-25)",
+      "Ocoee Middle School",
+      "Foundation Academy (private, PreK-12, in nearby Winter Garden)",
+    ],
+    dining: [
+      "Toll Road Brewing Company – craft brewery and taproom on McKey Street",
+      "Bike Life Cafe – paninis, espresso, and a Brazilian accent on McKey Street",
+      "DG Doughnuts – small-batch, hand-rolled doughnuts downtown",
+      "Carlo's Diner – longstanding local diner",
+    ],
+    commute: {
+      downtown: "15-20 minutes",
+      airport: "25-30 minutes",
+      disney: "15-25 minutes",
+    },
+    localTips: [
+      "Highway access is Ocoee's structural advantage – the SR-408, SR-429, and Turnpike interchanges meet here, which is why commuters keep choosing it over equivalent-priced suburbs further out",
+      "The downtown around McKey Street and Bluford Avenue is the next thing to watch – the city is in the middle of a $44 million capital program to redo public spaces along the western shore of Starke Lake",
+      "Lake Olympia is a private ski lake with a slalom course – homes with lake access here are rare and trade quickly when they list",
+      "For a full Plant Street evening, downtown Winter Garden is a 10-minute drive west – most Ocoee residents treat it as an extension of their own downtown",
+    ],
+  },
+  {
     slug: "clermont",
     name: "Clermont",
     image: "/images/neighborhoods/clermont.jpg",

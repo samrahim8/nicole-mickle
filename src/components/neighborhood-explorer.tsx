@@ -16,6 +16,7 @@ const neighborhoodCoords: Record<string, [number, number]> = {
   "baldwin-park": [-81.32649, 28.568096],
   "horizon-west": [-81.62662, 28.474367],
   "winter-garden": [-81.585647, 28.565737],
+  "ocoee": [-81.5440, 28.5694],
   "clermont": [-81.768654, 28.555268],
   "minneola": [-81.748184, 28.575645],
   "montverde": [-81.674664, 28.600831],
