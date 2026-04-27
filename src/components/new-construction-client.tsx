@@ -118,18 +118,18 @@ export function NewConstructionClient() {
                 <div className="bg-forest p-8 lg:p-10 space-y-6">
                   <div className="border-b border-white/15 pb-6">
                     <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
-                      5.0
+                      200+
                     </p>
                     <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      Google Rating
+                      Active communities
                     </p>
                   </div>
                   <div className="border-b border-white/15 pb-6">
                     <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
-                      30 years
+                      30+
                     </p>
                     <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      In the Orlando market
+                      Active builders
                     </p>
                   </div>
                   <div>
