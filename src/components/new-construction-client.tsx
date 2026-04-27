@@ -292,6 +292,15 @@ export function NewConstructionClient() {
                     </Link>
                   ))}
                 </div>
+
+                <div className="mt-10 border-l-[3px] border-forest/30 pl-6 py-2">
+                  <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-3">
+                    Urban Infill &amp; Custom
+                  </p>
+                  <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-2xl">
+                    Beyond the big master-planned communities, new builds also pop up inside Orlando&apos;s established city neighborhoods. College Park is the standout, where David Weekley and a handful of smaller custom builders are placing new homes on infill lots throughout the area. These opportunities are limited and rarely listed publicly &ndash; if a walkable in-town address matters to you, ask and I&apos;ll source what&apos;s currently available.
+                  </p>
+                </div>
               </SlideIn>
             </div>
           </div>
