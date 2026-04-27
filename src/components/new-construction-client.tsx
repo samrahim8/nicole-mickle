@@ -152,7 +152,7 @@ export function NewConstructionClient() {
         <div className="grid grid-cols-3 gap-1">
           <FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/neighborhoods/winter-park.jpg" alt="Winter Park tree-lined street" fill sizes="33vw" className="object-cover" />
+              <Image src="/images/new-construction/windermere-community.jpg" alt="Windermere community lake dock" fill sizes="33vw" className="object-cover" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
