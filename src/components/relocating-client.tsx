@@ -14,7 +14,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 lg:pt-44 lg:pb-32">
+      <section className="pt-20 sm:pt-32 pb-20 lg:pt-44 lg:pb-32">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-7">
@@ -31,7 +31,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 </h1>
               </TextReveal>
               <FadeIn delay={0.4}>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] mt-8 max-w-lg">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mt-8 max-w-lg">
                   You&apos;re not just buying a home -- you&apos;re choosing a
                   lifestyle. The lake access. The Friday night restaurants. The
                   drive to work on Monday. After 30 years living and working in
@@ -105,7 +105,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                   <span key={city.slug} className="flex items-center">
                     <Link
                       href={`/relocating-from/${city.slug}`}
-                      className="text-[15px] text-charcoal hover:text-forest transition-colors duration-300"
+                      className="text-[16px] sm:text-[15px] text-charcoal hover:text-forest transition-colors duration-300"
                     >
                       {city.name}
                     </Link>
@@ -131,7 +131,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
                 Clients have included employees from
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                 None of these were corporate referral arrangements. Each client
                 found me through referrals, research, or recommendation, and
                 hired me directly. That&apos;s how I prefer to work.
@@ -142,7 +142,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 {employers.map((name) => (
                   <StaggerChild key={name}>
                     <div className="py-4 border-b border-neutral-100">
-                      <p className="text-[15px] text-charcoal font-medium">
+                      <p className="text-[16px] sm:text-[15px] text-charcoal font-medium">
                         {name}
                       </p>
                     </div>
@@ -176,7 +176,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                   <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal">
                     {step.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[15px] text-neutral-500 leading-relaxed">
+                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                       <h3 className="text-base font-medium text-charcoal mb-2">
                         {reason.title}
                       </h3>
-                      <p className="text-[15px] text-neutral-500 leading-relaxed">
+                      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                         {reason.description}
                       </p>
                     </div>
@@ -239,7 +239,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 <h3 className="font-medium text-charcoal mb-3">
                   What&apos;s the best neighborhood in Orlando for families?
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   It depends on your priorities. Winter Park and Baldwin Park offer walkability and top-rated schools. Lake Nona is newer with excellent amenities. Windermere has larger lots and a quieter pace. I match neighborhoods to your lifestyle, commute, school preferences, and budget rather than giving a one-size-fits-all answer.
                 </p>
               </div>
@@ -249,7 +249,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 <h3 className="font-medium text-charcoal mb-3">
                   How far in advance should I start working with a realtor before relocating?
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Ideally three to six months before your move date. That gives us time for a discovery call, neighborhood research, virtual tours, and at least one in-person visit before writing offers. If your timeline is shorter, I can adjust. I have helped clients close in as little as 30 days when needed.
                 </p>
               </div>
@@ -259,7 +259,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 <h3 className="font-medium text-charcoal mb-3">
                   Do I need to visit Orlando before buying a home?
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Strongly recommended but not always required. I offer detailed video tours, neighborhood drive-throughs, and FaceTime walkthroughs so you can evaluate homes remotely. Many of my relocation clients narrow their list virtually, then fly in for a focused weekend of final showings before making an offer.
                 </p>
               </div>
@@ -269,7 +269,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 <h3 className="font-medium text-charcoal mb-3">
                   What are the top rated schools in the Orlando area?
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Orange County, Seminole County and Osceola County have highly rated public school districts with multiple A-rated schools. Winter Garden, Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private and charter options including and not limited to Bishop Moore, Trinity Prep, The Geneva School, Lake Highland Prep, Windermere Prep and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.
                 </p>
               </div>
@@ -290,7 +290,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Orlando isn&apos;t one place. It&apos;s many.
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                 Every neighborhood has a different personality, pace, and price
                 point. My guides break down the lifestyle, schools, dining, and
                 market for each one so you can compare before you visit.
@@ -318,7 +318,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
                   Take the neighborhood quiz
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7] mb-8">
                   Five questions. Two minutes. Personalized recommendations
                   based on your lifestyle and budget.
                 </p>
@@ -342,7 +342,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Thinking about Orlando?
               </h2>
-              <p className="text-[15px] text-white/70 mb-10">
+              <p className="text-[16px] sm:text-[15px] text-white/70 mb-10">
                 Let&apos;s start with a conversation. No pressure, no pitch. Just
                 honest answers about what it&apos;s like to live here.
               </p>

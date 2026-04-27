@@ -23,7 +23,7 @@ export default function NeighborhoodsPage() {
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
               Find the Orlando neighborhood that fits your life
             </h1>
-            <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
               Each neighborhood has its own character, pace, and personality.
               After 30 years here, I know which ones match which lifestyles.
             </p>
@@ -109,7 +109,7 @@ export default function NeighborhoodsPage() {
           <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
             Not sure which neighborhood is right?
           </h2>
-          <p className="text-[15px] text-white/70 max-w-xl mx-auto mb-10">
+          <p className="text-[16px] sm:text-[15px] text-white/70 max-w-xl mx-auto mb-10">
             Tell me about your lifestyle, commute, and priorities and I&apos;ll point
             you in the right direction.
           </p>

@@ -11,7 +11,7 @@ export function Footer() {
               Ready to make
               <span className="italic"> Orlando home?</span>
             </h2>
-            <p className="text-[15px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed mb-10 max-w-md mx-auto">
               Whether you&apos;re relocating from across the country or exploring
               new construction, let&apos;s find the right place for you.
             </p>

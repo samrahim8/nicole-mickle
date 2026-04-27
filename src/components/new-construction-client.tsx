@@ -64,7 +64,7 @@ export function NewConstructionClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 lg:pt-44 lg:pb-32">
+      <section className="pt-20 sm:pt-32 pb-20 lg:pt-44 lg:pb-32">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-end">
             <div className="lg:col-span-7">
@@ -84,7 +84,7 @@ export function NewConstructionClient() {
                 </h1>
               </TextReveal>
               <FadeIn delay={0.4}>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-lg mt-8 mb-10">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-lg mt-8 mb-10">
                   From choosing the right builder and community to negotiating
                   upgrades and monitoring the build, I guide you through every step
                   of the new construction process.
@@ -149,7 +149,7 @@ export function NewConstructionClient() {
 
       {/* Photo band */}
       <section className="py-0">
-        <div className="grid grid-cols-3 gap-1">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-1">
           <FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image src="/images/new-construction/windermere-community.jpg" alt="Windermere community lake dock" fill sizes="33vw" className="object-cover" />
@@ -190,7 +190,7 @@ export function NewConstructionClient() {
                       <h3 className="text-base font-medium text-white mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-[15px] text-white/60 leading-[1.8]">
+                      <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
                         {item.description}
                       </p>
                     </div>
@@ -224,7 +224,7 @@ export function NewConstructionClient() {
                   <h3 className="lg:col-span-3 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal">
                     {step.title}
                   </h3>
-                  <p className="lg:col-span-7 text-[15px] text-neutral-500 leading-[1.8]">
+                  <p className="lg:col-span-7 text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                     {step.description}
                   </p>
                 </div>
@@ -254,7 +254,7 @@ export function NewConstructionClient() {
                         <span className="text-[11px] tracking-[0.15em] text-neutral-300">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="text-[15px] font-medium text-charcoal">{b}</span>
+                        <span className="text-[16px] sm:text-[15px] font-medium text-charcoal">{b}</span>
                       </div>
                     </StaggerChild>
                   ))}
@@ -297,7 +297,7 @@ export function NewConstructionClient() {
                   <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-3">
                     Urban Infill &amp; Custom
                   </p>
-                  <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-2xl">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-2xl">
                     Beyond the big master-planned communities, new builds also pop up inside Orlando&apos;s established city neighborhoods. College Park is the standout, where David Weekley and a handful of smaller custom builders are placing new homes on infill lots throughout the area. These opportunities are limited and rarely listed publicly &ndash; if a walkable in-town address matters to you, ask and I&apos;ll source what&apos;s currently available.
                   </p>
                 </div>
@@ -322,7 +322,7 @@ export function NewConstructionClient() {
             <StaggerChild>
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">Do I need my own realtor when buying new construction?</h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   I offer a high level of representation throughout the new construction process, guiding you through the builder&apos;s contract, advising on key decisions, and advocating for available incentives such as closing cost contributions, upgrade opportunities, and lot considerations. My compensation is handled directly with the builder, in alignment with customary real estate practices.
                 </p>
               </div>
@@ -330,7 +330,7 @@ export function NewConstructionClient() {
             <StaggerChild>
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">How long does it take to build a new home in Orlando?</h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Most production homes from national builders take six to twelve months from contract to closing. Timelines can shift due to permitting, weather, or supply chain factors. I monitor the build schedule and keep you informed at every stage.
                 </p>
               </div>
@@ -338,7 +338,7 @@ export function NewConstructionClient() {
             <StaggerChild>
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">What upgrades are worth the investment?</h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   The most valuable upgrades in new construction are the ones that enhance both structure and long-term livability, including elevated ceiling heights and thoughtful design, well-planned electrical upgrades, plumbing rough-ins for future flexibility, expanded outdoor living areas like extended lanais, and flooring selections that complement the builder's overall quality and stand the test of time.
                 </p>
               </div>
@@ -346,7 +346,7 @@ export function NewConstructionClient() {
             <StaggerChild>
               <div className="border-t border-warm-200/60 py-8 lg:py-10">
                 <h3 className="font-medium text-charcoal mb-3">Can I negotiate the price on a new construction home?</h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                   Yes, to an extent. Negotiability often depends on the builder&apos;s inventory levels and overall demand within the community. While builders typically avoid reducing base prices to protect future comparable sales, there is often opportunity to secure value through closing cost contributions, upgrade packages, lot premiums, and interest rate buydowns offered through the builder&apos;s preferred lender.
                 </p>
               </div>
@@ -364,7 +364,7 @@ export function NewConstructionClient() {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Let&apos;s walk a community together
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                 The fastest way to know if new construction is right for you is
                 to see it in person. I&apos;ll meet you at the models, walk the
                 lots, and tell you what to look for before you sign anything.
@@ -388,7 +388,7 @@ export function NewConstructionClient() {
                 <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
                   Browse by neighborhood
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7] mb-8">
                   See which builders are active, what&apos;s available, and what
                   it costs in each Orlando neighborhood.
                 </p>

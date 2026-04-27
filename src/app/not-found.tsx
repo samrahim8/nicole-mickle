@@ -10,7 +10,7 @@ export default function NotFound() {
         <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal mb-4">
           Page not found
         </h1>
-        <p className="text-[15px] text-neutral-500 mb-10">
+        <p className="text-[16px] sm:text-[15px] text-neutral-500 mb-10">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="flex justify-center gap-6 items-center">

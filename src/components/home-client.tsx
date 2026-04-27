@@ -85,7 +85,7 @@ export function HomeClient({
             transition={{ duration: 1, delay: 0.9 }}
             className="mt-10"
           >
-            <p className="text-[15px] text-white/70 leading-[1.8] max-w-lg mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.8] max-w-lg mx-auto">
               Find your neighborhood before you pack a single box.
             </p>
           </motion.div>
@@ -171,13 +171,13 @@ export function HomeClient({
                   Three decades of Orlando,
                   <span className="italic"> from the inside out</span>
                 </h2>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-4">
                   A Central Florida native with 30 years in the industry.
                   Mortgage broker, nationwide closing company owner, and licensed
                   realtor. Nicole understands every stage of the transaction
                   from the inside out.
                 </p>
-                <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                   Founder of Florida Homes and Living. Specializing in
                   relocation and new construction throughout Central Florida.
                 </p>
@@ -243,7 +243,7 @@ export function HomeClient({
                     <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500">
                       {item.title}
                     </h3>
-                    <p className="lg:col-span-5 text-[15px] text-neutral-500 leading-[1.7]">
+                    <p className="lg:col-span-5 text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7]">
                       {item.description}
                     </p>
                     <div className="lg:col-span-2 flex lg:justify-end">
@@ -349,7 +349,7 @@ export function HomeClient({
             {testimonials.slice(1, 4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[15px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
@@ -373,7 +373,7 @@ export function HomeClient({
             {testimonials.slice(4).map((t, i) => (
               <FadeIn key={t.author} delay={i * 0.1}>
                 <blockquote>
-                  <p className="text-[15px] text-neutral-500 leading-[1.8] mb-6">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-6">
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <footer className="flex items-center gap-4">
@@ -419,7 +419,7 @@ export function HomeClient({
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
                 Find your Orlando neighborhood
               </h2>
-              <p className="text-[15px] text-white/60 leading-[1.8] mb-10">
+              <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8] mb-10">
                 Five questions. Two minutes. Personalized recommendations based
                 on your lifestyle, budget, and priorities.
               </p>

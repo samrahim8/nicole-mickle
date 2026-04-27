@@ -45,7 +45,7 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
               </TextReveal>
             </div>
             <FadeIn delay={0.3} className="lg:col-span-5">
-              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                 {n.newConstruction.summary}
               </p>
             </FadeIn>
@@ -99,7 +99,7 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                   <span className="text-[11px] tracking-[0.15em] text-neutral-300 block mb-2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[15px] font-medium text-charcoal">{c}</span>
+                  <span className="text-[16px] sm:text-[15px] font-medium text-charcoal">{c}</span>
                 </StaggerChild>
               ))}
             </Stagger>
@@ -156,19 +156,19 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                 <div className="space-y-8">
                   <div className="border-l-[3px] border-white/20 pl-8">
                     <h3 className="text-base font-medium text-white mb-2">Builder pricing includes buyer representation</h3>
-                    <p className="text-[15px] text-white/60 leading-[1.8]">
+                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
                       Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process.
                     </p>
                   </div>
                   <div className="border-l-[3px] border-white/20 pl-8">
                     <h3 className="text-base font-medium text-white mb-2">It costs you nothing</h3>
-                    <p className="text-[15px] text-white/60 leading-[1.8]">
+                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
                       The builder pays the buyer&apos;s agent commission whether you have an agent or not. Without one, the builder simply keeps that money.
                     </p>
                   </div>
                   <div className="border-l-[3px] border-white/20 pl-8">
                     <h3 className="text-base font-medium text-white mb-2">I know what&apos;s negotiable</h3>
-                    <p className="text-[15px] text-white/60 leading-[1.8]">
+                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
                       Closing cost credits, upgrade packages, lot premiums, rate buydowns. I track which builders are running incentives in {n.name} right now.
                     </p>
                   </div>
@@ -190,7 +190,7 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
                 Living in {n.name}
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                 {n.lifestyle}
               </p>
               <Link
@@ -212,15 +212,15 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                 Getting around
               </h2>
               <div className="space-y-0">
-                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[15px]">
+                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[16px] sm:text-[15px]">
                   <span className="text-neutral-500">Downtown Orlando</span>
                   <span className="text-charcoal font-medium">{n.commute.downtown}</span>
                 </div>
-                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[15px]">
+                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[16px] sm:text-[15px]">
                   <span className="text-neutral-500">Orlando Airport (MCO)</span>
                   <span className="text-charcoal font-medium">{n.commute.airport}</span>
                 </div>
-                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[15px]">
+                <div className="flex justify-between border-t border-warm-200/60 py-4 text-[16px] sm:text-[15px]">
                   <span className="text-neutral-500">Disney / Attractions</span>
                   <span className="text-charcoal font-medium">{n.commute.disney}</span>
                 </div>
@@ -239,7 +239,7 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Building in {n.name}?
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                 I know which builders deliver quality, which upgrades add value,
                 and how to negotiate the best deal in {n.name}. Let&apos;s talk
                 about your build.
@@ -263,7 +263,7 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                 <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
                   Take the neighborhood quiz
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7] mb-8">
                   Five questions. Two minutes. Find the right area for your
                   lifestyle, budget, and priorities.
                 </p>

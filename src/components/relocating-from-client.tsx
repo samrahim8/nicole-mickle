@@ -47,7 +47,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               </TextReveal>
             </div>
             <FadeIn delay={0.3} className="lg:col-span-5">
-              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                 {city.description}
               </p>
             </FadeIn>
@@ -66,7 +66,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
                 Orlando Schools
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                 {city.schoolComparison}
               </p>
             </SlideIn>
@@ -77,7 +77,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-charcoal mb-6">
                 What to expect
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8]">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                 {city.weatherComparison}
               </p>
             </SlideIn>
@@ -107,7 +107,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
                       <span className="text-[11px] tracking-[0.15em] text-forest/40 font-medium shrink-0 mt-0.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-[15px] text-neutral-500 leading-relaxed">
+                      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                         {reason}
                       </p>
                     </div>
@@ -182,7 +182,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               <StaggerChild key={faq.q}>
                 <div className="border-t border-warm-200/60 py-8 lg:py-10">
                   <h3 className="font-medium text-charcoal mb-3">{faq.q}</h3>
-                  <p className="text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
                     {faq.a}
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
                 Moving from {city.name}?
               </h2>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-8">
+              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
                 I&apos;ve helped dozens of {city.name} families make the move to Orlando.
                 Let&apos;s find the right neighborhood for your lifestyle and budget.
               </p>
@@ -228,7 +228,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
                 <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
                   Take the neighborhood quiz
                 </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7] mb-8">
                   Five questions. Two minutes. Personalized recommendations
                   based on your lifestyle and budget.
                 </p>

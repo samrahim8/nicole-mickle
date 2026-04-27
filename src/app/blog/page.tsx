@@ -57,7 +57,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
               Notes from 30 years in Orlando real estate
             </h1>
-            <p className="text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed max-w-lg mx-auto">
               Relocation playbooks, neighborhood deep-dives, and new construction
               insights – written for the people I&apos;d actually invite over.
             </p>
@@ -153,7 +153,7 @@ function PostCard({ post }: { post: PostListItem }) {
             {post.title}
           </h2>
           {post.excerpt ? (
-            <p className="text-[15px] leading-relaxed text-neutral-500 line-clamp-3">
+            <p className="text-[16px] sm:text-[15px] leading-relaxed text-neutral-500 line-clamp-3">
               {post.excerpt}
             </p>
           ) : null}
@@ -200,7 +200,7 @@ function EmptyState() {
       <h2 className="font-[family-name:var(--font-playfair)] text-[1.75rem] leading-tight text-charcoal mb-4">
         The journal is moving in
       </h2>
-      <p className="text-[15px] text-neutral-500 leading-relaxed">
+      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
         New posts and a full archive are on their way. In the meantime, explore
         the{" "}
         <Link href="/neighborhoods" className="underline underline-offset-[3px]">

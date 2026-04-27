@@ -274,7 +274,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
             <SlideIn direction="left" className="lg:col-span-6">
               <p className="text-[10px] tracking-[0.3em] uppercase text-neutral-400 mb-5">The Lifestyle</p>
               {remainingLifestyle && (
-                <p className="text-[15px] text-neutral-500 leading-[1.9]">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.9]">
                   {remainingLifestyle}
                 </p>
               )}
@@ -372,7 +372,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   >
                     Building new in {n.name}
                   </h2>
-                  <p className="text-[15px] text-neutral-500 leading-[1.85] mb-8">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85] mb-8">
                     {n.newConstruction.summary}
                   </p>
                   <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 mb-3">Builders</p>
@@ -405,7 +405,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
             ) : (
               <div className="max-w-3xl">
                 <div className="border-l-[3px] border-forest/20 pl-6">
-                  <p className="text-[15px] text-neutral-500 leading-[1.85]">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85]">
                     {n.newConstruction.summary}
                   </p>
                 </div>
@@ -436,7 +436,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   if (parts) {
                     return (
                       <li key={s} className="border-b border-white/10 py-4 first:pt-0">
-                        <p className="text-[15px] text-white/80 font-medium">{parts.name}</p>
+                        <p className="text-[16px] sm:text-[15px] text-white/80 font-medium">{parts.name}</p>
                         <p className="text-[13px] sm:text-[12px] text-white/40 mt-0.5">{parts.detail}</p>
                       </li>
                     );
@@ -444,13 +444,13 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   if (parenMatch) {
                     return (
                       <li key={s} className="border-b border-white/10 py-4 first:pt-0">
-                        <p className="text-[15px] text-white/80 font-medium">{parenMatch[1]}</p>
+                        <p className="text-[16px] sm:text-[15px] text-white/80 font-medium">{parenMatch[1]}</p>
                         <p className="text-[13px] sm:text-[12px] text-white/40 mt-0.5">{parenMatch[2]}</p>
                       </li>
                     );
                   }
                   return (
-                    <li key={s} className="text-[15px] text-white/60 border-b border-white/10 py-4 first:pt-0">
+                    <li key={s} className="text-[16px] sm:text-[15px] text-white/60 border-b border-white/10 py-4 first:pt-0">
                       {s}
                     </li>
                   );
@@ -471,13 +471,13 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   if (parts) {
                     return (
                       <li key={d} className="border-b border-white/10 py-4 first:pt-0">
-                        <p className="text-[15px] text-white/80 font-medium">{parts.name}</p>
+                        <p className="text-[16px] sm:text-[15px] text-white/80 font-medium">{parts.name}</p>
                         <p className="text-[13px] sm:text-[12px] text-white/40 mt-0.5">{parts.detail}</p>
                       </li>
                     );
                   }
                   return (
-                    <li key={d} className="text-[15px] text-white/60 border-b border-white/10 py-4 first:pt-0">
+                    <li key={d} className="text-[16px] sm:text-[15px] text-white/60 border-b border-white/10 py-4 first:pt-0">
                       {d}
                     </li>
                   );
@@ -515,7 +515,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                     <p className="text-[clamp(1.25rem,2vw,1.75rem)] font-[family-name:var(--font-playfair)] text-forest/10 leading-none mb-3">
                       {String(i + 1).padStart(2, "0")}
                     </p>
-                    <p className="text-[15px] text-neutral-500 leading-[1.8]">
+                    <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
                       {tip}
                     </p>
                   </StaggerChild>
@@ -571,7 +571,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
             >
               Interested in {n.name}?
             </h2>
-            <p className="text-[15px] text-white/70 max-w-xl mx-auto mb-10">
+            <p className="text-[16px] sm:text-[15px] text-white/70 max-w-xl mx-auto mb-10">
               I can tell you what it&apos;s really like to live here, what the market
               looks like right now, and whether it&apos;s the right fit for your lifestyle.
             </p>

@@ -221,7 +221,7 @@ export function QuizClient() {
                 <br />
                 <span className="italic">neighborhood</span>
               </h1>
-              <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-md mx-auto mb-12">
+              <p className="text-[16px] sm:text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-md mx-auto mb-12">
                 Five questions. Two minutes. Personalized neighborhood
                 recommendations based on your lifestyle, budget, and priorities.
               </p>
@@ -281,7 +281,7 @@ export function QuizClient() {
                           : "border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50"
                       }`}
                     >
-                      <span className={`text-[15px] transition-colors duration-300 ${
+                      <span className={`text-[16px] sm:text-[15px] transition-colors duration-300 ${
                         isSelected ? "text-forest" : "text-neutral-600 group-hover:text-charcoal"
                       }`}>
                         {option.label}

@@ -47,7 +47,7 @@ export function AboutClient() {
   return (
     <>
       {/* Hero - Editorial split */}
-      <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
+      <section className="pt-20 sm:pt-32 pb-16 lg:pt-44 lg:pb-24">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
             <div className="lg:col-span-5 relative pl-8 lg:pl-10">
@@ -69,21 +69,21 @@ export function AboutClient() {
               </TextReveal>
 
               <FadeIn delay={0.5} className="mt-10">
-                <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   I grew up in Central Florida. I&apos;ve been in the real estate
                   industry since 1996 -- as a mortgage broker, a nationwide closing
                   company owner, a transaction coordinator, and now a realtor. I
                   didn&apos;t just learn this business from a textbook. I learned
                   it from the inside out.
                 </p>
-                <p className="text-[15px] text-neutral-500 leading-[1.75] mb-6">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   For 23 years I ran APAT Real Estate Settlement Services,
                   coordinating closings nationwide. That background gave me a
                   deep understanding of the transaction process from every angle.
                   Today I specialize in relocation and new construction
                   throughout Central Florida.
                 </p>
-                <p className="text-[15px] text-neutral-500 leading-[1.75]">
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75]">
                   My Economics degree from Florida A&amp;M gave me an analytical
                   foundation, but what really drives the work is a genuine love
                   for researching communities -- understanding their history, how
@@ -133,7 +133,7 @@ export function AboutClient() {
                   <h3 className="lg:col-span-3 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white">
                     {m.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[15px] text-white/70 leading-relaxed">
+                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-white/70 leading-relaxed">
                     {m.description}
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export function AboutClient() {
                   <StaggerChild key={cred}>
                     <div className="flex items-center gap-4 py-4 border-b border-neutral-100">
                       <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
-                      <span className="text-[15px] text-neutral-600">{cred}</span>
+                      <span className="text-[16px] sm:text-[15px] text-neutral-600">{cred}</span>
                     </div>
                   </StaggerChild>
                 ))}
@@ -188,12 +188,12 @@ export function AboutClient() {
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <FadeIn delay={0.1}>
-                <p className="text-[15px] text-white/70 leading-[1.85] mb-6">
+                <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.85] mb-6">
                   A portion of my clients are public figures -- athletes,
                   entertainers, and executives whose moves require a higher
                   level of privacy. That work stays quiet by design.
                 </p>
-                <p className="text-[15px] text-white/70 leading-[1.85]">
+                <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.85]">
                   Among the clients I&apos;m able to name is Olympic champion
                   Noah Lyles. Whether you&apos;re a first-time buyer or
                   someone who needs the transaction handled with more care
