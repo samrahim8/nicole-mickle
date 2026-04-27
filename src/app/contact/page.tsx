@@ -7,9 +7,36 @@ import { FadeIn, TextReveal } from "@/components/animate";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const interests = data.getAll("interest").join(", ");
+    const payload = {
+      formType: "Contact",
+      firstName: data.get("firstName"),
+      lastName: data.get("lastName"),
+      email: data.get("email"),
+      phone: data.get("phone"),
+      interest: interests,
+      message: data.get("message"),
+    };
+    const url = process.env.NEXT_PUBLIC_SHEETS_URL;
+    if (url) {
+      try {
+        await fetch(url, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        /* Sheets endpoint runs in no-cors so we can't read the response */
+      }
+    }
+    setSubmitting(false);
     setSubmitted(true);
   }
 
@@ -130,24 +157,33 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label
-                      htmlFor="interest"
-                      className="block text-[11px] tracking-[0.15em] uppercase text-neutral-400 mb-3"
-                    >
-                      I&apos;m interested in
-                    </label>
-                    <select
-                      id="interest"
-                      name="interest"
-                      className="w-full px-0 py-3 pr-6 border-0 border-b border-neutral-200 bg-transparent text-[16px] md:text-[16px] sm:text-[15px] text-charcoal focus:outline-none focus:border-forest transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23999%22%20stroke-width=%222%22%3E%3Cpath%20d=%22M6%209l6%206%206-6%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_0_center] bg-no-repeat"
-                    >
-                      <option value="">Select one</option>
-                      <option value="relocation">Relocating to Orlando</option>
-                      <option value="new-construction">New Construction</option>
-                      <option value="buying">Buying a Home</option>
-                      <option value="selling">Selling a Home</option>
-                      <option value="other">Something Else</option>
-                    </select>
+                    <p className="block text-[11px] tracking-[0.15em] uppercase text-neutral-400 mb-4">
+                      I&apos;m interested in <span className="text-neutral-300 normal-case tracking-normal">(select all that apply)</span>
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {[
+                        { value: "Relocating to Orlando", label: "Relocating to Orlando" },
+                        { value: "New Construction", label: "New Construction" },
+                        { value: "Buying a Home", label: "Buying a Home" },
+                        { value: "Selling a Home", label: "Selling a Home" },
+                        { value: "Something Else", label: "Something Else" },
+                      ].map((opt) => (
+                        <label
+                          key={opt.value}
+                          className="flex items-center gap-3 cursor-pointer group py-2"
+                        >
+                          <input
+                            type="checkbox"
+                            name="interest"
+                            value={opt.value}
+                            className="w-4 h-4 accent-forest border-neutral-300 cursor-pointer"
+                          />
+                          <span className="text-[16px] sm:text-[15px] text-charcoal group-hover:text-forest transition-colors duration-300">
+                            {opt.label}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <label
@@ -166,9 +202,10 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 mt-4"
+                    disabled={submitting}
+                    className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send message
+                    {submitting ? "Sending…" : "Send message"}
                     <svg
                       width="14"
                       height="14"

@@ -396,7 +396,28 @@ export function QuizClient() {
                       Nicole&apos;s personal recommendations – delivered to your inbox.
                     </p>
                     <form
-                      onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                      onSubmit={async (e) => {
+                        e.preventDefault();
+                        const url = process.env.NEXT_PUBLIC_SHEETS_URL;
+                        const persona = results && results[0] ? results[0].name : "";
+                        if (url) {
+                          try {
+                            await fetch(url, {
+                              method: "POST",
+                              mode: "no-cors",
+                              body: JSON.stringify({
+                                formType: "Quiz",
+                                email,
+                                persona,
+                                answers,
+                              }),
+                            });
+                          } catch {
+                            /* Sheets endpoint runs in no-cors */
+                          }
+                        }
+                        setSubmitted(true);
+                      }}
                       className="flex flex-col sm:flex-row gap-3"
                     >
                       <input
