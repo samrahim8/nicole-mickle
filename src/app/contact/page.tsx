@@ -8,10 +8,12 @@ import { FadeIn, TextReveal } from "@/components/animate";
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
+    setError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
     const interests = data.getAll("interest").join(", ");
@@ -24,20 +26,20 @@ export default function ContactPage() {
       interest: interests,
       message: data.get("message"),
     };
-    const url = process.env.NEXT_PUBLIC_SHEETS_URL;
-    if (url) {
-      try {
-        await fetch(url, {
-          method: "POST",
-          mode: "no-cors",
-          body: JSON.stringify(payload),
-        });
-      } catch {
-        /* Sheets endpoint runs in no-cors so we can't read the response */
-      }
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !body.ok) throw new Error(body.error || "Submission failed");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
-    setSubmitted(true);
   }
 
   return (
@@ -218,6 +220,9 @@ export default function ContactPage() {
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
                   </button>
+                  {error && (
+                    <p className="text-[14px] text-red-600 mt-2">{error}</p>
+                  )}
                 </form>
               )}
             </FadeIn>

@@ -143,6 +143,8 @@ export function QuizClient() {
   const [results, setResults] = useState<Neighborhood[] | null>(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSelect = useCallback(
     (questionId: string, value: string) => {
@@ -398,25 +400,28 @@ export function QuizClient() {
                     <form
                       onSubmit={async (e) => {
                         e.preventDefault();
-                        const url = process.env.NEXT_PUBLIC_SHEETS_URL;
+                        setSubmitting(true);
+                        setError(null);
                         const persona = results && results[0] ? results[0].name : "";
-                        if (url) {
-                          try {
-                            await fetch(url, {
-                              method: "POST",
-                              mode: "no-cors",
-                              body: JSON.stringify({
-                                formType: "Quiz",
-                                email,
-                                persona,
-                                answers,
-                              }),
-                            });
-                          } catch {
-                            /* Sheets endpoint runs in no-cors */
-                          }
+                        try {
+                          const res = await fetch("/api/lead", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              formType: "Quiz",
+                              email,
+                              persona,
+                              answers,
+                            }),
+                          });
+                          const body = await res.json().catch(() => ({ ok: false }));
+                          if (!res.ok || !body.ok) throw new Error(body.error || "Submission failed");
+                          setSubmitted(true);
+                        } catch (err) {
+                          setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+                        } finally {
+                          setSubmitting(false);
                         }
-                        setSubmitted(true);
                       }}
                       className="flex flex-col sm:flex-row gap-3"
                     >
@@ -430,11 +435,15 @@ export function QuizClient() {
                       />
                       <button
                         type="submit"
-                        className="px-6 py-3.5 bg-white text-forest text-[15px] sm:text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0"
+                        disabled={submitting}
+                        className="px-6 py-3.5 bg-white text-forest text-[15px] sm:text-[13px] font-medium tracking-wide hover:bg-white/90 transition-colors duration-300 shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send guide
+                        {submitting ? "Sending…" : "Send guide"}
                       </button>
                     </form>
+                    {error && (
+                      <p className="text-[14px] text-red-300 mt-3 text-center">{error}</p>
+                    )}
                   </div>
                 )}
               </motion.div>
