@@ -162,16 +162,30 @@ export function Footer() {
           </div>
           <div className="border-t border-white/10 mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[11px] text-white/30">
-              &copy; {new Date().getFullYear()} Nicole Mickle Real Estate
+              &copy; {new Date().getFullYear()} Nicole Mickle Real Estate. Equal Housing Opportunity.
             </p>
-            <a
-              href="https://iorlandorealestate.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
-            >
-              iorlandorealestate.com
-            </a>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
+              >
+                Privacy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
+              >
+                Terms
+              </Link>
+              <a
+                href="https://iorlandorealestate.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
+              >
+                iorlandorealestate.com
+              </a>
+            </div>
           </div>
         </div>
       </div>

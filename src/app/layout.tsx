@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -111,6 +112,7 @@ export default function RootLayout({
         <SiteChrome navbar={<Navbar />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        <Analytics />
       </body>
     </html>
   );
