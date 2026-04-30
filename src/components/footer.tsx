@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -37,16 +38,25 @@ export function Footer() {
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 py-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
             <div className="md:col-span-4">
-              <p className="font-[family-name:var(--font-playfair)] text-lg text-white tracking-[-0.01em] mb-1">
+              <p className="font-[family-name:var(--font-playfair)] text-lg text-white tracking-[-0.01em] mb-3">
                 Nicole Mickle
-              </p>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-white/40 mb-3">
-                Olympus Executive Realty
               </p>
               <p className="text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
                 Orlando relocation &amp; new construction specialist.
                 30 years of industry expertise.
               </p>
+              <div className="mb-6">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-3">
+                  Brokerage
+                </p>
+                <Image
+                  src="/logos/olympus-executive-realty.webp"
+                  alt="Olympus Executive Realty"
+                  width={160}
+                  height={160}
+                  className="w-[160px] h-auto opacity-70 [filter:brightness(0)_invert(1)]"
+                />
+              </div>
               <div className="flex items-center gap-4">
                 <a
                   href="https://www.instagram.com/iorlandorealestate/"
