@@ -44,8 +44,8 @@ const whyAgent = [
     description: "Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process.",
   },
   {
-    title: "It costs you nothing",
-    description: "The builder pays the buyer's agent commission whether you bring your own agent or not. Without one, the builder simply keeps that money. There's no reason not to have representation.",
+    title: "No surprises on compensation",
+    description: "Buyer agent compensation is negotiated and documented in writing upfront, per current real estate rules. With most builders, that compensation is structured into the standard transaction. We confirm the terms before you sign anything, so you always know where you stand.",
   },
   {
     title: "I know what's negotiable",

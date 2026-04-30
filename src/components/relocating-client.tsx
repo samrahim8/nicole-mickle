@@ -350,7 +350,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 href="/contact"
                 className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
               >
-                Schedule a free consultation
+                Schedule a consultation
                 <svg
                   width="14" height="14" viewBox="0 0 16 16" fill="none"
                   stroke="currentColor" strokeWidth="1.5"

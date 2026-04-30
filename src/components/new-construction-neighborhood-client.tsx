@@ -161,9 +161,9 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
                     </p>
                   </div>
                   <div className="border-l-[3px] border-white/20 pl-8">
-                    <h3 className="text-base font-medium text-white mb-2">It costs you nothing</h3>
+                    <h3 className="text-base font-medium text-white mb-2">No surprises on compensation</h3>
                     <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
-                      The builder pays the buyer&apos;s agent commission whether you have an agent or not. Without one, the builder simply keeps that money.
+                      Buyer agent compensation is negotiated and documented in writing upfront, per current real estate rules. With most builders, that compensation is structured into the standard transaction. We confirm the terms before you sign anything.
                     </p>
                   </div>
                   <div className="border-l-[3px] border-white/20 pl-8">
