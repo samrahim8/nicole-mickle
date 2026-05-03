@@ -274,7 +274,7 @@ export function HomeClient({
                   <span className="text-[11px] tracking-[0.25em] text-neutral-300 font-medium mb-6">
                     {item.number}
                   </span>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500 mb-4">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500 mb-4 min-h-[2lh]">
                     {item.title}
                   </h3>
                   <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">

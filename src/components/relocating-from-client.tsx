@@ -181,7 +181,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
             {city.commonQuestions.map((faq) => (
               <StaggerChild key={faq.q} className="flex">
                 <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                  <h3 className="font-medium text-charcoal mb-3">{faq.q}</h3>
+                  <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">{faq.q}</h3>
                   <p className="text-[15px] text-neutral-500 leading-[1.8]">
                     {faq.a}
                   </p>

@@ -130,7 +130,7 @@ export function AboutClient() {
                   <span className="text-[11px] tracking-[0.25em] uppercase text-white/40 font-medium mb-5">
                     {m.period}
                   </span>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white mb-4">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white mb-4 min-h-[2lh]">
                     {m.title}
                   </h3>
                   <p className="text-[15px] text-white/70 leading-[1.8]">

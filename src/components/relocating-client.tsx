@@ -173,7 +173,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                   <span className="text-[11px] tracking-[0.25em] text-neutral-300 font-medium mb-6">
                     {step.number}
                   </span>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal mb-4">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal mb-4 min-h-[2lh]">
                     {step.title}
                   </h3>
                   <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
@@ -205,7 +205,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                 {reasons.map((reason) => (
                   <StaggerChild key={reason.title} className="flex">
                     <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                      <h3 className="text-base font-medium text-charcoal mb-3">
+                      <h3 className="text-base font-medium text-charcoal mb-3 min-h-[2lh]">
                         {reason.title}
                       </h3>
                       <p className="text-[15px] text-neutral-500 leading-relaxed">
@@ -235,7 +235,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.08}>
             <StaggerChild className="flex">
               <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3">
+                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
                   What&apos;s the best neighborhood in Orlando for families?
                 </h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8]">
@@ -245,7 +245,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             </StaggerChild>
             <StaggerChild className="flex">
               <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3">
+                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
                   How far in advance should I start working with a realtor before relocating?
                 </h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8]">
@@ -255,7 +255,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             </StaggerChild>
             <StaggerChild className="flex">
               <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3">
+                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
                   Do I need to visit Orlando before buying a home?
                 </h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8]">
@@ -265,7 +265,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             </StaggerChild>
             <StaggerChild className="flex">
               <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3">
+                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
                   What are the top rated schools in the Orlando area?
                 </h3>
                 <p className="text-[15px] text-neutral-500 leading-[1.8]">
