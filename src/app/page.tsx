@@ -62,11 +62,6 @@ const testimonials = [
     author: "Tiffanie Logan",
     context: "Bought and sold within two years",
   },
-  {
-    text: "Nicole was recommended to me by my accountant. Most importantly, Nicole sold the property for the listed price in less time that I have ever experienced.",
-    author: "Norma Harris",
-    context: "Sold property remotely",
-  },
 ];
 
 const mediaLogos = [
