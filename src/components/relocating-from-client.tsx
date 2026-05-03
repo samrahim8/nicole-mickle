@@ -100,17 +100,17 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <Stagger className="space-y-0" staggerDelay={0.08}>
+              <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.08}>
                 {city.whyOrlando.map((reason, i) => (
-                  <StaggerChild key={reason}>
-                    <div className="flex gap-5 items-start border-b border-neutral-100 pb-6 pt-6 first:pt-0">
-                      <span className="text-[11px] tracking-[0.15em] text-forest/40 font-medium shrink-0 mt-0.5">
+                  <StaggerChild key={reason} className="flex">
+                    <article className="flex gap-5 items-start bg-white border border-neutral-200 p-6 lg:p-7 w-full">
+                      <span className="text-[11px] tracking-[0.2em] text-forest/50 font-medium shrink-0 mt-1">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
+                      <p className="text-[15px] text-neutral-500 leading-[1.7]">
                         {reason}
                       </p>
-                    </div>
+                    </article>
                   </StaggerChild>
                 ))}
               </Stagger>
@@ -177,18 +177,17 @@ export function RelocatingFromClient({ city, recommended }: Props) {
               Moving from {city.name} to Orlando
             </h2>
           </FadeIn>
-          <Stagger className="space-y-0" staggerDelay={0.08}>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.08}>
             {city.commonQuestions.map((faq) => (
-              <StaggerChild key={faq.q}>
-                <div className="border-t border-warm-200/60 py-8 lg:py-10">
+              <StaggerChild key={faq.q} className="flex">
+                <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                   <h3 className="font-medium text-charcoal mb-3">{faq.q}</h3>
-                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                  <p className="text-[15px] text-neutral-500 leading-[1.8]">
                     {faq.a}
                   </p>
-                </div>
+                </article>
               </StaggerChild>
             ))}
-            <div className="border-t border-warm-200/60" />
           </Stagger>
         </div>
       </section>

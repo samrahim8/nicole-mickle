@@ -166,23 +166,22 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             </h2>
           </FadeIn>
 
-          <Stagger className="space-y-0" staggerDelay={0.1}>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.1}>
             {steps.map((step) => (
-              <StaggerChild key={step.number}>
-                <div className="grid lg:grid-cols-12 gap-6 py-10 lg:py-14 border-t border-warm-200/60">
-                  <span className="lg:col-span-1 text-[11px] tracking-[0.2em] text-neutral-300 font-medium">
+              <StaggerChild key={step.number} className="flex">
+                <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-8 lg:p-10">
+                  <span className="text-[11px] tracking-[0.25em] text-neutral-300 font-medium mb-6">
                     {step.number}
                   </span>
-                  <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-charcoal mb-4">
                     {step.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
                     {step.description}
                   </p>
-                </div>
+                </article>
               </StaggerChild>
             ))}
-            <div className="border-t border-warm-200/60" />
           </Stagger>
         </div>
       </section>
@@ -202,17 +201,17 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <Stagger className="space-y-12" staggerDelay={0.1}>
+              <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.1}>
                 {reasons.map((reason) => (
-                  <StaggerChild key={reason.title}>
-                    <div className="border-l-[3px] border-forest pl-8">
-                      <h3 className="text-base font-medium text-charcoal mb-2">
+                  <StaggerChild key={reason.title} className="flex">
+                    <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
+                      <h3 className="text-base font-medium text-charcoal mb-3">
                         {reason.title}
                       </h3>
-                      <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-relaxed">
+                      <p className="text-[15px] text-neutral-500 leading-relaxed">
                         {reason.description}
                       </p>
-                    </div>
+                    </article>
                   </StaggerChild>
                 ))}
               </Stagger>
@@ -233,48 +232,47 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             </h2>
           </FadeIn>
 
-          <Stagger className="space-y-0" staggerDelay={0.08}>
-            <StaggerChild>
-              <div className="border-t border-warm-200/60 py-8 lg:py-10">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.08}>
+            <StaggerChild className="flex">
+              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                 <h3 className="font-medium text-charcoal mb-3">
                   What&apos;s the best neighborhood in Orlando for families?
                 </h3>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[15px] text-neutral-500 leading-[1.8]">
                   It depends on your priorities. Winter Park and Baldwin Park offer walkability and top-rated schools. Lake Nona is newer with excellent amenities. Windermere has larger lots and a quieter pace. I match neighborhoods to your lifestyle, commute, school preferences, and budget rather than giving a one-size-fits-all answer.
                 </p>
-              </div>
+              </article>
             </StaggerChild>
-            <StaggerChild>
-              <div className="border-t border-warm-200/60 py-8 lg:py-10">
+            <StaggerChild className="flex">
+              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                 <h3 className="font-medium text-charcoal mb-3">
                   How far in advance should I start working with a realtor before relocating?
                 </h3>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[15px] text-neutral-500 leading-[1.8]">
                   Ideally three to six months before your move date. That gives us time for a discovery call, neighborhood research, virtual tours, and at least one in-person visit before writing offers. If your timeline is shorter, I can adjust. I have helped clients close in as little as 30 days when needed.
                 </p>
-              </div>
+              </article>
             </StaggerChild>
-            <StaggerChild>
-              <div className="border-t border-warm-200/60 py-8 lg:py-10">
+            <StaggerChild className="flex">
+              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                 <h3 className="font-medium text-charcoal mb-3">
                   Do I need to visit Orlando before buying a home?
                 </h3>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[15px] text-neutral-500 leading-[1.8]">
                   Strongly recommended but not always required. I offer detailed video tours, neighborhood drive-throughs, and FaceTime walkthroughs so you can evaluate homes remotely. Many of my relocation clients narrow their list virtually, then fly in for a focused weekend of final showings before making an offer.
                 </p>
-              </div>
+              </article>
             </StaggerChild>
-            <StaggerChild>
-              <div className="border-t border-warm-200/60 py-8 lg:py-10">
+            <StaggerChild className="flex">
+              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                 <h3 className="font-medium text-charcoal mb-3">
                   What are the top rated schools in the Orlando area?
                 </h3>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-3xl">
+                <p className="text-[15px] text-neutral-500 leading-[1.8]">
                   Orange County, Seminole County and Osceola County have highly rated public school districts with multiple A-rated schools. Winter Garden, Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private and charter options including and not limited to Bishop Moore, Trinity Prep, The Geneva School, Lake Highland Prep, Windermere Prep and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.
                 </p>
-              </div>
+              </article>
             </StaggerChild>
-            <div className="border-t border-warm-200/60" />
           </Stagger>
         </div>
       </section>

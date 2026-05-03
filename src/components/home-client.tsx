@@ -259,44 +259,40 @@ export function HomeClient({
             </div>
           </FadeIn>
 
-          <div className="space-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {audiences.map((item, i) => (
               <SlideIn
                 key={item.number}
                 delay={i * 0.06}
                 direction={i % 2 === 0 ? "left" : "right"}
+                className="flex"
               >
                 <Link
                   href={item.href}
-                  className="group block border-t border-neutral-100 py-10 lg:py-14"
+                  className="group flex flex-col h-full w-full bg-white border border-neutral-200 p-8 lg:p-10 hover:border-forest/40 transition-colors duration-500"
                 >
-                  <div className="grid lg:grid-cols-12 gap-4 lg:gap-6 items-baseline">
-                    <span className="lg:col-span-1 text-[11px] tracking-[0.2em] text-neutral-300">
-                      {item.number}
-                    </span>
-                    <h3 className="lg:col-span-4 font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500">
-                      {item.title}
-                    </h3>
-                    <p className="lg:col-span-5 text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7]">
-                      {item.description}
-                    </p>
-                    <div className="lg:col-span-2 flex lg:justify-end">
-                      <span className="text-[12px] tracking-wide text-neutral-400 group-hover:text-forest transition-colors duration-300 flex items-center gap-2">
-                        {item.cta}
-                        <svg
-                          width="12" height="12" viewBox="0 0 16 16" fill="none"
-                          stroke="currentColor" strokeWidth="1.5"
-                          className="group-hover:translate-x-2 transition-transform duration-500"
-                        >
-                          <path d="M3 8h10M9 4l4 4-4 4" />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
+                  <span className="text-[11px] tracking-[0.25em] text-neutral-300 font-medium mb-6">
+                    {item.number}
+                  </span>
+                  <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500 mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                    {item.description}
+                  </p>
+                  <span className="mt-auto text-[12px] tracking-wide text-neutral-400 group-hover:text-forest transition-colors duration-300 flex items-center gap-2">
+                    {item.cta}
+                    <svg
+                      width="12" height="12" viewBox="0 0 16 16" fill="none"
+                      stroke="currentColor" strokeWidth="1.5"
+                      className="group-hover:translate-x-2 transition-transform duration-500"
+                    >
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </span>
                 </Link>
               </SlideIn>
             ))}
-            <div className="border-t border-neutral-100" />
           </div>
         </div>
       </section>

@@ -123,23 +123,22 @@ export function AboutClient() {
             </h2>
           </FadeIn>
 
-          <Stagger className="space-y-0" staggerDelay={0.1}>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.1}>
             {milestones.map((m) => (
-              <StaggerChild key={m.title}>
-                <div className="grid lg:grid-cols-12 gap-6 py-10 lg:py-14 border-t border-white/15">
-                  <span className="lg:col-span-2 text-[11px] tracking-[0.2em] uppercase text-white/40 font-medium">
+              <StaggerChild key={m.title} className="flex">
+                <article className="flex flex-col h-full w-full bg-white/5 border border-white/10 p-8 lg:p-10">
+                  <span className="text-[11px] tracking-[0.25em] uppercase text-white/40 font-medium mb-5">
                     {m.period}
                   </span>
-                  <h3 className="lg:col-span-3 font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-xl lg:text-2xl text-white mb-4">
                     {m.title}
                   </h3>
-                  <p className="lg:col-span-6 text-[16px] sm:text-[15px] text-white/70 leading-relaxed">
+                  <p className="text-[15px] text-white/70 leading-[1.8]">
                     {m.description}
                   </p>
-                </div>
+                </article>
               </StaggerChild>
             ))}
-            <div className="border-t border-white/15" />
           </Stagger>
         </div>
       </section>
@@ -159,12 +158,12 @@ export function AboutClient() {
               </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <Stagger className="space-y-4" staggerDelay={0.06}>
+              <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4" staggerDelay={0.05}>
                 {credentials.map((cred) => (
-                  <StaggerChild key={cred}>
-                    <div className="flex items-center gap-4 py-4 border-b border-neutral-100">
-                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
-                      <span className="text-[16px] sm:text-[15px] text-neutral-600">{cred}</span>
+                  <StaggerChild key={cred} className="flex">
+                    <div className="flex items-start gap-3 bg-white border border-neutral-200 px-5 py-4 w-full h-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-forest shrink-0 mt-[7px]" />
+                      <span className="text-[14px] text-charcoal leading-relaxed">{cred}</span>
                     </div>
                   </StaggerChild>
                 ))}
