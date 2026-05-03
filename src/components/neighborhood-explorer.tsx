@@ -176,12 +176,12 @@ export function NeighborhoodExplorer({ neighborhoods }: Props) {
 
   return (
     <div className="grid lg:grid-cols-12 gap-0 border border-neutral-200 overflow-hidden">
-      {/* Map -- left side on desktop, top on mobile */}
+      {/* Map: left side on desktop, top on mobile */}
       <div className="lg:col-span-7 h-[400px] lg:h-[600px]">
         <div ref={mapContainer} className="w-full h-full" />
       </div>
 
-      {/* Card list -- right side on desktop, below on mobile */}
+      {/* Card list: right side on desktop, below on mobile */}
       <div
         ref={listRef}
         className="lg:col-span-5 h-[400px] lg:h-[600px] overflow-y-auto border-t lg:border-t-0 lg:border-l border-neutral-200 bg-white"

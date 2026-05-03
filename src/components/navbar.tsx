@@ -61,35 +61,19 @@ export function Navbar() {
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-8">
-          {links.map((link) =>
-            "external" in link && link.external ? (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`relative text-[13px] tracking-wide transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
-                  isLight
-                    ? "text-white/90 font-medium hover:text-white after:bg-white"
-                    : "text-neutral-400 hover:text-charcoal after:bg-charcoal"
-                }`}
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative text-[13px] tracking-wide transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
-                  isLight
-                    ? "text-white/90 font-medium hover:text-white after:bg-white"
-                    : "text-neutral-400 hover:text-charcoal after:bg-charcoal"
-                }`}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`relative text-[13px] tracking-wide transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+                isLight
+                  ? "text-white/90 font-medium hover:text-white after:bg-white"
+                  : "text-neutral-400 hover:text-charcoal after:bg-charcoal"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
           <a
             href="https://iorlandorealestate.com"
             target="_blank"
@@ -148,25 +132,13 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
-                  {"external" in link && link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-3"
-                      onClick={() => setOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-3"
-                      onClick={() => setOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="block text-lg text-neutral-500 hover:text-charcoal transition-colors py-3"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 </motion.div>
               ))}
               <motion.div

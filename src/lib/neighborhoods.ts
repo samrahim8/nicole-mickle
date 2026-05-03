@@ -45,7 +45,7 @@ export const neighborhoods: Neighborhood[] = [
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-park",
     tagline: "Tree-lined charm meets cultural sophistication",
     description:
-      "Winter Park is Orlando's most beloved neighborhood for a reason. Brick-lined Park Avenue, world-class museums, and lakefront living create a walkable, cultured community that feels like a small town. Mature oak canopies, independent boutiques, and some of the best restaurants in Central Florida make this a perennial favorite for relocators.",
+      "Winter Park is Orlando's most beloved neighborhood for a reason. Brick-lined Park Avenue, the Morse Museum's Tiffany glass collection, and lakefront living create a walkable, cultured community that feels like a small town. Mature oak canopies, independent boutiques, and some of the best restaurants in Central Florida make this a perennial favorite for relocators.",
     lifestyleTags: ["Walkable", "Cultural", "Lakefront", "Dining"],
     highlights: [
       "Park Avenue shopping and dining district",
@@ -198,7 +198,7 @@ export const neighborhoods: Neighborhood[] = [
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/windermere",
     tagline: "Lakefront luxury with a relaxed pace",
     description:
-      "Windermere is Orlando's premier lakefront community, known for its spacious estates, rolling hills, and the Butler Chain of Lakes. This is where you come for space, privacy, and water access without sacrificing proximity to Disney-area attractions and top schools. A favorite of executives and families seeking room to breathe.",
+      "Windermere is Orlando's most established lakefront community, known for its spacious estates, rolling hills, and the Butler Chain of Lakes. This is where you come for space, privacy, and water access without sacrificing proximity to Disney-area attractions and top schools. A favorite of executives and families seeking room to breathe.",
     lifestyleTags: ["Luxury", "Lakefront", "Spacious", "Gated"],
     highlights: [
       "Butler Chain of Lakes access",
@@ -283,7 +283,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$350K - $1.5M+",
     lifestyle:
-      "Dr. Phillips is convenience wrapped in a residential package. You're 10 minutes from world-class dining, 15 from the theme parks, and 20 from downtown – but your street feels like a quiet suburb. The dining scene is genuinely one of the best in Central Florida. The community is diverse, the schools are solid, and the housing stock ranges from accessible townhomes to gated estates.",
+      "Dr. Phillips is convenience wrapped in a residential package. You're 10 minutes from Restaurant Row, 15 from the theme parks, and 20 from downtown – but your street feels like a quiet suburb. The dining scene along Sand Lake Road is genuinely one of the best in Central Florida. The community is diverse, the schools are solid, and the housing stock ranges from accessible townhomes to gated estates.",
     bestFor: [
       "Families who want great schools and dining without the premium of Winter Park",
       "Professionals working in the attractions or hospitality corridor",
@@ -504,7 +504,7 @@ export const neighborhoods: Neighborhood[] = [
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/horizon-west",
     tagline: "Orlando's fastest-growing new construction corridor",
     description:
-      "Horizon West is the epicenter of new construction in the greater Orlando area. Organized into distinct villages -- Hamlin Town Center, Bridgewater, Lakeside, Hickory Nut, Ovation, and Seidel -- each with its own character, schools, and planned amenities. It's not one community but many, connected by trails, greenbelts, and a growing network of town centers. If new construction is your priority, this is where you start.",
+      "Horizon West is the epicenter of new construction in the greater Orlando area. It's organized into distinct villages: Hamlin Town Center, Bridgewater, Lakeside, Hickory Nut, Ovation, and Seidel. Each has its own character, schools, and planned amenities. It's not one community but many, connected by trails, greenbelts, and a growing network of town centers. If new construction is your priority, this is where you start.",
     lifestyleTags: ["New Construction", "Family-Friendly", "Growing", "Master-Planned"],
     highlights: [
       "6 distinct villages, each with its own identity and town center",
@@ -514,7 +514,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     priceRange: "$350K - $1.5M+",
     lifestyle:
-      "Horizon West is where Orlando is being built right now, but it's not the sprawl it sounds like. The area is organized into villages, each with a different feel. Bridgewater is the most established -- family-focused with parks and playgrounds throughout. Lakeside is the eastern gateway with trails connecting neighborhoods to schools and shopping. Hamlin is the social hub with the most dining and retail. Ovation and Hickory Nut are newer, still unfolding, with premium lots and conservation views. The trade-off is that some areas still feel like they're under construction, because they literally are. But if you're patient, you're buying into a community that will mature beautifully.",
+      "Horizon West is where Orlando is being built right now, but it's not the sprawl it sounds like. The area is organized into villages, each with a different feel. Bridgewater is the most established, family-focused with parks and playgrounds throughout. Lakeside is the eastern gateway with trails connecting neighborhoods to schools and shopping. Hamlin is the social hub with the most dining and retail. Ovation and Hickory Nut are newer, still unfolding, with premium lots and conservation views. The trade-off is that some areas still feel like they're under construction, because they literally are. But if you're patient, you're buying into a community that will mature beautifully.",
     bestFor: [
       "Buyers who want new construction with modern floor plans",
       "Families who want brand-new schools and community amenities",
@@ -568,9 +568,9 @@ export const neighborhoods: Neighborhood[] = [
     },
     localTips: [
       "Horizon West is organized into villages, not one big subdivision. Bridgewater is the most established and family-oriented. Lakeside is great for first-time buyers. Hamlin has the best dining and retail. Ovation and Hickory Nut are the newest with premium lots.",
-      "Hamlin Town Center is the social hub -- growing fast with new restaurants and retail quarterly. The Mark in Seidel Village is the newer walkable shopping district.",
+      "Hamlin Town Center is the social hub, growing fast with new restaurants and retail quarterly. The Mark in Seidel Village is the newer walkable shopping district.",
       "Each village has its own school assignments. Check with the district on which school your specific community feeds into, as lines shift with new school openings.",
-      "Builder incentives are strongest during pre-construction and community closeout phases -- timing matters here. I track which builders are running promotions and can advise on the best time to lock in.",
+      "Builder incentives are strongest during pre-construction and community closeout phases. Timing matters here. I track which builders are running promotions and can advise on the best time to lock in.",
     ],
   },
   {

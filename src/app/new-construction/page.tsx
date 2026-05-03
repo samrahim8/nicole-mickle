@@ -32,7 +32,7 @@ const faqSchema = {
       name: "What upgrades are worth the investment in a new build?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The most valuable upgrades in new construction are the ones that enhance both structure and long-term livability, including elevated ceiling heights and thoughtful design, well-planned electrical upgrades, plumbing rough-ins for future flexibility, expanded outdoor living areas like extended lanais, and flooring selections that complement the builder's overall quality and stand the test of time.",
+        text: "Spend on the things you can't change later. Ceiling height, electrical and plumbing rough-ins, structural options, and the floor plan choices that affect resale belong on the contract. Cosmetic finishes are different. Paint, fixtures, and backsplashes can almost always be done better and cheaper after closing.",
       },
     },
     {

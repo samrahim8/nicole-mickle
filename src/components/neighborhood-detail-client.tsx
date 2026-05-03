@@ -558,27 +558,24 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
       </section>
 
       {/* Final CTA */}
-      <section
-        ref={(el) => { darkSectionsRef.current[1] = el; }}
-        className="py-20 lg:py-32 bg-forest overflow-hidden"
-      >
-        <div data-parallax-inner className="max-w-[90rem] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-20 lg:py-32 border-t border-neutral-100">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 text-center">
           <FadeIn>
-            <div className="w-12 h-[1px] bg-white/20 mx-auto mb-8" />
+            <div className="w-12 h-[1px] bg-forest/30 mx-auto mb-8" />
             <h2
               ref={(el) => { sectionHeadlinesRef.current[4] = el; }}
-              className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4"
+              className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4"
             >
               Interested in {n.name}?
             </h2>
-            <p className="text-[16px] sm:text-[15px] text-white/70 max-w-xl mx-auto mb-10">
+            <p className="text-[16px] sm:text-[15px] text-neutral-500 max-w-xl mx-auto mb-10">
               I can tell you what it&apos;s really like to live here, what the market
               looks like right now, and whether it&apos;s the right fit for your lifestyle.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
+                className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
               >
                 Ask about {n.name}
                 <svg
@@ -589,12 +586,12 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
               </Link>
-              <span className="text-white/20 hidden sm:block">|</span>
+              <span className="text-neutral-200 hidden sm:block">|</span>
               <a
                 href={n.searchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300"
+                className="text-[13px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300"
               >
                 Search {n.name} homes
               </a>

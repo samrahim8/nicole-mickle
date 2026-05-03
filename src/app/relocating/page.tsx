@@ -18,7 +18,7 @@ const steps = [
     number: "02",
     title: "Neighborhood Strategy",
     description:
-      "Based on what matters to you, I narrow down the neighborhoods that actually fit your life. Not just price. Not just proximity. The full picture.",
+      "Based on what matters to you, I narrow down the neighborhoods that actually fit your life. Schools, commute, weekend rituals, the small details that turn a house into the right place to live.",
   },
   {
     number: "03",

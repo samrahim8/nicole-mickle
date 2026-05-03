@@ -71,7 +71,7 @@ export function AboutClient() {
               <FadeIn delay={0.5} className="mt-10">
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75] mb-6">
                   I grew up in Central Florida. I&apos;ve been in the real estate
-                  industry since 1996 -- as a mortgage broker, a nationwide closing
+                  industry since 1996, as a mortgage broker, a nationwide closing
                   company owner, a transaction coordinator, and now a realtor. I
                   didn&apos;t just learn this business from a textbook. I learned
                   it from the inside out.
@@ -86,10 +86,10 @@ export function AboutClient() {
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.75]">
                   My Economics degree from Florida A&amp;M gave me an analytical
                   foundation, but what really drives the work is a genuine love
-                  for researching communities -- understanding their history, how
-                  they&apos;ve evolved, and what makes each one distinct. That
-                  curiosity is the nerdy backend behind every neighborhood guide
-                  on this site.
+                  for researching communities and understanding their history,
+                  how they&apos;ve evolved, and what makes each one distinct.
+                  That curiosity is the nerdy backend behind every neighborhood
+                  guide on this site.
                 </p>
               </FadeIn>
             </div>
@@ -119,7 +119,7 @@ export function AboutClient() {
               The Path Here
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-white max-w-lg mb-16 lg:mb-24">
-              Built on experience, not shortcuts
+              From the closing table forward
             </h2>
           </FadeIn>
 
@@ -175,30 +175,32 @@ export function AboutClient() {
       </section>
 
       {/* Discretion */}
-      <section className="py-20 lg:py-44 bg-forest text-white">
+      <section className="py-20 lg:py-44 border-t border-neutral-100">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            <FadeIn className="lg:col-span-4">
-              <p className="text-[11px] tracking-[0.3em] uppercase text-white/40 mb-4">
+            <FadeIn className="lg:col-span-4 relative pl-8 lg:pl-10">
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-forest" />
+              <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-4">
                 Discretion
               </p>
-              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-white">
+              <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
                 Trusted with high-profile moves
               </h2>
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <FadeIn delay={0.1}>
-                <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.85] mb-6">
-                  A portion of my clients are public figures -- athletes,
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85] mb-6">
+                  A portion of my clients are public figures, athletes,
                   entertainers, and executives whose moves require a higher
                   level of privacy. That work stays quiet by design.
                 </p>
-                <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.85]">
-                  Among the clients I&apos;m able to name is Olympic champion
-                  Noah Lyles. Whether you&apos;re a first-time buyer or
-                  someone who needs the transaction handled with more care
-                  than most, the process looks the same: research-driven,
-                  honest, and on your terms.
+                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85]">
+                  Past clients have included Olympic and professional
+                  athletes who&apos;ve trusted me with discreet relocations.
+                  Whether you&apos;re a first-time buyer or someone who
+                  needs the transaction handled with more care than most,
+                  the process looks the same: research-driven, honest, and
+                  on your terms.
                 </p>
               </FadeIn>
             </div>

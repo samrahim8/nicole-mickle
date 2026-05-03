@@ -32,7 +32,7 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
               </TextReveal>
               <FadeIn delay={0.4}>
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mt-8 max-w-lg">
-                  You&apos;re not just buying a home -- you&apos;re choosing a
+                  You&apos;re not just buying a home. You&apos;re choosing a
                   lifestyle. The lake access. The Friday night restaurants. The
                   drive to work on Monday. After 30 years living and working in
                   Orlando, I match you to the life, not just the house.
