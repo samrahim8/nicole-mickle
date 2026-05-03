@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Orlando Neighborhoods",
   description:
     "Explore Orlando's best neighborhoods with Nicole Mickle. From Winter Park to Lake Nona, find the community that fits your lifestyle.",
+  alternates: { canonical: "/neighborhoods" },
 };
 
 export default function NeighborhoodsPage() {

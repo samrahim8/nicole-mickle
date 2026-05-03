@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "Terms governing use of nicolemickle.com, the website of Nicole Mickle Real Estate.",
+  alternates: { canonical: "/terms" },
   robots: { index: true, follow: false },
 };
 

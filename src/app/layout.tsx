@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Nicole Mickle Real Estate",
   },
   alternates: {
+    canonical: "/",
     types: {
       "application/rss+xml": [
         { url: "/blog/rss.xml", title: "Nicole Mickle – Journal" },
@@ -88,6 +89,24 @@ const jsonLd = {
     "New Construction",
     "Orlando Real Estate",
     "Mortgage Lending",
+  ],
+  worksFor: {
+    "@type": "RealEstateOrganization",
+    name: "Olympus Executive Realty",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "13790 Bridgewater Crossings Blvd. Ste 1080",
+      addressLocality: "Windermere",
+      addressRegion: "FL",
+      postalCode: "34786",
+      addressCountry: "US",
+    },
+  },
+  sameAs: [
+    "https://www.instagram.com/iorlandorealestate/",
+    "https://www.facebook.com/NicoleMickleFL/",
+    "https://www.linkedin.com/in/orlandorealestate/",
+    "https://www.youtube.com/channel/UCkzLaH9JCWK5epROI2ZyvtA",
   ],
 };
 

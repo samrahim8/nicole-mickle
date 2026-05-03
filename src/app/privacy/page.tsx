@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How Nicole Mickle Real Estate collects, uses, and protects information shared through nicolemickle.com.",
+  alternates: { canonical: "/privacy" },
   robots: { index: true, follow: false },
 };
 

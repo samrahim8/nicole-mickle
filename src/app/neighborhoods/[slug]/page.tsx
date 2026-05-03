@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: `${n.name} Neighborhood Guide - Living in ${n.name}, Orlando`,
     description: `Everything you need to know about living in ${n.name}, Orlando. Price points from ${n.priceRange}, schools, dining, new construction, and lifestyle details from a 30-year local expert.`,
+    alternates: { canonical: `/neighborhoods/${n.slug}` },
   };
 }
 

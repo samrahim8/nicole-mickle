@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "New Construction",
   description:
     "Expert guidance on new construction homes in Orlando. Nicole Mickle helps you select builders, negotiate upgrades, and navigate the build process.",
+  alternates: { canonical: "/new-construction" },
 };
 
 const faqSchema = {

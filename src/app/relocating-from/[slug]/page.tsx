@@ -19,6 +19,7 @@ export async function generateMetadata({
   return {
     title: `Moving to Orlando from ${city.name} - Relocation Guide`,
     description: `Everything you need to know about relocating from ${city.name} to Orlando. Cost of living comparison, best neighborhoods, tax savings, and expert guidance from a 30-year local specialist.`,
+    alternates: { canonical: `/relocating-from/${city.slug}` },
   };
 }
 

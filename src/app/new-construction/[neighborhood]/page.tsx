@@ -22,6 +22,7 @@ export async function generateMetadata({
   return {
     title: `New Construction in ${n.name} - Builders, Communities & Pricing`,
     description: `New construction homes in ${n.name}, Orlando. Active builders include ${n.newConstruction.builders.slice(0, 3).join(", ")}. Price range: ${n.priceRange}. Expert guidance from Nicole Mickle.`,
+    alternates: { canonical: `/new-construction/${n.slug}` },
   };
 }
 

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Journal",
   description:
     "Orlando relocation, new construction, and neighborhood insights from Nicole Mickle – 30 years of local expertise, written for buyers, sellers, and anyone dreaming about life in Central Florida.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Journal | Nicole Mickle",
     description:

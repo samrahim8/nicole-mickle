@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Relocating to Orlando",
   description:
     "Moving to Orlando? Nicole Mickle specializes in relocation with 30 years of local expertise. From neighborhoods to schools to commutes, get expert guidance.",
+  alternates: { canonical: "/relocating" },
 };
 
 const steps = [
