@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
-import { NeighborhoodExplorer } from "./neighborhood-explorer";
 import type { Neighborhood } from "@/lib/neighborhoods";
+
+const NeighborhoodExplorer = dynamic(
+  () => import("./neighborhood-explorer").then((m) => m.NeighborhoodExplorer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="grid lg:grid-cols-12 gap-0 border border-neutral-200">
+        <div className="lg:col-span-7 h-[400px] lg:h-[600px] bg-neutral-50" />
+        <div className="lg:col-span-5 h-[600px] hidden lg:block bg-cream" />
+      </div>
+    ),
+  }
+);
 
 interface Props {
   credentials: string[];
@@ -40,6 +53,25 @@ export function HomeClient({
   });
   const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
+  // Defer mounting the Mapbox-powered NeighborhoodExplorer until the user
+  // scrolls near it. Saves ~400 KB of JS and tile fetches on initial load.
+  const explorerRef = useRef<HTMLDivElement>(null);
+  const [explorerVisible, setExplorerVisible] = useState(false);
+  useEffect(() => {
+    if (!explorerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setExplorerVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    observer.observe(explorerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* ── Hero ── */}
@@ -53,6 +85,8 @@ export function HomeClient({
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
@@ -293,15 +327,24 @@ export function HomeClient({
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <NeighborhoodExplorer
-              neighborhoods={neighborhoods.map((n) => ({
-                slug: n.slug,
-                name: n.name,
-                tagline: n.tagline,
-                priceRange: n.priceRange,
-                lifestyleTags: n.lifestyleTags,
-              }))}
-            />
+            <div ref={explorerRef} className="min-h-[400px] lg:min-h-[600px]">
+              {explorerVisible ? (
+                <NeighborhoodExplorer
+                  neighborhoods={neighborhoods.map((n) => ({
+                    slug: n.slug,
+                    name: n.name,
+                    tagline: n.tagline,
+                    priceRange: n.priceRange,
+                    lifestyleTags: n.lifestyleTags,
+                  }))}
+                />
+              ) : (
+                <div className="grid lg:grid-cols-12 gap-0 border border-neutral-200 h-[400px] lg:h-[600px]">
+                  <div className="lg:col-span-7 bg-neutral-50" />
+                  <div className="lg:col-span-5 hidden lg:block bg-cream" />
+                </div>
+              )}
+            </div>
           </FadeIn>
         </div>
       </section>
