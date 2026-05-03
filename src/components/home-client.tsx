@@ -387,50 +387,32 @@ export function HomeClient({
             </div>
           </FadeIn>
 
-          {/* Secondary quotes – 3-column grid */}
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-neutral-100">
-            {testimonials.slice(1, 4).map((t, i) => (
-              <FadeIn key={t.author} delay={i * 0.1}>
-                <blockquote>
-                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-6">
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <footer className="flex items-center gap-4">
-                    <div className="w-6 h-[1px] bg-forest/20" />
-                    <div>
-                      <p className="text-[13px] font-medium text-charcoal">
-                        {t.author}
-                      </p>
-                      <p className="text-[11px] text-neutral-400 mt-0.5">
-                        {t.context}
-                      </p>
-                    </div>
-                  </footer>
-                </blockquote>
-              </FadeIn>
-            ))}
-          </div>
-
-          {/* More reviews row */}
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mt-12 pt-12 border-t border-neutral-100">
-            {testimonials.slice(4).map((t, i) => (
-              <FadeIn key={t.author} delay={i * 0.1}>
-                <blockquote>
-                  <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-6">
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <footer className="flex items-center gap-4">
-                    <div className="w-6 h-[1px] bg-forest/20" />
-                    <div>
-                      <p className="text-[13px] font-medium text-charcoal">
-                        {t.author}
-                      </p>
-                      <p className="text-[11px] text-neutral-400 mt-0.5">
-                        {t.context}
-                      </p>
-                    </div>
-                  </footer>
-                </blockquote>
+          {/* Secondary quotes – uniform card grid, equal heights, footer bottom-aligned */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-neutral-100">
+            {testimonials.slice(1).map((t, i) => (
+              <FadeIn
+                key={t.author}
+                delay={(i % 3) * 0.1}
+                className={`flex ${i === 3 ? "lg:col-start-2" : ""}`}
+              >
+                <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-8 lg:p-10">
+                  <blockquote className="flex flex-col h-full">
+                    <p className="text-[16px] sm:text-[15px] text-neutral-600 leading-[1.8] mb-6">
+                      &ldquo;{t.text}&rdquo;
+                    </p>
+                    <footer className="mt-auto pt-6 flex items-center gap-4">
+                      <div className="w-6 h-[1px] bg-forest/30 shrink-0" />
+                      <div>
+                        <p className="text-[13px] font-medium text-charcoal leading-tight">
+                          {t.author}
+                        </p>
+                        <p className="text-[11px] text-neutral-400 mt-1 leading-tight">
+                          {t.context}
+                        </p>
+                      </div>
+                    </footer>
+                  </blockquote>
+                </article>
               </FadeIn>
             ))}
           </div>
