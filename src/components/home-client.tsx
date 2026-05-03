@@ -387,13 +387,13 @@ export function HomeClient({
             </div>
           </FadeIn>
 
-          {/* Secondary quotes – uniform card grid, equal heights, footer bottom-aligned */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-neutral-100">
+          {/* Secondary quotes – 2x2 grid, fifth card spans full width below */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-neutral-100">
             {testimonials.slice(1).map((t, i) => (
               <FadeIn
                 key={t.author}
-                delay={(i % 3) * 0.1}
-                className={`flex ${i === 3 ? "lg:col-start-2" : ""}`}
+                delay={(i % 2) * 0.1}
+                className={`flex ${i === 4 ? "md:col-span-2" : ""}`}
               >
                 <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-8 lg:p-10">
                   <blockquote className="flex flex-col h-full">
