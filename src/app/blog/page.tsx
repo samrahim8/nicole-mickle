@@ -150,7 +150,7 @@ function PostCard({ post }: { post: PostListItem }) {
               {formatPostDate(post.publishedAt)}
             </time>
           </div>
-          <h2 className="font-[family-name:var(--font-playfair)] text-[1.5rem] leading-[1.25] tracking-[-0.015em] text-charcoal mb-3 group-hover:text-neutral-600 transition-colors duration-300">
+          <h2 className="font-[family-name:var(--font-playfair)] text-[1.5rem] leading-[1.25] tracking-[-0.015em] text-charcoal mb-3 group-hover:text-neutral-600 transition-colors duration-300 min-h-[2lh]">
             {post.title}
           </h2>
           {post.excerpt ? (

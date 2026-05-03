@@ -120,19 +120,21 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
           </FadeIn>
           <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
             {n.priceSegments.map((seg, i) => (
-              <StaggerChild key={seg.label} className="bg-white p-8 lg:p-10">
-                <p className="text-neutral-300 text-[13px] tracking-wide mb-2">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2">
-                  {seg.label}
-                </p>
-                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.15rem,1.8vw,1.5rem)] text-charcoal mb-4">
-                  {seg.range}
-                </p>
-                <p className="text-[13px] text-neutral-500 leading-relaxed">
-                  {seg.description}
-                </p>
+              <StaggerChild key={seg.label} className="flex bg-neutral-200">
+                <article className="flex flex-col h-full w-full bg-white p-8 lg:p-10">
+                  <p className="text-neutral-300 text-[13px] tracking-wide mb-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2">
+                    {seg.label}
+                  </p>
+                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.15rem,1.8vw,1.5rem)] text-charcoal mb-4 min-h-[2lh]">
+                    {seg.range}
+                  </p>
+                  <p className="text-[13px] text-neutral-500 leading-relaxed line-clamp-3">
+                    {seg.description}
+                  </p>
+                </article>
               </StaggerChild>
             ))}
           </Stagger>
@@ -153,25 +155,25 @@ export function NewConstructionNeighborhoodClient({ neighborhood: n }: Props) {
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <SlideIn direction="right">
-                <div className="space-y-8">
-                  <div className="border-l-[3px] border-white/20 pl-8">
-                    <h3 className="text-base font-medium text-white mb-2">Builder pricing includes buyer representation</h3>
-                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                  <article className="flex flex-col h-full bg-white/5 border border-white/10 p-7 lg:p-8">
+                    <h3 className="text-base font-medium text-white mb-3 min-h-[2lh]">Builder pricing includes buyer representation</h3>
+                    <p className="text-[15px] text-white/70 leading-[1.8]">
                       Builder pricing is designed to include buyer representation. The difference is whether you choose to have an experienced advocate protecting your interests and guiding your decisions throughout the process.
                     </p>
-                  </div>
-                  <div className="border-l-[3px] border-white/20 pl-8">
-                    <h3 className="text-base font-medium text-white mb-2">No surprises on compensation</h3>
-                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
+                  </article>
+                  <article className="flex flex-col h-full bg-white/5 border border-white/10 p-7 lg:p-8">
+                    <h3 className="text-base font-medium text-white mb-3 min-h-[2lh]">No surprises on compensation</h3>
+                    <p className="text-[15px] text-white/70 leading-[1.8]">
                       Buyer agent compensation is negotiated and documented in writing upfront, per current real estate rules. With most builders, that compensation is structured into the standard transaction. We confirm the terms before you sign anything.
                     </p>
-                  </div>
-                  <div className="border-l-[3px] border-white/20 pl-8">
-                    <h3 className="text-base font-medium text-white mb-2">I know what&apos;s negotiable</h3>
-                    <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8]">
+                  </article>
+                  <article className="flex flex-col h-full bg-white/5 border border-white/10 p-7 lg:p-8 md:col-span-2">
+                    <h3 className="text-base font-medium text-white mb-3 min-h-[2lh]">I know what&apos;s negotiable</h3>
+                    <p className="text-[15px] text-white/70 leading-[1.8]">
                       Closing cost credits, upgrade packages, lot premiums, rate buydowns. I track which builders are running incentives in {n.name} right now.
                     </p>
-                  </div>
+                  </article>
                 </div>
               </SlideIn>
             </div>

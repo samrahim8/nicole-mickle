@@ -339,17 +339,19 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
           </FadeIn>
           <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
             {n.priceSegments.map((seg, i) => (
-              <StaggerChild key={seg.label} className="bg-white p-8 lg:p-10">
-                <p className="text-neutral-300 text-[13px] tracking-wide mb-2">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2">{seg.label}</p>
-                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.15rem,1.8vw,1.5rem)] text-charcoal mb-4">
-                  {seg.range}
-                </p>
-                <p className="text-[13px] text-neutral-500 leading-relaxed">
-                  {seg.description}
-                </p>
+              <StaggerChild key={seg.label} className="flex bg-neutral-200">
+                <article className="flex flex-col h-full w-full bg-white p-8 lg:p-10">
+                  <p className="text-neutral-300 text-[13px] tracking-wide mb-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2">{seg.label}</p>
+                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.15rem,1.8vw,1.5rem)] text-charcoal mb-4 min-h-[2lh]">
+                    {seg.range}
+                  </p>
+                  <p className="text-[13px] text-neutral-500 leading-relaxed line-clamp-3">
+                    {seg.description}
+                  </p>
+                </article>
               </StaggerChild>
             ))}
           </Stagger>
@@ -536,18 +538,18 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
           </FadeIn>
           <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
             {related.map((nb) => (
-              <StaggerChild key={nb.slug}>
+              <StaggerChild key={nb.slug} className="flex">
                 <Link
                   href={`/neighborhoods/${nb.slug}`}
-                  className="group block bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-300"
+                  className="group flex flex-col h-full w-full bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-300"
                 >
-                  <h3 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-forest transition-colors duration-300 mb-2">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-forest transition-colors duration-300 mb-2 min-h-[2lh]">
                     {nb.name}
                   </h3>
-                  <p className="text-[13px] text-neutral-400 leading-relaxed mb-4">
+                  <p className="text-[13px] text-neutral-400 leading-relaxed mb-4 line-clamp-2">
                     {nb.tagline}
                   </p>
-                  <span className="text-[11px] tracking-[0.15em] uppercase text-forest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="mt-auto text-[11px] tracking-[0.15em] uppercase text-forest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     View guide
                   </span>
                 </Link>

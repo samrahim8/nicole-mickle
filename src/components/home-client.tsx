@@ -277,7 +277,7 @@ export function HomeClient({
                   <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.2] text-charcoal group-hover:text-forest transition-colors duration-500 mb-4 min-h-[2lh]">
                     {item.title}
                   </h3>
-                  <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8">
+                  <p className="text-[15px] text-neutral-500 leading-[1.7] mb-8 line-clamp-4">
                     {item.description}
                   </p>
                   <span className="mt-auto text-[12px] tracking-wide text-neutral-400 group-hover:text-forest transition-colors duration-300 flex items-center gap-2">
@@ -354,30 +354,23 @@ export function HomeClient({
             </p>
           </FadeIn>
 
-          {/* Featured quote – large, asymmetric */}
+          {/* Featured quote */}
           <FadeIn>
-            <div className="grid lg:grid-cols-12 gap-8 items-start">
-              <div className="hidden lg:block lg:col-span-1">
-                <span className="font-[family-name:var(--font-playfair)] text-[8rem] leading-none text-forest/10 select-none">
-                  &ldquo;
-                </span>
-              </div>
-              <div className="lg:col-span-8 lg:mt-6">
-                <blockquote>
-                  <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2.25rem)] leading-[1.4] tracking-[-0.01em] text-charcoal font-normal">
-                    {testimonials[0].text}
+            <div className="max-w-4xl">
+              <blockquote>
+                <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.25rem,2.5vw,2.25rem)] leading-[1.4] tracking-[-0.01em] text-charcoal font-normal">
+                  {testimonials[0].text}
+                </p>
+              </blockquote>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="w-8 h-[1px] bg-forest/20" />
+                <div>
+                  <p className="text-[13px] font-medium text-charcoal">
+                    {testimonials[0].author}
                   </p>
-                </blockquote>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="w-8 h-[1px] bg-forest/20" />
-                  <div>
-                    <p className="text-[13px] font-medium text-charcoal">
-                      {testimonials[0].author}
-                    </p>
-                    <p className="text-[11px] text-neutral-400 mt-0.5">
-                      {testimonials[0].context}
-                    </p>
-                  </div>
+                  <p className="text-[11px] text-neutral-400 mt-0.5">
+                    {testimonials[0].context}
+                  </p>
                 </div>
               </div>
             </div>

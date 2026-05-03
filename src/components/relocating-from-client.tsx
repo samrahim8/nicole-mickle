@@ -133,15 +133,15 @@ export function RelocatingFromClient({ city, recommended }: Props) {
           </FadeIn>
           <Stagger className="grid md:grid-cols-3 gap-[1px] bg-white/10">
             {recommended.map((n) => (
-              <StaggerChild key={n.slug}>
+              <StaggerChild key={n.slug} className="flex">
                 <Link
                   href={`/neighborhoods/${n.slug}`}
-                  className="group block bg-forest p-8 lg:p-10 hover:bg-forest-light transition-colors duration-500"
+                  className="group flex flex-col h-full w-full bg-forest p-8 lg:p-10 hover:bg-forest-light transition-colors duration-500"
                 >
-                  <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3 min-h-[2lh]">
                     {n.name}
                   </h3>
-                  <p className="text-[13px] text-white/50 leading-relaxed mb-4">
+                  <p className="text-[13px] text-white/50 leading-relaxed mb-4 line-clamp-2">
                     {n.tagline}
                   </p>
                   <div className="flex flex-wrap gap-x-4 text-[10px] tracking-[0.15em] uppercase text-white/30 mb-4">
@@ -149,7 +149,7 @@ export function RelocatingFromClient({ city, recommended }: Props) {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                  <div className="pt-4 border-t border-white/10 flex justify-between items-center">
+                  <div className="mt-auto pt-4 border-t border-white/10 flex justify-between items-center">
                     <span className="text-[12px] text-white/40">{n.priceRange}</span>
                     <svg
                       width="14" height="14" viewBox="0 0 16 16" fill="none"
