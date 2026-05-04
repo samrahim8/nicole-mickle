@@ -270,7 +270,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
           </div>
 
           {/* Body + fit card */}
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 py-16 lg:py-24 lg:items-start">
             <SlideIn direction="left" className="lg:col-span-6">
               <p className="text-[10px] tracking-[0.3em] uppercase text-neutral-400 mb-5">The Lifestyle</p>
               {remainingLifestyle && (
@@ -278,9 +278,32 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                   {remainingLifestyle}
                 </p>
               )}
+
+              {n.highlights && n.highlights.length > 0 && (
+                <div className="mt-12 lg:mt-14">
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-neutral-400 mb-6">
+                    The Highlights
+                  </p>
+                  <ul className="space-y-0">
+                    {n.highlights.map((h, i) => (
+                      <li
+                        key={h}
+                        className="flex gap-5 items-start border-t border-warm-200/60 py-4 first:border-t-0 first:pt-0"
+                      >
+                        <span className="text-[11px] tracking-[0.2em] text-forest/50 font-medium shrink-0 mt-1">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-[15px] text-neutral-600 leading-relaxed">
+                          {h}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </SlideIn>
 
-            <FadeIn className="lg:col-span-5 lg:col-start-8">
+            <FadeIn className="lg:col-span-5 lg:col-start-8 lg:sticky lg:top-32">
               <div className="border border-warm-200/60 bg-white p-8 lg:p-10">
                 <div className="mb-8 pb-8 border-b border-neutral-100">
                   <p className="text-[10px] tracking-[0.25em] uppercase text-forest mb-4">
