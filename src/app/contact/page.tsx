@@ -260,22 +260,6 @@ export default function ContactPage() {
                     Olympus Executive Realty
                   </p>
                 </div>
-                <div className="pt-6 border-t border-neutral-100">
-                  <p className="text-[11px] tracking-[0.15em] uppercase text-neutral-400 mb-3">
-                    Search Homes
-                  </p>
-                  <a
-                    href="https://iorlandorealestate.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-500 hover:text-charcoal text-[16px] sm:text-[15px] transition-colors duration-300 flex items-center gap-2"
-                  >
-                    iorlandorealestate.com
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M3 8h10M9 4l4 4-4 4" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </FadeIn>
           </div>
