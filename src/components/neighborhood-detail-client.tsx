@@ -354,7 +354,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                 </p>
               </div>
               <div className="lg:col-span-5 lg:col-start-8">
-                <p className="text-[13px] text-neutral-400 leading-relaxed">
+                <p className="text-[16px] sm:text-[17px] lg:text-[18px] text-neutral-500 leading-[1.6]">
                   What it costs to live in {n.name}, from entry-level to premium.
                 </p>
               </div>
