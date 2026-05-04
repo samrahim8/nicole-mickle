@@ -54,7 +54,7 @@ export function Footer() {
                   alt="Olympus Executive Realty"
                   width={160}
                   height={160}
-                  className="w-[160px] h-auto opacity-70 [filter:brightness(0)_invert(1)]"
+                  className="w-[160px] h-auto opacity-90"
                 />
               </div>
               <div className="flex items-center gap-4">

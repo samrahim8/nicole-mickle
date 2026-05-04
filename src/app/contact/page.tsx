@@ -256,13 +256,8 @@ export default function ContactPage() {
                   <p className="text-[11px] tracking-[0.15em] uppercase text-neutral-400 mb-3">
                     Office
                   </p>
-                  <p className="text-lg text-charcoal mb-1">
+                  <p className="text-lg text-charcoal">
                     Olympus Executive Realty
-                  </p>
-                  <p className="text-[15px] text-neutral-500 leading-relaxed">
-                    13790 Bridgewater Crossings Blvd. Ste 1080
-                    <br />
-                    Windermere, FL 34786
                   </p>
                 </div>
                 <div className="pt-6 border-t border-neutral-100">

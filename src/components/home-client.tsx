@@ -460,7 +460,7 @@ export function HomeClient({
         <section className="border-t border-neutral-100 py-10">
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-300 shrink-0">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-500 shrink-0">
                 As Seen In
               </p>
               <div className="h-[1px] bg-neutral-100 flex-1 hidden md:block" />
@@ -468,7 +468,7 @@ export function HomeClient({
                 {mediaLogos.map((logo) => (
                   <span
                     key={logo}
-                    className="text-[12px] text-neutral-300 tracking-wide"
+                    className="text-[12px] text-neutral-600 tracking-wide"
                   >
                     {logo}
                   </span>
@@ -476,15 +476,15 @@ export function HomeClient({
               </div>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-300 shrink-0">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-500 shrink-0">
                 Recognition
               </p>
               <div className="h-[1px] bg-neutral-100 flex-1 hidden md:block" />
               <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
-                <span className="text-[12px] text-neutral-300 tracking-wide">
+                <span className="text-[12px] text-neutral-600 tracking-wide">
                   Top 125 RE Instagram Influencers (Feedspot, 2019)
                 </span>
-                <span className="text-[12px] text-neutral-300 tracking-wide">
+                <span className="text-[12px] text-neutral-600 tracking-wide">
                   Social Media Marketer of the Year (Orlando Real Producers, 2019)
                 </span>
               </div>
