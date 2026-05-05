@@ -413,7 +413,7 @@ export function HomeClient({
                 href="https://www.google.com/search?q=Nicole+Mickle+Orlando+realtor+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] tracking-[0.2em] uppercase text-neutral-300 hover:text-forest transition-colors duration-300"
+                className="text-[11px] tracking-[0.2em] uppercase text-neutral-500 hover:text-forest transition-colors duration-300"
               >
                 5.0 Google Rating
               </a>

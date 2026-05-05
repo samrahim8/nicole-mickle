@@ -144,19 +144,6 @@ export function Footer() {
                 <a href="mailto:nicole@nicolemickle.com" className="block hover:text-white transition-colors duration-300">
                   nicole@nicolemickle.com
                 </a>
-                <p className="text-white/50">
-                  13790 Bridgewater Crossings Blvd. Ste 1080
-                  <br />
-                  Windermere, FL 34786
-                </p>
-                <a
-                  href="https://iorlandorealestate.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block hover:text-white transition-colors duration-300"
-                >
-                  Search Homes
-                </a>
               </div>
             </div>
           </div>
@@ -177,14 +164,6 @@ export function Footer() {
               >
                 Terms
               </Link>
-              <a
-                href="https://iorlandorealestate.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
-              >
-                iorlandorealestate.com
-              </a>
             </div>
           </div>
         </div>

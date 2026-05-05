@@ -6,25 +6,25 @@ import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
 
 const milestones = [
   {
-    period: "2014 \u2013 2026",
+    period: "2014 to 2026",
     title: "Relocation & New Construction",
     description:
       "Focused on relocation and new construction throughout Central Florida. Also founded Florida Homes and Living, a lifestyle blog covering interior design, travel, and Florida living.",
   },
   {
-    period: "2012 \u2013 2014",
+    period: "2012 to 2014",
     title: "Real Estate Sales",
     description:
       "Started at Reliance Realty as a transaction coordinator for an RE attorney/broker, then became a listing agent negotiating short sales. Developed hedge fund and investor relationships, closing 200+ short sales in two years. Pivoted to Instagram and social media marketing, building a global relocation network.",
   },
   {
-    period: "1996 \u2013 2019",
+    period: "1996 to 2019",
     title: "APAT Settlement Services",
     description:
       "Built and ran a nationwide mobile title closing company for 23 years, coordinating closings for mortgage brokers, title companies, and real estate brokerages across the country, including London, England and Puerto Rico.",
   },
   {
-    period: "1996 \u2013 2005",
+    period: "1996 to 2005",
     title: "Mortgage & Closings",
     description:
       "Senior Mortgage Broker at PMC Lending, handling refinancing and conventional loans with a specialty in bankruptcy. Founded Statewide Closers, a mobile notary closing company that grew to cover all Florida counties and eventually expanded nationwide as APAT Settlement Services.",
