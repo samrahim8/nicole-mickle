@@ -425,12 +425,17 @@ export function QuizClient() {
                       }}
                       className="flex flex-col sm:flex-row gap-3"
                     >
+                      <label htmlFor="quiz-email" className="sr-only">
+                        Email address
+                      </label>
                       <input
+                        id="quiz-email"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         placeholder="your@email.com"
+                        aria-describedby={error ? "quiz-email-error" : undefined}
                         className="flex-1 px-4 py-3.5 bg-white/5 border border-white/15 text-[16px] sm:text-[14px] text-white placeholder:text-white/25 focus:outline-none focus:border-white/40 transition-colors duration-300"
                       />
                       <button
@@ -442,7 +447,7 @@ export function QuizClient() {
                       </button>
                     </form>
                     {error && (
-                      <p className="text-[14px] text-red-300 mt-3 text-center">{error}</p>
+                      <p id="quiz-email-error" role="alert" className="text-[14px] text-red-300 mt-3 text-center">{error}</p>
                     )}
                   </div>
                 )}

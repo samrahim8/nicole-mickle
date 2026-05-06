@@ -28,6 +28,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   // When on a transparent hero page and not scrolled, use light text
   const isLight = isTransparentHero && !scrolled;
 
@@ -92,7 +101,9 @@ export function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className={`lg:hidden p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors duration-500 ${isLight ? "text-white" : "text-charcoal"}`}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <div className="w-5 h-4 relative flex flex-col justify-between">
             <motion.span
@@ -118,6 +129,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

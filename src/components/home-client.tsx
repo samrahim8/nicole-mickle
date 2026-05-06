@@ -47,11 +47,33 @@ export function HomeClient({
   mediaLogos,
 }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [videoPlaying, setVideoPlaying] = useState(true);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
   const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce && heroVideoRef.current) {
+      heroVideoRef.current.pause();
+      setVideoPlaying(false);
+    }
+  }, []);
+
+  const toggleHeroVideo = () => {
+    const v = heroVideoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setVideoPlaying(true);
+    } else {
+      v.pause();
+      setVideoPlaying(false);
+    }
+  };
 
   // Defer mounting the Mapbox-powered NeighborhoodExplorer until the user
   // scrolls near it. Saves ~400 KB of JS and tile fetches on initial load.
@@ -81,17 +103,36 @@ export function HomeClient({
       >
         {/* Background video */}
         <video
+          ref={heroVideoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
           poster="/images/hero-poster.jpg"
+          aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/45" />
+        <button
+          type="button"
+          onClick={toggleHeroVideo}
+          aria-label={videoPlaying ? "Pause background video" : "Play background video"}
+          className="absolute bottom-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
+        >
+          {videoPlaying ? (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="6" y="5" width="4" height="14" />
+              <rect x="14" y="5" width="4" height="14" />
+            </svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
 
         <motion.div
           style={{ opacity: heroOpacity }}

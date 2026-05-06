@@ -41,12 +41,12 @@ export function Footer() {
               <p className="font-[family-name:var(--font-playfair)] text-lg text-white tracking-[-0.01em] mb-3">
                 Nicole Mickle
               </p>
-              <p className="text-[13px] text-white/50 leading-relaxed max-w-xs mb-6">
+              <p className="text-[13px] text-white/70 leading-relaxed max-w-xs mb-6">
                 Orlando relocation &amp; new construction specialist.
                 30 years of industry expertise.
               </p>
               <div className="mb-6">
-                <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-3">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-white/60 mb-3">
                   Brokerage
                 </p>
                 <Image
@@ -62,10 +62,10 @@ export function Footer() {
                   href="https://www.instagram.com/iorlandorealestate/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors duration-300 p-2 -m-2"
+                  className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"
                   aria-label="Instagram"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <rect x="2" y="2" width="20" height="20" rx="5" />
                     <circle cx="12" cy="12" r="5" />
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -75,10 +75,10 @@ export function Footer() {
                   href="https://www.facebook.com/NicoleMickleFL/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors duration-300 p-2 -m-2"
+                  className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"
                   aria-label="Facebook"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
                 </a>
@@ -86,10 +86,10 @@ export function Footer() {
                   href="https://www.linkedin.com/in/orlandorealestate/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors duration-300 p-2 -m-2"
+                  className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"
                   aria-label="LinkedIn"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
                     <rect x="2" y="9" width="4" height="12" />
                     <circle cx="4" cy="4" r="2" />
@@ -99,10 +99,10 @@ export function Footer() {
                   href="https://www.youtube.com/channel/UCkzLaH9JCWK5epROI2ZyvtA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors duration-300 p-2 -m-2"
+                  className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"
                   aria-label="YouTube"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
                     <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
                   </svg>
@@ -110,7 +110,7 @@ export function Footer() {
               </div>
             </div>
             <div className="md:col-span-3 md:col-start-7">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/60 mb-4">
                 Explore
               </p>
               <div className="space-y-2.5">
@@ -126,7 +126,7 @@ export function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-[13px] text-white/50 hover:text-white transition-colors duration-300"
+                    className="block text-[13px] text-white/70 hover:text-white transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -134,10 +134,10 @@ export function Footer() {
               </div>
             </div>
             <div className="md:col-span-3">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-4">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/60 mb-4">
                 Contact
               </p>
-              <div className="space-y-2.5 text-[13px] text-white/50">
+              <div className="space-y-2.5 text-[13px] text-white/70">
                 <a href="tel:+14073530826" className="block hover:text-white transition-colors duration-300">
                   (407) 353-0826
                 </a>
@@ -148,21 +148,27 @@ export function Footer() {
             </div>
           </div>
           <div className="border-t border-white/10 mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-[11px] text-white/30">
+            <p className="text-[11px] text-white/60">
               &copy; {new Date().getFullYear()} Nicole Mickle Real Estate. Equal Housing Opportunity.
             </p>
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="text-[11px] text-white/60 hover:text-white/60 transition-colors duration-300"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-[11px] text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="text-[11px] text-white/60 hover:text-white/60 transition-colors duration-300"
               >
                 Terms
+              </Link>
+              <Link
+                href="/accessibility"
+                className="text-[11px] text-white/60 hover:text-white/60 transition-colors duration-300"
+              >
+                Accessibility
               </Link>
             </div>
           </div>

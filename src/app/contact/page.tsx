@@ -92,7 +92,11 @@ export default function ContactPage() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-8"
+                  aria-describedby={error ? "contact-form-error" : undefined}
+                >
                   <div className="grid sm:grid-cols-2 gap-8">
                     <div>
                       <label
@@ -221,7 +225,7 @@ export default function ContactPage() {
                     </svg>
                   </button>
                   {error && (
-                    <p className="text-[14px] text-red-600 mt-2">{error}</p>
+                    <p id="contact-form-error" role="alert" className="text-[14px] text-red-600 mt-2">{error}</p>
                   )}
                 </form>
               )}

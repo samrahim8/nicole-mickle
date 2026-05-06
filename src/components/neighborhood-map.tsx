@@ -169,7 +169,19 @@ export function NeighborhoodMap({ neighborhoods }: Props) {
 
   return (
     <div className="relative">
-      <div ref={mapContainer} className="w-full h-[500px] lg:h-[600px]" />
+      <p className="sr-only">
+        Interactive map of {neighborhoods.length} Central Florida neighborhoods.
+        For a non-map view of every neighborhood with full details, visit the{" "}
+        <Link href="/neighborhoods" className="underline">neighborhoods directory</Link>.
+        Use the Tab key to focus the map, then arrow keys to pan and the plus
+        and minus keys to zoom.
+      </p>
+      <div
+        ref={mapContainer}
+        role="application"
+        aria-label="Map of Central Florida neighborhoods. Use arrow keys to pan, plus and minus to zoom."
+        className="w-full h-[500px] lg:h-[600px]"
+      />
 
       {/* Selected neighborhood panel */}
       <div
