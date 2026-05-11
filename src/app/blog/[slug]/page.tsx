@@ -165,6 +165,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       fill
                       sizes="40px"
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
                 ) : null}
@@ -220,6 +221,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           fill
                           sizes="(min-width: 1024px) 28rem, 45vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                          unoptimized
                         />
                       ) : null}
                     </div>

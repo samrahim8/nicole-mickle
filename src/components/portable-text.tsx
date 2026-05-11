@@ -110,6 +110,7 @@ const components: PortableTextComponents = {
               fill
               sizes="(min-width: 1024px) 48rem, 100vw"
               className="object-cover"
+              unoptimized
             />
           </div>
           {image.caption ? (
