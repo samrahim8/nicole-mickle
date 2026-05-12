@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyRedirects } from "./src/lib/legacy-redirects";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -13,6 +14,9 @@ const nextConfig: NextConfig = {
         pathname: "/images/**",
       },
     ],
+  },
+  async redirects() {
+    return legacyRedirects;
   },
 };
 

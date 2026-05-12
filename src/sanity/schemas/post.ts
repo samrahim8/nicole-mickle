@@ -134,6 +134,22 @@ export const post = defineType({
         "Original WP permalink, kept for reference and redirect auditing.",
       hidden: ({ value }) => !value,
     }),
+    defineField({
+      name: "legacyWaybackUrl",
+      title: "Legacy Wayback URL",
+      type: "url",
+      group: "meta",
+      readOnly: true,
+      hidden: ({ value }) => !value,
+    }),
+    defineField({
+      name: "legacyWaybackTimestamp",
+      title: "Legacy Wayback Timestamp",
+      type: "string",
+      group: "meta",
+      readOnly: true,
+      hidden: ({ value }) => !value,
+    }),
   ],
   orderings: [
     {
