@@ -14,6 +14,7 @@ import { argv, exit } from "node:process";
 
 import { aboutFallback } from "../src/lib/about-fallback";
 import { contactFallback } from "../src/lib/contact-fallback";
+import { homeFallback } from "../src/lib/home-fallback";
 import { newConstructionFallback } from "../src/lib/new-construction-fallback";
 import { quizFallback } from "../src/lib/quiz-fallback";
 import { relocatingFallback } from "../src/lib/relocating-fallback";
@@ -128,9 +129,24 @@ async function seedRelocatingPage() {
   console.log("  ✓ wrote relocatingPage");
 }
 
+async function seedHomePage() {
+  console.log("→ homePage");
+  const fb = homeFallback;
+  await client.createOrReplace({
+    _id: "homePage",
+    _type: "homePage",
+    ...fb,
+    aboutStats: addKeys(fb.aboutStats, "stat"),
+    audiences: addKeys(fb.audiences, "aud"),
+    testimonials: addKeys(fb.testimonials, "test"),
+  });
+  console.log("  ✓ wrote homePage");
+}
+
 const seeders: Record<string, () => Promise<void>> = {
   aboutPage: seedAboutPage,
   contactPage: seedContactPage,
+  homePage: seedHomePage,
   newConstructionPage: seedNewConstructionPage,
   quizPage: seedQuizPage,
   relocatingPage: seedRelocatingPage,

@@ -21,31 +21,51 @@ const NeighborhoodExplorer = dynamic(
   }
 );
 
-interface Props {
-  credentials: string[];
+export type HomePageData = {
+  heroHeadlineLine1: string;
+  heroHeadlineLine2: string;
+  heroHeadlineLine3: string;
+  heroTagline: string;
+  heroPrimaryCtaLabel: string;
+  heroSecondaryCtaLabel: string;
+  positioningText: string;
+  aboutEyebrow: string;
+  aboutHeadlineLine1: string;
+  aboutHeadlineLine2: string;
+  aboutParagraphs: string[];
+  aboutCtaLabel: string;
+  aboutStats: { number: string; label: string }[];
+  audiencesHeadline: string;
   audiences: {
+    number: string;
     title: string;
     description: string;
-    href: string;
     cta: string;
-    number: string;
+    href: string;
   }[];
-  neighborhoods: Neighborhood[];
-  testimonials: {
-    text: string;
-    author: string;
-    context: string;
-  }[];
+  neighborhoodsEyebrow: string;
+  neighborhoodsHeadlineLine1: string;
+  neighborhoodsHeadlineLine2: string;
+  neighborhoodsViewAllLabel: string;
+  testimonialsEyebrow: string;
+  testimonials: { text: string; author: string; context: string }[];
+  quizCtaEyebrow: string;
+  quizCtaHeadline: string;
+  quizCtaBody: string;
+  quizCtaLabel: string;
+  asSeenInLabel: string;
   mediaLogos: string[];
+  recognitionLabel: string;
+  recognitionItems: string[];
+};
+
+interface Props {
+  data: HomePageData;
+  neighborhoods: Neighborhood[];
 }
 
-export function HomeClient({
-  credentials,
-  audiences,
-  neighborhoods,
-  testimonials,
-  mediaLogos,
-}: Props) {
+export function HomeClient({ data, neighborhoods }: Props) {
+  const { audiences, testimonials, mediaLogos } = data;
   const heroRef = useRef<HTMLDivElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [videoPlaying, setVideoPlaying] = useState(true);
@@ -140,17 +160,17 @@ export function HomeClient({
         >
           <TextReveal delay={0.3}>
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
-              Orlando&apos;s relocation
+              {data.heroHeadlineLine1}
             </h1>
           </TextReveal>
           <TextReveal delay={0.4}>
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
-              &amp; new construction
+              {data.heroHeadlineLine2}
             </h1>
           </TextReveal>
           <TextReveal delay={0.5}>
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal italic">
-              specialist
+              {data.heroHeadlineLine3}
             </h1>
           </TextReveal>
 
@@ -161,7 +181,7 @@ export function HomeClient({
             className="mt-10"
           >
             <p className="text-[16px] sm:text-[15px] text-white/70 leading-[1.8] max-w-lg mx-auto">
-              Find your neighborhood before you pack a single box.
+              {data.heroTagline}
             </p>
           </motion.div>
 
@@ -175,7 +195,7 @@ export function HomeClient({
               href="/contact"
               className="group text-[13px] tracking-wide font-medium text-white flex items-center gap-2 border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
             >
-              Let&apos;s talk
+              {data.heroPrimaryCtaLabel}
               <svg
                 width="14" height="14" viewBox="0 0 16 16" fill="none"
                 stroke="currentColor" strokeWidth="1.5"
@@ -191,7 +211,7 @@ export function HomeClient({
               rel="noopener noreferrer"
               className="text-[13px] tracking-wide text-white/50 hover:text-white transition-colors duration-300"
             >
-              Search homes
+              {data.heroSecondaryCtaLabel}
             </a>
           </motion.div>
         </motion.div>
@@ -216,7 +236,7 @@ export function HomeClient({
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 py-5">
           <FadeIn>
             <p className="text-center text-[11px] tracking-[0.35em] uppercase text-neutral-400">
-              Orlando relocation &amp; new construction, done thoughtfully
+              {data.positioningText}
             </p>
           </FadeIn>
         </div>
@@ -240,41 +260,43 @@ export function HomeClient({
               </div>
               <div className="lg:col-span-6 lg:col-start-7">
                 <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-6">
-                  About Nicole
+                  {data.aboutEyebrow}
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-8">
-                  Three decades of Orlando,
-                  <span className="italic"> from the inside out</span>
+                  {data.aboutHeadlineLine1}
+                  <span className="italic"> {data.aboutHeadlineLine2}</span>
                 </h2>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-4">
-                  A Central Florida native with 30 years in the industry.
-                  Mortgage broker, nationwide closing company owner, and licensed
-                  realtor. Nicole understands every stage of the transaction
-                  from the inside out.
-                </p>
-                <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
-                  Founder of Florida Homes and Living. Specializing in
-                  relocation and new construction throughout Central Florida.
-                </p>
+                {data.aboutParagraphs.map((p, i) => (
+                  <p
+                    key={i}
+                    className={`text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] ${i < data.aboutParagraphs.length - 1 ? "mb-4" : "mb-8"}`}
+                  >
+                    {p}
+                  </p>
+                ))}
 
                 {/* Social proof */}
                 <div className="flex items-center gap-6 mb-8 pb-8 border-b border-neutral-100">
-                  <div>
-                    <p className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal">5.0</p>
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-neutral-400 mt-1">Google Rating</p>
-                  </div>
-                  <div className="w-[1px] h-10 bg-neutral-100" />
-                  <div>
-                    <p className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal">30</p>
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-neutral-400 mt-1">Years Experience</p>
-                  </div>
+                  {data.aboutStats.map((stat, i) => (
+                    <div key={stat.label} className="flex items-center gap-6">
+                      {i > 0 && <div className="w-[1px] h-10 bg-neutral-100" />}
+                      <div>
+                        <p className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal">
+                          {stat.number}
+                        </p>
+                        <p className="text-[10px] tracking-[0.15em] uppercase text-neutral-400 mt-1">
+                          {stat.label}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <Link
                   href="/about"
                   className="group text-[13px] tracking-wide text-forest flex items-center gap-2 border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 w-fit"
                 >
-                  More about Nicole
+                  {data.aboutCtaLabel}
                   <svg
                     width="14" height="14" viewBox="0 0 16 16" fill="none"
                     stroke="currentColor" strokeWidth="1.5"
@@ -295,7 +317,7 @@ export function HomeClient({
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center mb-20 lg:mb-28">
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
-                Three ways I can help
+                {data.audiencesHeadline}
               </h2>
             </div>
           </FadeIn>
@@ -345,18 +367,18 @@ export function HomeClient({
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
               <div>
                 <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                  Neighborhoods
+                  {data.neighborhoodsEyebrow}
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
-                  Orlando isn&apos;t one place.
-                  <span className="italic"> It&apos;s many.</span>
+                  {data.neighborhoodsHeadlineLine1}
+                  <span className="italic"> {data.neighborhoodsHeadlineLine2}</span>
                 </h2>
               </div>
               <Link
                 href="/neighborhoods"
                 className="text-[12px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 flex items-center gap-2 shrink-0"
               >
-                View all neighborhoods
+                {data.neighborhoodsViewAllLabel}
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
@@ -391,7 +413,7 @@ export function HomeClient({
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-16 lg:mb-24">
-              What Clients Say
+              {data.testimonialsEyebrow}
             </p>
           </FadeIn>
 
@@ -469,20 +491,19 @@ export function HomeClient({
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-[10px] tracking-[0.35em] uppercase text-white/40 mb-6">
-                Not Sure Where to Start?
+                {data.quizCtaEyebrow}
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
-                Find your Orlando neighborhood
+                {data.quizCtaHeadline}
               </h2>
               <p className="text-[16px] sm:text-[15px] text-white/60 leading-[1.8] mb-10">
-                Five questions. Two minutes. Personalized recommendations based
-                on your lifestyle, budget, and priorities.
+                {data.quizCtaBody}
               </p>
               <Link
                 href="/quiz"
                 className="group inline-flex items-center gap-3 text-[13px] tracking-wide font-medium text-forest bg-white px-8 py-4 hover:bg-white/90 transition-all duration-300"
               >
-                Take the quiz
+                {data.quizCtaLabel}
                 <svg
                   width="14" height="14" viewBox="0 0 16 16" fill="none"
                   stroke="currentColor" strokeWidth="1.5"
@@ -502,7 +523,7 @@ export function HomeClient({
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-500 shrink-0">
-                As Seen In
+                {data.asSeenInLabel}
               </p>
               <div className="h-[1px] bg-neutral-100 flex-1 hidden md:block" />
               <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
@@ -518,16 +539,15 @@ export function HomeClient({
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-500 shrink-0">
-                Recognition
+                {data.recognitionLabel}
               </p>
               <div className="h-[1px] bg-neutral-100 flex-1 hidden md:block" />
               <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
-                <span className="text-[12px] text-neutral-600 tracking-wide">
-                  Top 125 RE Instagram Influencers (Feedspot, 2019)
-                </span>
-                <span className="text-[12px] text-neutral-600 tracking-wide">
-                  Social Media Marketer of the Year (Orlando Real Producers, 2019)
-                </span>
+                {data.recognitionItems.map((item) => (
+                  <span key={item} className="text-[12px] text-neutral-600 tracking-wide">
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

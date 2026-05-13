@@ -8,12 +8,14 @@ import type { StructureResolver } from "sanity/structure";
  * Blog-side document types (post, author, category) keep their default
  * list behaviour because there are many of each.
  */
+// Order here = order in Studio sidebar.
 const SINGLETONS: { id: string; type: string; title: string }[] = [
+  { id: "homePage", type: "homePage", title: "Homepage" },
   { id: "aboutPage", type: "aboutPage", title: "About" },
-  { id: "contactPage", type: "contactPage", title: "Contact" },
+  { id: "relocatingPage", type: "relocatingPage", title: "Relocating" },
   { id: "newConstructionPage", type: "newConstructionPage", title: "New Construction" },
   { id: "quizPage", type: "quizPage", title: "Quiz" },
-  { id: "relocatingPage", type: "relocatingPage", title: "Relocating" },
+  { id: "contactPage", type: "contactPage", title: "Contact" },
 ];
 
 const SINGLETON_TYPES = new Set(SINGLETONS.map((s) => s.type));

@@ -231,3 +231,39 @@ export const relocatingPageQuery = defineQuery(`
     seoDescription
   }
 `);
+
+export const homePageQuery = defineQuery(`
+  *[_type == "homePage" && _id == "homePage"][0] {
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroHeadlineLine3,
+    heroTagline,
+    heroPrimaryCtaLabel,
+    heroSecondaryCtaLabel,
+    positioningText,
+    aboutEyebrow,
+    aboutHeadlineLine1,
+    aboutHeadlineLine2,
+    aboutParagraphs,
+    aboutCtaLabel,
+    aboutStats[]{ number, label },
+    audiencesHeadline,
+    audiences[]{ number, title, description, cta, href },
+    neighborhoodsEyebrow,
+    neighborhoodsHeadlineLine1,
+    neighborhoodsHeadlineLine2,
+    neighborhoodsViewAllLabel,
+    testimonialsEyebrow,
+    testimonials[]{ text, author, context },
+    quizCtaEyebrow,
+    quizCtaHeadline,
+    quizCtaBody,
+    quizCtaLabel,
+    asSeenInLabel,
+    mediaLogos,
+    recognitionLabel,
+    recognitionItems,
+    seoTitle,
+    seoDescription
+  }
+`);
