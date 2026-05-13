@@ -85,3 +85,29 @@ export const relatedPostsQuery = defineQuery(`
     }
   }
 `);
+
+// -------------------- Pages --------------------
+
+export const aboutPageQuery = defineQuery(`
+  *[_type == "aboutPage" && _id == "aboutPage"][0] {
+    heroEyebrow,
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroParagraphs,
+    heroImage {
+      ...,
+      "alt": coalesce(alt, "")
+    },
+    journeyEyebrow,
+    journeyHeadline,
+    milestones[]{ period, title, description },
+    credentialsEyebrow,
+    credentialsHeadline,
+    credentialItems,
+    discretionEyebrow,
+    discretionHeadline,
+    discretionParagraphs,
+    seoTitle,
+    seoDescription
+  }
+`);
