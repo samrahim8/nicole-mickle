@@ -179,8 +179,12 @@ export const legacyRedirects: Redirect[] = [
   { source: "/comments/feed/:path*", destination: "/blog/rss.xml", permanent: true },
 
   // WordPress sitemaps → new sitemap.
+  // (path-to-regexp's :x* modifier only works after /, so the per-section
+  // sitemap variants are enumerated rather than wildcarded.)
   { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
-  { source: "/wp-sitemap-:path*.xml", destination: "/sitemap.xml", permanent: true },
+  { source: "/wp-sitemap-:type.xml", destination: "/sitemap.xml", permanent: true },
+  { source: "/wp-sitemap-:type-:n.xml", destination: "/sitemap.xml", permanent: true },
+  { source: "/wp-sitemap-:type-:sub-:n.xml", destination: "/sitemap.xml", permanent: true },
   { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
 
   // Root pagination from a few WP themes.
