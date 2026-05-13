@@ -194,3 +194,40 @@ export const newConstructionPageQuery = defineQuery(`
     seoDescription
   }
 `);
+
+export const relocatingPageQuery = defineQuery(`
+  *[_type == "relocatingPage" && _id == "relocatingPage"][0] {
+    heroEyebrow,
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroBody,
+    heroCtaLabel,
+    heroStats[]{ number, label },
+    trustedByEyebrow,
+    trustedByHeadline,
+    trustedByBody,
+    employers,
+    processEyebrow,
+    processHeadline,
+    processSteps[]{ number, title, description },
+    whyEyebrow,
+    whyHeadline,
+    whyItems[]{ title, description },
+    faqEyebrow,
+    faqHeadline,
+    faq[]{ question, answer },
+    neighborhoodsEyebrow,
+    neighborhoodsHeadline,
+    neighborhoodsBody,
+    neighborhoodsCtaLabel,
+    neighborhoodsQuizEyebrow,
+    neighborhoodsQuizHeadline,
+    neighborhoodsQuizBody,
+    neighborhoodsQuizCtaLabel,
+    finalCtaHeadline,
+    finalCtaBody,
+    finalCtaLabel,
+    seoTitle,
+    seoDescription
+  }
+`);

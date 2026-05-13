@@ -3,14 +3,45 @@
 import Link from "next/link";
 import { FadeIn, SlideIn, Stagger, StaggerChild, TextReveal } from "./animate";
 
-interface Props {
-  steps: { number: string; title: string; description: string }[];
-  reasons: { title: string; description: string }[];
-  originCities: { name: string; slug: string }[];
+export type RelocatingPageData = {
+  heroEyebrow: string;
+  heroHeadlineLine1: string;
+  heroHeadlineLine2: string;
+  heroBody: string;
+  heroCtaLabel: string;
+  heroStats: { number: string; label: string }[];
+  trustedByEyebrow: string;
+  trustedByHeadline: string;
+  trustedByBody: string;
   employers: string[];
+  processEyebrow: string;
+  processHeadline: string;
+  processSteps: { number: string; title: string; description: string }[];
+  whyEyebrow: string;
+  whyHeadline: string;
+  whyItems: { title: string; description: string }[];
+  faqEyebrow: string;
+  faqHeadline: string;
+  faq: { question: string; answer: string }[];
+  neighborhoodsEyebrow: string;
+  neighborhoodsHeadline: string;
+  neighborhoodsBody: string;
+  neighborhoodsCtaLabel: string;
+  neighborhoodsQuizEyebrow: string;
+  neighborhoodsQuizHeadline: string;
+  neighborhoodsQuizBody: string;
+  neighborhoodsQuizCtaLabel: string;
+  finalCtaHeadline: string;
+  finalCtaBody: string;
+  finalCtaLabel: string;
+};
+
+interface Props {
+  data: RelocatingPageData;
+  originCities: { name: string; slug: string }[];
 }
 
-export function RelocatingClient({ steps, reasons, originCities, employers }: Props) {
+export function RelocatingClient({ data, originCities }: Props) {
   return (
     <>
       {/* Hero */}
@@ -20,22 +51,19 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             <div className="lg:col-span-7">
               <FadeIn>
                 <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-6">
-                  Relocation
+                  {data.heroEyebrow}
                 </p>
               </FadeIn>
               <TextReveal>
                 <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
-                  You&apos;re choosing a lifestyle,
+                  {data.heroHeadlineLine1}
                   <br />
-                  <span className="italic">not just a house</span>
+                  <span className="italic">{data.heroHeadlineLine2}</span>
                 </h1>
               </TextReveal>
               <FadeIn delay={0.4}>
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mt-8 max-w-lg">
-                  You&apos;re not just buying a home. You&apos;re choosing a
-                  lifestyle. The lake access. The Friday night restaurants. The
-                  drive to work on Monday. After 30 years living and working in
-                  Orlando, I match you to the life, not just the house.
+                  {data.heroBody}
                 </p>
               </FadeIn>
               <FadeIn delay={0.6}>
@@ -44,12 +72,8 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
                     href="/contact"
                     className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
                   >
-                    Start a conversation
-                    <svg
-                      width="14" height="14" viewBox="0 0 16 16" fill="none"
-                      stroke="currentColor" strokeWidth="1.5"
-                      className="group-hover:translate-x-1 transition-transform duration-300"
-                    >
+                    {data.heroCtaLabel}
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
                   </Link>
@@ -61,30 +85,19 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             <div className="lg:col-span-4 lg:col-start-9 lg:self-end">
               <FadeIn delay={0.5}>
                 <div className="bg-forest p-8 lg:p-10 space-y-6">
-                  <div className="border-b border-white/15 pb-6">
-                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
-                      5.0
-                    </p>
-                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      Google Rating
-                    </p>
-                  </div>
-                  <div className="border-b border-white/15 pb-6">
-                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
-                      30 years
-                    </p>
-                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      In the Orlando market
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
-                      0% state tax
-                    </p>
-                    <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
-                      No Florida income tax
-                    </p>
-                  </div>
+                  {data.heroStats.map((stat, i) => (
+                    <div
+                      key={`${stat.number}-${i}`}
+                      className={i < data.heroStats.length - 1 ? "border-b border-white/15 pb-6" : ""}
+                    >
+                      <p className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.1] text-white">
+                        {stat.number}
+                      </p>
+                      <p className="text-[11px] tracking-[0.2em] uppercase text-white/50 mt-1">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </FadeIn>
             </div>
@@ -126,20 +139,18 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <FadeIn className="lg:col-span-4">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                Trusted By Relocating Professionals
+                {data.trustedByEyebrow}
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6">
-                Clients have included employees from
+                {data.trustedByHeadline}
               </h2>
               <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">
-                None of these were corporate referral arrangements. Each client
-                found me through referrals, research, or recommendation, and
-                hired me directly. That&apos;s how I prefer to work.
+                {data.trustedByBody}
               </p>
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <Stagger className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6" staggerDelay={0.05}>
-                {employers.map((name) => (
+                {data.employers.map((name) => (
                   <StaggerChild key={name}>
                     <div className="py-4 border-b border-neutral-100">
                       <p className="text-[16px] sm:text-[15px] text-charcoal font-medium">
@@ -159,15 +170,15 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-4">
-              The Process
+              {data.processEyebrow}
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-charcoal max-w-xl mb-16 lg:mb-24">
-              A clear path from first call to closing day
+              {data.processHeadline}
             </h2>
           </FadeIn>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.1}>
-            {steps.map((step) => (
+            {data.processSteps.map((step) => (
               <StaggerChild key={step.number} className="flex">
                 <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-8 lg:p-10">
                   <span className="text-[11px] tracking-[0.25em] text-neutral-300 font-medium mb-6">
@@ -193,23 +204,23 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <FadeIn>
                 <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-4">
-                  Why Work With Me
+                  {data.whyEyebrow}
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
-                  The difference 30 years makes
+                  {data.whyHeadline}
                 </h2>
               </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.1}>
-                {reasons.map((reason) => (
-                  <StaggerChild key={reason.title} className="flex">
+                {data.whyItems.map((item) => (
+                  <StaggerChild key={item.title} className="flex">
                     <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
                       <h3 className="text-base font-medium text-charcoal mb-3 min-h-[2lh]">
-                        {reason.title}
+                        {item.title}
                       </h3>
                       <p className="text-[15px] text-neutral-500 leading-relaxed">
-                        {reason.description}
+                        {item.description}
                       </p>
                     </article>
                   </StaggerChild>
@@ -225,54 +236,22 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <FadeIn>
             <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-              Frequently Asked
+              {data.faqEyebrow}
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-charcoal max-w-xl mb-16 lg:mb-24">
-              Questions from relocating buyers
+              {data.faqHeadline}
             </h2>
           </FadeIn>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6" staggerDelay={0.08}>
-            <StaggerChild className="flex">
-              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
-                  What&apos;s the best neighborhood in Orlando for families?
-                </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8]">
-                  It depends on your priorities. Winter Park and Baldwin Park offer walkability and top-rated schools. Lake Nona is newer with excellent amenities. Windermere has larger lots and a quieter pace. I match neighborhoods to your lifestyle, commute, school preferences, and budget rather than giving a one-size-fits-all answer.
-                </p>
-              </article>
-            </StaggerChild>
-            <StaggerChild className="flex">
-              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
-                  How far in advance should I start working with a realtor before relocating?
-                </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8]">
-                  Ideally three to six months before your move date. That gives us time for a discovery call, neighborhood research, virtual tours, and at least one in-person visit before writing offers. If your timeline is shorter, I can adjust. I have helped clients close in as little as 30 days when needed.
-                </p>
-              </article>
-            </StaggerChild>
-            <StaggerChild className="flex">
-              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
-                  Do I need to visit Orlando before buying a home?
-                </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8]">
-                  Strongly recommended but not always required. I offer detailed video tours, neighborhood drive-throughs, and FaceTime walkthroughs so you can evaluate homes remotely. Many of my relocation clients narrow their list virtually, then fly in for a focused weekend of final showings before making an offer.
-                </p>
-              </article>
-            </StaggerChild>
-            <StaggerChild className="flex">
-              <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
-                <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">
-                  What are the top rated schools in the Orlando area?
-                </h3>
-                <p className="text-[15px] text-neutral-500 leading-[1.8]">
-                  Orange County, Seminole County and Osceola County have highly rated public school districts with multiple A-rated schools. Winter Garden, Winter Park, Windermere, and Lake Nona are especially known for top-rated public schools. Private and charter options including and not limited to Bishop Moore, Trinity Prep, The Geneva School, Lake Highland Prep, Windermere Prep and Foundation Academy are also strong. I help match your family to the right school zone based on your priorities.
-                </p>
-              </article>
-            </StaggerChild>
+            {data.faq.map((item) => (
+              <StaggerChild key={item.question} className="flex">
+                <article className="flex flex-col h-full w-full bg-white border border-neutral-200 p-7 lg:p-8">
+                  <h3 className="font-medium text-charcoal mb-3 min-h-[2lh]">{item.question}</h3>
+                  <p className="text-[15px] text-neutral-500 leading-[1.8]">{item.answer}</p>
+                </article>
+              </StaggerChild>
+            ))}
           </Stagger>
         </div>
       </section>
@@ -283,26 +262,20 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <SlideIn direction="left" className="lg:col-span-6">
               <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
-                Explore Neighborhoods
+                {data.neighborhoodsEyebrow}
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,3.5vw,2.75rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-4">
-                Orlando isn&apos;t one place. It&apos;s many.
+                {data.neighborhoodsHeadline}
               </h2>
               <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] mb-8">
-                Every neighborhood has a different personality, pace, and price
-                point. My guides break down the lifestyle, schools, dining, and
-                market for each one so you can compare before you visit.
+                {data.neighborhoodsBody}
               </p>
               <Link
                 href="/neighborhoods"
                 className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
               >
-                Browse all neighborhoods
-                <svg
-                  width="14" height="14" viewBox="0 0 16 16" fill="none"
-                  stroke="currentColor" strokeWidth="1.5"
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                >
+                {data.neighborhoodsCtaLabel}
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
               </Link>
@@ -311,20 +284,19 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
             <SlideIn direction="right" className="lg:col-span-5 lg:col-start-8">
               <div className="bg-cream border border-neutral-200 p-10 lg:p-12">
                 <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-4">
-                  Not Sure Where to Start?
+                  {data.neighborhoodsQuizEyebrow}
                 </p>
                 <h3 className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.2] text-charcoal mb-3">
-                  Take the neighborhood quiz
+                  {data.neighborhoodsQuizHeadline}
                 </h3>
                 <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.7] mb-8">
-                  Five questions. Two minutes. Personalized recommendations
-                  based on your lifestyle and budget.
+                  {data.neighborhoodsQuizBody}
                 </p>
                 <Link
                   href="/quiz"
                   className="inline-block bg-forest text-white px-8 py-3.5 text-[13px] tracking-wide font-medium hover:bg-forest-light transition-colors duration-300"
                 >
-                  Start the quiz
+                  {data.neighborhoodsQuizCtaLabel}
                 </Link>
               </div>
             </SlideIn>
@@ -338,22 +310,17 @@ export function RelocatingClient({ steps, reasons, originCities, employers }: Pr
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
-                Thinking about Orlando?
+                {data.finalCtaHeadline}
               </h2>
               <p className="text-[16px] sm:text-[15px] text-white/70 mb-10">
-                Let&apos;s start with a conversation. No pressure, no pitch. Just
-                honest answers about what it&apos;s like to live here.
+                {data.finalCtaBody}
               </p>
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-white border-b border-white/60 pb-0.5 hover:border-white transition-all duration-300"
               >
-                Schedule a consultation
-                <svg
-                  width="14" height="14" viewBox="0 0 16 16" fill="none"
-                  stroke="currentColor" strokeWidth="1.5"
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                >
+                {data.finalCtaLabel}
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
               </Link>

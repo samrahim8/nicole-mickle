@@ -8,6 +8,7 @@ import { aboutPage } from "./pages/aboutPage";
 import { contactPage } from "./pages/contactPage";
 import { newConstructionPage } from "./pages/newConstructionPage";
 import { quizPage } from "./pages/quizPage";
+import { relocatingPage } from "./pages/relocatingPage";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   post,
@@ -18,4 +19,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   contactPage,
   newConstructionPage,
   quizPage,
+  relocatingPage,
 ];
