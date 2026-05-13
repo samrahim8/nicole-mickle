@@ -113,7 +113,8 @@ export const legacyRedirects: Redirect[] = [
   { source: "/questions-to-ask-your-real-estate-agent-when-selling", destination: "/blog/questions-to-ask-your-real-estate-agent-when-selling", permanent: true },
   { source: "/real-estate-captions", destination: "/blog/real-estate-captions", permanent: true },
   { source: "/real-estate-investment-in-florida", destination: "/blog/real-estate-investment-in-florida", permanent: true },
-  { source: "/real-estate-marketing-strategy", destination: "/blog/real-estate-marketing-strategy", permanent: true },
+  // Was an Elementor service-pitch page; closest topical post on new site.
+  { source: "/real-estate-marketing-strategy", destination: "/blog/seller-leads", permanent: true },
   { source: "/real-estate-quotes", destination: "/blog/real-estate-quotes", permanent: true },
   { source: "/realtor-for-new-construction", destination: "/blog/realtor-for-new-construction", permanent: true },
   { source: "/relocating-to-dr-phillips-florida", destination: "/blog/relocating-to-dr-phillips-florida", permanent: true },
@@ -154,7 +155,7 @@ export const legacyRedirects: Redirect[] = [
   { source: "/buy-an-orlando-home", destination: "/relocating", permanent: true },
   { source: "/deals", destination: "/blog", permanent: true },
   { source: "/florida-relocation", destination: "/relocating", permanent: true },
-  { source: "/instagram-tips", destination: "/blog", permanent: true },
+  { source: "/instagram-tips", destination: "/blog/instagram-stories-for-real-estate", permanent: true },
   { source: "/new-construction-homes-in-orlando", destination: "/new-construction", permanent: true },
   { source: "/news", destination: "/blog", permanent: true },
   { source: "/orlando-quiz", destination: "/quiz", permanent: true },
@@ -166,7 +167,13 @@ export const legacyRedirects: Redirect[] = [
   // One-off referenced in an old post body but never a real WP URL.
   { source: "/contact-nicole", destination: "/contact", permanent: true },
 
-  // Category / author / tag / paginated blog index → /blog.
+  // Topical category archives → matching new-site hub pages. More specific
+  // rules MUST come before the wildcard /category/:path* fallback.
+  { source: "/category/orlando-real-estate/relocation/:path*", destination: "/relocating", permanent: true },
+  { source: "/category/orlando-real-estate/new-construction/:path*", destination: "/new-construction", permanent: true },
+  { source: "/category/orlando-real-estate/neighborhood-guides/:path*", destination: "/neighborhoods", permanent: true },
+
+  // Everything else under category / author / tag / paginated blog index → /blog.
   { source: "/category/:path*", destination: "/blog", permanent: true },
   { source: "/author/:path*", destination: "/blog", permanent: true },
   { source: "/tag/:path*", destination: "/blog", permanent: true },
