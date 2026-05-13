@@ -16,10 +16,13 @@ export const { sanityFetch, SanityLive } = sanityClient
       client: sanityClient.withConfig({
         // Bump apiVersion for live edits (per Sanity's recommendation).
         apiVersion: "vX",
+        // Stega embeds invisible source-map markers in the response so the
+        // Presentation visual editor can map rendered text back to the
+        // Sanity field it came from. Studio is mounted at /studio.
+        stega: {
+          studioUrl: "/studio",
+        },
       }),
-      // Token used for the live stream (read-only). Defaults to the write
-      // token we already have in .env.local; in a more locked-down setup
-      // you'd issue a viewer-only token instead.
       serverToken: process.env.SANITY_API_WRITE_TOKEN,
       browserToken: process.env.NEXT_PUBLIC_SANITY_VIEWER_TOKEN,
     })

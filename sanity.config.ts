@@ -58,12 +58,16 @@ export default defineConfig({
             locations: [{ title: "Contact", href: "/contact" }],
           }),
         },
-        // For blog posts, map every published post to its /blog/<slug> route.
+        // Maps incoming URLs back to the Sanity document that drives them.
+        // Drives the "Documents on this page" sidebar in Presentation.
         mainDocuments: defineDocuments([
-          {
-            route: "/blog/:slug",
-            filter: `_type == "post" && slug.current == $slug`,
-          },
+          { route: "/", filter: `_type == "homePage" && _id == $id`, params: { id: "homePage" } },
+          { route: "/about", filter: `_type == "aboutPage" && _id == $id`, params: { id: "aboutPage" } },
+          { route: "/relocating", filter: `_type == "relocatingPage" && _id == $id`, params: { id: "relocatingPage" } },
+          { route: "/new-construction", filter: `_type == "newConstructionPage" && _id == $id`, params: { id: "newConstructionPage" } },
+          { route: "/quiz", filter: `_type == "quizPage" && _id == $id`, params: { id: "quizPage" } },
+          { route: "/contact", filter: `_type == "contactPage" && _id == $id`, params: { id: "contactPage" } },
+          { route: "/blog/:slug", filter: `_type == "post" && slug.current == $slug` },
         ]),
       },
     }),
