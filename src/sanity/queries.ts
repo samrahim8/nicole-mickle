@@ -153,3 +153,44 @@ export const contactPageQuery = defineQuery(`
     seoDescription
   }
 `);
+
+export const newConstructionPageQuery = defineQuery(`
+  *[_type == "newConstructionPage" && _id == "newConstructionPage"][0] {
+    heroEyebrow,
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroBody,
+    heroPrimaryCtaLabel,
+    heroSecondaryCtaLabel,
+    heroStats[]{ number, label },
+    photoBand[]{
+      ...,
+      "alt": coalesce(alt, "")
+    },
+    whyAgentEyebrow,
+    whyAgentHeadline,
+    whyAgentItems[]{ title, description },
+    processEyebrow,
+    processHeadline,
+    processSteps[]{ number, title, description },
+    buildersEyebrow,
+    buildersHeadline,
+    builders,
+    areasEyebrow,
+    areasHeadline,
+    infillEyebrow,
+    infillBody,
+    faqEyebrow,
+    faqHeadline,
+    faq[]{ question, answer },
+    ctaHeadline,
+    ctaBody,
+    ctaButtonLabel,
+    ctaSideEyebrow,
+    ctaSideHeadline,
+    ctaSideBody,
+    ctaSideButtonLabel,
+    seoTitle,
+    seoDescription
+  }
+`);

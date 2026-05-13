@@ -1,60 +1,125 @@
 import type { Metadata } from "next";
-import { NewConstructionClient } from "@/components/new-construction-client";
+import {
+  NewConstructionClient,
+  type NewConstructionPageData,
+} from "@/components/new-construction-client";
+import { sanityClient } from "@/sanity/client";
+import { newConstructionPageQuery } from "@/sanity/queries";
+import { newConstructionFallback } from "@/lib/new-construction-fallback";
+import { urlFor } from "@/sanity/image";
 
-export const metadata: Metadata = {
-  title: "New Construction",
-  description:
-    "Expert guidance on new construction homes in Orlando. Nicole Mickle helps you select builders, negotiate upgrades, and navigate the build process.",
-  alternates: { canonical: "/new-construction" },
+export const revalidate = 60;
+
+type SanityImageRef = { asset?: unknown; alt?: string } | null;
+type SanityNewConstruction = Partial<
+  Omit<NewConstructionPageData, "photoBand">
+> & {
+  photoBand: SanityImageRef[] | null;
+  seoTitle: string | null;
+  seoDescription: string | null;
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do I need my own realtor when buying new construction?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "I offer a high level of representation throughout the new construction process, guiding you through the builder's contract, advising on key decisions, and advocating for available incentives such as closing cost contributions, upgrade opportunities, and lot considerations. My compensation is handled directly with the builder, in alignment with customary real estate practices.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does it take to build a new home in Orlando?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most production homes take six to twelve months from contract to closing. Semi-custom and fully custom builds can take twelve to eighteen months or longer depending on complexity. Timelines can shift due to permitting, weather, or supply chain factors. Nicole monitors the build schedule and keeps you informed at every stage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What upgrades are worth the investment in a new build?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Spend on the things you can't change later. Ceiling height, electrical and plumbing rough-ins, structural options, and the floor plan choices that affect resale belong on the contract. Cosmetic finishes are different. Paint, fixtures, and backsplashes can almost always be done better and cheaper after closing.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I negotiate the price on a new construction home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, to an extent. Negotiability often depends on the builder's inventory levels and overall demand within the community. While builders typically avoid reducing base prices to protect future comparable sales, there is often opportunity to secure value through closing cost contributions, upgrade packages, lot premiums, and interest rate buydowns offered through the builder's preferred lender.",
-      },
-    },
-  ],
-};
+function resolvePhotoBand(
+  raw: SanityImageRef[] | null | undefined,
+): { src: string; alt: string }[] {
+  if (!raw?.length) return newConstructionFallback.photoBand;
+  const resolved = raw
+    .map((img, i) => {
+      if (!img?.asset) return null;
+      return {
+        src: urlFor(img as Parameters<typeof urlFor>[0]).width(1200).fit("max").url(),
+        alt: img.alt || newConstructionFallback.photoBand[i]?.alt || "",
+      };
+    })
+    .filter((x): x is { src: string; alt: string } => x !== null);
+  return resolved.length === 3 ? resolved : newConstructionFallback.photoBand;
+}
 
-export default function NewConstructionPage() {
+async function getPage(): Promise<{
+  data: NewConstructionPageData;
+  seo: { title?: string; description?: string };
+}> {
+  if (!sanityClient) return { data: newConstructionFallback, seo: {} };
+  try {
+    const doc = await sanityClient.fetch<SanityNewConstruction | null>(
+      newConstructionPageQuery,
+    );
+    if (!doc) return { data: newConstructionFallback, seo: {} };
+    const fb = newConstructionFallback;
+    const data: NewConstructionPageData = {
+      heroEyebrow: doc.heroEyebrow ?? fb.heroEyebrow,
+      heroHeadlineLine1: doc.heroHeadlineLine1 ?? fb.heroHeadlineLine1,
+      heroHeadlineLine2: doc.heroHeadlineLine2 ?? fb.heroHeadlineLine2,
+      heroBody: doc.heroBody ?? fb.heroBody,
+      heroPrimaryCtaLabel: doc.heroPrimaryCtaLabel ?? fb.heroPrimaryCtaLabel,
+      heroSecondaryCtaLabel: doc.heroSecondaryCtaLabel ?? fb.heroSecondaryCtaLabel,
+      heroStats: doc.heroStats?.length ? doc.heroStats : fb.heroStats,
+      photoBand: resolvePhotoBand(doc.photoBand),
+      whyAgentEyebrow: doc.whyAgentEyebrow ?? fb.whyAgentEyebrow,
+      whyAgentHeadline: doc.whyAgentHeadline ?? fb.whyAgentHeadline,
+      whyAgentItems: doc.whyAgentItems?.length ? doc.whyAgentItems : fb.whyAgentItems,
+      processEyebrow: doc.processEyebrow ?? fb.processEyebrow,
+      processHeadline: doc.processHeadline ?? fb.processHeadline,
+      processSteps: doc.processSteps?.length ? doc.processSteps : fb.processSteps,
+      buildersEyebrow: doc.buildersEyebrow ?? fb.buildersEyebrow,
+      buildersHeadline: doc.buildersHeadline ?? fb.buildersHeadline,
+      builders: doc.builders?.length ? doc.builders : fb.builders,
+      areasEyebrow: doc.areasEyebrow ?? fb.areasEyebrow,
+      areasHeadline: doc.areasHeadline ?? fb.areasHeadline,
+      infillEyebrow: doc.infillEyebrow ?? fb.infillEyebrow,
+      infillBody: doc.infillBody ?? fb.infillBody,
+      faqEyebrow: doc.faqEyebrow ?? fb.faqEyebrow,
+      faqHeadline: doc.faqHeadline ?? fb.faqHeadline,
+      faq: doc.faq?.length ? doc.faq : fb.faq,
+      ctaHeadline: doc.ctaHeadline ?? fb.ctaHeadline,
+      ctaBody: doc.ctaBody ?? fb.ctaBody,
+      ctaButtonLabel: doc.ctaButtonLabel ?? fb.ctaButtonLabel,
+      ctaSideEyebrow: doc.ctaSideEyebrow ?? fb.ctaSideEyebrow,
+      ctaSideHeadline: doc.ctaSideHeadline ?? fb.ctaSideHeadline,
+      ctaSideBody: doc.ctaSideBody ?? fb.ctaSideBody,
+      ctaSideButtonLabel: doc.ctaSideButtonLabel ?? fb.ctaSideButtonLabel,
+    };
+    return {
+      data,
+      seo: {
+        title: doc.seoTitle ?? undefined,
+        description: doc.seoDescription ?? undefined,
+      },
+    };
+  } catch {
+    return { data: newConstructionFallback, seo: {} };
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await getPage();
+  return {
+    title: seo.title || "New Construction",
+    description:
+      seo.description ||
+      "Expert guidance on new construction homes in Orlando. Nicole Mickle helps you select builders, negotiate upgrades, and navigate the build process.",
+    alternates: { canonical: "/new-construction" },
+  };
+}
+
+export default async function NewConstructionPage() {
+  const { data } = await getPage();
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <NewConstructionClient />
+      <NewConstructionClient data={data} />
     </>
   );
 }

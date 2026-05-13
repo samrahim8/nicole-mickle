@@ -11,6 +11,7 @@ import type { StructureResolver } from "sanity/structure";
 const SINGLETONS: { id: string; type: string; title: string }[] = [
   { id: "aboutPage", type: "aboutPage", title: "About" },
   { id: "contactPage", type: "contactPage", title: "Contact" },
+  { id: "newConstructionPage", type: "newConstructionPage", title: "New Construction" },
   { id: "quizPage", type: "quizPage", title: "Quiz" },
 ];
 

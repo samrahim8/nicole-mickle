@@ -14,6 +14,7 @@ import { argv, exit } from "node:process";
 
 import { aboutFallback } from "../src/lib/about-fallback";
 import { contactFallback } from "../src/lib/contact-fallback";
+import { newConstructionFallback } from "../src/lib/new-construction-fallback";
 import { quizFallback } from "../src/lib/quiz-fallback";
 
 loadEnv({ path: ".env.local" });
@@ -89,9 +90,32 @@ async function seedContactPage() {
   console.log("  ✓ wrote contactPage");
 }
 
+function addKeys<T extends object>(arr: T[], prefix: string): (T & { _key: string })[] {
+  return arr.map((item, i) => ({ ...item, _key: `${prefix}-${i}` }));
+}
+
+async function seedNewConstructionPage() {
+  console.log("→ newConstructionPage");
+  const fb = newConstructionFallback;
+  await client.createOrReplace({
+    _id: "newConstructionPage",
+    _type: "newConstructionPage",
+    ...fb,
+    heroStats: addKeys(fb.heroStats, "stat"),
+    // photoBand intentionally skipped — Nicole uploads her own. Component
+    // falls back to /images/new-construction/* until she does.
+    whyAgentItems: addKeys(fb.whyAgentItems, "why"),
+    processSteps: addKeys(fb.processSteps, "step"),
+    faq: addKeys(fb.faq, "faq"),
+    photoBand: undefined,
+  });
+  console.log("  ✓ wrote newConstructionPage");
+}
+
 const seeders: Record<string, () => Promise<void>> = {
   aboutPage: seedAboutPage,
   contactPage: seedContactPage,
+  newConstructionPage: seedNewConstructionPage,
   quizPage: seedQuizPage,
 };
 

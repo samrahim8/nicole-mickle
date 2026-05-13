@@ -6,6 +6,7 @@ import { post } from "./post";
 import { portableText } from "./blocks/portableText";
 import { aboutPage } from "./pages/aboutPage";
 import { contactPage } from "./pages/contactPage";
+import { newConstructionPage } from "./pages/newConstructionPage";
 import { quizPage } from "./pages/quizPage";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
@@ -15,5 +16,6 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   portableText,
   aboutPage,
   contactPage,
+  newConstructionPage,
   quizPage,
 ];
