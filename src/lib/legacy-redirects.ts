@@ -173,6 +173,19 @@ export const legacyRedirects: Redirect[] = [
   { source: "/category/orlando-real-estate/new-construction/:path*", destination: "/new-construction", permanent: true },
   { source: "/category/orlando-real-estate/neighborhood-guides/:path*", destination: "/neighborhoods", permanent: true },
 
+  // WordPress feeds → new RSS feed (RSS subscribers + Google's discovered feeds).
+  { source: "/feed", destination: "/blog/rss.xml", permanent: true },
+  { source: "/feed/:path*", destination: "/blog/rss.xml", permanent: true },
+  { source: "/comments/feed/:path*", destination: "/blog/rss.xml", permanent: true },
+
+  // WordPress sitemaps → new sitemap.
+  { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+  { source: "/wp-sitemap-:path*.xml", destination: "/sitemap.xml", permanent: true },
+  { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+
+  // Root pagination from a few WP themes.
+  { source: "/page/:n", destination: "/blog", permanent: true },
+
   // Everything else under category / author / tag / paginated blog index → /blog.
   { source: "/category/:path*", destination: "/blog", permanent: true },
   { source: "/author/:path*", destination: "/blog", permanent: true },
