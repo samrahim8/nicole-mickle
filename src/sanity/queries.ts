@@ -111,3 +111,45 @@ export const aboutPageQuery = defineQuery(`
     seoDescription
   }
 `);
+
+export const quizPageQuery = defineQuery(`
+  *[_type == "quizPage" && _id == "quizPage"][0] {
+    introEyebrow,
+    introHeadingLine1,
+    introHeadingLine2,
+    introBody,
+    startButtonLabel,
+    resultsEyebrow,
+    resultsHeading,
+    resultsBody,
+    emailHeading,
+    emailBody,
+    emailPlaceholder,
+    successHeading,
+    successBody,
+    seoTitle,
+    seoDescription
+  }
+`);
+
+export const contactPageQuery = defineQuery(`
+  *[_type == "contactPage" && _id == "contactPage"][0] {
+    heroEyebrow,
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroBody,
+    interestOptions,
+    submitLabel,
+    successHeading,
+    successBody,
+    phoneNumber,
+    phoneDisplay,
+    email,
+    officeName,
+    locationEyebrow,
+    locationHeadline,
+    locationBody,
+    seoTitle,
+    seoDescription
+  }
+`);

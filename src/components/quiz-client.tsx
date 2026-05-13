@@ -5,6 +5,22 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { neighborhoods, type Neighborhood } from "@/lib/neighborhoods";
 
+export type QuizPageData = {
+  introEyebrow: string;
+  introHeadingLine1: string;
+  introHeadingLine2: string;
+  introBody: string;
+  startButtonLabel: string;
+  resultsEyebrow: string;
+  resultsHeading: string;
+  resultsBody: string;
+  emailHeading: string;
+  emailBody: string;
+  emailPlaceholder: string;
+  successHeading: string;
+  successBody: string;
+};
+
 // ── Question Data ──
 
 interface Option {
@@ -136,7 +152,7 @@ const slideVariants = {
 
 // ── Component ──
 
-export function QuizClient() {
+export function QuizClient({ data }: { data: QuizPageData }) {
   const [step, setStep] = useState(-1);
   const [answers, setAnswers] = useState<Answers>({});
   const [direction, setDirection] = useState(1);
@@ -216,22 +232,21 @@ export function QuizClient() {
               className="max-w-2xl mx-auto text-center"
             >
               <p className="text-[10px] tracking-[0.4em] uppercase text-neutral-400 mb-8">
-                Neighborhood Quiz
+                {data.introEyebrow}
               </p>
               <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal mb-6">
-                Find your Orlando
+                {data.introHeadingLine1}
                 <br />
-                <span className="italic">neighborhood</span>
+                <span className="italic">{data.introHeadingLine2}</span>
               </h1>
               <p className="text-[16px] sm:text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8] max-w-md mx-auto mb-12">
-                Five questions. Two minutes. Personalized neighborhood
-                recommendations based on your lifestyle, budget, and priorities.
+                {data.introBody}
               </p>
               <button
                 onClick={() => { setDirection(1); setStep(0); }}
                 className="group inline-flex items-center gap-3 text-[15px] sm:text-[13px] tracking-wide font-medium text-white bg-forest px-8 py-4 hover:bg-forest-light transition-all duration-300"
               >
-                Start the quiz
+                {data.startButtonLabel}
                 <svg
                   width="14" height="14" viewBox="0 0 16 16" fill="none"
                   stroke="currentColor" strokeWidth="1.5"
@@ -317,14 +332,13 @@ export function QuizClient() {
             >
               <div className="text-center mb-16">
                 <p className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-6">
-                  Your Results
+                  {data.resultsEyebrow}
                 </p>
                 <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-white mb-4">
-                  Your top Orlando neighborhoods
+                  {data.resultsHeading}
                 </h2>
                 <p className="text-[16px] sm:text-[14px] text-white/50 max-w-md mx-auto">
-                  Based on your answers, these neighborhoods are your best fit.
-                  Explore the full guides or download your personalized report.
+                  {data.resultsBody}
                 </p>
               </div>
 
@@ -382,20 +396,19 @@ export function QuizClient() {
                 {submitted ? (
                   <div className="text-center">
                     <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
-                      Check your inbox
+                      {data.successHeading}
                     </h3>
                     <p className="text-[16px] sm:text-[14px] text-white/50">
-                      Your personalized neighborhood guide is on its way.
+                      {data.successBody}
                     </p>
                   </div>
                 ) : (
                   <div className="max-w-md mx-auto text-center">
                     <h3 className="font-[family-name:var(--font-playfair)] text-xl text-white mb-3">
-                      Get your personalized guide
+                      {data.emailHeading}
                     </h3>
                     <p className="text-[16px] sm:text-[14px] text-white/50 mb-8">
-                      Detailed neighborhood breakdowns, price points, schools, and
-                      Nicole&apos;s personal recommendations – delivered to your inbox.
+                      {data.emailBody}
                     </p>
                     <form
                       onSubmit={async (e) => {
@@ -434,7 +447,7 @@ export function QuizClient() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        placeholder="your@email.com"
+                        placeholder={data.emailPlaceholder}
                         aria-describedby={error ? "quiz-email-error" : undefined}
                         className="flex-1 px-4 py-3.5 bg-white/5 border border-white/15 text-[16px] sm:text-[14px] text-white placeholder:text-white/25 focus:outline-none focus:border-white/40 transition-colors duration-300"
                       />

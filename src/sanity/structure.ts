@@ -10,7 +10,8 @@ import type { StructureResolver } from "sanity/structure";
  */
 const SINGLETONS: { id: string; type: string; title: string }[] = [
   { id: "aboutPage", type: "aboutPage", title: "About" },
-  // Future singletons go here (homePage, relocatingPage, etc.)
+  { id: "contactPage", type: "contactPage", title: "Contact" },
+  { id: "quizPage", type: "quizPage", title: "Quiz" },
 ];
 
 const SINGLETON_TYPES = new Set(SINGLETONS.map((s) => s.type));

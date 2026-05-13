@@ -13,6 +13,8 @@ import { config as loadEnv } from "dotenv";
 import { argv, exit } from "node:process";
 
 import { aboutFallback } from "../src/lib/about-fallback";
+import { contactFallback } from "../src/lib/contact-fallback";
+import { quizFallback } from "../src/lib/quiz-fallback";
 
 loadEnv({ path: ".env.local" });
 
@@ -67,8 +69,30 @@ async function seedAboutPage() {
   console.log("  ✓ wrote aboutPage");
 }
 
+async function seedQuizPage() {
+  console.log("→ quizPage");
+  await client.createOrReplace({
+    _id: "quizPage",
+    _type: "quizPage",
+    ...quizFallback,
+  });
+  console.log("  ✓ wrote quizPage");
+}
+
+async function seedContactPage() {
+  console.log("→ contactPage");
+  await client.createOrReplace({
+    _id: "contactPage",
+    _type: "contactPage",
+    ...contactFallback,
+  });
+  console.log("  ✓ wrote contactPage");
+}
+
 const seeders: Record<string, () => Promise<void>> = {
   aboutPage: seedAboutPage,
+  contactPage: seedContactPage,
+  quizPage: seedQuizPage,
 };
 
 async function main() {
