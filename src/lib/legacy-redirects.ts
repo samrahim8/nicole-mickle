@@ -173,6 +173,13 @@ export const legacyRedirects: Redirect[] = [
   { source: "/category/orlando-real-estate/new-construction/:path*", destination: "/new-construction", permanent: true },
   { source: "/category/orlando-real-estate/neighborhood-guides/:path*", destination: "/neighborhoods", permanent: true },
 
+  // WordPress static asset paths → homepage. Google Images and old image
+  // hotlinks land somewhere useful instead of 403. The originals are gone
+  // (BigScoots WP decommissioned), so a 308 to /  is the cleanest signal
+  // we can give the crawler.
+  { source: "/wp-content/:path*", destination: "/", permanent: true },
+  { source: "/wp-includes/:path*", destination: "/", permanent: true },
+
   // WordPress feeds → new RSS feed (RSS subscribers + Google's discovered feeds).
   { source: "/feed", destination: "/blog/rss.xml", permanent: true },
   { source: "/feed/:path*", destination: "/blog/rss.xml", permanent: true },
