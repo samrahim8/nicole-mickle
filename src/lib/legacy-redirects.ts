@@ -167,6 +167,9 @@ export const legacyRedirects: Redirect[] = [
   // One-off referenced in an old post body but never a real WP URL.
   { source: "/contact-nicole", destination: "/contact", permanent: true },
 
+  // Indexed by Google but missing from Wayback's CDX (caught via site: search).
+  { source: "/orlando-new-construction-homes", destination: "/new-construction", permanent: true },
+
   // Topical category archives → matching new-site hub pages. More specific
   // rules MUST come before the wildcard /category/:path* fallback.
   { source: "/category/orlando-real-estate/relocation/:path*", destination: "/relocating", permanent: true },
