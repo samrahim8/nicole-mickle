@@ -3,7 +3,7 @@ import {
   RelocatingClient,
   type RelocatingPageData,
 } from "@/components/relocating-client";
-import { sanityClient } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/live";
 import { relocatingPageQuery } from "@/sanity/queries";
 import { relocatingFallback } from "@/lib/relocating-fallback";
 
@@ -29,11 +29,9 @@ async function getPage(): Promise<{
   data: RelocatingPageData;
   seo: { title?: string; description?: string };
 }> {
-  if (!sanityClient) return { data: relocatingFallback, seo: {} };
   try {
-    const doc = await sanityClient.fetch<SanityRelocating | null>(
-      relocatingPageQuery,
-    );
+    const { data: raw } = await sanityFetch({ query: relocatingPageQuery });
+    const doc = raw as SanityRelocating | null;
     if (!doc) return { data: relocatingFallback, seo: {} };
     const fb = relocatingFallback;
     const data: RelocatingPageData = {

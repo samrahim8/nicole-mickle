@@ -1,6 +1,6 @@
 import { neighborhoods } from "@/lib/neighborhoods";
 import { HomeClient, type HomePageData } from "@/components/home-client";
-import { sanityClient } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/live";
 import { homePageQuery } from "@/sanity/queries";
 import { homeFallback } from "@/lib/home-fallback";
 
@@ -12,9 +12,9 @@ type SanityHome = Partial<HomePageData> & {
 };
 
 async function getPage(): Promise<HomePageData> {
-  if (!sanityClient) return homeFallback;
   try {
-    const doc = await sanityClient.fetch<SanityHome | null>(homePageQuery);
+    const { data: raw } = await sanityFetch({ query: homePageQuery });
+    const doc = raw as SanityHome | null;
     if (!doc) return homeFallback;
     const fb = homeFallback;
     return {

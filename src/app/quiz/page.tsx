@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { QuizClient, type QuizPageData } from "@/components/quiz-client";
-import { sanityClient } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/live";
 import { quizPageQuery } from "@/sanity/queries";
 import { quizFallback } from "@/lib/quiz-fallback";
 
@@ -15,9 +15,9 @@ async function getQuizPage(): Promise<{
   data: QuizPageData;
   seo: { title?: string; description?: string };
 }> {
-  if (!sanityClient) return { data: quizFallback, seo: {} };
   try {
-    const doc = await sanityClient.fetch<SanityQuiz | null>(quizPageQuery);
+    const { data: raw } = await sanityFetch({ query: quizPageQuery });
+    const doc = raw as SanityQuiz | null;
     if (!doc) return { data: quizFallback, seo: {} };
     const data: QuizPageData = {
       introEyebrow: doc.introEyebrow ?? quizFallback.introEyebrow,

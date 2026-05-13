@@ -3,7 +3,7 @@ import {
   NewConstructionClient,
   type NewConstructionPageData,
 } from "@/components/new-construction-client";
-import { sanityClient } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/live";
 import { newConstructionPageQuery } from "@/sanity/queries";
 import { newConstructionFallback } from "@/lib/new-construction-fallback";
 import { urlFor } from "@/sanity/image";
@@ -39,11 +39,9 @@ async function getPage(): Promise<{
   data: NewConstructionPageData;
   seo: { title?: string; description?: string };
 }> {
-  if (!sanityClient) return { data: newConstructionFallback, seo: {} };
   try {
-    const doc = await sanityClient.fetch<SanityNewConstruction | null>(
-      newConstructionPageQuery,
-    );
+    const { data: raw } = await sanityFetch({ query: newConstructionPageQuery });
+    const doc = raw as SanityNewConstruction | null;
     if (!doc) return { data: newConstructionFallback, seo: {} };
     const fb = newConstructionFallback;
     const data: NewConstructionPageData = {

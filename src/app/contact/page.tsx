@@ -1,5 +1,5 @@
 import { ContactClient, type ContactPageData } from "@/components/contact-client";
-import { sanityClient } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/live";
 import { contactPageQuery } from "@/sanity/queries";
 import { contactFallback } from "@/lib/contact-fallback";
 
@@ -8,9 +8,9 @@ export const revalidate = 60;
 type SanityContact = Partial<ContactPageData>;
 
 async function getContactPage(): Promise<ContactPageData> {
-  if (!sanityClient) return contactFallback;
   try {
-    const doc = await sanityClient.fetch<SanityContact | null>(contactPageQuery);
+    const { data } = await sanityFetch({ query: contactPageQuery });
+    const doc = data as SanityContact | null;
     if (!doc) return contactFallback;
     return {
       heroEyebrow: doc.heroEyebrow ?? contactFallback.heroEyebrow,

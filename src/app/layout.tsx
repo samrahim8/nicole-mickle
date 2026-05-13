@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SiteChrome } from "@/components/site-chrome";
+import { SanityLive } from "@/sanity/live";
 
 const bodoni = Bodoni_Moda({
   variable: "--font-playfair",
@@ -110,11 +113,12 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled: isDraft } = await draftMode();
   return (
     <html
       lang="en"
@@ -131,6 +135,11 @@ export default function RootLayout({
         <SiteChrome navbar={<Navbar />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        {/* Streams Sanity content updates into the page while draft mode is on. */}
+        <SanityLive />
+        {/* Visual editing overlay (click any rendered string to jump to its
+            Sanity field). Only mounts when draft mode is enabled. */}
+        {isDraft && <VisualEditing />}
         <Analytics />
       </body>
     </html>

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { AboutClient, type AboutData } from "@/components/about-client";
-import { sanityClient } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
+import { sanityFetch } from "@/sanity/live";
 import { aboutPageQuery } from "@/sanity/queries";
 import { aboutFallback } from "@/lib/about-fallback";
 
 // Revalidate the page on a 60s interval. Nicole's edits in Studio go live within
-// a minute without a full rebuild.
+// a minute without a full rebuild. Inside the Presentation visual editor this
+// auto-upgrades to live streaming via sanityFetch.
 export const revalidate = 60;
 
 type SanityAbout = {
@@ -32,50 +33,47 @@ async function getAboutPage(): Promise<{
   data: AboutData;
   seo: { title?: string; description?: string };
 }> {
-  if (!sanityClient) return { data: aboutFallback, seo: {} };
   try {
-    const doc = await sanityClient.fetch<SanityAbout | null>(aboutPageQuery);
-    if (!doc) return { data: aboutFallback, seo: {} };
+    const { data: doc } = await sanityFetch({ query: aboutPageQuery });
+    const typed = doc as SanityAbout | null;
+    if (!typed) return { data: aboutFallback, seo: {} };
 
-    const heroImageSrc = doc.heroImage?.asset
-      ? urlFor(doc.heroImage as Parameters<typeof urlFor>[0])
-          .width(1200)
-          .fit("max")
-          .url()
+    const heroImageSrc = typed.heroImage?.asset
+      ? urlFor(typed.heroImage as Parameters<typeof urlFor>[0]).width(1200).fit("max").url()
       : aboutFallback.heroImage.src;
 
     const data: AboutData = {
-      heroEyebrow: doc.heroEyebrow ?? aboutFallback.heroEyebrow,
-      heroHeadlineLine1: doc.heroHeadlineLine1 ?? aboutFallback.heroHeadlineLine1,
-      heroHeadlineLine2: doc.heroHeadlineLine2 ?? aboutFallback.heroHeadlineLine2,
-      heroParagraphs: doc.heroParagraphs?.length
-        ? doc.heroParagraphs
+      heroEyebrow: typed.heroEyebrow ?? aboutFallback.heroEyebrow,
+      heroHeadlineLine1: typed.heroHeadlineLine1 ?? aboutFallback.heroHeadlineLine1,
+      heroHeadlineLine2: typed.heroHeadlineLine2 ?? aboutFallback.heroHeadlineLine2,
+      heroParagraphs: typed.heroParagraphs?.length
+        ? typed.heroParagraphs
         : aboutFallback.heroParagraphs,
       heroImage: {
         src: heroImageSrc,
-        alt: doc.heroImage?.alt || aboutFallback.heroImage.alt,
+        alt: typed.heroImage?.alt || aboutFallback.heroImage.alt,
       },
-      journeyEyebrow: doc.journeyEyebrow ?? aboutFallback.journeyEyebrow,
-      journeyHeadline: doc.journeyHeadline ?? aboutFallback.journeyHeadline,
-      milestones: doc.milestones?.length ? doc.milestones : aboutFallback.milestones,
-      credentialsEyebrow: doc.credentialsEyebrow ?? aboutFallback.credentialsEyebrow,
+      journeyEyebrow: typed.journeyEyebrow ?? aboutFallback.journeyEyebrow,
+      journeyHeadline: typed.journeyHeadline ?? aboutFallback.journeyHeadline,
+      milestones: typed.milestones?.length ? typed.milestones : aboutFallback.milestones,
+      credentialsEyebrow: typed.credentialsEyebrow ?? aboutFallback.credentialsEyebrow,
       credentialsHeadline:
-        doc.credentialsHeadline ?? aboutFallback.credentialsHeadline,
-      credentialItems: doc.credentialItems?.length
-        ? doc.credentialItems
+        typed.credentialsHeadline ?? aboutFallback.credentialsHeadline,
+      credentialItems: typed.credentialItems?.length
+        ? typed.credentialItems
         : aboutFallback.credentialItems,
-      discretionEyebrow: doc.discretionEyebrow ?? aboutFallback.discretionEyebrow,
+      discretionEyebrow: typed.discretionEyebrow ?? aboutFallback.discretionEyebrow,
       discretionHeadline:
-        doc.discretionHeadline ?? aboutFallback.discretionHeadline,
-      discretionParagraphs: doc.discretionParagraphs?.length
-        ? doc.discretionParagraphs
+        typed.discretionHeadline ?? aboutFallback.discretionHeadline,
+      discretionParagraphs: typed.discretionParagraphs?.length
+        ? typed.discretionParagraphs
         : aboutFallback.discretionParagraphs,
     };
     return {
       data,
       seo: {
-        title: doc.seoTitle ?? undefined,
-        description: doc.seoDescription ?? undefined,
+        title: typed.seoTitle ?? undefined,
+        description: typed.seoDescription ?? undefined,
       },
     };
   } catch {
