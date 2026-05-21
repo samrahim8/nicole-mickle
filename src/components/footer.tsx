@@ -96,7 +96,7 @@ export function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.youtube.com/channel/UCkzLaH9JCWK5epROI2ZyvtA"
+                  href="https://www.youtube.com/@nicolemickle3735/shorts"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"

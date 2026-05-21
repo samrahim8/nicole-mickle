@@ -109,7 +109,7 @@ const jsonLd = {
     "https://www.instagram.com/iorlandorealestate/",
     "https://www.facebook.com/NicoleMickleFL/",
     "https://www.linkedin.com/in/orlandorealestate/",
-    "https://www.youtube.com/channel/UCkzLaH9JCWK5epROI2ZyvtA",
+    "https://www.youtube.com/@nicolemickle3735/shorts",
   ],
 };
 
