@@ -119,6 +119,9 @@ export const neighborhoods: Neighborhood[] = [
     slug: "lake-nona",
     name: "Lake Nona",
     image: "/images/neighborhoods/lake-nona.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/lake-nona/laureate-park-volleyball.jpg", alt: "Beach volleyball court at the Laureate Park Aquatic Center in Lake Nona" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-nona",
     tagline: "Orlando's master-planned community of the future",
     description:
@@ -195,6 +198,9 @@ export const neighborhoods: Neighborhood[] = [
     slug: "windermere",
     name: "Windermere",
     image: "/images/neighborhoods/windermere.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/windermere/town-tennis-courts.jpg", alt: "Town of Windermere tennis courts signage" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/windermere",
     tagline: "Lakefront luxury with a relaxed pace",
     description:
@@ -346,6 +352,10 @@ export const neighborhoods: Neighborhood[] = [
     slug: "celebration",
     name: "Celebration",
     image: "/images/neighborhoods/celebration.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/celebration/downtown-aerial.jpg", alt: "Aerial view over downtown Celebration's main street and waterfront promenade" },
+      { src: "/images/neighborhoods/celebration/market-street-arcade.jpg", alt: "Coral-pillared arcade along Market Street in downtown Celebration" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/celebration",
     tagline: "A walkable town designed for community",
     description:
@@ -809,6 +819,9 @@ export const neighborhoods: Neighborhood[] = [
     slug: "minneola",
     name: "Minneola",
     image: "/images/neighborhoods/minneola.jpg",
+    gallery: [
+      { src: "/images/neighborhoods/minneola/lake-walking-trail.jpg", alt: "Lakefront walking trail under cypress and oak trees along Lake Minneola" },
+    ],
     searchUrl: "https://iorlandorealestate.com/homes-for-sale/minneola",
     tagline: "A fast-growing small town with elevation and new construction",
     description:
