@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FadeIn, TextReveal } from "@/components/animate";
 
@@ -27,6 +27,16 @@ export function ContactClient({ data }: { data: ContactPageData }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // When the form collapses into the (shorter) success card, the page reflows and
+  // the scroll position would otherwise land on the section below. Bring the
+  // confirmation back into the center of the viewport so the user sees it.
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [submitted]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -99,14 +109,33 @@ export function ContactClient({ data }: { data: ContactPageData }) {
             <FadeIn delay={0.3} className="lg:col-span-7">
               {submitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="p-12 bg-cream border border-neutral-200 text-center"
+                  ref={successRef}
+                  role="status"
+                  aria-live="polite"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="flex flex-col items-center text-center p-12 lg:p-16 bg-cream border border-forest/20"
                 >
-                  <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-charcoal mb-3">
+                  <motion.span
+                    initial={{ scale: 0.6, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.4, ease: "backOut" }}
+                    className="mb-7 inline-flex items-center justify-center w-16 h-16 rounded-full bg-forest text-white"
+                  >
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <motion.path
+                        d="M5 12.5l4.5 4.5L19 7"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+                      />
+                    </svg>
+                  </motion.span>
+                  <h3 className="font-[family-name:var(--font-playfair)] text-3xl lg:text-4xl leading-[1.1] text-charcoal mb-4">
                     {data.successHeading}
                   </h3>
-                  <p className="text-[16px] sm:text-[15px] text-neutral-500">
+                  <p className="text-[16px] sm:text-[15px] text-neutral-500 max-w-md">
                     {data.successBody}
                   </p>
                 </motion.div>
@@ -166,10 +195,10 @@ export function ContactClient({ data }: { data: ContactPageData }) {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="group inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group mt-4 inline-flex w-full sm:w-auto items-center justify-center gap-2.5 bg-forest text-white text-[13px] tracking-[0.12em] uppercase font-medium px-10 py-4 hover:bg-forest-light transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Sending…" : data.submitLabel}
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true">
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
                   </button>
