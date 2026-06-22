@@ -6,6 +6,7 @@ export const post = defineType({
   type: "document",
   groups: [
     { name: "content", title: "Content", default: true },
+    { name: "faq", title: "FAQ" },
     { name: "seo", title: "SEO" },
     { name: "meta", title: "Meta" },
   ],
@@ -84,6 +85,35 @@ export const post = defineType({
       type: "boolean",
       group: "meta",
       initialValue: false,
+    }),
+    defineField({
+      name: "faq",
+      title: "FAQ",
+      type: "array",
+      group: "faq",
+      description:
+        "Optional. Questions and answers shown at the bottom of the post. Also fed into Google's FAQ rich-result schema and used by AI tools, so write clear, focused answers. Leave empty to hide the section entirely.",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "question",
+              title: "Question",
+              type: "string",
+              validation: (rule) => rule.required().max(200),
+            },
+            {
+              name: "answer",
+              title: "Answer",
+              type: "text",
+              rows: 4,
+              validation: (rule) => rule.required().max(800),
+            },
+          ],
+          preview: { select: { title: "question", subtitle: "answer" } },
+        },
+      ],
     }),
     defineField({
       name: "seo",

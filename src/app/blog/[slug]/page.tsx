@@ -100,12 +100,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     mainEntityOfPage: `https://nicolemickle.com/blog/${post.slug}`,
   };
 
+  const faqItems = (post.faq ?? []).filter((f) => f.question && f.answer);
+  const faqSchema =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
 
       <article className="pt-32 lg:pt-36">
         {/* Header */}
@@ -131,7 +151,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center gap-3 mb-6">
               {post.categories?.[0] ? (
                 <Link
-                  href={`/blog?category=${post.categories[0].slug}`}
+                  href={`/blog/category/${post.categories[0].slug}`}
                   className="text-[10px] tracking-[0.2em] uppercase text-forest hover:underline"
                 >
                   {post.categories[0].title}
@@ -186,6 +206,46 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 pb-24 lg:pb-32">
           <div className="max-w-3xl mx-auto">
             {post.body ? <PostBody value={post.body} /> : null}
+
+            {faqItems.length > 0 ? (
+              <section className="mt-16 pt-12 border-t border-neutral-200">
+                <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-400 mb-3">
+                  Frequently Asked
+                </p>
+                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.6rem,3vw,2.25rem)] leading-tight tracking-[-0.015em] text-charcoal mb-8">
+                  Questions, answered
+                </h2>
+                <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+                  {faqItems.map((item, i) => (
+                    <details key={i} className="group py-5">
+                      <summary className="flex items-start justify-between gap-4 cursor-pointer list-none">
+                        <h3 className="font-[family-name:var(--font-playfair)] text-[1.2rem] leading-snug text-charcoal">
+                          {item.question}
+                        </h3>
+                        <span
+                          aria-hidden="true"
+                          className="mt-1 shrink-0 text-forest transition-transform duration-300 group-open:rotate-45"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                          >
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-[16px] leading-relaxed text-neutral-600 whitespace-pre-line">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </div>
         </div>
       </article>

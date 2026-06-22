@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { originCities } from "@/lib/relocating-from";
 import { sanityClient } from "@/sanity/client";
+import { categorySlugsQuery } from "@/sanity/queries";
 
 const SITE_URL = "https://nicolemickle.com";
 
@@ -55,23 +56,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Fetch blog posts from Sanity. Fail gracefully – if Sanity is unreachable
-  // we still ship a sitemap with everything else so the build never breaks.
+  // Fetch blog posts + category archives from Sanity. Fail gracefully – if
+  // Sanity is unreachable we still ship a sitemap with everything else so the
+  // build never breaks.
   let blogRoutes: MetadataRoute.Sitemap = [];
+  let categoryRoutes: MetadataRoute.Sitemap = [];
   try {
     if (!sanityClient) throw new Error("Sanity not configured");
-    const posts = await sanityClient.fetch<BlogSitemapEntry[]>(
-      `*[_type == "post" && defined(slug.current) && defined(publishedAt)]{
-        "slug": slug.current,
-        publishedAt,
-        _updatedAt
-      }`,
-    );
+    const [posts, categorySlugs] = await Promise.all([
+      sanityClient.fetch<BlogSitemapEntry[]>(
+        `*[_type == "post" && defined(slug.current) && defined(publishedAt)]{
+          "slug": slug.current,
+          publishedAt,
+          _updatedAt
+        }`,
+      ),
+      sanityClient.fetch<string[]>(categorySlugsQuery),
+    ]);
     blogRoutes = (posts ?? []).map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: new Date(post._updatedAt ?? post.publishedAt),
       changeFrequency: "monthly",
       priority: 0.7,
+    }));
+    categoryRoutes = (categorySlugs ?? []).map((slug) => ({
+      url: `${SITE_URL}/blog/category/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
     }));
   } catch (err) {
     console.warn("Sitemap: failed to fetch posts from Sanity", err);
@@ -82,6 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...neighborhoodRoutes,
     ...newConstructionRoutes,
     ...relocatingRoutes,
+    ...categoryRoutes,
     ...blogRoutes,
   ];
 }

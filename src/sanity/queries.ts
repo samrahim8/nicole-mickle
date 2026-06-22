@@ -57,12 +57,72 @@ export const postBySlugQuery = defineQuery(`
       title,
       "slug": slug.current
     },
+    faq[]{ question, answer },
     seo {
       metaTitle,
       metaDescription,
       ogImage
     },
     legacyWordpressUrl
+  }
+`);
+
+// All category slugs – used for generateStaticParams on category archives.
+// Only categories that actually have published posts.
+export const categorySlugsQuery = defineQuery(`
+  *[
+    _type == "category"
+    && defined(slug.current)
+    && count(*[_type == "post" && defined(slug.current) && defined(publishedAt) && references(^._id)]) > 0
+  ].slug.current
+`);
+
+// A single category by slug, with its published-post count.
+export const categoryBySlugQuery = defineQuery(`
+  *[_type == "category" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    description,
+    "postCount": count(*[_type == "post" && defined(slug.current) && defined(publishedAt) && references(^._id)])
+  }
+`);
+
+// Paginated posts within a single category, newest first.
+export const postsByCategoryQuery = defineQuery(`
+  *[
+    _type == "post"
+    && defined(slug.current)
+    && defined(publishedAt)
+    && $categoryId in categories[]._ref
+  ] | order(publishedAt desc) [$start...$end] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    coverImage {
+      ...,
+      "alt": coalesce(alt, "")
+    },
+    "categories": categories[]->{
+      _id,
+      title,
+      "slug": slug.current
+    }
+  }
+`);
+
+// All categories that have published posts – for the blog index filter bar.
+export const categoriesWithPostsQuery = defineQuery(`
+  *[
+    _type == "category"
+    && defined(slug.current)
+    && count(*[_type == "post" && defined(slug.current) && defined(publishedAt) && references(^._id)]) > 0
+  ] | order(title asc) {
+    _id,
+    title,
+    "slug": slug.current
   }
 `);
 

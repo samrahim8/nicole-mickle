@@ -11,6 +11,19 @@ export type PostCategory = {
   slug: string;
 };
 
+export type CategoryDetail = {
+  _id: string;
+  title: string;
+  slug: string;
+  description?: string | null;
+  postCount: number;
+};
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type PostAuthor = {
   _id: string;
   name: string;
@@ -32,6 +45,7 @@ export type PostListItem = {
 export type PostDetail = PostListItem & {
   body?: PortableTextBlock[] | null;
   author?: PostAuthor | null;
+  faq?: FaqItem[] | null;
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
