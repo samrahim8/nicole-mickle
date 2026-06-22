@@ -1,3 +1,5 @@
+import { subscribeLeadToKit } from "@/lib/kit";
+
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
@@ -38,6 +40,12 @@ export async function POST(request: Request) {
         { status: 502 }
       );
     }
+
+    // Lead is captured (Sheet + notification email already done upstream). Enrolling
+    // the lead in Nicole's Kit nurture sequences is an isolated best-effort step:
+    // subscribeLeadToKit never throws, and its outcome must not affect this response.
+    // We await it so the serverless function isn't frozen before the calls complete.
+    await subscribeLeadToKit(payload as Record<string, unknown>);
 
     return Response.json({ ok: true });
   } catch (err) {
