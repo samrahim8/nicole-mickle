@@ -90,6 +90,14 @@ function resolveTargets(lead: LeadPayload): { sequences: number[]; tags: number[
       if (entry.sequence) sequences.add(entry.sequence);
       if (entry.tag) tags.add(entry.tag);
     }
+    // Catch-all: the interest checkboxes are optional, so a contact lead can submit
+    // with nothing selected (or an unrecognized value). Rather than drop them from
+    // Kit entirely, enroll them in the general Orlando sequence so EVERY lead lands
+    // somewhere. (A "Buying a Home"-only lead already has a tag, so it isn't empty
+    // and keeps its deliberate tag-only treatment.)
+    if (sequences.size === 0 && tags.size === 0) {
+      sequences.add(RE_ORLANDO_SEQUENCE);
+    }
   }
 
   return { sequences: [...sequences], tags: [...tags] };
