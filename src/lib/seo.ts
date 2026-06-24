@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 
+import { getPageSeo } from "./page-seo";
+
+/** Site-wide branded OG image (the app/opengraph-image route). Used as the
+ *  default share image for pages that have no section-specific image. */
+export const DEFAULT_OG_IMAGE = "/opengraph-image";
+
 /**
  * Per-URL title overrides supplied by the SEO contractor (the "Title too long"
  * fixes). These are the COMPLETE title tags, deliberately written without the
@@ -72,38 +78,53 @@ type BuildMetadataInput = {
 /**
  * Single source of truth for page metadata. Guarantees every page emits a
  * complete, page-specific Open Graph + Twitter card (title, description, url,
- * type) plus a canonical — instead of inheriting the homepage's defaults.
+ * type) plus a canonical, instead of inheriting the homepage's defaults.
+ *
+ * Precedence for every field: CMS `pageSeo` override (editable in Studio) >
+ * code default (SEO_TITLES map / the title+description passed in) > built-in.
+ * A "complete" title (a CMS metaTitle or a SEO_TITLES entry) is emitted as an
+ * absolute title so the "| Nicole Mickle Real Estate" template is not appended.
  */
-export function buildMetadata({
+export async function buildMetadata({
   title,
   description,
   path,
   ogType = "website",
   ogImage,
   publishedTime,
-}: BuildMetadataInput): Metadata {
-  const override = SEO_TITLES[path];
-  const displayTitle = override ?? title;
+}: BuildMetadataInput): Promise<Metadata> {
+  const override = await getPageSeo(path);
 
-  return {
-    // Override titles are absolute (no brand-suffix template); natural titles
-    // keep the template from the root layout.
-    title: override ? { absolute: override } : title,
-    description,
+  const completeTitle = override?.metaTitle ?? SEO_TITLES[path];
+  const displayTitle = completeTitle ?? title;
+  const finalDescription = override?.metaDescription ?? description;
+  const ogTitle = override?.ogTitle ?? displayTitle;
+  const ogDescription = override?.ogDescription ?? finalDescription;
+  const resolvedOgImage = override?.ogImageUrl ?? ogImage;
+
+  const meta: Metadata = {
+    title: completeTitle ? { absolute: completeTitle } : title,
+    description: finalDescription,
     alternates: { canonical: path },
     openGraph: {
-      title: displayTitle,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       url: path,
       type: ogType,
       ...(publishedTime ? { publishedTime } : {}),
-      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
+      ...(resolvedOgImage
+        ? { images: [{ url: resolvedOgImage, width: 1200, height: 630 }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
-      title: displayTitle,
-      description,
-      ...(ogImage ? { images: [ogImage] } : {}),
+      title: ogTitle,
+      description: ogDescription,
+      ...(resolvedOgImage ? { images: [resolvedOgImage] } : {}),
     },
   };
+
+  if (override?.noindex) meta.robots = { index: false, follow: true };
+
+  return meta;
 }

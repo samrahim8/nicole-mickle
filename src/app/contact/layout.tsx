@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Contact",
-  description:
-    "Get in touch with Nicole Mickle. Email, phone, and a contact form for relocation, new construction, or general Orlando real estate questions.",
-  path: "/contact",
-});
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata({
+    title: "Contact",
+    description:
+      "Get in touch with Nicole Mickle. Email, phone, and a contact form for relocation, new construction, or general Orlando real estate questions.",
+    path: "/contact",
+  });
+}
 
 const contactPageSchema = {
   "@context": "https://schema.org",
