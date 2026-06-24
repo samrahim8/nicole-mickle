@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["RealEstateAgent", "LocalBusiness"],
-  name: "Nicole Mickle",
+  name: "Nicole Mickle Real Estate",
   description:
     "Orlando relocation and new construction real estate specialist with 30 years of industry experience.",
   url: "https://nicolemickle.com",
@@ -77,6 +77,8 @@ const jsonLd = {
   openingHours: "Mo-Su 09:00-18:00",
   currenciesAccepted: "USD",
   paymentAccepted: "Cash, Check, Credit Card, Debit Card, Bank Transfer",
+  keywords:
+    "Orlando real estate, Central Florida real estate, relocation specialist, new construction, Windermere FL real estate, Winter Garden real estate, neighborhood guides, home buying, home selling, Olympus Executive Realty",
   address: {
     "@type": "PostalAddress",
     streetAddress: "13790 Bridgewater Crossings Blvd. Ste 1080",
