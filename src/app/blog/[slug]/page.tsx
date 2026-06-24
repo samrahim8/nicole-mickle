@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { AuthorBox } from "@/components/author-box";
 import { PostBody } from "@/components/portable-text";
 import { sanityClient } from "@/sanity/client";
 import { urlFor } from "@/sanity/image";
@@ -246,6 +247,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               </section>
             ) : null}
+
+            {post.author ? <AuthorBox author={post.author} /> : null}
           </div>
         </div>
       </article>

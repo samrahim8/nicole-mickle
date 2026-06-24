@@ -42,7 +42,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "winter-park",
     name: "Winter Park",
     image: "/images/neighborhoods/winter-park.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-park",
+    searchUrl: "https://www.iorlandorealestate.com/winter-park/",
     tagline: "Tree-lined charm meets cultural sophistication",
     description:
       "Winter Park is Orlando's most beloved neighborhood for a reason. Brick-lined Park Avenue, the Morse Museum's Tiffany glass collection, and lakefront living create a walkable, cultured community that feels like a small town. Mature oak canopies, independent boutiques, and some of the best restaurants in Central Florida make this a perennial favorite for relocators.",
@@ -122,7 +122,7 @@ export const neighborhoods: Neighborhood[] = [
     gallery: [
       { src: "/images/neighborhoods/lake-nona/laureate-park-volleyball.jpg", alt: "Beach volleyball court at the Laureate Park Aquatic Center in Lake Nona" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-nona",
+    searchUrl: "https://www.iorlandorealestate.com/lake-nona/",
     tagline: "Orlando's master-planned community of the future",
     description:
       "Lake Nona is where innovation meets lifestyle. Home to the Medical City, USTA National Campus, and a growing tech corridor, this master-planned community offers modern architecture, resort-style amenities, and a forward-thinking approach to community design. Ideal for families and professionals who want new construction with walkable town centers.",
@@ -201,7 +201,7 @@ export const neighborhoods: Neighborhood[] = [
     gallery: [
       { src: "/images/neighborhoods/windermere/town-tennis-courts.jpg", alt: "Town of Windermere tennis courts signage" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/windermere",
+    searchUrl: "https://www.iorlandorealestate.com/windermere/",
     tagline: "Lakefront luxury with a relaxed pace",
     description:
       "Windermere is Orlando's most established lakefront community, known for its spacious estates, rolling hills, and the Butler Chain of Lakes. This is where you come for space, privacy, and water access without sacrificing proximity to Disney-area attractions and top schools. A favorite of executives and families seeking room to breathe.",
@@ -276,7 +276,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "dr-phillips",
     name: "Dr. Phillips",
     image: "/images/neighborhoods/dr-phillips.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/dr-phillips",
+    searchUrl: "https://www.iorlandorealestate.com/dr-phillips/",
     tagline: "Orlando's dining capital with suburban comfort",
     description:
       "Dr. Phillips offers the best of Orlando dining at Restaurant Row while maintaining a family-friendly suburban character. With good schools, proximity to the attractions corridor, and a wide range of housing from townhomes to estates, it's one of the most versatile neighborhoods for relocators who want convenience and community.",
@@ -356,7 +356,7 @@ export const neighborhoods: Neighborhood[] = [
       { src: "/images/neighborhoods/celebration/downtown-aerial.jpg", alt: "Aerial view over downtown Celebration's main street and waterfront promenade" },
       { src: "/images/neighborhoods/celebration/market-street-arcade.jpg", alt: "Coral-pillared arcade along Market Street in downtown Celebration" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/celebration",
+    searchUrl: "https://www.iorlandorealestate.com/celebration/",
     tagline: "A walkable town designed for community",
     description:
       "Celebration is a master-planned town originally developed by Disney that has grown into one of Orlando's most distinctive communities. Its walkable downtown, community events calendar, and mix of architectural styles create a neighborhood that feels intentionally crafted for connection. Great for families and anyone who values a strong sense of place.",
@@ -429,7 +429,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "baldwin-park",
     name: "Baldwin Park",
     image: "/images/neighborhoods/baldwin-park.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/baldwin-park",
+    searchUrl: "https://www.iorlandorealestate.com/baldwin-park/",
     tagline: "Urban village living in the heart of Orlando",
     description:
       "Built on the former Orlando Naval Training Center, Baldwin Park is a vibrant urban village minutes from downtown. Tree-lined streets, a central village center with restaurants and shops, and a mix of condos, townhomes, and single-family homes make it one of the most walkable and community-oriented neighborhoods in Central Florida.",
@@ -511,7 +511,7 @@ export const neighborhoods: Neighborhood[] = [
       { src: "/images/neighborhoods/horizon-west/lakeshore-pool.jpg", alt: "Lakeshore community pool by Toll Brothers" },
       { src: "/images/neighborhoods/horizon-west/lakeshore-home.jpg", alt: "Toll Brothers home in Lakeshore community" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/horizon-west",
+    searchUrl: "https://www.iorlandorealestate.com/horizon-west/",
     tagline: "Orlando's fastest-growing new construction corridor",
     description:
       "Horizon West is the epicenter of new construction in the greater Orlando area. It's organized into distinct villages: Hamlin Town Center, Bridgewater, Lakeside, Hickory Nut, Ovation, and Seidel. Each has its own character, schools, and planned amenities. It's not one community but many, connected by trails, greenbelts, and a growing network of town centers. If new construction is your priority, this is where you start.",
@@ -593,7 +593,7 @@ export const neighborhoods: Neighborhood[] = [
       { src: "/images/neighborhoods/winter-garden/downtown-dining.jpg", alt: "Downtown Winter Garden outdoor dining" },
       { src: "/images/neighborhoods/winter-garden/downtown-aerial.jpg", alt: "Elevated view of downtown Winter Garden" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/winter-garden",
+    searchUrl: "https://www.iorlandorealestate.com/winter-garden/",
     tagline: "Small-town charm with a thriving downtown",
     description:
       "Winter Garden is one of Orlando's best-kept secrets – a historic small town with a revitalized downtown that has become one of the most desirable places to live in Central Florida. Plant Street's boutique shops, craft breweries, and farm-to-table restaurants create a walkable core, while surrounding communities offer everything from new construction to established estates.",
@@ -668,7 +668,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "ocoee",
     name: "Ocoee",
     image: "/images/neighborhoods/ocoee.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/ocoee",
+    searchUrl: "https://www.iorlandorealestate.com/ocoee/",
     tagline: "The most connected suburb on the west side",
     description:
       "Ocoee sits at the crossroads of three major routes – SR-408, SR-429, and Florida's Turnpike – making it one of the best-connected suburbs in the metro. It is bordered by Winter Garden to the west, Apopka to the north, and Windermere to the south, with downtown Orlando just 15-20 minutes east. A $44 million capital program is reshaping the historic downtown around Starke Lake, while established neighborhoods like Lake Olympia and Westyn Bay anchor a family-oriented bedroom community of about 53,000 residents.",
@@ -744,7 +744,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "clermont",
     name: "Clermont",
     image: "/images/neighborhoods/clermont.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/clermont",
+    searchUrl: "https://www.iorlandorealestate.com/clermont/",
     tagline: "Rolling hills, lakefront living, and an active outdoor lifestyle",
     description:
       "Clermont is the largest city in south Lake County and stands out for its rare rolling terrain and chain of lakes. Known as the 'Choice of Champions' for its nationally recognized athletic training facilities, the city has transformed from a quiet citrus town into one of Central Florida's fastest-growing communities. Neighboring Minneola, Montverde, and Groveland are all within 10-15 minutes, and Winter Garden is a short drive east on Highway 50.",
@@ -822,7 +822,7 @@ export const neighborhoods: Neighborhood[] = [
     gallery: [
       { src: "/images/neighborhoods/minneola/lake-walking-trail.jpg", alt: "Lakefront walking trail under cypress and oak trees along Lake Minneola" },
     ],
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/minneola",
+    searchUrl: "https://www.iorlandorealestate.com/property-search/results/#sortby_m.Price%20DESC/nearby_false,-1/area_/city_Minneola/state_FL/",
     tagline: "A fast-growing small town with elevation and new construction",
     description:
       "Minneola sits between Clermont and Winter Garden along Highway 50, offering a small-town feel with rapid new construction growth. The Hills of Minneola development takes advantage of the area's unusual elevation, with some of the best views in Central Florida. It's close enough to Winter Garden's downtown for dining and shopping, and Clermont's lakes and recreation are just minutes west.",
@@ -895,7 +895,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "montverde",
     name: "Montverde",
     image: "/images/neighborhoods/montverde.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/montverde",
+    searchUrl: "https://www.iorlandorealestate.com/montverde/",
     tagline: "Rural elegance in the rolling hills of Lake County",
     description:
       "Montverde is a small, unincorporated community of fewer than 2,000 residents that has maintained its rural, rustic character even as neighboring Clermont and Minneola have boomed. Home to the prestigious Montverde Academy and the luxury Bella Collina golf community, it attracts buyers who want acreage, privacy, and a slower pace of life. Oakland and Minneola are both within 10 minutes, and Winter Garden's downtown is about 15 minutes east.",
@@ -968,7 +968,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "oakland",
     name: "Oakland",
     image: "/images/neighborhoods/oakland.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/oakland",
+    searchUrl: "https://www.iorlandorealestate.com/property-search/results/#sortby_m.Price%20DESC/nearby_false,-1/area_/city_Oakland/state_FL/",
     tagline: "A hidden gem nestled among the oaks on the West Orange Trail",
     description:
       "Oakland is a tiny historic town of about 3,500 residents tucked between Winter Garden and Clermont along Highway 50. Incorporated in 1887 and bordered by Lake Apopka and Johns Lake, it offers a rare combination of old Florida charm, nature access, and new construction. The West Orange Trail runs directly through town, and the Oakland Nature Preserve provides 150 acres of free hiking and boardwalk trails. Winter Garden's Plant Street is about 5 minutes east.",
@@ -1040,7 +1040,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "groveland",
     name: "Groveland",
     image: "/images/neighborhoods/groveland.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/groveland",
+    searchUrl: "https://www.iorlandorealestate.com/property-search/results/#sortby_m.Price%20DESC/nearby_false,-1/area_/city_Groveland/state_FL/",
     tagline: "Affordable new construction in a fast-growing Lake County town",
     description:
       "Groveland is the most affordable entry point in the west Lake County corridor, offering new construction from national builders at prices below neighboring Clermont and Minneola. Located south and west of Clermont along Highway 27 and Highway 33, it's growing rapidly with master-planned communities, including the Trilogy Orlando 55+ resort community by Shea Homes. The trade-off is a longer commute to Orlando and a commercial infrastructure that's still catching up to residential growth.",
@@ -1114,7 +1114,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "apopka",
     name: "Apopka",
     image: "/images/neighborhoods/apopka.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/apopka",
+    searchUrl: "https://www.iorlandorealestate.com/apopka/",
     tagline: "New construction meets natural springs in Orlando's northwest corridor",
     description:
       "Apopka is a rapidly expanding city northwest of Orlando, once known as the Indoor Foliage Capital of the World. Today it draws buyers with abundant new construction, proximity to Wekiwa Springs State Park, and home prices that remain below the Orlando metro median. The completion of the Wekiva Parkway has dramatically improved connectivity to the rest of Central Florida.",
@@ -1188,7 +1188,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "lake-mary",
     name: "Lake Mary",
     image: "/images/neighborhoods/lake-mary.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/lake-mary",
+    searchUrl: "https://www.iorlandorealestate.com/lake-mary/",
     tagline: "Seminole County's polished suburban hub with top-rated schools",
     description:
       "Lake Mary is an affluent suburb in Seminole County, roughly 20 miles north of downtown Orlando along I-4. Home to major corporate offices, top-rated Seminole County public schools, and upscale shopping and dining at Colonial TownPark, it consistently ranks among the best places to live in the Orlando metro for families and professionals.",
@@ -1264,7 +1264,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "sanford",
     name: "Sanford",
     image: "/images/neighborhoods/sanford.jpg",
-    searchUrl: "https://iorlandorealestate.com/homes-for-sale/sanford",
+    searchUrl: "https://www.iorlandorealestate.com/sanford/",
     tagline: "A historic lakefront city with a growing food and arts scene",
     description:
       "Sanford is the county seat of Seminole County, situated on the southern shore of Lake Monroe along the St. Johns River. The city has experienced a renaissance in its historic downtown, which now features a walkable stretch of restaurants, craft bars, art galleries, and antique shops. It offers significantly lower home prices than neighboring Lake Mary while sharing the same top-rated Seminole County school district.",
