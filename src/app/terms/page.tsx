@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animate";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...buildMetadata({
-    title: "Terms of Use",
-    description:
-      "Review Nicole Mickle Real Estate’s terms and conditions for website use, services, policies, and important user guidelines.",
-    path: "/terms",
-  }),
-  robots: { index: true, follow: false },
-};
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...(await buildMetadata({
+      title: "Terms of Use",
+      description:
+        "Review Nicole Mickle Real Estate’s terms and conditions for website use, services, policies, and important user guidelines.",
+      path: "/terms",
+      ogImage: DEFAULT_OG_IMAGE,
+    })),
+    robots: { index: true, follow: false },
+  };
+}
 
 export default function TermsPage() {
   return (

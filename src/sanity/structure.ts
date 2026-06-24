@@ -57,11 +57,16 @@ export const studioStructure: StructureResolver = (S) =>
               S.documentTypeListItem("category").title("Categories"),
             ]),
         ),
+      S.divider(),
+      S.listItem()
+        .title("Page SEO")
+        .icon(() => "🔎")
+        .child(S.documentTypeList("pageSeo").title("Page SEO overrides")),
       // Hide everything else (singletons appear only via the curated entries above).
       ...S.documentTypeListItems().filter(
         (item) =>
           !SINGLETON_TYPES.has(item.getId() ?? "") &&
-          !["post", "author", "category"].includes(item.getId() ?? ""),
+          !["post", "author", "category", "pageSeo"].includes(item.getId() ?? ""),
       ),
     ]);
 

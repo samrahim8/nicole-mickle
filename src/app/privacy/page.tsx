@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animate";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...buildMetadata({
-    title: "Privacy Policy",
-    description:
-      "How Nicole Mickle Real Estate collects, uses, and protects information shared through nicolemickle.com.",
-    path: "/privacy",
-  }),
-  robots: { index: true, follow: false },
-};
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...(await buildMetadata({
+      title: "Privacy Policy",
+      description:
+        "How Nicole Mickle Real Estate collects, uses, and protects information shared through nicolemickle.com.",
+      path: "/privacy",
+      ogImage: DEFAULT_OG_IMAGE,
+    })),
+    robots: { index: true, follow: false },
+  };
+}
 
 export default function PrivacyPage() {
   return (

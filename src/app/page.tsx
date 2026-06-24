@@ -1,10 +1,21 @@
+import type { Metadata } from "next";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { HomeClient, type HomePageData } from "@/components/home-client";
 import { sanityFetch } from "@/sanity/live";
 import { homePageQuery } from "@/sanity/queries";
 import { homeFallback } from "@/lib/home-fallback";
+import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata({
+    title: "Nicole Mickle | Orlando Relocation & New Construction",
+    description:
+      "Orlando's trusted relocation and new construction specialist with 30 years of experience. Expert guidance for moving to Orlando, new builds, and finding your perfect neighborhood.",
+    path: "/",
+  });
+}
 
 type SanityHome = Partial<HomePageData> & {
   seoTitle: string | null;
