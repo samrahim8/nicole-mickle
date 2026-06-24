@@ -40,16 +40,14 @@ export function AboutClient({ data }: { data: AboutData }) {
                   {data.heroEyebrow}
                 </p>
               </FadeIn>
-              <TextReveal delay={0.1}>
-                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
-                  {data.heroHeadlineLine1}
-                </h1>
-              </TextReveal>
-              <TextReveal delay={0.2}>
-                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal italic">
-                  {data.heroHeadlineLine2}
-                </h1>
-              </TextReveal>
+              <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
+                <TextReveal delay={0.1}>
+                  <span className="block">{data.heroHeadlineLine1}</span>
+                </TextReveal>
+                <TextReveal delay={0.2}>
+                  <span className="block italic">{data.heroHeadlineLine2}</span>
+                </TextReveal>
+              </h1>
 
               <FadeIn delay={0.5} className="mt-10">
                 {data.heroParagraphs.map((p, i) => (

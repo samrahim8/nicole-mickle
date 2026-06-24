@@ -35,16 +35,14 @@ export function RelocatingFromClient({ city, recommended }: Props) {
                   Relocation Guide
                 </p>
               </FadeIn>
-              <TextReveal>
-                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
-                  Moving to Orlando
-                </h1>
-              </TextReveal>
-              <TextReveal delay={0.1}>
-                <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal italic">
-                  from {city.name}
-                </h1>
-              </TextReveal>
+              <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-[-0.02em] text-charcoal">
+                <TextReveal>
+                  <span className="block">Moving to Orlando</span>
+                </TextReveal>
+                <TextReveal delay={0.1}>
+                  <span className="block italic">from {city.name}</span>
+                </TextReveal>
+              </h1>
             </div>
             <FadeIn delay={0.3} className="lg:col-span-5">
               <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.8]">

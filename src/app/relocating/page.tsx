@@ -6,6 +6,7 @@ import {
 import { sanityFetch } from "@/sanity/live";
 import { relocatingPageQuery } from "@/sanity/queries";
 import { relocatingFallback } from "@/lib/relocating-fallback";
+import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -83,13 +84,13 @@ async function getPage(): Promise<{
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getPage();
-  return {
+  return buildMetadata({
     title: seo.title || "Relocating to Orlando",
     description:
       seo.description ||
       "Moving to Orlando? Nicole Mickle specializes in relocation with 30 years of local expertise. From neighborhoods to schools to commutes, get expert guidance.",
-    alternates: { canonical: "/relocating" },
-  };
+    path: "/relocating",
+  });
 }
 
 export default async function RelocatingPage() {

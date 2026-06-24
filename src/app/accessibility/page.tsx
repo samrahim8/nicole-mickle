@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animate";
+import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Accessibility Statement",
-  description:
-    "Nicole Mickle Real Estate is committed to making nicolemickle.com accessible to everyone, including people with disabilities.",
-  alternates: { canonical: "/accessibility" },
+  ...buildMetadata({
+    title: "Accessibility Statement",
+    description:
+      "Nicole Mickle Real Estate is committed to making nicolemickle.com accessible to everyone, including people with disabilities.",
+    path: "/accessibility",
+  }),
   robots: { index: true, follow: false },
 };
 

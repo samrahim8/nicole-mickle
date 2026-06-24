@@ -3,6 +3,7 @@ import { QuizClient, type QuizPageData } from "@/components/quiz-client";
 import { sanityFetch } from "@/sanity/live";
 import { quizPageQuery } from "@/sanity/queries";
 import { quizFallback } from "@/lib/quiz-fallback";
+import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -48,13 +49,13 @@ async function getQuizPage(): Promise<{
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getQuizPage();
-  return {
+  return buildMetadata({
     title: seo.title || "Find Your Orlando Neighborhood",
     description:
       seo.description ||
       "Take a 2-minute quiz to find the Orlando neighborhood that fits your lifestyle, budget, and priorities. Personalized recommendations from a 30-year local expert.",
-    alternates: { canonical: "/quiz" },
-  };
+    path: "/quiz",
+  });
 }
 
 export default async function QuizPage() {
