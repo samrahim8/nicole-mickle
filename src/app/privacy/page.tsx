@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animate";
+import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How Nicole Mickle Real Estate collects, uses, and protects information shared through nicolemickle.com.",
-  alternates: { canonical: "/privacy" },
+  ...buildMetadata({
+    title: "Privacy Policy",
+    description:
+      "How Nicole Mickle Real Estate collects, uses, and protects information shared through nicolemickle.com.",
+    path: "/privacy",
+  }),
   robots: { index: true, follow: false },
 };
 

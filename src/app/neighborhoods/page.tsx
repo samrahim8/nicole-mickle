@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { NeighborhoodExplorer } from "@/components/neighborhood-explorer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Orlando Neighborhoods",
   description:
     "Explore Orlando's best neighborhoods with Nicole Mickle. From Winter Park to Lake Nona, find the community that fits your lifestyle.",
-  alternates: { canonical: "/neighborhoods" },
-};
+  path: "/neighborhoods",
+});
 
 export default function NeighborhoodsPage() {
   return (

@@ -7,6 +7,7 @@ import { sanityFetch } from "@/sanity/live";
 import { newConstructionPageQuery } from "@/sanity/queries";
 import { newConstructionFallback } from "@/lib/new-construction-fallback";
 import { urlFor } from "@/sanity/image";
+import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -91,13 +92,13 @@ async function getPage(): Promise<{
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getPage();
-  return {
+  return buildMetadata({
     title: seo.title || "New Construction",
     description:
       seo.description ||
       "Expert guidance on new construction homes in Orlando. Nicole Mickle helps you select builders, negotiate upgrades, and navigate the build process.",
-    alternates: { canonical: "/new-construction" },
-  };
+    path: "/new-construction",
+  });
 }
 
 export default async function NewConstructionPage() {

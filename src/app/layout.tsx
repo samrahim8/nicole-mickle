@@ -24,7 +24,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nicolemickle.com"),
   title: {
-    default: "Nicole Mickle | Orlando Real Estate - Relocation & New Construction Specialist",
+    default: "Nicole Mickle | Orlando Relocation & New Construction",
     template: "%s | Nicole Mickle Real Estate",
   },
   alternates: {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nicolemickle.com",
     siteName: "Nicole Mickle Real Estate",
-    title: "Nicole Mickle | Orlando's Relocation & New Construction Specialist",
+    title: "Nicole Mickle | Orlando Relocation & New Construction",
     description:
       "Orlando's relocation and new construction specialist. 30 years of market expertise. Find your neighborhood before you pack a single box.",
   },
@@ -71,6 +71,12 @@ const jsonLd = {
   url: "https://nicolemickle.com",
   telephone: "+1-407-353-0826",
   email: "nicole@nicolemickle.com",
+  founder: "Nicole Mickle",
+  foundingDate: "1996",
+  priceRange: "$400K-$5M",
+  openingHours: "Mo-Su 09:00-18:00",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Check, Credit Card, Debit Card, Bank Transfer",
   address: {
     "@type": "PostalAddress",
     streetAddress: "13790 Bridgewater Crossings Blvd. Ste 1080",
@@ -79,6 +85,13 @@ const jsonLd = {
     postalCode: "34786",
     addressCountry: "US",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "28.4957",
+    longitude: "-81.5343",
+  },
+  hasMap:
+    "https://www.google.com/maps?q=13790+Bridgewater+Crossings+Blvd.+Ste+1080,+Windermere,+FL+34786",
   areaServed: {
     "@type": "City",
     name: "Orlando",
@@ -110,6 +123,7 @@ const jsonLd = {
     "https://www.facebook.com/NicoleMickleFL/",
     "https://www.linkedin.com/in/orlandorealestate/",
     "https://www.youtube.com/@nicolemickle3735/shorts",
+    "https://www.tiktok.com/@iorlandorealestate",
   ],
 };
 

@@ -39,7 +39,13 @@ export async function generateMetadata({
   });
   if (!post) return {};
 
-  const title = post.seo?.metaTitle ?? post.title;
+  // When an SEO meta title is set it is a complete, length-tuned title, so emit
+  // it absolutely and skip the "| Nicole Mickle Real Estate" template suffix
+  // (that suffix is what pushed post titles past the length limit). Posts with no
+  // meta title fall back to the headline plus the template as before.
+  const metaTitle = post.seo?.metaTitle;
+  const titleField = metaTitle ? { absolute: metaTitle } : post.title;
+  const ogTitle = metaTitle ?? post.title;
   const description = post.seo?.metaDescription ?? post.excerpt ?? undefined;
   const ogSource = post.seo?.ogImage ?? post.coverImage ?? null;
   const ogImage = ogSource
@@ -47,19 +53,20 @@ export async function generateMetadata({
     : undefined;
 
   return {
-    title,
+    title: titleField,
     description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
+      url: `/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: ogTitle,
       description,
       images: ogImage ? [ogImage] : undefined,
     },

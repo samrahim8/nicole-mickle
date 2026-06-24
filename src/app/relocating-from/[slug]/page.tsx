@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { originCities } from "@/lib/relocating-from";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { RelocatingFromClient } from "@/components/relocating-from-client";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return originCities.map((c) => ({ slug: c.slug }));
@@ -16,11 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const city = originCities.find((c) => c.slug === slug);
   if (!city) return {};
-  return {
+  return buildMetadata({
     title: `Moving to Orlando from ${city.name} - Relocation Guide`,
     description: `Everything you need to know about relocating from ${city.name} to Orlando. Cost of living comparison, best neighborhoods, tax savings, and expert guidance from a 30-year local specialist.`,
-    alternates: { canonical: `/relocating-from/${city.slug}` },
-  };
+    path: `/relocating-from/${city.slug}`,
+  });
 }
 
 export default async function RelocatingFromPage({

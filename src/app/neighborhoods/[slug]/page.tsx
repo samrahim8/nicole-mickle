@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { NeighborhoodDetailClient } from "@/components/neighborhood-detail-client";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return neighborhoods.map((n) => ({ slug: n.slug }));
@@ -15,11 +16,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const n = neighborhoods.find((nb) => nb.slug === slug);
   if (!n) return {};
-  return {
+  return buildMetadata({
     title: `${n.name} Neighborhood Guide - Living in ${n.name}, Orlando`,
     description: `Everything you need to know about living in ${n.name}, Orlando. Price points from ${n.priceRange}, schools, dining, new construction, and lifestyle details from a 30-year local expert.`,
-    alternates: { canonical: `/neighborhoods/${n.slug}` },
-  };
+    path: `/neighborhoods/${n.slug}`,
+  });
 }
 
 export default async function NeighborhoodPage({

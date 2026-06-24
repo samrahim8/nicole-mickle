@@ -59,8 +59,10 @@ export const portableText = defineType({
           type: "string",
           title: "Alt text",
           description: "Important for accessibility and SEO.",
+          // Recommended, not required: a warning still nudges editors but never
+          // blocks saving/publishing (so SEO edits aren't held hostage by alt).
           validation: (rule) =>
-            rule.required().error("Alt text is required."),
+            rule.required().warning("Add alt text for accessibility and SEO."),
         },
         {
           name: "caption",

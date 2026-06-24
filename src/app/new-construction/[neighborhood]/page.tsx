@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { NewConstructionNeighborhoodClient } from "@/components/new-construction-neighborhood-client";
+import { buildMetadata } from "@/lib/seo";
 
 const withNewConstruction = neighborhoods.filter(
   (n) => n.newConstruction.builders.length > 0
@@ -19,11 +20,11 @@ export async function generateMetadata({
   const { neighborhood } = await params;
   const n = neighborhoods.find((nb) => nb.slug === neighborhood);
   if (!n || n.newConstruction.builders.length === 0) return {};
-  return {
+  return buildMetadata({
     title: `New Construction in ${n.name} - Builders, Communities & Pricing`,
     description: `New construction homes in ${n.name}, Orlando. Active builders include ${n.newConstruction.builders.slice(0, 3).join(", ")}. Price range: ${n.priceRange}. Expert guidance from Nicole Mickle.`,
-    alternates: { canonical: `/new-construction/${n.slug}` },
-  };
+    path: `/new-construction/${n.slug}`,
+  });
 }
 
 export default async function NewConstructionNeighborhoodPage({

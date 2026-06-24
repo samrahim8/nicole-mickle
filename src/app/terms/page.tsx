@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/animate";
+import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
-  description:
-    "Terms governing use of nicolemickle.com, the website of Nicole Mickle Real Estate.",
-  alternates: { canonical: "/terms" },
+  ...buildMetadata({
+    title: "Terms of Use",
+    description:
+      "Review Nicole Mickle Real Estate’s terms and conditions for website use, services, policies, and important user guidelines.",
+    path: "/terms",
+  }),
   robots: { index: true, follow: false },
 };
 

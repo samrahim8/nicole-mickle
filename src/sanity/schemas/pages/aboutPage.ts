@@ -66,7 +66,8 @@ export const aboutPage = defineType({
           name: "alt",
           type: "string",
           title: "Alt text",
-          validation: (rule) => rule.required(),
+          validation: (rule) =>
+            rule.required().warning("Add alt text for accessibility and SEO."),
         },
       ],
     }),

@@ -158,21 +158,17 @@ export function HomeClient({ data, neighborhoods }: Props) {
           style={{ opacity: heroOpacity }}
           className="relative max-w-[90rem] mx-auto px-6 lg:px-12 w-full text-center"
         >
-          <TextReveal delay={0.3}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
-              {data.heroHeadlineLine1}
-            </h1>
-          </TextReveal>
-          <TextReveal delay={0.4}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
-              {data.heroHeadlineLine2}
-            </h1>
-          </TextReveal>
-          <TextReveal delay={0.5}>
-            <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal italic">
-              {data.heroHeadlineLine3}
-            </h1>
-          </TextReveal>
+          <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,7vw,7rem)] leading-[1.1] tracking-[-0.03em] text-white font-normal">
+            <TextReveal delay={0.3}>
+              <span className="block">{data.heroHeadlineLine1}</span>
+            </TextReveal>
+            <TextReveal delay={0.4}>
+              <span className="block">{data.heroHeadlineLine2}</span>
+            </TextReveal>
+            <TextReveal delay={0.5}>
+              <span className="block italic">{data.heroHeadlineLine3}</span>
+            </TextReveal>
+          </h1>
 
           <motion.div
             initial={{ opacity: 0 }}

@@ -58,7 +58,7 @@ export const newConstructionPage = defineType({
         {
           type: "image",
           options: { hotspot: true },
-          fields: [{ name: "alt", type: "string", title: "Alt text", validation: (r) => r.required() }],
+          fields: [{ name: "alt", type: "string", title: "Alt text", validation: (r) => r.required().warning("Add alt text for accessibility and SEO.") }],
         },
       ],
       validation: (r) => r.min(3).max(3),
