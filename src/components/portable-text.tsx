@@ -21,6 +21,12 @@ type LinkValue = {
 };
 
 const components: PortableTextComponents = {
+  // Imported WordPress posts have hard line breaks (\n) baked in from the old
+  // ~70-char hard-wrapped source. The default renderer turns each into a <br>,
+  // which forces the prose to break early and leaves a large empty right margin
+  // in our wide reading column. Rendering them as collapsing whitespace instead
+  // lets paragraphs reflow naturally to fill the column.
+  hardBreak: false,
   block: {
     normal: ({ children }) => (
       <p className="text-[17px] leading-[1.75] text-neutral-700 mb-6">
