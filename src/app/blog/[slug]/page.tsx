@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="pt-32 lg:pt-36">
         {/* Header */}
         <header className="max-w-[90rem] mx-auto px-6 lg:px-12 mb-12 lg:mb-16">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-[52rem] mx-auto">
             <Link
               href="/blog"
               className="text-[12px] tracking-wide text-neutral-400 hover:text-charcoal transition-colors duration-300 mb-8 inline-flex items-center gap-2 py-2"
@@ -210,9 +210,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
+        {/* Hero cover image */}
+        {coverSrc ? (
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12 mb-14 lg:mb-20">
+            <figure className="max-w-5xl mx-auto">
+              <div className="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden">
+                <Image
+                  src={coverSrc}
+                  alt={post.coverImage?.alt ?? post.title}
+                  fill
+                  sizes="(min-width: 1024px) 64rem, 100vw"
+                  className="object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  unoptimized
+                />
+              </div>
+            </figure>
+          </div>
+        ) : null}
+
         {/* Body */}
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 pb-24 lg:pb-32">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-[52rem] mx-auto">
             {post.body ? <PostBody value={post.body} /> : null}
 
             {faqItems.length > 0 ? (
