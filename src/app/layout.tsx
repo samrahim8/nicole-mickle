@@ -109,7 +109,7 @@ const jsonLd = {
     "Mortgage Lending",
   ],
   worksFor: {
-    "@type": "RealEstateOrganization",
+    "@type": "RealEstateAgent",
     name: "Olympus Executive Realty",
     address: {
       "@type": "PostalAddress",
