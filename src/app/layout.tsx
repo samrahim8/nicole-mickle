@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import "./globals.css";
@@ -23,6 +24,9 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nicolemickle.com"),
+  verification: {
+    google: "S0h6DEYCBQWgxQThHtS0DEyCQiokmtuIBq2pdnuDrrY",
+  },
   title: {
     default: "Nicole Mickle | Orlando Relocation & New Construction",
     template: "%s | Nicole Mickle Real Estate",
@@ -158,6 +162,7 @@ export default async function RootLayout({
         {isDraft && <VisualEditing />}
         <Analytics />
       </body>
+      <GoogleAnalytics gaId="G-6XEQK07721" />
     </html>
   );
 }
