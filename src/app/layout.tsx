@@ -69,18 +69,23 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["RealEstateAgent", "LocalBusiness"],
+  "@id": "https://nicolemickle.com/#business",
   name: "Nicole Mickle Real Estate",
   description:
     "Orlando relocation and new construction real estate specialist with 30 years of industry experience.",
   url: "https://nicolemickle.com",
+  image: "https://nicolemickle.com/images/nicole.jpg",
   telephone: "+1-407-353-0826",
   email: "nicole@nicolemickle.com",
-  founder: "Nicole Mickle",
+  founder: {
+    "@type": "Person",
+    name: "Nicole Mickle",
+  },
   foundingDate: "1996",
   priceRange: "$400K-$5M",
   openingHours: "Mo-Su 09:00-18:00",
   currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Check, Credit Card, Debit Card, Bank Transfer",
+  paymentAccepted: ["Cash", "Check", "Credit Card", "Debit Card", "Bank Transfer"],
   keywords:
     "Orlando real estate, Central Florida real estate, relocation specialist, new construction, Windermere FL real estate, Winter Garden real estate, neighborhood guides, home buying, home selling, Olympus Executive Realty",
   address: {
@@ -93,19 +98,17 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "28.4957",
-    longitude: "-81.5343",
+    latitude: 28.4957,
+    longitude: -81.5343,
   },
   hasMap:
     "https://www.google.com/maps?q=13790+Bridgewater+Crossings+Blvd.+Ste+1080,+Windermere,+FL+34786",
-  areaServed: {
-    "@type": "City",
-    name: "Orlando",
-    containedInPlace: {
-      "@type": "State",
-      name: "Florida",
-    },
-  },
+  areaServed: [
+    { "@type": "City", name: "Orlando" },
+    { "@type": "City", name: "Windermere" },
+    { "@type": "City", name: "Winter Garden" },
+    { "@type": "AdministrativeArea", name: "Central Florida" },
+  ],
   knowsAbout: [
     "Relocation",
     "New Construction",
@@ -128,7 +131,7 @@ const jsonLd = {
     "https://www.instagram.com/iorlandorealestate/",
     "https://www.facebook.com/NicoleMickleFL/",
     "https://www.linkedin.com/in/orlandorealestate/",
-    "https://www.youtube.com/@nicolemickle3735/shorts",
+    "https://www.youtube.com/@nicolemickle3735",
     "https://www.tiktok.com/@iorlandorealestate",
   ],
 };
