@@ -2,6 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { presentationTool, defineDocuments, defineLocations } from "sanity/presentation";
 import { visionTool } from "@sanity/vision";
+import { media, mediaAssetSource } from "sanity-plugin-media";
 
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schemaTypes } from "./src/sanity/schemas";
@@ -72,8 +73,28 @@ export default defineConfig({
       },
     }),
     structureTool({ structure: studioStructure }),
+    // Searchable, taggable asset library. The stock Sanity asset browser only
+    // lists uploads newest-first with no filename search, so once the library
+    // grew past a few hundred images the team could not find a previously
+    // uploaded photo and kept re-uploading duplicates.
+    media(),
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  form: {
+    // Make the media library the first choice on every image field, so picking
+    // an existing asset is the default path and uploading a new one is the
+    // deliberate one. That is what actually stops duplicate uploads.
+    image: {
+      assetSources: (prev) => [
+        mediaAssetSource,
+        ...prev.filter((source) => source !== mediaAssetSource),
+      ],
+    },
+    // The plugin is image-focused; leave file fields on the stock browser.
+    file: {
+      assetSources: (prev) => prev.filter((source) => source !== mediaAssetSource),
+    },
+  },
   schema: {
     types: schemaTypes,
     templates: singletonNewDocumentOptions,

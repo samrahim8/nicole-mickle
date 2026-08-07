@@ -8,14 +8,17 @@ import { formatPostDate } from "@/lib/format";
 export function PostCard({ post }: { post: PostListItem }) {
   const href = `/blog/${post.slug}`;
   const category = post.categories?.[0];
+  // Cover images are produced at 1200x630 (1.91:1). Request that exact ratio and
+  // render it into a 1.91:1 box so the full frame survives — asking Sanity for a
+  // different ratio and then object-cover'ing it into a third one crops twice.
   const coverSrc = post.coverImage?.asset
-    ? urlFor(post.coverImage).width(900).height(600).fit("crop").auto("format").url()
+    ? urlFor(post.coverImage).width(1200).height(630).fit("crop").auto("format").url()
     : null;
 
   return (
     <article className="group bg-white border border-neutral-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)] overflow-hidden sm:bg-transparent sm:border-0 sm:shadow-none sm:overflow-visible">
       <Link href={href} aria-label={post.title} className="block">
-        <div className="aspect-[4/3] bg-neutral-100 overflow-hidden relative sm:mb-5">
+        <div className="aspect-[1.91/1] bg-neutral-100 overflow-hidden relative sm:mb-5">
           {coverSrc ? (
             <Image
               src={coverSrc}

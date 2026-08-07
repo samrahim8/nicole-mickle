@@ -6,7 +6,9 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
-import type { Neighborhood } from "@/lib/neighborhoods";
+import { neighborhoods, type Neighborhood } from "@/lib/neighborhoods";
+import type { NeighborhoodPageContent } from "@/lib/neighborhood-page-content";
+import { FaqAccordion } from "./faq-accordion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,9 +21,12 @@ function splitOnDash(text: string): { name: string; detail: string } | null {
 interface Props {
   neighborhood: Neighborhood;
   related: Neighborhood[];
+  /** SEO-rewrite content. Absent for neighborhoods not covered by the sheet,
+   *  which then render exactly as they did before. */
+  content?: NeighborhoodPageContent;
 }
 
-export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
+export function NeighborhoodDetailClient({ neighborhood: n, related, content }: Props) {
   const pullQuote = n.lifestyle.split(/(?<=\.)\s/)[0];
   const remainingLifestyle = n.lifestyle.slice(pullQuote.length).trim();
 
@@ -139,12 +144,23 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
 
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             <div className="lg:col-span-6">
+              {/* One h1 carrying the full target phrase. The neighborhood name
+                  stays the dominant display line; the keyword lead-in sits above
+                  it as an eyebrow so the heading reads "Homes for Sale in
+                  Clermont, FL" in the DOM without breaking the hero typography. */}
               <TextReveal>
                 <h1
                   ref={(el) => { sectionHeadlinesRef.current[0] = el; }}
-                  className="font-[family-name:var(--font-playfair)] text-[clamp(3rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em] text-charcoal"
+                  className="text-charcoal"
                 >
-                  {n.name}
+                  {content ? (
+                    <span className="block text-[12px] sm:text-[13px] tracking-[0.25em] uppercase text-neutral-400 mb-3 sm:mb-4">
+                      {content.h1Lead}
+                    </span>
+                  ) : null}
+                  <span className="block font-[family-name:var(--font-playfair)] text-[clamp(3rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em]">
+                    {content ? content.h1Display : n.name}
+                  </span>
                 </h1>
               </TextReveal>
               <FadeIn delay={0.3}>
@@ -217,6 +233,20 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Keyword intro — an addition below the hero, ahead of the existing
+          lifestyle content. The hero copy and stat row are untouched. */}
+      {content ? (
+        <section className="pt-16 lg:pt-24">
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <FadeIn>
+              <p className="max-w-3xl text-[17px] sm:text-[18px] leading-[1.75] text-neutral-600">
+                {content.intro}
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+      ) : null}
 
       {/* Photo Gallery */}
       {n.gallery && n.gallery.length > 0 && (
@@ -395,7 +425,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
                     ref={(el) => { sectionHeadlinesRef.current[2] = el; }}
                     className="font-[family-name:var(--font-playfair)] text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] tracking-[-0.02em] text-charcoal mb-6"
                   >
-                    Building new in {n.name}
+                    New Construction Homes in {n.name}
                   </h2>
                   <p className="text-[16px] sm:text-[15px] text-neutral-500 leading-[1.85] mb-8">
                     {n.newConstruction.summary}
@@ -551,6 +581,28 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
         </div>
       </section>
 
+      {/* FAQ — copy here must stay word-for-word identical to the FAQPage
+          JSON-LD emitted by the route, which reads the same array. */}
+      {content ? (
+        <section className="py-20 lg:py-32 border-t border-neutral-100">
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+              <FadeIn className="lg:col-span-4">
+                <p className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 mb-5">
+                  Frequently Asked
+                </p>
+                <h2 className="font-[family-name:var(--font-playfair)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-charcoal">
+                  {n.name} home-buying FAQ
+                </h2>
+              </FadeIn>
+              <div className="lg:col-span-7 lg:col-start-6">
+                <FaqAccordion items={content.faq} />
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* Related Neighborhoods */}
       <section className="border-t border-neutral-100 py-16 lg:py-24">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
@@ -559,26 +611,61 @@ export function NeighborhoodDetailClient({ neighborhood: n, related }: Props) {
               Other neighborhoods to consider
             </p>
           </FadeIn>
-          <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
-            {related.map((nb) => (
-              <StaggerChild key={nb.slug} className="flex">
-                <Link
-                  href={`/neighborhoods/${nb.slug}`}
-                  className="group flex flex-col h-full w-full bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-300"
-                >
-                  <h3 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-forest transition-colors duration-300 mb-2 min-h-[2lh]">
-                    {nb.name}
-                  </h3>
-                  <p className="text-[13px] text-neutral-400 leading-relaxed mb-4 line-clamp-2">
-                    {nb.tagline}
-                  </p>
-                  <span className="mt-auto text-[11px] tracking-[0.15em] uppercase text-forest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View guide
-                  </span>
-                </Link>
-              </StaggerChild>
-            ))}
-          </Stagger>
+          {content ? (
+            // Editorially chosen destinations. The card keeps the name and
+            // tagline; the descriptive anchor phrase replaces the decorative
+            // "View guide" so the link text itself carries the keyword.
+            <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
+              {content.relatedLinks.map((link) => {
+                const target = neighborhoods.find(
+                  (nb) => `/neighborhoods/${nb.slug}` === link.href,
+                );
+                return (
+                  <StaggerChild key={link.href} className="flex">
+                    <Link
+                      href={link.href}
+                      className="group flex flex-col h-full w-full bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-300"
+                    >
+                      {target ? (
+                        <>
+                          <h3 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-forest transition-colors duration-300 mb-2 min-h-[2lh]">
+                            {target.name}
+                          </h3>
+                          <p className="text-[13px] text-neutral-400 leading-relaxed mb-6 line-clamp-2">
+                            {target.tagline}
+                          </p>
+                        </>
+                      ) : null}
+                      <span className="mt-auto text-[12px] text-forest group-hover:translate-x-0.5 transition-transform duration-300">
+                        {link.label} &rarr;
+                      </span>
+                    </Link>
+                  </StaggerChild>
+                );
+              })}
+            </Stagger>
+          ) : (
+            <Stagger className="grid md:grid-cols-3 gap-[1px] bg-neutral-200">
+              {related.map((nb) => (
+                <StaggerChild key={nb.slug} className="flex">
+                  <Link
+                    href={`/neighborhoods/${nb.slug}`}
+                    className="group flex flex-col h-full w-full bg-white p-8 lg:p-10 hover:bg-neutral-50 transition-colors duration-300"
+                  >
+                    <h3 className="font-[family-name:var(--font-playfair)] text-lg text-charcoal group-hover:text-forest transition-colors duration-300 mb-2 min-h-[2lh]">
+                      {nb.name}
+                    </h3>
+                    <p className="text-[13px] text-neutral-400 leading-relaxed mb-4 line-clamp-2">
+                      {nb.tagline}
+                    </p>
+                    <span className="mt-auto text-[11px] tracking-[0.15em] uppercase text-forest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      View guide
+                    </span>
+                  </Link>
+                </StaggerChild>
+              ))}
+            </Stagger>
+          )}
         </div>
       </section>
 

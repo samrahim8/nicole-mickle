@@ -112,11 +112,50 @@ export default async function NewConstructionPage() {
       acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
   };
+  // The sheet's per-page block also carried a Service node and a breadcrumb.
+  // The FAQPage above already existed (contrary to the sheet's note), so only
+  // these two are new. No RealEstateAgent node — the root layout emits one
+  // sitewide and a second would create competing business entities.
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "New construction buyer representation",
+    areaServed: "Orlando, FL",
+    provider: {
+      "@type": "RealEstateAgent",
+      name: "Nicole Mickle Real Estate",
+      telephone: "+1-407-353-0826",
+      url: "https://nicolemickle.com/new-construction",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nicolemickle.com/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "New Construction",
+        item: "https://nicolemickle.com/new-construction",
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <NewConstructionClient data={data} />
     </>

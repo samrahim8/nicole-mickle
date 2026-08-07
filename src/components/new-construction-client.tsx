@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
 import { neighborhoods } from "@/lib/neighborhoods";
+import { PRIORITY_AREA_ORDER } from "@/lib/neighborhood-page-content";
 
 export type NewConstructionPageData = {
   heroEyebrow: string;
@@ -39,7 +40,18 @@ export type NewConstructionPageData = {
   ctaSideButtonLabel: string;
 };
 
-const activeAreas = neighborhoods.filter((n) => n.newConstruction.builders.length > 0);
+// Lead with the 13 priority areas in sheet order, then everything else that has
+// active builders, alphabetically.
+const activeAreas = neighborhoods
+  .filter((n) => n.newConstruction.builders.length > 0)
+  .sort((a, b) => {
+    const ai = PRIORITY_AREA_ORDER.indexOf(a.slug);
+    const bi = PRIORITY_AREA_ORDER.indexOf(b.slug);
+    if (ai !== -1 && bi !== -1) return ai - bi;
+    if (ai !== -1) return -1;
+    if (bi !== -1) return 1;
+    return a.name.localeCompare(b.name);
+  });
 
 export function NewConstructionClient({ data }: { data: NewConstructionPageData }) {
   return (
