@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { getPageSeo } from "./page-seo";
+import { neighborhoodPageContent } from "./neighborhood-page-content";
 
 /** Site-wide branded OG image (the app/opengraph-image route). Used as the
  *  default share image for pages that have no section-specific image. */
@@ -16,7 +17,7 @@ export const DEFAULT_OG_IMAGE = "/opengraph-image";
  * Blog post titles are NOT here — those live on each post's `seo.metaTitle`
  * field in Sanity so Nicole's team can edit them without a developer.
  */
-export const SEO_TITLES: Record<string, string> = {
+const BASE_SEO_TITLES: Record<string, string> = {
   "/": "Nicole Mickle | Orlando Relocation & New Construction",
   "/neighborhoods/lake-nona": "Lake Nona Guide: Living in Orlando's Top Community",
   "/neighborhoods/windermere": "Windermere Guide: Living Near Orlando's Best Lakes",
@@ -58,6 +59,24 @@ export const SEO_TITLES: Record<string, string> = {
   "/relocating-from/georgia": "Moving to Orlando From Georgia: Relocation Guide",
   "/neighborhoods/montverde": "Montverde Guide: Living Near Orlando’s Quiet Side",
   "/neighborhoods/minneola": "Minneola Guide: Living Near Orlando’s Growth Hub",
+};
+
+/**
+ * The July 2026 rewrite retargeted 13 neighborhood guides plus /new-construction
+ * onto commercial-intent keywords ("homes for sale in X" rather than "X guide").
+ * These titles live on each neighborhood's content entry so the page copy and
+ * the title tag can never drift apart; merging them here last means they win
+ * over the older BASE_SEO_TITLES values for the same paths.
+ */
+export const SEO_TITLES: Record<string, string> = {
+  ...BASE_SEO_TITLES,
+  ...Object.fromEntries(
+    Object.entries(neighborhoodPageContent).map(([slug, content]) => [
+      `/neighborhoods/${slug}`,
+      content.seoTitle,
+    ]),
+  ),
+  "/new-construction": "New Construction Homes in Orlando, FL | Nicole Mickle",
 };
 
 type BuildMetadataInput = {

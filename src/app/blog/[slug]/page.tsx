@@ -214,7 +214,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {coverSrc ? (
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12 mb-14 lg:mb-20">
             <figure className="max-w-5xl mx-auto">
-              <div className="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden">
+              <div className="relative w-full aspect-[1.91/1] bg-neutral-100 overflow-hidden">
                 <Image
                   src={coverSrc}
                   alt={post.coverImage?.alt ?? post.title}
@@ -291,8 +291,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {related.map((r) => {
                 const src = r.coverImage?.asset
                   ? urlFor(r.coverImage)
-                      .width(800)
-                      .height(500)
+                      .width(1200)
+                      .height(630)
                       .fit("crop")
                       .auto("format")
                       .url()
@@ -303,7 +303,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     href={`/blog/${r.slug}`}
                     className="group block bg-white border border-neutral-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)] overflow-hidden sm:bg-transparent sm:border-0 sm:shadow-none sm:overflow-visible"
                   >
-                    <div className="aspect-[4/3] bg-neutral-100 overflow-hidden relative sm:mb-4">
+                    <div className="aspect-[1.91/1] bg-neutral-100 overflow-hidden relative sm:mb-4">
                       {src ? (
                         <Image
                           src={src}

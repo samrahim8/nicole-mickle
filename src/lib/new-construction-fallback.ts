@@ -2,7 +2,7 @@ import type { NewConstructionPageData } from "@/components/new-construction-clie
 
 export const newConstructionFallback: NewConstructionPageData = {
   heroEyebrow: "New Construction",
-  heroHeadlineLine1: "Building new",
+  heroHeadlineLine1: "New Construction Homes",
   heroHeadlineLine2: "in Orlando",
   heroBody:
     "From choosing the right builder and community to negotiating upgrades and monitoring the build, I guide you through every step of the new construction process.",
