@@ -4,6 +4,10 @@ import { neighborhoods } from "@/lib/neighborhoods";
 import { NewConstructionNeighborhoodClient } from "@/components/new-construction-neighborhood-client";
 import { buildMetadata } from "@/lib/seo";
 
+// See the note on /neighborhoods/[slug]: needed so CMS pageSeo edits reach
+// production without a redeploy.
+export const revalidate = 60;
+
 const withNewConstruction = neighborhoods.filter(
   (n) => n.newConstruction.builders.length > 0
 );

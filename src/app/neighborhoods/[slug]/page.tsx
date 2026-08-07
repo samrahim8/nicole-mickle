@@ -6,6 +6,12 @@ import { buildMetadata } from "@/lib/seo";
 import { neighborhoodPageContent } from "@/lib/neighborhood-page-content";
 import { buildFaqSchema } from "@/components/faq-accordion";
 
+// These pages read a CMS `pageSeo` override for their title/description. Without
+// a revalidate window they are baked at build time only, so a Studio edit would
+// never reach production without a redeploy — which defeats the self-serve SEO
+// layer. 60s matches every other CMS-backed route.
+export const revalidate = 60;
+
 export function generateStaticParams() {
   return neighborhoods.map((n) => ({ slug: n.slug }));
 }

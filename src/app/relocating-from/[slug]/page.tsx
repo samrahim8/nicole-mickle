@@ -5,6 +5,10 @@ import { neighborhoods } from "@/lib/neighborhoods";
 import { RelocatingFromClient } from "@/components/relocating-from-client";
 import { buildMetadata } from "@/lib/seo";
 
+// See the note on /neighborhoods/[slug]: needed so CMS pageSeo edits reach
+// production without a redeploy.
+export const revalidate = 60;
+
 export function generateStaticParams() {
   return originCities.map((c) => ({ slug: c.slug }));
 }
