@@ -229,6 +229,15 @@ export function NewConstructionClient({ data }: { data: NewConstructionPageData 
                   ))}
                   <div className="border-t border-warm-200/60" />
                 </Stagger>
+                <Link
+                  href="/new-construction/builders"
+                  className="group mt-8 inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
+                >
+                  See all Orlando builders
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </Link>
               </SlideIn>
             </div>
 
