@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { getPageSeo } from "./page-seo";
 import { neighborhoodPageContent } from "./neighborhood-page-content";
+import { builderPages, buildersHub } from "./builders";
 
 /** Site-wide branded OG image (the app/opengraph-image route). Used as the
  *  default share image for pages that have no section-specific image. */
@@ -77,6 +78,12 @@ export const SEO_TITLES: Record<string, string> = {
     ]),
   ),
   "/new-construction": "New Construction Homes in Orlando, FL | Nicole Mickle",
+  // The builders hub and each builder page. These titles already carry their
+  // own brand element, so they must be emitted absolute (no template suffix).
+  "/new-construction/builders": buildersHub.seoTitle,
+  ...Object.fromEntries(
+    builderPages.map((b) => [`/new-construction/builders/${b.slug}`, b.seoTitle]),
+  ),
 };
 
 type BuildMetadataInput = {

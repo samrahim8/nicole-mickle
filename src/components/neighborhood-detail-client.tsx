@@ -441,6 +441,15 @@ export function NeighborhoodDetailClient({ neighborhood: n, related, content }: 
                       </span>
                     ))}
                   </div>
+                  <Link
+                    href="/new-construction/builders"
+                    className="group mt-6 inline-flex items-center gap-2 text-[13px] tracking-wide font-medium text-forest border-b border-forest pb-0.5 hover:border-forest-light hover:text-forest-light transition-all duration-300"
+                  >
+                    Orlando new construction builders
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-300">
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </Link>
                 </div>
                 {n.newConstruction.communities.length > 0 && (
                   <div className="lg:col-span-4 lg:col-start-9 border-t lg:border-t-0 lg:border-l border-neutral-200 pt-8 lg:pt-0 lg:pl-10">

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { builderPaths } from "@/lib/builders";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { originCities } from "@/lib/relocating-from";
 import { sanityClient } from "@/sanity/client";
@@ -49,6 +50,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
+  const builderRoutes: MetadataRoute.Sitemap = builderPaths.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: path === "/new-construction/builders" ? 0.8 : 0.7,
+  }));
+
   const relocatingRoutes: MetadataRoute.Sitemap = originCities.map((r) => ({
     url: `${SITE_URL}/relocating-from/${r.slug}`,
     lastModified: now,
@@ -93,6 +101,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes,
     ...neighborhoodRoutes,
     ...newConstructionRoutes,
+    ...builderRoutes,
     ...relocatingRoutes,
     ...categoryRoutes,
     ...blogRoutes,
