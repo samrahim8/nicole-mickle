@@ -43,6 +43,7 @@ export type PostListItem = {
 };
 
 export type PostDetail = PostListItem & {
+  updatedAt?: string | null;
   body?: PortableTextBlock[] | null;
   author?: PostAuthor | null;
   faq?: FaqItem[] | null;
@@ -52,4 +53,29 @@ export type PostDetail = PostListItem & {
     ogImage?: Image | null;
   } | null;
   legacyWordpressUrl?: string | null;
+};
+
+export type LandStatus = "available" | "pending" | "sold";
+
+export type LandListingCard = {
+  _id: string;
+  title: string;
+  slug: string;
+  status: LandStatus;
+  price?: number | null;
+  acreage?: number | null;
+  city: string;
+  county?: string | null;
+  community?: string | null;
+  photos?: SanityImageWithAlt | null;
+};
+
+export type LandListingDetail = Omit<LandListingCard, "photos"> & {
+  address?: string | null;
+  summary?: string | null;
+  features?: string[] | null;
+  builderRequirement?: string | null;
+  photos?: SanityImageWithAlt[] | null;
+  listingUrl?: string | null;
+  listedAt?: string | null;
 };

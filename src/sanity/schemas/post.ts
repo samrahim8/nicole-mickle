@@ -81,6 +81,23 @@ export const post = defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
+      name: "updatedAt",
+      title: "Updated on",
+      type: "datetime",
+      group: "meta",
+      description:
+        "Optional. Set this when you have fully refreshed an older post. Readers see both dates (\"Published\" and \"Updated\"), and Google gets the update date too. Leave empty to show only the original date.",
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const published = (context.document as { publishedAt?: string })
+            ?.publishedAt;
+          if (value && published && new Date(value) < new Date(published)) {
+            return "Updated date can't be earlier than the published date.";
+          }
+          return true;
+        }),
+    }),
+    defineField({
       name: "featured",
       title: "Feature on blog home",
       type: "boolean",

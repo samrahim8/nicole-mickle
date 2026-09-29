@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PortableText, type PortableTextComponents } from "next-sanity";
 import type { PortableTextBlock } from "next-sanity";
 
+import { MortgageCalculator } from "@/components/mortgage-calculator";
 import { urlFor } from "@/sanity/image";
 import type { SanityImageWithAlt } from "@/sanity/types";
 
@@ -19,6 +20,86 @@ type LinkValue = {
   href: string;
   openInNewTab?: boolean;
 };
+
+type ComparisonTableValue = {
+  caption?: string;
+  headers?: string[];
+  rows?: { _key?: string; cells?: string[] }[];
+  note?: string;
+};
+
+function ComparisonTable({ value }: { value: ComparisonTableValue }) {
+  const headers = value.headers ?? [];
+  const rows = (value.rows ?? []).filter((r) => (r.cells?.length ?? 0) > 0);
+  if (headers.length === 0 || rows.length === 0) return null;
+
+  return (
+    <figure className="my-12">
+      {value.caption ? (
+        <figcaption className="font-[family-name:var(--font-playfair)] text-[1.25rem] leading-snug tracking-[-0.01em] text-charcoal mb-4">
+          {value.caption}
+        </figcaption>
+      ) : null}
+      {/* Sideways scroll on narrow screens; first column stays pinned so the row
+          label is always visible. tabIndex lets keyboard users scroll it. */}
+      <div
+        className="overflow-x-auto border border-neutral-200 bg-white"
+        tabIndex={0}
+        role="region"
+        aria-label={value.caption ? `${value.caption}, scrollable table` : "Scrollable table"}
+      >
+        <table className="w-full min-w-[34rem] border-collapse text-left text-[15px] leading-[1.5]">
+          <thead>
+            <tr className="bg-forest text-white">
+              {headers.map((h, i) => (
+                <th
+                  key={i}
+                  scope="col"
+                  className={`px-4 py-3.5 text-[11px] font-semibold tracking-[0.15em] uppercase align-bottom ${
+                    i === 0 ? "sticky left-0 z-10 bg-forest" : ""
+                  }`}
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, r) => (
+              <tr
+                key={row._key ?? r}
+                className="border-t border-neutral-200 odd:bg-white even:bg-[#F7F6F2]"
+              >
+                {headers.map((_, c) =>
+                  c === 0 ? (
+                    <th
+                      key={c}
+                      scope="row"
+                      className={`sticky left-0 z-10 px-4 py-3.5 font-semibold text-charcoal align-top ${
+                        r % 2 === 0 ? "bg-white" : "bg-[#F7F6F2]"
+                      }`}
+                    >
+                      {row.cells?.[c] ?? ""}
+                    </th>
+                  ) : (
+                    <td key={c} className="px-4 py-3.5 text-neutral-700 align-top">
+                      {row.cells?.[c] ?? ""}
+                    </td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {value.note ? (
+        <p className="mt-3 text-[13px] text-neutral-500 leading-relaxed">
+          {value.note}
+        </p>
+      ) : null}
+    </figure>
+  );
+}
 
 const components: PortableTextComponents = {
   // Imported WordPress posts have hard line breaks (\n) baked in from the old
@@ -127,6 +208,15 @@ const components: PortableTextComponents = {
         </figure>
       );
     },
+    comparisonTable: ({ value }) => (
+      <ComparisonTable value={value as ComparisonTableValue} />
+    ),
+    mortgageCalculator: ({ value }) => (
+      <MortgageCalculator
+        embedded
+        initialPrice={(value as { homePrice?: number })?.homePrice}
+      />
+    ),
     pullQuote: ({ value }) => {
       const quote = value as PullQuoteValue | undefined;
       if (!quote?.quote) return null;

@@ -14,6 +14,7 @@ export const revalidate = 600;
 type BlogSitemapEntry = {
   slug: string;
   publishedAt: string;
+  updatedAt?: string;
   _updatedAt?: string;
 };
 
@@ -27,6 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/relocating`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/new-construction`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/neighborhoods`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/mortgage-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/land`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/quiz`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -76,6 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         `*[_type == "post" && defined(slug.current) && defined(publishedAt)]{
           "slug": slug.current,
           publishedAt,
+          updatedAt,
           _updatedAt
         }`,
       ),
@@ -83,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ]);
     blogRoutes = (posts ?? []).map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
-      lastModified: new Date(post._updatedAt ?? post.publishedAt),
+      lastModified: new Date(post.updatedAt ?? post._updatedAt ?? post.publishedAt),
       changeFrequency: "monthly",
       priority: 0.7,
     }));
