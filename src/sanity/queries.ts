@@ -40,6 +40,7 @@ export const postBySlugQuery = defineQuery(`
     "slug": slug.current,
     excerpt,
     publishedAt,
+    updatedAt,
     coverImage {
       ...,
       "alt": coalesce(alt, "")
@@ -325,5 +326,47 @@ export const homePageQuery = defineQuery(`
     recognitionItems,
     seoTitle,
     seoDescription
+  }
+`);
+
+// Land listings. Sold lots sort last and stay visible as proof of activity.
+export const landListingsQuery = defineQuery(`
+  *[_type == "landListing" && defined(slug.current)]
+    | order(select(status == "available" => 0, status == "pending" => 1, 2) asc, listedAt desc) {
+      _id,
+      title,
+      "slug": slug.current,
+      status,
+      price,
+      acreage,
+      city,
+      county,
+      community,
+      photos[0]{ ..., "alt": coalesce(alt, "") }
+    }
+`);
+
+export const landListingSlugsQuery = defineQuery(`
+  *[_type == "landListing" && defined(slug.current)][].slug.current
+`);
+
+export const landListingBySlugQuery = defineQuery(`
+  *[_type == "landListing" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    status,
+    price,
+    acreage,
+    city,
+    county,
+    address,
+    community,
+    summary,
+    features,
+    builderRequirement,
+    photos[]{ ..., "alt": coalesce(alt, "") },
+    listingUrl,
+    listedAt
   }
 `);

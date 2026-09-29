@@ -59,6 +59,11 @@ export const studioStructure: StructureResolver = (S) =>
         ),
       S.divider(),
       S.listItem()
+        .title("Land Listings")
+        .icon(() => "🌳")
+        .child(S.documentTypeList("landListing").title("Land Listings")),
+      S.divider(),
+      S.listItem()
         .title("Page SEO")
         .icon(() => "🔎")
         .child(S.documentTypeList("pageSeo").title("Page SEO overrides")),
@@ -66,7 +71,7 @@ export const studioStructure: StructureResolver = (S) =>
       ...S.documentTypeListItems().filter(
         (item) =>
           !SINGLETON_TYPES.has(item.getId() ?? "") &&
-          !["post", "author", "category", "pageSeo"].includes(item.getId() ?? ""),
+          !["post", "author", "category", "pageSeo", "landListing"].includes(item.getId() ?? ""),
       ),
     ]);
 

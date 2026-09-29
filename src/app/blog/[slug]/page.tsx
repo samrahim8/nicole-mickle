@@ -62,6 +62,7 @@ export async function generateMetadata({
       url: `/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? undefined,
       images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : undefined,
     },
     twitter: {
@@ -95,11 +96,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? urlFor(post.coverImage).width(2000).fit("max").auto("format").url()
     : null;
 
+  // Only surface an "Updated" date when it is genuinely later than the original.
+  const showUpdated =
+    !!post.updatedAt &&
+    new Date(post.updatedAt).toDateString() !==
+      new Date(post.publishedAt).toDateString() &&
+    new Date(post.updatedAt) > new Date(post.publishedAt);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     datePublished: post.publishedAt,
+    dateModified: showUpdated ? post.updatedAt : post.publishedAt,
     author: post.author
       ? { "@type": "Person", name: post.author.name }
       : { "@type": "Person", name: "Nicole Mickle" },
@@ -165,12 +174,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.categories[0].title}
                 </Link>
               ) : null}
-              <time
-                dateTime={post.publishedAt}
-                className="text-[11px] tracking-wide text-neutral-400"
-              >
-                {formatPostDate(post.publishedAt)}
-              </time>
+              <p className="text-[11px] tracking-wide text-neutral-400">
+                <time dateTime={post.publishedAt}>
+                  Published {formatPostDate(post.publishedAt)}
+                </time>
+                {showUpdated && post.updatedAt ? (
+                  <>
+                    <span aria-hidden="true" className="mx-2">
+                      /
+                    </span>
+                    <time dateTime={post.updatedAt}>
+                      Updated {formatPostDate(post.updatedAt)}
+                    </time>
+                  </>
+                ) : null}
+              </p>
             </div>
 
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.1] tracking-[-0.02em] text-charcoal mb-6">
