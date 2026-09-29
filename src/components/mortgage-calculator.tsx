@@ -21,38 +21,97 @@ type FieldProps = {
   label: string;
   value: string;
   onChange: (v: string) => void;
+  step: number;
+  min?: number;
+  max?: number;
   prefix?: string;
   suffix?: string;
   hint?: string;
 };
 
-function Field({ label, value, onChange, prefix, suffix, hint }: FieldProps) {
+// Keep only as many decimals as the step needs so 6.5 + 0.125 shows 6.625, not 6.62500001.
+function decimalsFor(step: number): number {
+  const s = String(step);
+  return s.includes(".") ? s.split(".")[1].length : 0;
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+  step,
+  min = 0,
+  max = Number.POSITIVE_INFINITY,
+  prefix,
+  suffix,
+  hint,
+}: FieldProps) {
   const id = useId();
+
+  const nudge = (dir: 1 | -1, mult = 1) => {
+    const next = parseNum(value) + dir * step * mult;
+    const clamped = Math.min(max, Math.max(min, next));
+    onChange(String(Number(clamped.toFixed(decimalsFor(step)))));
+  };
+
+  const btn =
+    "flex h-full w-11 shrink-0 items-center justify-center text-neutral-500 hover:bg-neutral-100 hover:text-forest active:bg-neutral-200 transition-colors select-none";
+
   return (
     <div>
       <label
         htmlFor={id}
-        className="block text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2"
+        className="block text-[11px] tracking-[0.18em] uppercase text-neutral-500 mb-2"
       >
         {label}
       </label>
-      <div className="flex items-center border border-neutral-300 bg-white focus-within:border-forest transition-colors">
-        {prefix ? (
-          <span className="pl-4 text-[16px] text-neutral-400">{prefix}</span>
-        ) : null}
-        <input
-          id={id}
-          type="text"
-          inputMode="decimal"
-          autoComplete="off"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          aria-describedby={hint ? `${id}-hint` : undefined}
-          className="w-full min-w-0 bg-transparent px-4 py-3 text-[16px] text-charcoal outline-none"
-        />
-        {suffix ? (
-          <span className="pr-4 text-[16px] text-neutral-400">{suffix}</span>
-        ) : null}
+      <div className="flex h-12 items-stretch border border-neutral-300 bg-white focus-within:border-forest focus-within:ring-1 focus-within:ring-forest transition-colors">
+        <button
+          type="button"
+          aria-label={`Decrease ${label}`}
+          onClick={() => nudge(-1)}
+          className={`${btn} border-r border-neutral-200`}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+            <path d="M5 12h14" />
+          </svg>
+        </button>
+        <div className="flex min-w-0 flex-1 items-center px-3">
+          {prefix ? (
+            <span className="pr-1 text-[15px] text-neutral-400">{prefix}</span>
+          ) : null}
+          <input
+            id={id}
+            type="text"
+            inputMode="decimal"
+            autoComplete="off"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+                e.preventDefault();
+                nudge(e.key === "ArrowUp" ? 1 : -1, e.shiftKey ? 10 : 1);
+              }
+            }}
+            aria-describedby={hint ? `${id}-hint` : undefined}
+            className="w-full min-w-0 bg-transparent text-[16px] text-charcoal tabular-nums outline-none"
+          />
+          {suffix ? (
+            <span className="pl-1 text-[13px] text-neutral-400 whitespace-nowrap">
+              {suffix}
+            </span>
+          ) : null}
+        </div>
+        <button
+          type="button"
+          aria-label={`Increase ${label}`}
+          onClick={() => nudge(1)}
+          className={`${btn} border-l border-neutral-200`}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </button>
       </div>
       {hint ? (
         <p id={`${id}-hint`} className="mt-1.5 text-[12px] text-neutral-500">
@@ -60,6 +119,14 @@ function Field({ label, value, onChange, prefix, suffix, hint }: FieldProps) {
         </p>
       ) : null}
     </div>
+  );
+}
+
+function GroupTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="sm:col-span-2 text-[11px] tracking-[0.3em] uppercase text-forest pb-2 border-b border-neutral-300">
+      {children}
+    </h2>
   );
 }
 
@@ -114,68 +181,73 @@ export function MortgageCalculator({ initialPrice = 500000, embedded }: Props) {
       }
     >
       <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-x-5 gap-y-5 sm:grid-cols-2 content-start">
+          <GroupTitle>The loan</GroupTitle>
           <div className="sm:col-span-2">
-            <Field label="Home price" prefix="$" value={price} onChange={setPrice} />
+            <Field label="Home price" prefix="$" step={5000} min={0} value={price} onChange={setPrice} />
           </div>
           <Field
             label="Down payment"
             suffix="%"
+            step={1}
+            max={100}
             value={downPct}
             onChange={setDownPct}
             hint={`${usd.format(downDollars)} down`}
           />
-          <Field label="Interest rate" suffix="%" value={rate} onChange={setRate} />
-          <div>
-            <label
-              htmlFor={termId}
-              className="block text-[11px] tracking-[0.2em] uppercase text-neutral-500 mb-2"
+          <Field label="Interest rate" suffix="%" step={0.125} max={25} value={rate} onChange={setRate} />
+          <div className="sm:col-span-2">
+            <p
+              id={termId}
+              className="block text-[11px] tracking-[0.18em] uppercase text-neutral-500 mb-2"
             >
               Loan term
-            </label>
-            <select
-              id={termId}
-              value={term}
-              onChange={(e) => setTerm(e.target.value)}
-              className="w-full border border-neutral-300 bg-white px-4 py-3 text-[16px] text-charcoal outline-none focus:border-forest transition-colors"
-            >
-              <option value="30">30 years</option>
-              <option value="20">20 years</option>
-              <option value="15">15 years</option>
-              <option value="10">10 years</option>
-            </select>
+            </p>
+            <div role="radiogroup" aria-labelledby={termId} className="grid grid-cols-4 gap-2">
+              {["30", "20", "15", "10"].map((t) => (
+                <button
+                  key={t}
+                  type="button"
+                  role="radio"
+                  aria-checked={term === t}
+                  onClick={() => setTerm(t)}
+                  className={`h-12 text-[14px] border transition-colors ${
+                    term === t
+                      ? "bg-forest border-forest text-white"
+                      : "bg-white border-neutral-300 text-charcoal hover:border-forest"
+                  }`}
+                >
+                  {t} yr
+                </button>
+              ))}
+            </div>
           </div>
+
+          <div className="sm:col-span-2 mt-3" />
+          <GroupTitle>Monthly extras</GroupTitle>
           <Field
             label="Property tax"
             suffix="% / yr"
+            step={0.05}
+            max={10}
             value={taxPct}
             onChange={setTaxPct}
-            hint="Rate varies by county and by community."
+            hint="Varies by county and community."
           />
-          <Field
-            label="Home insurance"
-            prefix="$"
-            suffix="/ yr"
-            value={insurance}
-            onChange={setInsurance}
-          />
-          <Field
-            label="HOA / CDD fees"
-            prefix="$"
-            suffix="/ mo"
-            value={hoa}
-            onChange={setHoa}
-          />
+          <Field label="Home insurance" prefix="$" suffix="/ yr" step={100} value={insurance} onChange={setInsurance} />
+          <Field label="HOA / CDD fees" prefix="$" suffix="/ mo" step={25} value={hoa} onChange={setHoa} />
           <Field
             label="PMI rate"
             suffix="% / yr"
+            step={0.05}
+            max={5}
             value={pmiPct}
             onChange={setPmiPct}
             hint="Applies only under 20% down."
           />
         </div>
 
-        <div className="bg-white border border-neutral-200 p-6 sm:p-8 self-start">
+        <div className="bg-white border border-neutral-200 p-6 sm:p-8 self-start lg:sticky lg:top-28">
           <p className="text-[11px] tracking-[0.25em] uppercase text-neutral-500 mb-2">
             Estimated monthly payment
           </p>
