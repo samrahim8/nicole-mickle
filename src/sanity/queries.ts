@@ -405,12 +405,13 @@ export const postsSearchCountQuery = defineQuery(`
 // (e.g. "new construction" on builder pages).
 export const pageRelatedPostsQuery = defineQuery(`
   *[_type == "post" && defined(slug.current) && defined(publishedAt)
-    && (title match $terms || excerpt match $terms)]
+    && (title match $t0 || title match $t1 || title match $t2
+      || excerpt match $t0 || excerpt match $t1 || excerpt match $t2)]
   | score(
-      boost(title match $terms, 3),
-      boost(excerpt match $terms, 1),
-      boost(title match $boost, 2),
-      boost(excerpt match $boost, 1)
+      boost(title match $t0 || title match $t1 || title match $t2, 3),
+      boost(excerpt match $t0 || excerpt match $t1 || excerpt match $t2, 1),
+      boost(title match $b0 || title match $b1 || title match $b2, 2),
+      boost(excerpt match $b0 || excerpt match $b1 || excerpt match $b2, 1)
     )
   | order(_score desc, publishedAt desc) [0...$limit] {
     _id,

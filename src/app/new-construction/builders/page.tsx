@@ -93,8 +93,8 @@ export default function BuildersHubPage() {
       ) : null}
       <BuildersHubClient />
       <RelatedPosts
-        terms={["builders", "home builders", "new construction"]}
-        boost={["home builders", "builders"]}
+        terms={["home builders", "builders", "new construction"]}
+        boost={["home builders"]}
         heading="Builder reviews and new construction reading"
       />
     </>

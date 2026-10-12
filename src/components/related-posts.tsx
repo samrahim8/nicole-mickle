@@ -28,9 +28,15 @@ export async function RelatedPosts({
 
   let posts: PostListItem[] = [];
   try {
+    const slots = (list: string[]) => {
+      const first = list.slice(0, 3);
+      while (first.length < 3) first.push(first[0]);
+      return first;
+    };
+    const [t0, t1, t2] = slots(terms);
+    const [b0, b1, b2] = slots(boost.length > 0 ? boost : terms);
     posts = await sanityClient.fetch<PostListItem[]>(pageRelatedPostsQuery, {
-      terms,
-      boost: boost.length > 0 ? boost : terms,
+      t0, t1, t2, b0, b1, b2,
       limit,
     });
   } catch {
