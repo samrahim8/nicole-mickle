@@ -28,6 +28,7 @@ export function ContactClient({ data }: { data: ContactPageData }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const successRef = useRef<HTMLDivElement>(null);
+  const [renderedAt] = useState(() => Date.now());
 
   // When the form collapses into the (shorter) success card, the page reflows and
   // the scroll position would otherwise land on the section below. Bring the
@@ -53,6 +54,8 @@ export function ContactClient({ data }: { data: ContactPageData }) {
       phone: formData.get("phone"),
       interest: interests,
       message: formData.get("message"),
+      website: formData.get("website"),
+      _t: renderedAt,
     };
     try {
       const res = await fetch("/api/lead", {
@@ -143,6 +146,11 @@ export function ContactClient({ data }: { data: ContactPageData }) {
                   className="space-y-8"
                   aria-describedby={error ? "contact-form-error" : undefined}
                 >
+                  {/* Honeypot: hidden from people, bots fill it in. */}
+                  <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                    <label htmlFor="website">Leave this field empty</label>
+                    <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <div className="grid sm:grid-cols-2 gap-8">
                     <div>
                       <label htmlFor="firstName" className="block text-[11px] tracking-[0.15em] uppercase text-neutral-400 mb-3">

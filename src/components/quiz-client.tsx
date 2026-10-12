@@ -153,6 +153,8 @@ const slideVariants = {
 // ── Component ──
 
 export function QuizClient({ data }: { data: QuizPageData }) {
+  const [renderedAt] = useState(() => Date.now());
+  const [honeypot, setHoneypot] = useState("");
   const [step, setStep] = useState(-1);
   const [answers, setAnswers] = useState<Answers>({});
   const [direction, setDirection] = useState(1);
@@ -425,6 +427,8 @@ export function QuizClient({ data }: { data: QuizPageData }) {
                               email,
                               persona,
                               answers,
+                              website: honeypot,
+                              _t: renderedAt,
                             }),
                           });
                           const body = await res.json().catch(() => ({ ok: false }));
@@ -438,6 +442,18 @@ export function QuizClient({ data }: { data: QuizPageData }) {
                       }}
                       className="flex flex-col sm:flex-row gap-3"
                     >
+                      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                        <label htmlFor="quiz-website">Leave this field empty</label>
+                        <input
+                          type="text"
+                          id="quiz-website"
+                          name="website"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          value={honeypot}
+                          onChange={(e) => setHoneypot(e.target.value)}
+                        />
+                      </div>
                       <label htmlFor="quiz-email" className="sr-only">
                         Email address
                       </label>

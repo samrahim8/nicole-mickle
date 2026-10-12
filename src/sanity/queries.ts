@@ -268,6 +268,7 @@ export const relocatingPageQuery = defineQuery(`
     trustedByHeadline,
     trustedByBody,
     employers,
+    employerDetails[]{ name, url, "logo": logo.asset->url },
     processEyebrow,
     processHeadline,
     processSteps[]{ number, title, description },
@@ -368,5 +369,63 @@ export const landListingBySlugQuery = defineQuery(`
     photos[]{ ..., "alt": coalesce(alt, "") },
     listingUrl,
     listedAt
+  }
+`);
+
+// Blog search: title, excerpt and body text. $q is a GROQ match pattern built
+// from the visitor's words (see buildSearchPattern in src/app/blog/page.tsx).
+const searchFilter = `_type == "post" && defined(slug.current) && defined(publishedAt)
+  && (title match $q || excerpt match $q || pt::text(body) match $q)`;
+
+export const postsSearchQuery = defineQuery(`
+  *[${searchFilter}] | order(publishedAt desc) [$start...$end] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    coverImage {
+      ...,
+      "alt": coalesce(alt, "")
+    },
+    "categories": categories[]->{
+      _id,
+      title,
+      "slug": slug.current
+    }
+  }
+`);
+
+export const postsSearchCountQuery = defineQuery(`
+  count(*[${searchFilter}])
+`);
+
+// Posts related to a page (neighborhood, builder, ...). $terms are phrases that
+// should appear in the title or excerpt; $boost phrases rank matches higher
+// (e.g. "new construction" on builder pages).
+export const pageRelatedPostsQuery = defineQuery(`
+  *[_type == "post" && defined(slug.current) && defined(publishedAt)
+    && (title match $terms || excerpt match $terms)]
+  | score(
+      boost(title match $terms, 3),
+      boost(excerpt match $terms, 1),
+      boost(title match $boost, 2),
+      boost(excerpt match $boost, 1)
+    )
+  | order(_score desc, publishedAt desc) [0...$limit] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    publishedAt,
+    coverImage {
+      ...,
+      "alt": coalesce(alt, "")
+    },
+    "categories": categories[]->{
+      _id,
+      title,
+      "slug": slug.current
+    }
   }
 `);

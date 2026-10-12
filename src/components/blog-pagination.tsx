@@ -10,7 +10,7 @@ type BlogPaginationProps = {
 export function BlogPagination({ page, totalPages, basePath }: BlogPaginationProps) {
   if (totalPages <= 1) return null;
 
-  const hrefForPage = (p: number) => (p === 1 ? basePath : `${basePath}?page=${p}`);
+  const hrefForPage = (p: number) => (p === 1 ? basePath : `${basePath}${basePath.includes("?") ? "&" : "?"}page=${p}`);
 
   return (
     <nav

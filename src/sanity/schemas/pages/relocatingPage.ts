@@ -49,6 +49,25 @@ export const relocatingPage = defineType({
     defineField({ name: "trustedByHeadline", title: "Trusted-by — headline", type: "string", group: "trustedBy", validation: (r) => r.required().max(80) }),
     defineField({ name: "trustedByBody", title: "Trusted-by — body", type: "text", rows: 3, group: "trustedBy", validation: (r) => r.required().max(500) }),
     defineField({ name: "employers", title: "Employer list", description: "Drag to reorder.", type: "array", of: [{ type: "string", validation: (r) => r.max(80) }], group: "trustedBy", validation: (r) => r.min(1).max(30) }),
+    defineField({
+      name: "employerDetails",
+      title: "Employer links and logos",
+      description:
+        "Optional. Add a website link and/or logo for an employer. The name must match the Employer list entry exactly. With a logo, the logo shows instead of the text.",
+      type: "array",
+      group: "trustedBy",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "name", title: "Name (must match the list above)", type: "string", validation: (r: any) => r.required().max(80) },
+            { name: "url", title: "Website link", type: "url", validation: (r: any) => r.uri({ scheme: ["https", "http"] }) },
+            { name: "logo", title: "Logo", type: "image", options: { hotspot: false } },
+          ],
+          preview: { select: { title: "name", subtitle: "url", media: "logo" } },
+        },
+      ],
+    }),
     // Process
     defineField({ name: "processEyebrow", title: "Process — eyebrow", type: "string", group: "process", initialValue: "The Process", validation: (r) => r.max(40) }),
     defineField({ name: "processHeadline", title: "Process — headline", type: "string", group: "process", validation: (r) => r.required().max(80) }),

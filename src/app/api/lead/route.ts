@@ -1,4 +1,5 @@
 import { subscribeLeadToKit } from "@/lib/kit";
+import { checkLeadSpam } from "@/lib/spam";
 
 export const runtime = "nodejs";
 
@@ -17,6 +18,27 @@ export async function POST(request: Request) {
   } catch {
     return Response.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
+
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return Response.json({ ok: false, error: "Invalid payload" }, { status: 400 });
+  }
+
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown";
+  const verdict = checkLeadSpam(payload as Record<string, unknown>, ip);
+  if (verdict.spam) {
+    console.warn(`[lead] dropped as spam: ${verdict.reason}`);
+    // Look successful so bots don't adapt; nothing reaches the Sheet, email or Kit.
+    return Response.json({ ok: true });
+  }
+
+  // Strip anti-spam fields before forwarding upstream.
+  const { website: _website, _t, ...clean } = payload as Record<string, unknown>;
+  void _website;
+  void _t;
+  payload = clean;
 
   try {
     const res = await fetch(url, {

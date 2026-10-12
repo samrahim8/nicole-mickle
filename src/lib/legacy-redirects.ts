@@ -12,7 +12,7 @@ export const legacyRedirects: Redirect[] = [
   { source: "/5-ways-to-add-color-to-your-home-exterior", destination: "/blog/5-ways-to-add-color-to-your-home-exterior", permanent: true },
   { source: "/5-ways-to-add-custom-to-your-kitchen", destination: "/blog/5-ways-to-add-custom-to-your-kitchen", permanent: true },
   { source: "/54-56-bougainvillea-dr", destination: "/blog/54-56-bougainvillea-dr", permanent: true },
-  { source: "/6-design-ideas-to-add-luxury-to-your-new-construction-home", destination: "/blog/6-design-ideas-to-add-luxury-to-your-new-construction-home", permanent: true },
+  { source: "/6-design-ideas-to-add-luxury-to-your-new-construction-home", destination: "/blog/luxury-design-ideas", permanent: true },
   { source: "/6-ways-to-convert-a-spare-bedroom", destination: "/blog/6-ways-to-convert-a-spare-bedroom", permanent: true },
   { source: "/902-nicole-drive", destination: "/blog/902-nicole-drive", permanent: true },
   { source: "/airbnb-business-in-florida", destination: "/blog/airbnb-business-in-florida", permanent: true },
@@ -196,6 +196,9 @@ export const legacyRedirects: Redirect[] = [
   { source: "/wp-sitemap-:type-:n.xml", destination: "/sitemap.xml", permanent: true },
   { source: "/wp-sitemap-:type-:sub-:n.xml", destination: "/sitemap.xml", permanent: true },
   { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+
+  // Unpublished post consolidated into a newer one (Nicole, 2026-10-11).
+  { source: "/blog/6-design-ideas-to-add-luxury-to-your-new-construction-home", destination: "/blog/luxury-design-ideas", permanent: true },
 
   // Root pagination from a few WP themes.
   { source: "/page/:n", destination: "/blog", permanent: true },

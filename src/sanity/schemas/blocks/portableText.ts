@@ -173,6 +173,37 @@ export const portableText = defineType({
     }),
     defineArrayMember({
       type: "object",
+      name: "kitForm",
+      title: "Kit sign-up form",
+      description:
+        "Embeds a Kit (ConvertKit) form in the post. In Kit: open the form, click Embed, choose JavaScript, copy the code and paste it below.",
+      fields: [
+        {
+          name: "embedCode",
+          type: "text",
+          rows: 4,
+          title: "Kit embed code",
+          description:
+            'Paste the whole snippet. It looks like <script async data-uid="..." src="https://....kit.com/....js"></script>',
+          validation: (rule) =>
+            rule.required().custom((value) => {
+              const code = typeof value === "string" ? value : "";
+              return /src=["']https:\/\/[^"']+\.(kit\.com|ck\.page|convertkit\.com)\/[^"']+["']/i.test(code)
+                ? true
+                : "Could not find a Kit script address in this code. Copy the JavaScript embed from Kit.";
+            }),
+        },
+      ],
+      preview: {
+        select: { code: "embedCode" },
+        prepare({ code }: { code?: string }) {
+          const uid = code?.match(/data-uid=["']([^"']+)["']/i)?.[1];
+          return { title: "Kit sign-up form", subtitle: uid ? `Form ${uid}` : undefined };
+        },
+      },
+    }),
+    defineArrayMember({
+      type: "object",
       name: "mortgageCalculator",
       title: "Mortgage calculator",
       description:

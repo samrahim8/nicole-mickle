@@ -107,6 +107,19 @@ export function Footer() {
                     <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
                   </svg>
                 </a>
+                <a
+                  href="https://www.pinterest.com/nicolemicklere/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors duration-300 p-2 -m-2"
+                  aria-label="Pinterest"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 20.5L11 10.5" />
+                    <path d="M9.5 13.5c-1.5-3 .5-6 3.5-6 2.5 0 3.5 2 3 4s-2 3.5-3.5 3.5c-1.2 0-1.8-.8-1.8-.8" />
+                  </svg>
+                </a>
               </div>
             </div>
             <div className="md:col-span-3 md:col-start-7">
@@ -117,6 +130,8 @@ export function Footer() {
                 {[
                   { href: "/relocating", label: "Relocating" },
                   { href: "/new-construction", label: "New Construction" },
+                  { href: "/new-construction/builders", label: "Builders" },
+                  { href: "/mortgage-calculator", label: "Mortgage Calculator" },
                   { href: "/neighborhoods", label: "Neighborhoods" },
                   { href: "/about", label: "About" },
                   { href: "/quiz", label: "Neighborhood Quiz" },

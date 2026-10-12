@@ -5,6 +5,7 @@ import { NeighborhoodDetailClient } from "@/components/neighborhood-detail-clien
 import { buildMetadata } from "@/lib/seo";
 import { neighborhoodPageContent } from "@/lib/neighborhood-page-content";
 import { buildFaqSchema } from "@/components/faq-accordion";
+import { RelatedPosts } from "@/components/related-posts";
 
 // These pages read a CMS `pageSeo` override for their title/description. Without
 // a revalidate window they are baked at build time only, so a Studio edit would
@@ -112,6 +113,11 @@ export default async function NeighborhoodPage({
         />
       ) : null}
       <NeighborhoodDetailClient neighborhood={n} related={related} content={content} />
+      <RelatedPosts
+        terms={[n.name]}
+        boost={["neighborhood guide", "living in", "homes"]}
+        heading={`More on ${n.name}`}
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PortableText, type PortableTextComponents } from "next-sanity";
 import type { PortableTextBlock } from "next-sanity";
 
+import { KitForm } from "@/components/kit-form";
 import { MortgageCalculator } from "@/components/mortgage-calculator";
 import { urlFor } from "@/sanity/image";
 import type { SanityImageWithAlt } from "@/sanity/types";
@@ -211,6 +212,10 @@ const components: PortableTextComponents = {
     comparisonTable: ({ value }) => (
       <ComparisonTable value={value as ComparisonTableValue} />
     ),
+    kitForm: ({ value }) => {
+      const code = (value as { embedCode?: string })?.embedCode;
+      return code ? <KitForm embedCode={code} /> : null;
+    },
     mortgageCalculator: ({ value }) => (
       <MortgageCalculator
         embedded

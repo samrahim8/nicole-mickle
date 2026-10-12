@@ -1,3 +1,4 @@
+import { RelatedPosts } from "@/components/related-posts";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { neighborhoods } from "@/lib/neighborhoods";
@@ -40,5 +41,14 @@ export default async function NewConstructionNeighborhoodPage({
   const n = neighborhoods.find((nb) => nb.slug === neighborhood);
   if (!n || n.newConstruction.builders.length === 0) notFound();
 
-  return <NewConstructionNeighborhoodClient neighborhood={n} />;
+  return (
+    <>
+      <NewConstructionNeighborhoodClient neighborhood={n} />
+      <RelatedPosts
+        terms={[n.name]}
+        boost={["new construction", "builder", "building"]}
+        heading={`New construction reading for ${n.name}`}
+      />
+    </>
+  );
 }

@@ -14,6 +14,7 @@ export type RelocatingPageData = {
   trustedByHeadline: string;
   trustedByBody: string;
   employers: string[];
+  employerItems?: { name: string; url?: string; logo?: string }[];
   processEyebrow: string;
   processHeadline: string;
   processSteps: { number: string; title: string; description: string }[];
@@ -150,12 +151,10 @@ export function RelocatingClient({ data, originCities }: Props) {
             </FadeIn>
             <div className="lg:col-span-7 lg:col-start-6">
               <Stagger className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6" staggerDelay={0.05}>
-                {data.employers.map((name) => (
-                  <StaggerChild key={name}>
+                {(data.employerItems ?? data.employers.map((name) => ({ name }))).map((item) => (
+                  <StaggerChild key={item.name}>
                     <div className="py-4 border-b border-neutral-100">
-                      <p className="text-[16px] sm:text-[15px] text-charcoal font-medium">
-                        {name}
-                      </p>
+                      <EmployerEntry item={item} />
                     </div>
                   </StaggerChild>
                 ))}
@@ -329,5 +328,39 @@ export function RelocatingClient({ data, originCities }: Props) {
         </div>
       </section>
     </>
+  );
+}
+
+function EmployerEntry({
+  item,
+}: {
+  item: { name: string; url?: string; logo?: string };
+}) {
+  const label = item.logo ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={item.logo}
+      alt={item.name}
+      className="h-8 w-auto max-w-[9rem] object-contain object-left"
+    />
+  ) : (
+    <span className="text-[16px] sm:text-[15px] text-charcoal font-medium">
+      {item.name}
+    </span>
+  );
+  if (!item.url) return label;
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 hover:text-forest transition-colors"
+    >
+      {label}
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-neutral-300 shrink-0" aria-hidden="true">
+        <path d="M3.5 8.5l5-5M4 3.5h4.5V8" />
+      </svg>
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
   );
 }

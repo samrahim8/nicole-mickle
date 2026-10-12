@@ -1,3 +1,4 @@
+import { RelatedPosts } from "@/components/related-posts";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -90,6 +91,11 @@ export default async function BuilderPage({
         />
       ) : null}
       <BuilderDetailClient builder={page} />
+      <RelatedPosts
+        terms={[page.name]}
+        boost={["new construction", "builder", "builders"]}
+        heading={`Reading on ${page.name} and new construction`}
+      />
     </>
   );
 }

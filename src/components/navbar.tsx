@@ -5,10 +5,19 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-const links = [
+type NavLink = { href: string; label: string; children?: { href: string; label: string }[] };
+
+const links: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/relocating", label: "Relocating" },
-  { href: "/new-construction", label: "New Construction" },
+  {
+    href: "/new-construction",
+    label: "New Construction",
+    children: [
+      { href: "/new-construction/builders", label: "Builders" },
+      { href: "/mortgage-calculator", label: "Mortgage Calculator" },
+    ],
+  },
   { href: "/neighborhoods", label: "Neighborhoods" },
   { href: "/about", label: "About" },
   { href: "/quiz", label: "Quiz" },
@@ -70,19 +79,40 @@ export function Navbar() {
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`relative text-[13px] tracking-wide transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
-                isLight
-                  ? "text-white/90 font-medium hover:text-white after:bg-white"
-                  : "text-neutral-400 hover:text-charcoal after:bg-charcoal"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const linkClass = `relative text-[13px] tracking-wide transition-colors duration-300 after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+              isLight
+                ? "text-white/90 font-medium hover:text-white after:bg-white"
+                : "text-neutral-400 hover:text-charcoal after:bg-charcoal"
+            }`;
+            if (!link.children) {
+              return (
+                <Link key={link.href} href={link.href} className={linkClass}>
+                  {link.label}
+                </Link>
+              );
+            }
+            return (
+              <div key={link.href} className="relative group">
+                <Link href={link.href} className={linkClass}>
+                  {link.label}
+                </Link>
+                <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all duration-200 absolute left-1/2 -translate-x-1/2 top-full pt-4">
+                  <div className="bg-white border border-neutral-100 shadow-sm py-2 min-w-[200px]">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block px-5 py-2.5 text-[13px] text-neutral-500 hover:text-charcoal hover:bg-neutral-50 transition-colors whitespace-nowrap"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
           <a
             href="https://iorlandorealestate.com"
             target="_blank"
@@ -151,6 +181,16 @@ export function Navbar() {
                   >
                     {link.label}
                   </Link>
+                  {link.children?.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="block text-base text-neutral-400 hover:text-charcoal transition-colors py-2 pl-5"
+                      onClick={() => setOpen(false)}
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
                 </motion.div>
               ))}
               <motion.div

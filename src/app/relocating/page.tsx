@@ -5,7 +5,7 @@ import {
 } from "@/components/relocating-client";
 import { sanityFetch } from "@/sanity/live";
 import { relocatingPageQuery } from "@/sanity/queries";
-import { relocatingFallback } from "@/lib/relocating-fallback";
+import { relocatingFallback, employerDefaultLinks } from "@/lib/relocating-fallback";
 import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
@@ -22,9 +22,30 @@ const originCities = [
 ];
 
 type SanityRelocating = Partial<RelocatingPageData> & {
+  employerDetails?: { name: string; url?: string | null; logo?: string | null }[] | null;
   seoTitle: string | null;
   seoDescription: string | null;
 };
+
+function withEmployerLinks(
+  data: RelocatingPageData,
+  details: SanityRelocating["employerDetails"],
+): RelocatingPageData {
+  const byName = new Map(
+    (details ?? []).map((d) => [d.name.trim().toLowerCase(), d]),
+  );
+  return {
+    ...data,
+    employerItems: data.employers.map((name) => {
+      const d = byName.get(name.trim().toLowerCase());
+      return {
+        name,
+        url: d?.url || employerDefaultLinks[name] || undefined,
+        logo: d?.logo || undefined,
+      };
+    }),
+  };
+}
 
 async function getPage(): Promise<{
   data: RelocatingPageData;
@@ -33,7 +54,7 @@ async function getPage(): Promise<{
   try {
     const { data: raw } = await sanityFetch({ query: relocatingPageQuery });
     const doc = raw as SanityRelocating | null;
-    if (!doc) return { data: relocatingFallback, seo: {} };
+    if (!doc) return { data: withEmployerLinks(relocatingFallback, null), seo: {} };
     const fb = relocatingFallback;
     const data: RelocatingPageData = {
       heroEyebrow: doc.heroEyebrow ?? fb.heroEyebrow,
@@ -71,14 +92,14 @@ async function getPage(): Promise<{
       finalCtaLabel: doc.finalCtaLabel ?? fb.finalCtaLabel,
     };
     return {
-      data,
+      data: withEmployerLinks(data, doc.employerDetails),
       seo: {
         title: doc.seoTitle ?? undefined,
         description: doc.seoDescription ?? undefined,
       },
     };
   } catch {
-    return { data: relocatingFallback, seo: {} };
+    return { data: withEmployerLinks(relocatingFallback, null), seo: {} };
   }
 }
 

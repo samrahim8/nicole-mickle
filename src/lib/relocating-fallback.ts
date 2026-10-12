@@ -121,3 +121,20 @@ export const relocatingFallback: RelocatingPageData = {
     "Let's start with a conversation. No pressure, no pitch. Just honest answers about what it's like to live here.",
   finalCtaLabel: "Schedule a consultation",
 };
+
+// Default website links for the employer list. A matching "Employer links and
+// logos" entry in Sanity overrides these (and can add a logo).
+export const employerDefaultLinks: Record<string, string> = {
+  "Lockheed Martin": "https://www.lockheedmartin.com",
+  "Walt Disney Company": "https://thewaltdisneycompany.com",
+  "AdventHealth": "https://www.adventhealth.com",
+  "Orlando Health": "https://www.orlandohealth.com",
+  "Deloitte": "https://www.deloitte.com",
+  "Marriott": "https://www.marriott.com",
+  "Darden Restaurants": "https://www.darden.com",
+  "Coca-Cola": "https://www.coca-colacompany.com",
+  "PepsiCo": "https://www.pepsico.com",
+  "Frito-Lay": "https://www.fritolay.com",
+  "Walgreens": "https://www.walgreens.com",
+  "Orlando Utilities Commission (OUC)": "https://www.ouc.com",
+};
