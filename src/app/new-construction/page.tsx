@@ -1,3 +1,4 @@
+import { RelatedPosts } from "@/components/related-posts";
 import type { Metadata } from "next";
 import {
   NewConstructionClient,
@@ -158,6 +159,11 @@ export default async function NewConstructionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <NewConstructionClient data={data} />
+      <RelatedPosts
+        terms={["new construction", "new build", "builders"]}
+        boost={["new construction", "closing costs", "builder"]}
+        heading="New construction guides"
+      />
     </>
   );
 }

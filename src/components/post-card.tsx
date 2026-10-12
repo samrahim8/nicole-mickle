@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { urlFor } from "@/sanity/image";
 import type { PostListItem } from "@/sanity/types";
-import { formatPostDate } from "@/lib/format";
+import { decodeEntities, formatPostDate } from "@/lib/format";
 
 export function PostCard({ post }: { post: PostListItem }) {
   const href = `/blog/${post.slug}`;
@@ -60,12 +60,12 @@ export function PostCard({ post }: { post: PostListItem }) {
         </div>
         <Link href={href} className="block">
           <h2 className="font-[family-name:var(--font-playfair)] text-[1.5rem] leading-[1.25] tracking-[-0.015em] text-charcoal mb-3 group-hover:text-neutral-600 transition-colors duration-300 min-h-[2lh]">
-            {post.title}
+            {decodeEntities(post.title)}
           </h2>
         </Link>
         {post.excerpt ? (
           <p className="text-[16px] sm:text-[15px] leading-relaxed text-neutral-500 line-clamp-3">
-            {post.excerpt}
+            {decodeEntities(post.excerpt)}
           </p>
         ) : null}
       </div>

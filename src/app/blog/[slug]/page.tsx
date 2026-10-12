@@ -13,7 +13,7 @@ import {
   relatedPostsQuery,
 } from "@/sanity/queries";
 import type { PostDetail, PostListItem } from "@/sanity/types";
-import { formatPostDate } from "@/lib/format";
+import { formatPostDate, decodeEntities } from "@/lib/format";
 
 // Revalidate posts every 60 seconds. Any missing slugs are rendered on-demand.
 export const revalidate = 60;
@@ -44,8 +44,8 @@ export async function generateMetadata({
   // (that suffix is what pushed post titles past the length limit). Posts with no
   // meta title fall back to the headline plus the template as before.
   const metaTitle = post.seo?.metaTitle;
-  const titleField = metaTitle ? { absolute: metaTitle } : post.title;
-  const ogTitle = metaTitle ?? post.title;
+  const titleField = metaTitle ? { absolute: metaTitle } : decodeEntities(post.title);
+  const ogTitle = metaTitle ?? decodeEntities(post.title);
   const description = post.seo?.metaDescription ?? post.excerpt ?? undefined;
   const ogSource = post.seo?.ogImage ?? post.coverImage ?? null;
   const ogImage = ogSource
@@ -192,7 +192,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             <h1 className="font-[family-name:var(--font-playfair)] text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.1] tracking-[-0.02em] text-charcoal mb-6">
-              {post.title}
+              {decodeEntities(post.title)}
             </h1>
 
             {post.excerpt ? (

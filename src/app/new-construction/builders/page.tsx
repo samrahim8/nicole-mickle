@@ -1,3 +1,4 @@
+import { RelatedPosts } from "@/components/related-posts";
 import type { Metadata } from "next";
 
 import { BuildersHubClient } from "@/components/builders-hub-client";
@@ -91,6 +92,11 @@ export default function BuildersHubPage() {
         />
       ) : null}
       <BuildersHubClient />
+      <RelatedPosts
+        terms={["builders", "home builders", "new construction"]}
+        boost={["home builders", "builders"]}
+        heading="Builder reviews and new construction reading"
+      />
     </>
   );
 }
