@@ -16,7 +16,7 @@ import type { PostDetail, PostListItem } from "@/sanity/types";
 import { formatPostDate, decodeEntities } from "@/lib/format";
 
 // Revalidate posts every 60 seconds. Any missing slugs are rendered on-demand.
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 export const dynamicParams = true;
 
 type BlogPostPageProps = {

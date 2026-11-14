@@ -56,9 +56,10 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Run on every path EXCEPT routes the new site owns + Next internals.
+  // Run on every path EXCEPT the homepage, routes the new site owns + Next internals.
+  // `.+` (not `.*`) keeps the homepage out, so the busiest page never runs the proxy.
   // Anything listed here renders normally without the Sanity round-trip.
   matcher: [
-    "/((?!api|_next|studio|about|accessibility|blog|contact|neighborhoods|new-construction|privacy|quiz|relocating|relocating-from|terms|.*\\..*).*)",
+    "/((?!api|_next|studio|about|accessibility|blog|contact|land|mortgage-calculator|neighborhoods|new-construction|privacy|quiz|relocating|relocating-from|terms|.*\\..*).+)",
   ],
 };

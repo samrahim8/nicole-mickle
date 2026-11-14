@@ -5,7 +5,7 @@ import { quizPageQuery } from "@/sanity/queries";
 import { quizFallback } from "@/lib/quiz-fallback";
 import { buildMetadata } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 type SanityQuiz = Partial<QuizPageData> & {
   seoTitle: string | null;

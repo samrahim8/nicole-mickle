@@ -8,7 +8,7 @@ import { relocatingPageQuery } from "@/sanity/queries";
 import { relocatingFallback, employerDefaultLinks } from "@/lib/relocating-fallback";
 import { buildMetadata } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 // Origin-city links stay in code — each has a paired /relocating-from/<slug>
 // page in src/lib/relocating-from.ts.

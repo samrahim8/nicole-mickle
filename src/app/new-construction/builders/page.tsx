@@ -7,7 +7,7 @@ import { buildersHub, builderPages, hubBuilderNames } from "@/lib/builders";
 import { buildMetadata } from "@/lib/seo";
 
 // Needed so CMS pageSeo edits reach production without a redeploy.
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 const SITE = "https://nicolemickle.com";
 const PATH = "/new-construction/builders";

@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animate";
 import { MortgageCalculator } from "@/components/mortgage-calculator";
 import { buildMetadata, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({

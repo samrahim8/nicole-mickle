@@ -9,9 +9,9 @@ import { RelatedPosts } from "@/components/related-posts";
 
 // These pages read a CMS `pageSeo` override for their title/description. Without
 // a revalidate window they are baked at build time only, so a Studio edit would
-// never reach production without a redeploy — which defeats the self-serve SEO
-// layer. 60s matches every other CMS-backed route.
-export const revalidate = 60;
+// never reach production without a redeploy, which defeats the self-serve SEO
+// layer. Publishing in Sanity refreshes it instantly (webhook to /api/revalidate).
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 export function generateStaticParams() {
   return neighborhoods.map((n) => ({ slug: n.slug }));

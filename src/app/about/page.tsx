@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 // Revalidate the page on a 60s interval. Nicole's edits in Studio go live within
 // a minute without a full rebuild. Inside the Presentation visual editor this
 // auto-upgrades to live streaming via sanityFetch.
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 type SanityAbout = {
   heroEyebrow: string | null;

@@ -3,7 +3,7 @@ import { sanityFetch } from "@/sanity/live";
 import { contactPageQuery } from "@/sanity/queries";
 import { contactFallback } from "@/lib/contact-fallback";
 
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 type SanityContact = Partial<ContactPageData>;
 

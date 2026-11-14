@@ -14,7 +14,7 @@ import {
 import type { PostCategory, PostListItem } from "@/sanity/types";
 
 // Revalidate the blog index every 60 seconds.
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 const PAGE_SIZE = 12;
 

@@ -10,7 +10,7 @@ import { newConstructionFallback } from "@/lib/new-construction-fallback";
 import { urlFor } from "@/sanity/image";
 import { buildMetadata } from "@/lib/seo";
 
-export const revalidate = 60;
+export const revalidate = 86400; // daily fallback; Sanity publishes refresh instantly via /api/revalidate
 
 type SanityImageRef = { asset?: unknown; alt?: string } | null;
 type SanityNewConstruction = Partial<
