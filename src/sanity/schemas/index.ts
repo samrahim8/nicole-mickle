@@ -8,6 +8,7 @@ import { portableText } from "./blocks/portableText";
 import { aboutPage } from "./pages/aboutPage";
 import { contactPage } from "./pages/contactPage";
 import { homePage } from "./pages/homePage";
+import { neighborhoodPage } from "./pages/neighborhoodPage";
 import { newConstructionPage } from "./pages/newConstructionPage";
 import { pageSeo } from "./pages/pageSeo";
 import { quizPage } from "./pages/quizPage";
@@ -22,6 +23,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   aboutPage,
   contactPage,
   homePage,
+  neighborhoodPage,
   newConstructionPage,
   pageSeo,
   quizPage,

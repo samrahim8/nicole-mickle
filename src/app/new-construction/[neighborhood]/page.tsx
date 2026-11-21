@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { neighborhoods } from "@/lib/neighborhoods";
 import { NewConstructionNeighborhoodClient } from "@/components/new-construction-neighborhood-client";
 import { buildMetadata } from "@/lib/seo";
+import { getNeighborhoods } from "@/lib/neighborhood-data";
 
 // See the note on /neighborhoods/[slug]: needed so CMS pageSeo edits reach
 // production without a redeploy.
@@ -38,7 +39,7 @@ export default async function NewConstructionNeighborhoodPage({
   params: Promise<{ neighborhood: string }>;
 }) {
   const { neighborhood } = await params;
-  const n = neighborhoods.find((nb) => nb.slug === neighborhood);
+  const n = (await getNeighborhoods()).find((nb) => nb.slug === neighborhood);
   if (!n || n.newConstruction.builders.length === 0) notFound();
 
   return (

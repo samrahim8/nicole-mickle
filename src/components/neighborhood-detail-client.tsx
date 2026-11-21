@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FadeIn, SlideIn, TextReveal, Stagger, StaggerChild } from "./animate";
-import { neighborhoods, type Neighborhood } from "@/lib/neighborhoods";
+import { neighborhoods as codeNeighborhoods, type Neighborhood } from "@/lib/neighborhoods";
 import type { NeighborhoodPageContent } from "@/lib/neighborhood-page-content";
 import { FaqAccordion } from "./faq-accordion";
 
@@ -24,9 +24,12 @@ interface Props {
   /** SEO-rewrite content. Absent for neighborhoods not covered by the sheet,
    *  which then render exactly as they did before. */
   content?: NeighborhoodPageContent;
+  /** Every guide with Studio edits applied, for the related-link cards. */
+  allNeighborhoods?: Neighborhood[];
 }
 
-export function NeighborhoodDetailClient({ neighborhood: n, related, content }: Props) {
+export function NeighborhoodDetailClient({ neighborhood: n, related, content, allNeighborhoods }: Props) {
+  const neighborhoods = allNeighborhoods ?? codeNeighborhoods;
   const pullQuote = n.lifestyle.split(/(?<=\.)\s/)[0];
   const remainingLifestyle = n.lifestyle.slice(pullQuote.length).trim();
 
@@ -153,13 +156,13 @@ export function NeighborhoodDetailClient({ neighborhood: n, related, content }: 
                   ref={(el) => { sectionHeadlinesRef.current[0] = el; }}
                   className="text-charcoal"
                 >
-                  {content ? (
+                  {content?.h1Lead ? (
                     <span className="block text-[12px] sm:text-[13px] tracking-[0.25em] uppercase text-neutral-400 mb-3 sm:mb-4">
                       {content.h1Lead}
                     </span>
                   ) : null}
                   <span className="block font-[family-name:var(--font-playfair)] text-[clamp(3rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em]">
-                    {content ? content.h1Display : n.name}
+                    {content?.h1Display || n.name}
                   </span>
                 </h1>
               </TextReveal>
@@ -236,7 +239,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related, content }: 
 
       {/* Keyword intro — an addition below the hero, ahead of the existing
           lifestyle content. The hero copy and stat row are untouched. */}
-      {content ? (
+      {content?.intro ? (
         <section className="pt-16 lg:pt-24">
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
             <FadeIn>
@@ -592,7 +595,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related, content }: 
 
       {/* FAQ — copy here must stay word-for-word identical to the FAQPage
           JSON-LD emitted by the route, which reads the same array. */}
-      {content ? (
+      {content && content.faq.length > 0 ? (
         <section className="py-20 lg:py-32 border-t border-neutral-100">
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
@@ -620,7 +623,7 @@ export function NeighborhoodDetailClient({ neighborhood: n, related, content }: 
               Other neighborhoods to consider
             </p>
           </FadeIn>
-          {content ? (
+          {content && content.relatedLinks.length > 0 ? (
             // Editorially chosen destinations. The card keeps the name and
             // tagline; the descriptive anchor phrase replaces the decorative
             // "View guide" so the link text itself carries the keyword.

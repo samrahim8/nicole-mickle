@@ -5,6 +5,7 @@ import { NeighborhoodDetailClient } from "@/components/neighborhood-detail-clien
 import { buildMetadata } from "@/lib/seo";
 import { neighborhoodPageContent } from "@/lib/neighborhood-page-content";
 import { buildFaqSchema } from "@/components/faq-accordion";
+import { getNeighborhoodGuides } from "@/lib/neighborhood-data";
 import { RelatedPosts } from "@/components/related-posts";
 
 // These pages read a CMS `pageSeo` override for their title/description. Without
@@ -43,10 +44,13 @@ export default async function NeighborhoodPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const n = neighborhoods.find((nb) => nb.slug === slug);
-  if (!n) notFound();
+  const guides = await getNeighborhoodGuides();
+  const guide = guides.find((g) => g.neighborhood.slug === slug);
+  if (!guide) notFound();
+  const n = guide.neighborhood;
+  const all = guides.map((g) => g.neighborhood);
 
-  const related = neighborhoods
+  const related = all
     .filter((nb) => nb.slug !== n.slug)
     .map((nb) => ({
       ...nb,
@@ -55,7 +59,7 @@ export default async function NeighborhoodPage({
     .sort((a, b) => b.score - a.score)
     .slice(0, 3);
 
-  const content = neighborhoodPageContent[n.slug];
+  const content = guide.content;
 
   const neighborhoodSchema = {
     "@context": "https://schema.org",
@@ -94,7 +98,7 @@ export default async function NeighborhoodPage({
   // RealEstateAgent/LocalBusiness on every page, and a second one here would put
   // two competing business entities on the same page — the exact error the sheet
   // warns about. Breadcrumb + FAQ are the parts that add anything.
-  const faqSchema = content ? buildFaqSchema(content.faq) : null;
+  const faqSchema = content && content.faq.length > 0 ? buildFaqSchema(content.faq) : null;
 
   return (
     <>
@@ -112,7 +116,7 @@ export default async function NeighborhoodPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       ) : null}
-      <NeighborhoodDetailClient neighborhood={n} related={related} content={content} />
+      <NeighborhoodDetailClient neighborhood={n} related={related} content={content} allNeighborhoods={all} />
       <RelatedPosts
         terms={[n.name]}
         boost={["neighborhood guide", "living in", "homes"]}

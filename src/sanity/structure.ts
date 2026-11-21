@@ -20,6 +20,10 @@ const SINGLETONS: { id: string; type: string; title: string }[] = [
 
 const SINGLETON_TYPES = new Set(SINGLETONS.map((s) => s.type));
 
+// Fixed-set collections: many documents, but each one maps to a route that
+// exists in code, so Nicole can edit but not create, duplicate or delete them.
+const FIXED_SET_TYPES = new Set(["neighborhoodPage"]);
+
 export const studioStructure: StructureResolver = (S) =>
   S.list()
     .title("Content")
@@ -43,6 +47,15 @@ export const studioStructure: StructureResolver = (S) =>
                   ),
               ),
             ),
+        ),
+      S.listItem()
+        .title("Neighborhood Guides")
+        .icon(() => "📍")
+        .child(
+          S.documentTypeList("neighborhoodPage")
+            .title("Neighborhood Guides")
+            .defaultOrdering([{ field: "name", direction: "asc" }])
+            .initialValueTemplates([]),
         ),
       S.divider(),
       S.listItem()
@@ -71,6 +84,7 @@ export const studioStructure: StructureResolver = (S) =>
       ...S.documentTypeListItems().filter(
         (item) =>
           !SINGLETON_TYPES.has(item.getId() ?? "") &&
+          !FIXED_SET_TYPES.has(item.getId() ?? "") &&
           !["post", "author", "category", "pageSeo", "landListing"].includes(item.getId() ?? ""),
       ),
     ]);
@@ -81,7 +95,7 @@ export const studioStructure: StructureResolver = (S) =>
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function singletonActions(prev: any[], context: { schemaType: string }): any[] {
-  if (SINGLETON_TYPES.has(context.schemaType)) {
+  if (SINGLETON_TYPES.has(context.schemaType) || FIXED_SET_TYPES.has(context.schemaType)) {
     return prev.filter(
       (a) =>
         a?.action !== "duplicate" &&
@@ -94,5 +108,9 @@ export function singletonActions(prev: any[], context: { schemaType: string }): 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function singletonNewDocumentOptions(prev: any[]): any[] {
-  return prev.filter((tpl) => !SINGLETON_TYPES.has(tpl?.templateId ?? ""));
+  return prev.filter(
+    (tpl) =>
+      !SINGLETON_TYPES.has(tpl?.templateId ?? "") &&
+      !FIXED_SET_TYPES.has(tpl?.templateId ?? ""),
+  );
 }

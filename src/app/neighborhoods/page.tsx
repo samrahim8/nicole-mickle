@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { neighborhoods } from "@/lib/neighborhoods";
+import { getNeighborhoods } from "@/lib/neighborhood-data";
 import { NeighborhoodExplorer } from "@/components/neighborhood-explorer";
 import { buildMetadata } from "@/lib/seo";
 
@@ -16,7 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function NeighborhoodsPage() {
+export default async function NeighborhoodsPage() {
+  const neighborhoods = await getNeighborhoods();
   return (
     <>
       {/* Hero */}
